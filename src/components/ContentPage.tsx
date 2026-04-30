@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { PageContent } from "@/content/pages";
 
 type ContentPageProps = {
@@ -13,24 +18,20 @@ export function ContentPage({ page }: ContentPageProps) {
       <SiteHeader />
       <main>
         <section className="border-b border-border-soft bg-white">
-          <div className="section-inner max-w-4xl py-14 sm:py-16">
-            <p className="text-sm font-semibold text-brand-green">
-              {page.title}
-            </p>
-            <h1 className="text-display mt-4">
-              {page.title}
-            </h1>
-            <p className="text-body mt-5 text-lg">{page.intro}</p>
-          </div>
+          <Container size="narrow" className="py-14 sm:py-16">
+            <SectionHeading
+              eyebrow={page.title}
+              headingLevel="h1"
+              intro={page.intro}
+              title={page.title}
+            />
+          </Container>
         </section>
 
-        <section className="section-shell bg-surface">
-          <div className="section-inner grid gap-4 md:grid-cols-2">
+        <Section variant="surface">
+          <Container className="grid gap-4 md:grid-cols-2">
             {page.sections.map((section) => (
-              <article
-                key={section.title}
-                className="surface-card p-6"
-              >
+              <Card key={section.title}>
                 <h2 className="text-2xl font-semibold text-brand-green">
                   {section.title}
                 </h2>
@@ -54,24 +55,24 @@ export function ContentPage({ page }: ContentPageProps) {
                     ))}
                   </nav>
                 ) : null}
-              </article>
+              </Card>
             ))}
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <section className="bg-white py-12">
           <nav
             aria-label="Vervolgstappen"
-            className="section-inner flex flex-col gap-3 sm:flex-row"
+            className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 sm:flex-row sm:px-8"
           >
             {page.ctas.map((cta) => (
-              <Link
+              <Button
                 key={cta.href}
                 href={cta.href}
-                className="inline-flex justify-center rounded-full border border-border-soft px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-surface"
+                variant="secondary"
               >
                 {cta.label}
-              </Link>
+              </Button>
             ))}
           </nav>
         </section>

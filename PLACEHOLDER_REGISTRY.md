@@ -4,8 +4,8 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 
 | Sleutel | Huidige placeholder | Nog aan te leveren | Waar beheerd |
 | --- | --- | --- | --- |
-| `LOGO_PRIMARY` | `LOGO PLACEHOLDER - UNIQARA` | Definitief logo voor headergebruik | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
-| `LOGO_FOOTER` | `LOGO PLACEHOLDER - UNIQARA` | Definitief logo voor footer | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
+| `LOGO_PRIMARY` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor headergebruik | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
+| `LOGO_FOOTER` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor footer | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
 | `HERO_IMAGE_HOOIBERG` | `HERO_IMAGE_HOOIBERG - beeld van De Hooiberg volgt` | Foto of beeld van De Hooiberg/groene omgeving | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `CONTACT_EMAIL` | `CONTACT_EMAIL - e-mailadres volgt` | Publiek contactmailadres | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `CONTACT_PHONE` | `CONTACT_PHONE - telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |

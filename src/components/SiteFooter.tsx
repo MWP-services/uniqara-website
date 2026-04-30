@@ -2,12 +2,14 @@ import Link from "next/link";
 import { contact } from "@/content/contact";
 import { navigation } from "@/content/navigation";
 import { brand } from "@/content/site";
-import { LogoPlaceholder } from "./LogoPlaceholder";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border-soft bg-surface">
-      <div className="section-inner grid gap-8 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
+      <Container className="grid gap-8 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <LogoPlaceholder placeholderKey="LOGO_FOOTER" />
           <p className="text-support mt-4 max-w-sm">
@@ -36,14 +38,14 @@ export function SiteFooter() {
           <p className="text-support mt-3">{contact.email}</p>
           <p className="text-support">{contact.phone}</p>
           <p className="text-support">{contact.openingHours}</p>
-          <Link
+          <Button
             href={contact.cta.href}
-            className="mt-4 inline-flex rounded-full bg-brand-green px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-deep"
+            className="mt-4"
           >
             {contact.cta.label}
-          </Link>
+          </Button>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

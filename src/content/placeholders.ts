@@ -31,13 +31,13 @@ export type PlaceholderRecord = {
 export const placeholders = {
   LOGO_PRIMARY: {
     key: "LOGO_PRIMARY",
-    uiText: "LOGO PLACEHOLDER - UNIQARA",
+    uiText: "LOGO PLACEHOLDER – UNIQARA",
     description: "Primair logo in de header.",
     replaceWith: "Definitief Uniqara-logo voor headergebruik.",
   },
   LOGO_FOOTER: {
     key: "LOGO_FOOTER",
-    uiText: "LOGO PLACEHOLDER - UNIQARA",
+    uiText: "LOGO PLACEHOLDER – UNIQARA",
     description: "Logo in de footer.",
     replaceWith: "Definitief Uniqara-logo voor footergebruik.",
   },
