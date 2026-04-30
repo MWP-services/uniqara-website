@@ -17,5 +17,7 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `FAQ_CONTENT` | `FAQ_CONTENT - definitieve antwoorden volgen` | Definitieve antwoorden op veelgestelde vragen | `src/content/placeholders.ts`, `src/content/faq.ts` |
 | `ROUTE_PARKING_INFO` | `ROUTE_PARKING_INFO - route en parkeren volgen` | Routebeschrijving, parkeren en aankomstinformatie | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `PRACTICE_PHOTOS` | `PRACTICE_PHOTOS - praktijkfoto's volgen` | Foto's van praktijkruimte, erf en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `REGISTRATION_PROCESS` | `REGISTRATION_PROCESS - aanmeldproces volgt` | Aanmeldroute, eerste contact en processtappen | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `REFERRER_SCHOOL_INFO` | `REFERRER_SCHOOL_INFO - afspraken voor scholen en verwijzers volgen` | Afspraken voor scholen, huisartsen en andere verwijzers | `src/content/placeholders.ts`, `src/content/pages.ts` |
 
 Werkafspraak: voeg bij elke nieuwe ontbrekende input eerst een sleutel toe in `src/content/placeholders.ts`, registreer die hier, en verwijs ernaar in `TODO_USER.md`.

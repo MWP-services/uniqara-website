@@ -1,4 +1,5 @@
 import { placeholders } from "./placeholders";
+import { routes } from "./routes";
 
 export type CtaLink = {
   label: string;
@@ -36,8 +37,8 @@ export const home = {
       "Uniqara biedt rust, aandacht en professionele psychologische zorg.",
     intro:
       "Een warme praktijkplek waar kinderen, jongeren en gezinnen zich veilig mogen voelen. In een landelijke omgeving, met ruimte om zorgvuldig te kijken naar wat nodig is.",
-    primaryCta: { label: "Bekijk het aanbod", href: "#aanbod" },
-    secondaryCta: { label: "Ontdek De Hooiberg", href: "#locatie" },
+    primaryCta: { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
+    secondaryCta: { label: "Ontdek De Hooiberg", href: routes.locatie.href },
     imagePlaceholderLabel: "Beeldplaceholder",
     imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
   },
@@ -46,10 +47,10 @@ export const home = {
     intro:
       "De site krijgt per onderwerp een eigen vervolgpagina, zodat de homepage licht en overzichtelijk blijft.",
     pathways: [
-      { label: "Voor ouders en kinderen", href: "#contact" },
-      { label: "Voor jongeren", href: "#contact" },
-      { label: "Voor verwijzers", href: "#contact" },
-      { label: "Praktische informatie", href: "#praktisch" },
+      { label: "Voor ouders en kinderen", href: routes.voorWie.href },
+      { label: "Voor jongeren", href: routes.voorWie.href },
+      { label: "Voor verwijzers", href: routes.voorWie.href },
+      { label: "Praktische informatie", href: routes.praktischeInformatie.href },
     ],
   },
   location: {

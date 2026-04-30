@@ -1,3 +1,5 @@
+import { routes } from "./routes";
+
 export type NavigationItem = {
   label: string;
   href: string;
@@ -11,17 +13,22 @@ export type NavigationContent = {
 // Pas hier het hoofdmenu en de footer-links aan wanneer pagina's worden toegevoegd.
 export const navigation = {
   main: [
-    { label: "Aanbod", href: "#aanbod" },
-    { label: "Werkwijze", href: "#werkwijze" },
-    { label: "De Hooiberg", href: "#locatie" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    routes.overUniqara,
+    routes.voorWie,
+    routes.hulpvragen,
+    routes.werkwijze,
+    routes.locatie,
+    routes.contact,
   ],
   footer: [
-    { label: "Aanbod", href: "#aanbod" },
-    { label: "Werkwijze", href: "#werkwijze" },
-    { label: "Praktische informatie", href: "#praktisch" },
-    { label: "Privacy", href: "#privacy" },
-    { label: "Contact", href: "#contact" },
+    routes.home,
+    routes.overUniqara,
+    routes.voorWie,
+    routes.hulpvragen,
+    routes.werkwijze,
+    routes.locatie,
+    routes.praktischeInformatie,
+    routes.contact,
+    routes.privacy,
   ],
 } satisfies NavigationContent;

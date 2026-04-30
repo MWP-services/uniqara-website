@@ -1,3 +1,5 @@
+import { routes } from "./routes";
+
 export type ServiceItem = {
   title: string;
   summary: string;
@@ -26,19 +28,19 @@ export const services = {
       title: "Begeleiding",
       summary:
         "Ruimte om stil te staan bij klachten, patronen en vragen die aandacht nodig hebben.",
-      href: "#contact",
+      href: routes.hulpvragen.href,
     },
     {
       title: "Onderzoek",
       summary:
         "Heldere diagnostiek met oog voor het hele verhaal achter gedrag en ontwikkeling.",
-      href: "#contact",
+      href: routes.hulpvragen.href,
     },
     {
       title: "Behandeling",
       summary:
         "Een zorgvuldig traject dat aansluit bij leeftijd, gezinssituatie en hulpvraag.",
-      href: "#contact",
+      href: routes.hulpvragen.href,
     },
   ],
   helpQuestions: [

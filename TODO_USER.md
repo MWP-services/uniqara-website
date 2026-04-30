@@ -7,5 +7,7 @@
 - Vul de definitieve privacytekst en praktische informatie aan voor `PRIVACY_INFO`, `WAITLIST_INFO`, `TARIFFS_INFO`, verwijzingen en bereikbaarheid.
 - Controleer de FAQ-vragen en antwoorden voor `FAQ_CONTENT` in `src/content/faq.ts`.
 - Vul eventueel de praktijkhouder of behandelaren aan voor `OWNER_NAME`.
+- Vul de aanmeldroute aan voor `REGISTRATION_PROCESS`.
+- Vul afspraken voor scholen en verwijzers aan voor `REFERRER_SCHOOL_INFO`.
 
 Zie ook `PLACEHOLDER_REGISTRY.md` en `src/content/placeholders.ts` voor het centrale placeholderoverzicht.

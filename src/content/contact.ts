@@ -1,4 +1,5 @@
 import { placeholders } from "./placeholders";
+import { routes } from "./routes";
 
 export type ContactContent = {
   heading: string;
@@ -37,6 +38,6 @@ export const contact = {
   routeNote: placeholders.ROUTE_PARKING_INFO.uiText,
   cta: {
     label: "Contactgegevens volgen",
-    href: "#contact",
+    href: routes.contact.href,
   },
 } satisfies ContactContent;

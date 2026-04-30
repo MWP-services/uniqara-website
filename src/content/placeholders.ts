@@ -11,7 +11,9 @@ export type PlaceholderKey =
   | "PRIVACY_INFO"
   | "FAQ_CONTENT"
   | "ROUTE_PARKING_INFO"
-  | "PRACTICE_PHOTOS";
+  | "PRACTICE_PHOTOS"
+  | "REGISTRATION_PROCESS"
+  | "REFERRER_SCHOOL_INFO";
 
 export type PlaceholderRecord = {
   key: PlaceholderKey;
@@ -100,5 +102,17 @@ export const placeholders = {
     uiText: "PRACTICE_PHOTOS - praktijkfoto's volgen",
     description: "Foto's van praktijkruimte, erf, natuur en omgeving.",
     replaceWith: "Definitieve fotografie voor websitegebruik.",
+  },
+  REGISTRATION_PROCESS: {
+    key: "REGISTRATION_PROCESS",
+    uiText: "REGISTRATION_PROCESS - aanmeldproces volgt",
+    description: "Uitleg over aanmelden, eerste contact en vervolg.",
+    replaceWith: "Definitieve aanmeldroute en processtappen.",
+  },
+  REFERRER_SCHOOL_INFO: {
+    key: "REFERRER_SCHOOL_INFO",
+    uiText: "REFERRER_SCHOOL_INFO - afspraken voor scholen en verwijzers volgen",
+    description: "Informatie voor scholen, huisartsen en andere verwijzers.",
+    replaceWith: "Definitieve afspraken voor afstemming en verwijzing.",
   },
 } satisfies Record<PlaceholderKey, PlaceholderRecord>;

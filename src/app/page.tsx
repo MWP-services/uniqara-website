@@ -5,6 +5,7 @@ import { contact } from "@/content/contact";
 import { faq } from "@/content/faq";
 import { home } from "@/content/home";
 import { pages } from "@/content/pages";
+import { routes } from "@/content/routes";
 import { services } from "@/content/services";
 
 export default function Home() {
@@ -58,6 +59,68 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="bg-white py-14 sm:py-16">
+          <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <h2 className="text-3xl font-semibold text-brand-green">
+                {pages.overUniqara.title}
+              </h2>
+              <p className="mt-4 leading-7 text-muted">
+                {pages.overUniqara.intro}
+              </p>
+            </div>
+            <nav
+              aria-label="Introductie links"
+              className="grid gap-3 sm:grid-cols-2"
+            >
+              <Link
+                href={routes.overUniqara.href}
+                className="rounded-[8px] border border-border-soft bg-surface px-5 py-4 font-semibold text-foreground transition hover:border-brand-green hover:bg-white"
+              >
+                Meer over Uniqara
+              </Link>
+              <Link
+                href={routes.werkwijze.href}
+                className="rounded-[8px] border border-border-soft bg-surface px-5 py-4 font-semibold text-foreground transition hover:border-brand-green hover:bg-white"
+              >
+                Lees de werkwijze
+              </Link>
+            </nav>
+          </div>
+        </section>
+
+        <section id="voor-wie" className="border-y border-border-soft bg-surface py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-semibold text-brand-green">
+                {pages.voorWie.title}
+              </h2>
+              <p className="mt-4 leading-7 text-muted">{pages.voorWie.intro}</p>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-4">
+              {pages.voorWie.sections.map((section) => (
+                <article
+                  key={section.title}
+                  className="rounded-[8px] border border-border-soft bg-white p-5"
+                >
+                  <h3 className="font-semibold text-brand-green">
+                    {section.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {section.body[0]}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <Link
+              href={routes.voorWie.href}
+              className="mt-8 inline-flex text-sm font-semibold text-brand-green hover:text-brand-green-deep"
+            >
+              Bekijk alle doelgroepen
+            </Link>
+          </div>
+        </section>
+
         <section id="aanbod" className="bg-surface py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <div className="max-w-2xl">
@@ -84,6 +147,34 @@ export default function Home() {
                   >
                     Meer informatie
                   </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="hulpvragen" className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-semibold text-brand-green">
+                {pages.hulpvragen.title}
+              </h2>
+              <p className="mt-4 leading-7 text-muted">
+                {pages.hulpvragen.intro}
+              </p>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {services.helpQuestions.map((question) => (
+                <article
+                  key={question.title}
+                  className="rounded-[8px] border border-border-soft bg-surface p-5"
+                >
+                  <h3 className="font-semibold text-foreground">
+                    {question.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {question.description}
+                  </p>
                 </article>
               ))}
             </div>
@@ -150,7 +241,7 @@ export default function Home() {
 
         <section id="praktisch" className="border-y border-border-soft bg-surface py-16 sm:py-20">
           <div className="mx-auto grid max-w-6xl gap-4 px-5 sm:px-8 md:grid-cols-2">
-            {[pages.practical, pages.privacy].map((page) => (
+            {[pages.praktischeInformatie, pages.privacy].map((page) => (
               <article
                 key={page.title}
                 id={page.title === pages.privacy.title ? "privacy" : undefined}
@@ -159,7 +250,17 @@ export default function Home() {
                 <h2 className="text-2xl font-semibold text-brand-green">
                   {page.title}
                 </h2>
-                <p className="mt-4 leading-7 text-muted">{page.summary}</p>
+                <p className="mt-4 leading-7 text-muted">{page.intro}</p>
+                <Link
+                  href={
+                    page.routeKey === "privacy"
+                      ? routes.privacy.href
+                      : routes.praktischeInformatie.href
+                  }
+                  className="mt-5 inline-flex text-sm font-semibold text-brand-green hover:text-brand-green-deep"
+                >
+                  Lees verder
+                </Link>
               </article>
             ))}
           </div>
@@ -187,6 +288,26 @@ export default function Home() {
                   </p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-border-soft bg-surface py-14">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="rounded-[8px] border border-border-soft bg-white p-6 sm:p-8">
+              <h2 className="text-3xl font-semibold text-brand-green">
+                Contact opnemen
+              </h2>
+              <p className="mt-4 max-w-2xl leading-7 text-muted">
+                De definitieve contactgegevens volgen nog. De contactpagina staat
+                alvast klaar met alle placeholders op een vaste plek.
+              </p>
+              <Link
+                href={routes.contact.href}
+                className="mt-6 inline-flex rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-deep"
+              >
+                Naar contact
+              </Link>
             </div>
           </div>
         </section>
