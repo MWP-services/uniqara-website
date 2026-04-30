@@ -28,6 +28,7 @@ export function IntroSection({
         <div className="grid gap-4 sm:grid-cols-3">
           {values.slice(0, 3).map((value) => (
             <Card key={value} className="p-5">
+              <span className="inline-flex h-2 w-10 rounded-pill bg-accent-yellow" />
               <h3 className="text-lg font-semibold text-brand-green">
                 {value}
               </h3>

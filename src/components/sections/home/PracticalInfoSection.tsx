@@ -11,6 +11,7 @@ type PracticalInfoSectionProps = {
   items: PageSection[];
   ctaLabel: string;
   ctaHref: string;
+  cardLinkLabel: string;
 };
 
 export function PracticalInfoSection({
@@ -19,6 +20,7 @@ export function PracticalInfoSection({
   items,
   ctaLabel,
   ctaHref,
+  cardLinkLabel,
 }: PracticalInfoSectionProps) {
   return (
     <Section id="praktisch" variant="surface">
@@ -29,6 +31,9 @@ export function PracticalInfoSection({
             <Card key={item.title} className="p-5">
               <h3 className="font-semibold text-brand-green">{item.title}</h3>
               <p className="text-support mt-3">{item.body[0]}</p>
+              <Button href={ctaHref} className="mt-5 px-0 py-0" variant="ghost">
+                {cardLinkLabel}
+              </Button>
             </Card>
           ))}
         </div>

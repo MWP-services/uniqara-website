@@ -14,6 +14,8 @@ type ServicesPreviewSectionProps = {
   primaryCtaHref: string;
   secondaryCtaLabel: string;
   secondaryCtaHref: string;
+  serviceLinkLabel: string;
+  questionLinkLabel: string;
 };
 
 export function ServicesPreviewSection({
@@ -25,6 +27,8 @@ export function ServicesPreviewSection({
   primaryCtaHref,
   secondaryCtaLabel,
   secondaryCtaHref,
+  serviceLinkLabel,
+  questionLinkLabel,
 }: ServicesPreviewSectionProps) {
   return (
     <Section id="hulpvragen">
@@ -38,6 +42,9 @@ export function ServicesPreviewSection({
                   {item.title}
                 </h3>
                 <p className="text-body mt-4">{item.summary}</p>
+                <Button href={item.href} className="mt-5 px-0 py-0" variant="ghost">
+                  {serviceLinkLabel}
+                </Button>
               </Card>
             ))}
           </div>
@@ -48,6 +55,13 @@ export function ServicesPreviewSection({
                   {question.title}
                 </h3>
                 <p className="text-support mt-3">{question.description}</p>
+                <Button
+                  href={primaryCtaHref}
+                  className="mt-5 px-0 py-0"
+                  variant="ghost"
+                >
+                  {questionLinkLabel}
+                </Button>
               </Card>
             ))}
           </div>

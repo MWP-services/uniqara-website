@@ -32,6 +32,7 @@ export default function Home() {
       />
 
       <AudienceSection
+        cardLinkLabel={home.audience.cardLinkLabel}
         ctaHref={routes.voorWie.href}
         ctaLabel={home.audience.ctaLabel}
         intro={pages.voorWie.intro}
@@ -46,6 +47,8 @@ export default function Home() {
         primaryCtaLabel={home.servicesPreview.primaryCtaLabel}
         secondaryCtaHref={routes.werkwijze.href}
         secondaryCtaLabel={home.servicesPreview.secondaryCtaLabel}
+        questionLinkLabel={home.servicesPreview.questionLinkLabel}
+        serviceLinkLabel={home.servicesPreview.serviceLinkLabel}
         services={services.items}
         title={home.servicesPreview.title}
       />
@@ -54,6 +57,7 @@ export default function Home() {
         ctaHref={routes.werkwijze.href}
         ctaLabel={home.approach.ctaLabel}
         intro={pages.werkwijze.intro}
+        stepLinkLabel={home.approach.stepLinkLabel}
         steps={workSteps}
         title={home.approach.heading}
       />
@@ -65,10 +69,13 @@ export default function Home() {
         imageText={home.hero.imagePlaceholderText}
         intro={home.location.intro}
         locationDescription={contact.locationDescription}
+        secondaryCtaHref={routes.praktischeInformatie.href}
+        secondaryCtaLabel={home.location.secondaryCtaLabel}
         title={home.location.heading}
       />
 
       <PracticalInfoSection
+        cardLinkLabel={home.practicalInfo.cardLinkLabel}
         ctaHref={routes.praktischeInformatie.href}
         ctaLabel={home.practicalInfo.ctaLabel}
         intro={pages.praktischeInformatie.intro}

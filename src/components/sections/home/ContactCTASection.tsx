@@ -24,6 +24,9 @@ export function ContactCTASection({
       <Container>
         <Card className="grid gap-6 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
+            <p className="mb-3 text-sm font-semibold uppercase text-brand-green">
+              Volgende stap
+            </p>
             <h2 className="text-3xl font-semibold text-brand-green">
               {title}
             </h2>

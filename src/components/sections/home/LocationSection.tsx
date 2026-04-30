@@ -9,6 +9,8 @@ type LocationSectionProps = {
   intro: string;
   ctaLabel: string;
   ctaHref: string;
+  secondaryCtaLabel: string;
+  secondaryCtaHref: string;
   imageLabel: string;
   imageText: string;
   locationDescription: string;
@@ -19,6 +21,8 @@ export function LocationSection({
   intro,
   ctaLabel,
   ctaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
   imageLabel,
   imageText,
   locationDescription,
@@ -28,9 +32,14 @@ export function LocationSection({
       <Container>
         <div className="grid gap-6 rounded-medium border border-border-soft bg-surface p-5 shadow-card sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <SectionHeading intro={intro} title={title}>
-            <Button href={ctaHref} className="mt-6" variant="secondary">
-              {ctaLabel}
-            </Button>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button href={ctaHref} variant="secondary">
+                {ctaLabel}
+              </Button>
+              <Button href={secondaryCtaHref} variant="ghost">
+                {secondaryCtaLabel}
+              </Button>
+            </div>
           </SectionHeading>
           <Card className="border-dashed bg-white p-5">
             <p className="text-sm font-semibold uppercase text-brand-green">

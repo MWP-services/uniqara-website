@@ -27,17 +27,21 @@ export type HomeContent = {
   };
   audience: {
     ctaLabel: string;
+    cardLinkLabel: string;
   };
   servicesPreview: {
     title: string;
     primaryCtaLabel: string;
     secondaryCtaLabel: string;
+    serviceLinkLabel: string;
+    questionLinkLabel: string;
   };
   approach: {
     heading: string;
     intro: string;
     pathways: CtaLink[];
     ctaLabel: string;
+    stepLinkLabel: string;
   };
   location: {
     heading: string;
@@ -45,9 +49,11 @@ export type HomeContent = {
     cardLabel: string;
     cardText: string;
     ctaLabel: string;
+    secondaryCtaLabel: string;
   };
   practicalInfo: {
     ctaLabel: string;
+    cardLinkLabel: string;
   };
   contactCta: {
     title: string;
@@ -95,11 +101,14 @@ export const home = {
   },
   audience: {
     ctaLabel: "Bekijk alle doelgroepen",
+    cardLinkLabel: "Voor wie",
   },
   servicesPreview: {
     title: "Hulpvragen en aanbod",
     primaryCtaLabel: "Bekijk hulpvragen",
     secondaryCtaLabel: "Lees de werkwijze",
+    serviceLinkLabel: "Meer over aanbod",
+    questionLinkLabel: "Bekijk hulpvragen",
   },
   approach: {
     heading: "Werkwijze in duidelijke stappen",
@@ -112,6 +121,7 @@ export const home = {
       { label: "Praktische informatie", href: routes.praktischeInformatie.href },
     ],
     ctaLabel: "Bekijk de volledige werkwijze",
+    stepLinkLabel: "Stap bekijken",
   },
   location: {
     heading: "De Hooiberg als rustige praktijkplek",
@@ -120,9 +130,11 @@ export const home = {
     cardLabel: "Locatieblok",
     cardText: placeholders.PRACTICE_PHOTOS.uiText,
     ctaLabel: "Bekijk de locatie",
+    secondaryCtaLabel: "Praktische route-info",
   },
   practicalInfo: {
     ctaLabel: "Lees praktische informatie",
+    cardLinkLabel: "Meer informatie",
   },
   contactCta: {
     title: "Contact opnemen",

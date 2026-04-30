@@ -11,6 +11,7 @@ type StepsSectionProps = {
   steps: PageSection[];
   ctaLabel: string;
   ctaHref: string;
+  stepLinkLabel: string;
 };
 
 export function StepsSection({
@@ -19,6 +20,7 @@ export function StepsSection({
   steps,
   ctaLabel,
   ctaHref,
+  stepLinkLabel,
 }: StepsSectionProps) {
   return (
     <Section id="werkwijze" variant="surface">
@@ -34,6 +36,9 @@ export function StepsSection({
                 {step.title}
               </h3>
               <p className="text-support mt-3">{step.body[0]}</p>
+              <Button href={ctaHref} className="mt-5 px-0 py-0" variant="ghost">
+                {stepLinkLabel}
+              </Button>
             </Card>
           ))}
         </div>

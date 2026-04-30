@@ -11,6 +11,7 @@ type AudienceSectionProps = {
   sections: PageSection[];
   ctaLabel: string;
   ctaHref: string;
+  cardLinkLabel: string;
 };
 
 export function AudienceSection({
@@ -19,6 +20,7 @@ export function AudienceSection({
   sections,
   ctaLabel,
   ctaHref,
+  cardLinkLabel,
 }: AudienceSectionProps) {
   return (
     <Section id="voor-wie" variant="surface">
@@ -31,6 +33,9 @@ export function AudienceSection({
                 {section.title}
               </h3>
               <p className="text-support mt-3">{section.body[0]}</p>
+              <Button href={ctaHref} className="mt-5 px-0 py-0" variant="ghost">
+                {cardLinkLabel}
+              </Button>
             </Card>
           ))}
         </div>
