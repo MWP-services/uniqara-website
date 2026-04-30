@@ -8,6 +8,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 | --- | --- | --- |
 | Definitief logo | Voor herkenbaarheid en een professionele eerste indruk. | `public/placeholders/logo-placeholder.svg`, `src/components/LogoPlaceholder.tsx`, placeholderkeys `LOGO_PRIMARY` en `LOGO_FOOTER` |
 | Contactgegevens | Bezoekers moeten weten hoe ze contact kunnen opnemen. | `src/content/contact.ts`, placeholderkeys `CONTACT_EMAIL` en `CONTACT_PHONE` |
+| Formulierafhandeling | Nodig om berichten echt te kunnen ontvangen via het contactformulier. | `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx`, placeholderkey `CONTACT_FORM_HANDLER` |
 | Adres en bereikbaarheid | Nodig voor route, locatiepagina en praktische informatie. | `src/content/contact.ts`, placeholderkeys `LOCATION_ADDRESS` en `ROUTE_PARKING_INFO` |
 | Kaart of routeblok | Helpt bezoekers de locatie rustig en duidelijk te vinden. | `src/content/pages.ts`, placeholderkey `LOCATION_MAP_PLACEHOLDER` |
 | Foto's van De Hooiberg, natuur en praktijk | Versterkt de rustige, landelijke sfeer en maakt de plek concreet. | `src/content/home.ts`, `src/content/pages.ts`, placeholderkeys `HERO_IMAGE_HOOIBERG`, `HERO_IMAGE_NATURE`, `HERO_IMAGE_PRACTICE` en `PRACTICE_PHOTOS` |
@@ -17,6 +18,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 | Vergoedingsinformatie | Maakt duidelijk of en hoe vergoeding, verwijzing of betaling werkt. | `src/content/pages.ts`, placeholderkey `REIMBURSEMENT_INFO` |
 | Wachttijd | Bezoekers willen weten wanneer hulp mogelijk is. | `src/content/pages.ts`, placeholderkey `WAITLIST_INFO` |
 | Privacytekst | Nodig voor zorgvuldige uitleg over gegevens en dossiers. | `src/content/pages.ts`, placeholderkey `PRIVACY_INFO` |
+| Juridische privacydetails | Nodig om correct te beschrijven welke gegevens worden verwerkt en welke rechten bezoekers hebben. | `src/content/pages.ts`, placeholderkeys `PRIVACY_LEGAL_TEXT`, `PRIVACY_DATA_CATEGORIES` en `PRIVACY_RIGHTS_INFO` |
 | Aanmeldinformatie | Maakt duidelijk hoe iemand de eerste stap zet. | `src/content/pages.ts`, placeholderkey `REGISTRATION_PROCESS` |
 | Footer- en copyrighttekst | Zorgt dat de onderkant van de site netjes en volledig is. | `src/content/placeholders.ts`, placeholderkey `COPYRIGHT_INFO` |
 
@@ -47,12 +49,16 @@ Belangrijkste placeholderkeys:
 - `HERO_IMAGE_PRACTICE`
 - `CONTACT_EMAIL`
 - `CONTACT_PHONE`
+- `CONTACT_FORM_HANDLER`
 - `LOCATION_ADDRESS`
 - `OWNER_NAME`
 - `TARIFFS_INFO`
 - `REIMBURSEMENT_INFO`
 - `WAITLIST_INFO`
 - `PRIVACY_INFO`
+- `PRIVACY_LEGAL_TEXT`
+- `PRIVACY_DATA_CATEGORIES`
+- `PRIVACY_RIGHTS_INFO`
 - `FAQ_CONTENT`
 - `ROUTE_PARKING_INFO`
 - `LOCATION_MAP_PLACEHOLDER`

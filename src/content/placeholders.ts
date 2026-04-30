@@ -6,12 +6,16 @@ export type PlaceholderKey =
   | "HERO_IMAGE_PRACTICE"
   | "CONTACT_EMAIL"
   | "CONTACT_PHONE"
+  | "CONTACT_FORM_HANDLER"
   | "LOCATION_ADDRESS"
   | "OWNER_NAME"
   | "TARIFFS_INFO"
   | "REIMBURSEMENT_INFO"
   | "WAITLIST_INFO"
   | "PRIVACY_INFO"
+  | "PRIVACY_LEGAL_TEXT"
+  | "PRIVACY_DATA_CATEGORIES"
+  | "PRIVACY_RIGHTS_INFO"
   | "FAQ_CONTENT"
   | "ROUTE_PARKING_INFO"
   | "LOCATION_MAP_PLACEHOLDER"
@@ -76,6 +80,12 @@ export const placeholders = {
     description: "Publiek telefoonnummer van de praktijk.",
     replaceWith: "Definitief telefoonnummer of keuze om geen telefoon te tonen.",
   },
+  CONTACT_FORM_HANDLER: {
+    key: "CONTACT_FORM_HANDLER",
+    uiText: "CONTACT_FORM_HANDLER - formulierkoppeling volgt",
+    description: "Technische afhandeling van het contactformulier.",
+    replaceWith: "Definitieve formulierbackend, mailservice of CRM-koppeling.",
+  },
   LOCATION_ADDRESS: {
     key: "LOCATION_ADDRESS",
     uiText: "LOCATION_ADDRESS - adres volgt",
@@ -111,6 +121,24 @@ export const placeholders = {
     uiText: "PRIVACY_INFO - privacytekst volgt",
     description: "Privacy, dossier en omgang met persoonsgegevens.",
     replaceWith: "Definitieve privacyverklaring of samenvatting.",
+  },
+  PRIVACY_LEGAL_TEXT: {
+    key: "PRIVACY_LEGAL_TEXT",
+    uiText: "PRIVACY_LEGAL_TEXT - juridische privacytekst volgt",
+    description: "Juridisch gecontroleerde privacyverklaring voor de praktijk.",
+    replaceWith: "Definitieve juridisch gecontroleerde privacytekst.",
+  },
+  PRIVACY_DATA_CATEGORIES: {
+    key: "PRIVACY_DATA_CATEGORIES",
+    uiText: "PRIVACY_DATA_CATEGORIES - overzicht persoonsgegevens volgt",
+    description: "Overzicht van gegevens die mogelijk worden verwerkt.",
+    replaceWith: "Definitieve lijst met gegevenscategorieen en verwerkingsdoelen.",
+  },
+  PRIVACY_RIGHTS_INFO: {
+    key: "PRIVACY_RIGHTS_INFO",
+    uiText: "PRIVACY_RIGHTS_INFO - rechten en verwijzingen volgen",
+    description: "Uitleg over privacyrechten, inzage, correctie en klachtenroute.",
+    replaceWith: "Definitieve rechteninformatie en eventuele externe verwijzingen.",
   },
   FAQ_CONTENT: {
     key: "FAQ_CONTENT",

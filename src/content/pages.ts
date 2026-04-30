@@ -333,6 +333,11 @@ export const pages = {
     description:
       "Contactgegevens en route-informatie voor psychologiepraktijk Uniqara.",
     intro: contact.intro,
+    aside: {
+      label: "Eerste stap",
+      title: "Rustig contact opnemen",
+      text: contact.reassurance,
+    },
     sections: [
       {
         title: "Contactgegevens",
@@ -340,6 +345,7 @@ export const pages = {
           placeholders.CONTACT_EMAIL.uiText,
           placeholders.CONTACT_PHONE.uiText,
           placeholders.OPENING_HOURS.uiText,
+          placeholders.OWNER_NAME.uiText,
         ],
       },
       {
@@ -365,22 +371,51 @@ export const pages = {
     description:
       "Placeholder voor privacy-informatie, dossiervoering en zorgvuldig omgaan met gegevens bij Uniqara.",
     intro:
-      "Zorgvuldige omgang met gegevens is belangrijk. De privacy-informatie staat klaar als centrale placeholder.",
+      "Zorgvuldige omgang met gegevens is belangrijk. Deze pagina staat klaar als professionele placeholder tot de definitieve privacytekst is aangeleverd.",
+    aside: {
+      label: "Juridische tekst",
+      title: "Definitieve controle volgt",
+      text: placeholders.PRIVACY_LEGAL_TEXT.uiText,
+    },
     sections: [
       {
-        title: "Privacyverklaring",
-        body: [placeholders.PRIVACY_INFO.uiText],
+        title: "Welke gegevens",
+        body: [
+          "Hier komt later helder te staan welke gegevens mogelijk worden verwerkt wanneer iemand contact opneemt of begeleiding start.",
+          placeholders.PRIVACY_DATA_CATEGORIES.uiText,
+        ],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Dossier en gegevens",
-        body: [placeholders.PRIVACY_DOSSIER_INFO.uiText],
+        body: [
+          "Voor zorgvuldige begeleiding kan dossiervoering nodig zijn. De definitieve uitleg wordt later juridisch en inhoudelijk aangevuld.",
+          placeholders.PRIVACY_DOSSIER_INFO.uiText,
+        ],
+        links: [{ label: "Praktische informatie", href: routes.praktischeInformatie.href }],
       },
       {
-        title: "Vragen over privacy",
+        title: "Privacyverklaring",
+        body: [
+          "De volledige privacyverklaring wordt later vervangen door de definitieve tekst van de praktijk.",
+          placeholders.PRIVACY_INFO.uiText,
+          placeholders.PRIVACY_LEGAL_TEXT.uiText,
+        ],
+      },
+      {
+        title: "Rechten en verwijzingen",
+        body: [
+          "Hier komt later te staan welke rechten bezoekers en clienten hebben rond inzage, correctie en verwijdering.",
+          placeholders.PRIVACY_RIGHTS_INFO.uiText,
+        ],
+      },
+      {
+        title: "Contact over privacy",
         body: [
           placeholders.PRIVACY_CONTACT_ROUTE.uiText,
           placeholders.CONTACT_EMAIL.uiText,
         ],
+        links: [{ label: "Contactpagina", href: routes.contact.href }],
       },
     ],
     ctas: [

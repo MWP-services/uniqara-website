@@ -11,12 +11,16 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `HERO_IMAGE_PRACTICE` | `HERO_IMAGE_PRACTICE - foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `CONTACT_EMAIL` | `CONTACT_EMAIL - e-mailadres volgt` | Publiek contactmailadres | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `CONTACT_PHONE` | `CONTACT_PHONE - telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `CONTACT_FORM_HANDLER` | `CONTACT_FORM_HANDLER - formulierkoppeling volgt` | Formulierbackend, mailservice of CRM-koppeling | `src/content/placeholders.ts`, `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx` |
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `OWNER_NAME` | `OWNER_NAME - praktijkhouder volgt` | Naam/namen van praktijkhouder of behandelaren | `src/content/placeholders.ts` |
 | `TARIFFS_INFO` | `TARIFFS_INFO - tarieven en vergoedingen volgen` | Tarieven, vergoedingen en betaalinformatie | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `REIMBURSEMENT_INFO` | `REIMBURSEMENT_INFO - vergoedingsinformatie volgt` | Vergoedingen, verwijzing en betaalroute | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `WAITLIST_INFO` | `WAITLIST_INFO - wachttijdinformatie volgt` | Wachttijd of aanmeldstatus | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRIVACY_INFO` | `PRIVACY_INFO - privacytekst volgt` | Privacyverklaring of samenvatting | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `PRIVACY_LEGAL_TEXT` | `PRIVACY_LEGAL_TEXT - juridische privacytekst volgt` | Juridisch gecontroleerde privacytekst | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `PRIVACY_DATA_CATEGORIES` | `PRIVACY_DATA_CATEGORIES - overzicht persoonsgegevens volgt` | Gegevenscategorieen en verwerkingsdoelen | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `PRIVACY_RIGHTS_INFO` | `PRIVACY_RIGHTS_INFO - rechten en verwijzingen volgen` | Privacyrechten, inzage, correctie en klachtenroute | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `FAQ_CONTENT` | `FAQ_CONTENT - definitieve antwoorden volgen` | Definitieve antwoorden op veelgestelde vragen | `src/content/placeholders.ts`, `src/content/faq.ts` |
 | `ROUTE_PARKING_INFO` | `ROUTE_PARKING_INFO - route en parkeren volgen` | Routebeschrijving, parkeren en aankomstinformatie | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `LOCATION_MAP_PLACEHOLDER` | `LOCATION_MAP_PLACEHOLDER - kaart of routeblok volgt` | Kaartweergave, routeblok of locatiekaart | `src/content/placeholders.ts`, `src/content/pages.ts` |
@@ -38,3 +42,6 @@ Sprint 4A binnenpagina's gebruiken vooral bestaande placeholders:
 
 Sprint 4B informatiepagina's gebruiken daarnaast:
 `REIMBURSEMENT_INFO`, `LOCATION_MAP_PLACEHOLDER`, `LOCATION_ADDRESS`, `ROUTE_PARKING_INFO`, `WAITLIST_INFO`, `TARIFFS_INFO`, `CONTACT_ROUTE_INFO` en `FAQ_CONTENT`.
+
+Sprint 4C contact en privacy gebruiken daarnaast:
+`CONTACT_FORM_HANDLER`, `PRIVACY_LEGAL_TEXT`, `PRIVACY_DATA_CATEGORIES` en `PRIVACY_RIGHTS_INFO`.
