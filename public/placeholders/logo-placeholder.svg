@@ -1,0 +1,13 @@
+<svg width="320" height="96" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LOGO PLACEHOLDER - UNIQARA</title>
+  <desc id="desc">Tijdelijke, duidelijk zichtbare logo-placeholder voor Uniqara.</desc>
+  <rect x="2" y="2" width="316" height="92" rx="12" fill="#FFFFFF" stroke="#2F6F4F" stroke-width="4" stroke-dasharray="10 8"/>
+  <circle cx="48" cy="48" r="24" fill="#F4DC74"/>
+  <path d="M38 54C43.5 41 55 34 70 34C64 48 53 56 38 54Z" fill="#2F6F4F"/>
+  <text x="88" y="42" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="0">
+    LOGO PLACEHOLDER
+  </text>
+  <text x="88" y="64" fill="#2F6F4F" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="0">
+    UNIQARA
+  </text>
+</svg>

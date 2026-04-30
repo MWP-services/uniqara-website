@@ -1,0 +1,35 @@
+import Link from "next/link";
+import { LogoPlaceholder } from "./LogoPlaceholder";
+
+const navigation = [
+  { label: "Aanbod", href: "#aanbod" },
+  { label: "Werkwijze", href: "#werkwijze" },
+  { label: "De Hooiberg", href: "#locatie" },
+  { label: "Contact", href: "#contact" },
+];
+
+export function SiteHeader() {
+  return (
+    <header className="sticky top-0 z-20 border-b border-border-soft bg-white/95 backdrop-blur">
+      <nav
+        aria-label="Hoofdnavigatie"
+        className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between"
+      >
+        <Link href="/" aria-label="Uniqara home">
+          <LogoPlaceholder priority />
+        </Link>
+        <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-foreground sm:gap-4">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-full border border-transparent px-3 py-2 transition hover:border-border-soft hover:bg-surface"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
+    </header>
+  );
+}
