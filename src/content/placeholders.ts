@@ -13,7 +13,11 @@ export type PlaceholderKey =
   | "ROUTE_PARKING_INFO"
   | "PRACTICE_PHOTOS"
   | "REGISTRATION_PROCESS"
-  | "REFERRER_SCHOOL_INFO";
+  | "REFERRER_SCHOOL_INFO"
+  | "OPENING_HOURS"
+  | "CONTACT_ROUTE_INFO"
+  | "PRIVACY_DOSSIER_INFO"
+  | "PRIVACY_CONTACT_ROUTE";
 
 export type PlaceholderRecord = {
   key: PlaceholderKey;
@@ -114,5 +118,29 @@ export const placeholders = {
     uiText: "REFERRER_SCHOOL_INFO - afspraken voor scholen en verwijzers volgen",
     description: "Informatie voor scholen, huisartsen en andere verwijzers.",
     replaceWith: "Definitieve afspraken voor afstemming en verwijzing.",
+  },
+  OPENING_HOURS: {
+    key: "OPENING_HOURS",
+    uiText: "OPENING_HOURS - openingstijden volgen",
+    description: "Bereikbaarheid en openingstijden van de praktijk.",
+    replaceWith: "Definitieve openingstijden of bereikbaarheid per dag.",
+  },
+  CONTACT_ROUTE_INFO: {
+    key: "CONTACT_ROUTE_INFO",
+    uiText: "CONTACT_ROUTE_INFO - contactroute volgt",
+    description: "Uitleg over de beste manier om contact op te nemen.",
+    replaceWith: "Definitieve contactroute, bijvoorbeeld mail, formulier of telefoon.",
+  },
+  PRIVACY_DOSSIER_INFO: {
+    key: "PRIVACY_DOSSIER_INFO",
+    uiText: "PRIVACY_DOSSIER_INFO - uitleg over dossier en gegevens volgt",
+    description: "Uitleg over dossiervoering, bewaartermijnen en rechten.",
+    replaceWith: "Definitieve privacy- en dossierinformatie.",
+  },
+  PRIVACY_CONTACT_ROUTE: {
+    key: "PRIVACY_CONTACT_ROUTE",
+    uiText: "PRIVACY_CONTACT_ROUTE - contactroute voor privacyvragen volgt",
+    description: "Contactmogelijkheid voor vragen over privacy.",
+    replaceWith: "Definitieve contactroute voor privacyvragen.",
   },
 } satisfies Record<PlaceholderKey, PlaceholderRecord>;

@@ -6,6 +6,7 @@ export type ContactContent = {
   intro: string;
   email: string;
   phone: string;
+  openingHours: string;
   address: {
     name: string;
     street: string;
@@ -27,6 +28,7 @@ export const contact = {
     "Contactgegevens, adres en aanmeldinformatie worden later ingevuld. De placeholders hieronder maken duidelijk wat nog volgt.",
   email: placeholders.CONTACT_EMAIL.uiText,
   phone: placeholders.CONTACT_PHONE.uiText,
+  openingHours: placeholders.OPENING_HOURS.uiText,
   address: {
     name: "Uniqara - De Hooiberg",
     street: placeholders.LOCATION_ADDRESS.uiText,

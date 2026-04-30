@@ -1,4 +1,5 @@
 import { placeholders } from "./placeholders";
+import { contact } from "./contact";
 import { routes, type RouteKey } from "./routes";
 import { services } from "./services";
 
@@ -221,10 +222,7 @@ export const pages = {
       },
       {
         title: "Contactroute",
-        body: [
-          "Wanneer de praktijkgegevens compleet zijn, komt hier een heldere uitleg over de beste manier om contact op te nemen.",
-          placeholders.CONTACT_EMAIL.uiText,
-        ],
+        body: [placeholders.CONTACT_ROUTE_INFO.uiText],
       },
     ],
     ctas: [
@@ -237,14 +235,14 @@ export const pages = {
     title: "Contact",
     description:
       "Contactgegevens en route-informatie voor psychologiepraktijk Uniqara.",
-    intro:
-      "De definitieve contactgegevens volgen nog. De pagina staat alvast klaar met duidelijke placeholders.",
+    intro: contact.intro,
     sections: [
       {
         title: "Contactgegevens",
         body: [
           placeholders.CONTACT_EMAIL.uiText,
           placeholders.CONTACT_PHONE.uiText,
+          placeholders.OPENING_HOURS.uiText,
         ],
       },
       {
@@ -270,7 +268,7 @@ export const pages = {
     description:
       "Placeholder voor privacy-informatie, dossiervoering en zorgvuldig omgaan met gegevens bij Uniqara.",
     intro:
-      "Zorgvuldige omgang met gegevens is belangrijk. De definitieve privacytekst wordt later toegevoegd.",
+      "Zorgvuldige omgang met gegevens is belangrijk. De privacy-informatie staat klaar als centrale placeholder.",
     sections: [
       {
         title: "Privacyverklaring",
@@ -278,14 +276,12 @@ export const pages = {
       },
       {
         title: "Dossier en gegevens",
-        body: [
-          "Hier komt later een heldere uitleg over dossiervoering, bewaartermijnen en rechten van clienten.",
-        ],
+        body: [placeholders.PRIVACY_DOSSIER_INFO.uiText],
       },
       {
         title: "Vragen over privacy",
         body: [
-          "Voor privacyvragen komt later een passende contactroute beschikbaar.",
+          placeholders.PRIVACY_CONTACT_ROUTE.uiText,
           placeholders.CONTACT_EMAIL.uiText,
         ],
       },

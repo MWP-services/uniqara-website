@@ -11,7 +11,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 | Adres en bereikbaarheid | Nodig voor route, locatiepagina en praktische informatie. | `src/content/contact.ts`, placeholderkeys `LOCATION_ADDRESS` en `ROUTE_PARKING_INFO` |
 | Foto's van De Hooiberg en praktijk | Versterkt de rustige, landelijke sfeer en maakt de plek concreet. | `src/content/home.ts`, `src/content/pages.ts`, placeholderkeys `HERO_IMAGE_HOOIBERG` en `PRACTICE_PHOTOS` |
 | Naam behandelaar / praktijkhouder | Geeft vertrouwen en maakt de praktijk persoonlijker. | `src/content/pages.ts`, placeholderkey `OWNER_NAME` |
-| Openingstijden | Helpt bezoekers begrijpen wanneer de praktijk bereikbaar is. | Nog toe te voegen aan `src/content/contact.ts` of `src/content/pages.ts` |
+| Openingstijden | Helpt bezoekers begrijpen wanneer de praktijk bereikbaar is. | `src/content/contact.ts`, placeholderkey `OPENING_HOURS` |
 | Tarieven en vergoedingen | Belangrijk voor transparantie voordat iemand contact opneemt. | `src/content/pages.ts`, placeholderkey `TARIFFS_INFO` |
 | Wachttijd | Bezoekers willen weten wanneer hulp mogelijk is. | `src/content/pages.ts`, placeholderkey `WAITLIST_INFO` |
 | Privacytekst | Nodig voor zorgvuldige uitleg over gegevens en dossiers. | `src/content/pages.ts`, placeholderkey `PRIVACY_INFO` |
@@ -52,3 +52,7 @@ Belangrijkste placeholderkeys:
 - `PRACTICE_PHOTOS`
 - `REGISTRATION_PROCESS`
 - `REFERRER_SCHOOL_INFO`
+- `OPENING_HOURS`
+- `CONTACT_ROUTE_INFO`
+- `PRIVACY_DOSSIER_INFO`
+- `PRIVACY_CONTACT_ROUTE`

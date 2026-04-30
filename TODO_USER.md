@@ -9,5 +9,8 @@
 - Vul eventueel de praktijkhouder of behandelaren aan voor `OWNER_NAME`.
 - Vul de aanmeldroute aan voor `REGISTRATION_PROCESS`.
 - Vul afspraken voor scholen en verwijzers aan voor `REFERRER_SCHOOL_INFO`.
+- Vul openingstijden en bereikbaarheid aan voor `OPENING_HOURS`.
+- Vul de gewenste contactroute aan voor `CONTACT_ROUTE_INFO`.
+- Vul dossier- en privacyuitleg aan voor `PRIVACY_DOSSIER_INFO` en `PRIVACY_CONTACT_ROUTE`.
 
 Zie ook `PLACEHOLDER_REGISTRY.md` en `src/content/placeholders.ts` voor het centrale placeholderoverzicht.

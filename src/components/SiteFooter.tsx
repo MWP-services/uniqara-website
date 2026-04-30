@@ -35,6 +35,7 @@ export function SiteFooter() {
           </p>
           <p className="text-support mt-3">{contact.email}</p>
           <p className="text-support">{contact.phone}</p>
+          <p className="text-support">{contact.openingHours}</p>
           <Link
             href={contact.cta.href}
             className="mt-4 inline-flex rounded-full bg-brand-green px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-deep"

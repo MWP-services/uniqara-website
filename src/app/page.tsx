@@ -299,8 +299,7 @@ export default function Home() {
                 Contact opnemen
               </h2>
               <p className="mt-4 max-w-2xl leading-7 text-muted">
-                De definitieve contactgegevens volgen nog. De contactpagina staat
-                alvast klaar met alle placeholders op een vaste plek.
+                {pages.contact.intro}
               </p>
               <Link
                 href={routes.contact.href}
