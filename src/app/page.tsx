@@ -47,6 +47,7 @@ export default function Home() {
                 <p className="mt-3 text-2xl font-semibold leading-snug text-foreground">
                   {home.hero.imagePlaceholderText}
                 </p>
+                {/* HERO_IMAGE_HOOIBERG wordt later vervangen door echte locatie- of natuurbeelden. */}
                 <div className="mt-8 grid grid-cols-3 gap-3" aria-hidden="true">
                   <div className="h-24 rounded-[8px] bg-surface-strong" />
                   <div className="h-24 rounded-[8px] bg-accent-yellow" />
@@ -134,6 +135,12 @@ export default function Home() {
                   </p>
                   <p className="mt-4 text-sm leading-6 text-muted">
                     {contact.locationDescription}
+                  </p>
+                  <p className="mt-4 text-sm leading-6 text-muted">
+                    {contact.address.street}
+                  </p>
+                  <p className="text-sm leading-6 text-muted">
+                    {contact.routeNote}
                   </p>
                 </div>
               </div>

@@ -1,18 +1,23 @@
 import Image from "next/image";
+import { placeholders, type PlaceholderKey } from "@/content/placeholders";
 
 type LogoPlaceholderProps = {
   className?: string;
   priority?: boolean;
+  placeholderKey?: Extract<PlaceholderKey, "LOGO_PRIMARY" | "LOGO_FOOTER">;
 };
 
 export function LogoPlaceholder({
   className = "",
   priority = false,
+  placeholderKey = "LOGO_PRIMARY",
 }: LogoPlaceholderProps) {
+  const placeholder = placeholders[placeholderKey];
+
   return (
     <Image
       src="/placeholders/logo-placeholder.svg"
-      alt="LOGO PLACEHOLDER - UNIQARA"
+      alt={placeholder.uiText}
       width={320}
       height={96}
       priority={priority}

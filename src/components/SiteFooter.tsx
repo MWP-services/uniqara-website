@@ -9,7 +9,7 @@ export function SiteFooter() {
     <footer className="border-t border-border-soft bg-surface">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <LogoPlaceholder />
+          <LogoPlaceholder placeholderKey="LOGO_FOOTER" />
           <p className="mt-4 max-w-sm text-sm leading-6 text-muted">
             {brand.shortDescription}
           </p>
@@ -33,6 +33,8 @@ export function SiteFooter() {
           <p className="mt-4 text-sm leading-6 text-muted">
             {contact.intro}
           </p>
+          <p className="mt-3 text-sm leading-6 text-muted">{contact.email}</p>
+          <p className="text-sm leading-6 text-muted">{contact.phone}</p>
           <Link
             href={contact.cta.href}
             className="mt-4 inline-flex rounded-full bg-brand-green px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-deep"

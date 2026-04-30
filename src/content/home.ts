@@ -1,3 +1,5 @@
+import { placeholders } from "./placeholders";
+
 export type CtaLink = {
   label: string;
   href: string;
@@ -37,7 +39,7 @@ export const home = {
     primaryCta: { label: "Bekijk het aanbod", href: "#aanbod" },
     secondaryCta: { label: "Ontdek De Hooiberg", href: "#locatie" },
     imagePlaceholderLabel: "Beeldplaceholder",
-    imagePlaceholderText: "Hooiberg, erf, bomen en zachte natuurbeelden.",
+    imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
   },
   approach: {
     heading: "Warm, rustig en professioneel",
@@ -55,7 +57,6 @@ export const home = {
     intro:
       "De locatiebeleving mag straks voelbaar worden door echte beelden van groen, erf en landelijke stilte. Voor nu is de structuur alvast voorbereid.",
     cardLabel: "Locatieblok",
-    cardText:
-      "Plek voor adres, route, parkeren en een zachte introductie op de praktijkruimte.",
+    cardText: placeholders.PRACTICE_PHOTOS.uiText,
   },
 } satisfies HomeContent;

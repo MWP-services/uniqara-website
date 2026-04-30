@@ -9,5 +9,8 @@ De website gebruikt centrale contentbestanden in `src/content`. Daardoor kunnen 
 - `contact.ts`: contactgegevens, adres en locatieomschrijving.
 - `pages.ts`: placeholders voor praktische informatie en privacy.
 - `faq.ts`: veelgestelde vragen.
+- `placeholders.ts`: centrale placeholderteksten met vaste sleutels.
 
 Laat componenten vooral in `src/components` en `src/app` staan. Pas voor tekstwijzigingen eerst de bestanden hierboven aan.
+
+Ontbrekende input staat ook centraal geregistreerd in `PLACEHOLDER_REGISTRY.md` en `TODO_USER.md` in de projectroot.

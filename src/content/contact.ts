@@ -1,3 +1,5 @@
+import { placeholders } from "./placeholders";
+
 export type ContactContent = {
   heading: string;
   intro: string;
@@ -17,25 +19,24 @@ export type ContactContent = {
   };
 };
 
-// Vervang deze placeholders zodra de definitieve praktijkgegevens bekend zijn.
+// Vervang de gekoppelde placeholders zodra de definitieve praktijkgegevens bekend zijn.
 export const contact = {
   heading: "Contact",
   intro:
-    "Contactgegevens, adres en aanmeldinformatie worden later ingevuld. Gebruik voorlopig deze nette placeholders.",
-  email: "info@uniqara.nl",
-  phone: "Telefoonnummer volgt",
+    "Contactgegevens, adres en aanmeldinformatie worden later ingevuld. De placeholders hieronder maken duidelijk wat nog volgt.",
+  email: placeholders.CONTACT_EMAIL.uiText,
+  phone: placeholders.CONTACT_PHONE.uiText,
   address: {
     name: "Uniqara - De Hooiberg",
-    street: "Adres volgt",
-    postalCodeCity: "Postcode en plaats volgen",
+    street: placeholders.LOCATION_ADDRESS.uiText,
+    postalCodeCity: placeholders.LOCATION_ADDRESS.uiText,
     country: "Nederland",
   },
   locationDescription:
     "Een rustige praktijklocatie in een landelijke omgeving, met groen, ruimte en een veilige sfeer.",
-  routeNote:
-    "Praktische informatie over route, parkeren en aankomst wordt later toegevoegd.",
+  routeNote: placeholders.ROUTE_PARKING_INFO.uiText,
   cta: {
-    label: "Mail Uniqara",
-    href: "mailto:info@uniqara.nl",
+    label: "Contactgegevens volgen",
+    href: "#contact",
   },
 } satisfies ContactContent;

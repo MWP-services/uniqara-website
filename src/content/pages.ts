@@ -1,3 +1,5 @@
+import { placeholders } from "./placeholders";
+
 export type InfoPageContent = {
   title: string;
   summary: string;
@@ -13,14 +15,12 @@ export type PagesContent = {
 export const pages = {
   practical: {
     title: "Praktische informatie",
-    summary:
-      "Hier komen later aanmelding, wachttijd, tarieven, vergoedingen, verwijzing en bereikbaarheid.",
+    summary: `${placeholders.WAITLIST_INFO.uiText}. ${placeholders.TARIFFS_INFO.uiText}.`,
     status: "placeholder",
   },
   privacy: {
     title: "Privacy",
-    summary:
-      "Hier komt later een heldere uitleg over privacy, dossiervoering en zorgvuldig omgaan met gegevens.",
+    summary: placeholders.PRIVACY_INFO.uiText,
     status: "placeholder",
   },
 } satisfies PagesContent;

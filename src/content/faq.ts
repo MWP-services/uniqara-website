@@ -1,3 +1,5 @@
+import { placeholders } from "./placeholders";
+
 export type FaqItem = {
   question: string;
   answer: string;
@@ -22,8 +24,7 @@ export const faq = {
     },
     {
       question: "Hoe kan ik mij aanmelden?",
-      answer:
-        "De definitieve aanmeldroute volgt nog. Voor nu verwijst de website naar contact per e-mail.",
+      answer: placeholders.FAQ_CONTENT.uiText,
     },
     {
       question: "Waar vindt de begeleiding plaats?",
