@@ -7,16 +7,16 @@ import { LogoPlaceholder } from "./LogoPlaceholder";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border-soft bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div className="section-inner grid gap-8 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <LogoPlaceholder placeholderKey="LOGO_FOOTER" />
-          <p className="mt-4 max-w-sm text-sm leading-6 text-muted">
+          <p className="text-support mt-4 max-w-sm">
             {brand.shortDescription}
           </p>
         </div>
         <div>
           <h2 className="text-base font-semibold text-brand-green">Snel naar</h2>
-          <ul className="mt-4 space-y-2 text-sm text-muted">
+          <ul className="text-support mt-4 space-y-2">
             {navigation.footer.map((item) => (
               <li key={item.href}>
                 <Link className="hover:text-brand-green" href={item.href}>
@@ -30,11 +30,11 @@ export function SiteFooter() {
           <h2 className="text-base font-semibold text-brand-green">
             {contact.heading}
           </h2>
-          <p className="mt-4 text-sm leading-6 text-muted">
+          <p className="text-support mt-4">
             {contact.intro}
           </p>
-          <p className="mt-3 text-sm leading-6 text-muted">{contact.email}</p>
-          <p className="text-sm leading-6 text-muted">{contact.phone}</p>
+          <p className="text-support mt-3">{contact.email}</p>
+          <p className="text-support">{contact.phone}</p>
           <Link
             href={contact.cta.href}
             className="mt-4 inline-flex rounded-full bg-brand-green px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-deep"

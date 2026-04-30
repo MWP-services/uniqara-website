@@ -8,12 +8,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-20 border-b border-border-soft bg-white/95 backdrop-blur">
       <nav
         aria-label="Hoofdnavigatie"
-        className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between"
+        className="section-inner flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between"
       >
         <Link href="/" aria-label={`${site.name} home`}>
           <LogoPlaceholder priority />
         </Link>
-        <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-foreground sm:gap-4">
+        <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-foreground sm:gap-3">
           {navigation.main.map((item) => (
             <Link
               key={item.href}

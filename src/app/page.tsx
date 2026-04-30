@@ -10,19 +10,19 @@ import { services } from "@/content/services";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="page-shell">
       <SiteHeader />
       <main>
         <section className="border-b border-border-soft bg-white">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="section-inner grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <p className="mb-5 inline-flex rounded-full bg-accent-yellow px-4 py-2 text-sm font-semibold text-foreground">
+              <p className="eyebrow mb-5">
                 {home.hero.eyebrow}
               </p>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-brand-green sm:text-5xl">
+              <h1 className="text-display max-w-3xl">
                 {home.hero.title}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+              <p className="text-body mt-6 max-w-2xl text-lg">
                 {home.hero.intro}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -40,8 +40,8 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="rounded-[8px] border border-border-soft bg-surface p-6 shadow-sm">
-              <div className="rounded-[8px] border border-border-soft bg-white p-5">
+            <div className="surface-panel p-6">
+              <div className="surface-card p-5">
                 <p className="text-sm font-semibold uppercase text-brand-green">
                   {home.hero.imagePlaceholderLabel}
                 </p>
@@ -60,7 +60,7 @@ export default function Home() {
         </section>
 
         <section className="bg-white py-14 sm:py-16">
-          <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="section-inner grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <h2 className="text-3xl font-semibold text-brand-green">
                 {pages.overUniqara.title}
@@ -90,7 +90,7 @@ export default function Home() {
         </section>
 
         <section id="voor-wie" className="border-y border-border-soft bg-surface py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="section-inner">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold text-brand-green">
                 {pages.voorWie.title}
@@ -122,7 +122,7 @@ export default function Home() {
         </section>
 
         <section id="aanbod" className="bg-surface py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="section-inner">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold text-brand-green">
                 {services.heading}
@@ -154,7 +154,7 @@ export default function Home() {
         </section>
 
         <section id="hulpvragen" className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="section-inner">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold text-brand-green">
                 {pages.hulpvragen.title}
@@ -182,7 +182,7 @@ export default function Home() {
         </section>
 
         <section id="werkwijze" className="border-y border-border-soft bg-white py-16 sm:py-20">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="section-inner grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="text-3xl font-semibold text-brand-green">
                 {home.approach.heading}
@@ -206,7 +206,7 @@ export default function Home() {
         </section>
 
         <section id="locatie" className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="section-inner">
             <div className="rounded-[8px] border border-border-soft bg-surface p-6 sm:p-8">
               <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
                 <div>
@@ -240,7 +240,7 @@ export default function Home() {
         </section>
 
         <section id="praktisch" className="border-y border-border-soft bg-surface py-16 sm:py-20">
-          <div className="mx-auto grid max-w-6xl gap-4 px-5 sm:px-8 md:grid-cols-2">
+          <div className="section-inner grid gap-4 md:grid-cols-2">
             {[pages.praktischeInformatie, pages.privacy].map((page) => (
               <article
                 key={page.title}
@@ -267,7 +267,7 @@ export default function Home() {
         </section>
 
         <section id="faq" className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="section-inner">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold text-brand-green">
                 {faq.heading}
@@ -293,7 +293,7 @@ export default function Home() {
         </section>
 
         <section className="border-t border-border-soft bg-surface py-14">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="section-inner">
             <div className="rounded-[8px] border border-border-soft bg-white p-6 sm:p-8">
               <h2 className="text-3xl font-semibold text-brand-green">
                 Contact opnemen
