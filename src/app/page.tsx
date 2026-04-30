@@ -1,28 +1,11 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-
-const supportAreas = [
-  {
-    title: "Begeleiding",
-    text: "Ruimte om stil te staan bij klachten, patronen en vragen die aandacht nodig hebben.",
-  },
-  {
-    title: "Onderzoek",
-    text: "Heldere diagnostiek met oog voor het hele verhaal achter gedrag en ontwikkeling.",
-  },
-  {
-    title: "Behandeling",
-    text: "Een zorgvuldig traject dat aansluit bij leeftijd, gezinssituatie en hulpvraag.",
-  },
-];
-
-const pathways = [
-  "Voor ouders en kinderen",
-  "Voor jongeren",
-  "Voor verwijzers",
-  "Praktische informatie",
-];
+import { contact } from "@/content/contact";
+import { faq } from "@/content/faq";
+import { home } from "@/content/home";
+import { pages } from "@/content/pages";
+import { services } from "@/content/services";
 
 export default function Home() {
   return (
@@ -33,39 +16,36 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="mb-5 inline-flex rounded-full bg-accent-yellow px-4 py-2 text-sm font-semibold text-foreground">
-                Nieuwe psychologiepraktijk in het groen
+                {home.hero.eyebrow}
               </p>
               <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-brand-green sm:text-5xl">
-                Uniqara biedt rust, aandacht en professionele psychologische
-                zorg.
+                {home.hero.title}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                Een warme praktijkplek waar kinderen, jongeren en gezinnen zich
-                veilig mogen voelen. In een landelijke omgeving, met ruimte om
-                zorgvuldig te kijken naar wat nodig is.
+                {home.hero.intro}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="#aanbod"
+                  href={home.hero.primaryCta.href}
                   className="inline-flex justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-green-deep"
                 >
-                  Bekijk het aanbod
+                  {home.hero.primaryCta.label}
                 </Link>
                 <Link
-                  href="#locatie"
+                  href={home.hero.secondaryCta.href}
                   className="inline-flex justify-center rounded-full border border-border-soft px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-surface"
                 >
-                  Ontdek De Hooiberg
+                  {home.hero.secondaryCta.label}
                 </Link>
               </div>
             </div>
             <div className="rounded-[8px] border border-border-soft bg-surface p-6 shadow-sm">
               <div className="rounded-[8px] border border-border-soft bg-white p-5">
                 <p className="text-sm font-semibold uppercase text-brand-green">
-                  Beeldplaceholder
+                  {home.hero.imagePlaceholderLabel}
                 </p>
                 <p className="mt-3 text-2xl font-semibold leading-snug text-foreground">
-                  Hooiberg, erf, bomen en zachte natuurbeelden.
+                  {home.hero.imagePlaceholderText}
                 </p>
                 <div className="mt-8 grid grid-cols-3 gap-3" aria-hidden="true">
                   <div className="h-24 rounded-[8px] bg-surface-strong" />
@@ -81,15 +61,14 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold text-brand-green">
-                Zorg met duidelijke stappen
+                {services.heading}
               </h2>
               <p className="mt-4 leading-7 text-muted">
-                Korte teksten, heldere routes en rustige keuzes helpen bezoekers
-                snel te vinden wat bij hun vraag past.
+                {services.intro}
               </p>
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {supportAreas.map((area) => (
+              {services.items.map((area) => (
                 <article
                   key={area.title}
                   className="rounded-[8px] border border-border-soft bg-white p-6"
@@ -97,9 +76,9 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-brand-green">
                     {area.title}
                   </h3>
-                  <p className="mt-4 leading-7 text-muted">{area.text}</p>
+                  <p className="mt-4 leading-7 text-muted">{area.summary}</p>
                   <Link
-                    href="#contact"
+                    href={area.href}
                     className="mt-6 inline-flex text-sm font-semibold text-brand-green hover:text-brand-green-deep"
                   >
                     Meer informatie
@@ -114,21 +93,20 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="text-3xl font-semibold text-brand-green">
-                Warm, rustig en professioneel
+                {home.approach.heading}
               </h2>
               <p className="mt-4 leading-7 text-muted">
-                De site krijgt per onderwerp een eigen vervolgpagina, zodat de
-                homepage licht en overzichtelijk blijft.
+                {home.approach.intro}
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              {pathways.map((item) => (
+              {home.approach.pathways.map((item) => (
                 <Link
-                  key={item}
-                  href="#contact"
+                  key={item.label}
+                  href={item.href}
                   className="rounded-[8px] border border-border-soft bg-surface px-5 py-4 font-semibold text-foreground transition hover:border-brand-green hover:bg-white"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -141,24 +119,67 @@ export default function Home() {
               <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
                 <div>
                   <h2 className="text-3xl font-semibold text-brand-green">
-                    De Hooiberg als rustige praktijkplek
+                    {home.location.heading}
                   </h2>
                   <p className="mt-4 leading-7 text-muted">
-                    De locatiebeleving mag straks voelbaar worden door echte
-                    beelden van groen, erf en landelijke stilte. Voor nu is de
-                    structuur alvast voorbereid.
+                    {home.location.intro}
                   </p>
                 </div>
                 <div className="rounded-[8px] border border-border-soft bg-white p-5">
                   <p className="text-sm font-semibold uppercase text-brand-green">
-                    Locatieblok
+                    {home.location.cardLabel}
                   </p>
                   <p className="mt-3 text-lg leading-7 text-muted">
-                    Plek voor adres, route, parkeren en een zachte introductie
-                    op de praktijkruimte.
+                    {home.location.cardText}
+                  </p>
+                  <p className="mt-4 text-sm leading-6 text-muted">
+                    {contact.locationDescription}
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="praktisch" className="border-y border-border-soft bg-surface py-16 sm:py-20">
+          <div className="mx-auto grid max-w-6xl gap-4 px-5 sm:px-8 md:grid-cols-2">
+            {[pages.practical, pages.privacy].map((page) => (
+              <article
+                key={page.title}
+                id={page.title === pages.privacy.title ? "privacy" : undefined}
+                className="rounded-[8px] border border-border-soft bg-white p-6"
+              >
+                <h2 className="text-2xl font-semibold text-brand-green">
+                  {page.title}
+                </h2>
+                <p className="mt-4 leading-7 text-muted">{page.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="faq" className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-semibold text-brand-green">
+                {faq.heading}
+              </h2>
+              <p className="mt-4 leading-7 text-muted">{faq.intro}</p>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {faq.items.map((item) => (
+                <article
+                  key={item.question}
+                  className="rounded-[8px] border border-border-soft bg-surface p-5"
+                >
+                  <h3 className="font-semibold text-foreground">
+                    {item.question}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {item.answer}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </section>

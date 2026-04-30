@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { site } from "@/content/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Uniqara | Psychologiepraktijk",
-  description:
-    "Uniqara is een warme, rustige psychologiepraktijk in een groene landelijke omgeving.",
+  title: {
+    default: site.defaultTitle,
+    template: site.titleTemplate,
+  },
+  description: site.description,
 };
 
 export default function RootLayout({

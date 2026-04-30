@@ -1,12 +1,7 @@
 import Link from "next/link";
+import { navigation } from "@/content/navigation";
+import { site } from "@/content/site";
 import { LogoPlaceholder } from "./LogoPlaceholder";
-
-const navigation = [
-  { label: "Aanbod", href: "#aanbod" },
-  { label: "Werkwijze", href: "#werkwijze" },
-  { label: "De Hooiberg", href: "#locatie" },
-  { label: "Contact", href: "#contact" },
-];
 
 export function SiteHeader() {
   return (
@@ -15,11 +10,11 @@ export function SiteHeader() {
         aria-label="Hoofdnavigatie"
         className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between"
       >
-        <Link href="/" aria-label="Uniqara home">
+        <Link href="/" aria-label={`${site.name} home`}>
           <LogoPlaceholder priority />
         </Link>
         <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-foreground sm:gap-4">
-          {navigation.map((item) => (
+          {navigation.main.map((item) => (
             <Link
               key={item.href}
               href={item.href}
