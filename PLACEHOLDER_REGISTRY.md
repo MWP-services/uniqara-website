@@ -55,3 +55,8 @@ Sprint 4C contact en privacy gebruiken daarnaast:
 - Contactgegevens en formulierplaceholder: `src/content/contact.ts`.
 - FAQ: `src/content/faq.ts`.
 - Alle placeholderwaarden: `src/content/placeholders.ts`.
+
+## Weergave-afspraken
+
+- Sprint 5A heeft de mobiele weergave van logo-, foto-, locatie- en formulierplaceholders aangescherpt.
+- Er zijn geen nieuwe placeholderkeys toegevoegd; alle placeholderteksten blijven centraal beheerd in `src/content/placeholders.ts`.

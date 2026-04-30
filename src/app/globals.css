@@ -31,7 +31,7 @@
   --radius-pill: 999px;
 
   --container-page: 72rem;
-  --section-y: clamp(3.5rem, 6vw, 5.5rem);
+  --section-y: clamp(3rem, 6vw, 5.5rem);
 }
 
 @theme inline {
@@ -91,12 +91,12 @@
   }
 
   h1 {
-    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    font-size: clamp(2.25rem, 10vw, 4.75rem);
     line-height: 1.05;
   }
 
   h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 7vw, 3rem);
     line-height: 1.12;
   }
 
@@ -152,7 +152,7 @@
 
   .text-display {
     color: var(--brand-green);
-    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    font-size: clamp(2.25rem, 10vw, 4.75rem);
     font-weight: 650;
     line-height: 1.05;
     letter-spacing: 0;
@@ -160,7 +160,7 @@
 
   .text-heading {
     color: var(--brand-green);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 7vw, 3rem);
     font-weight: 650;
     line-height: 1.12;
     letter-spacing: 0;

@@ -36,7 +36,7 @@ export function Button({
   variant = "primary",
   ...props
 }: ButtonProps) {
-  const classes = `inline-flex min-h-11 items-center justify-center rounded-pill px-5 py-3 text-sm font-semibold transition ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex min-h-11 items-center justify-center rounded-pill px-5 py-3 text-center text-sm font-semibold leading-snug transition ${variantClasses[variant]} ${className}`;
 
   if ("href" in props) {
     const { href, ...linkProps } = props as ButtonAsLinkProps;

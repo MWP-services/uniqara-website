@@ -28,12 +28,12 @@ export function PracticalInfoSection({
         <SectionHeading intro={intro} title={title} />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
-            <Card key={item.title} className="p-5">
+            <Card key={item.title} className="flex flex-col p-5">
               <h3 className="font-semibold text-brand-green">{item.title}</h3>
               <p className="text-support mt-3">{item.body[0]}</p>
               <Button
                 href={ctaHref}
-                className="mt-5 w-full justify-start"
+                className="mt-5 w-full justify-start sm:mt-auto"
                 variant="ghost"
               >
                 {cardLinkLabel}

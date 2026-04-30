@@ -45,13 +45,13 @@ export function LocationSection({
             <p className="text-sm font-semibold uppercase text-brand-green">
               {imageLabel}
             </p>
-            <p className="mt-3 text-xl font-semibold text-foreground">
+            <p className="mt-3 break-words text-lg font-semibold text-foreground sm:text-xl">
               {imageText}
             </p>
             <p className="text-support mt-5">{locationDescription}</p>
             {/* HERO_IMAGE_HOOIBERG wordt later vervangen door echte locatie- of natuurbeelden. */}
             <div
-              className="mt-6 grid min-h-40 grid-cols-2 gap-2 sm:grid-cols-4"
+              className="mt-6 grid min-h-32 grid-cols-2 gap-2 sm:min-h-40 sm:grid-cols-4"
               aria-hidden="true"
             >
               <div className="rounded-soft bg-brand-green-soft" />

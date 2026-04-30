@@ -18,6 +18,7 @@
 - Controleer de FAQ-vragen en antwoorden voor `FAQ_CONTENT` in `src/content/faq.ts`.
 - Controleer afspraken voor scholen en verwijzers voor `REFERRER_SCHOOL_INFO`.
 - Controleer de inhoud van `/over-uniqara`, `/voor-wie`, `/hulpvragen`, `/werkwijze`, `/locatie`, `/praktische-informatie`, `/contact` en `/privacy`.
-- Controleer voor livegang ook `HOMEPAGE_QA.md` en `SITE_STATUS_V1.md`.
+- Controleer voor livegang ook `HOMEPAGE_QA.md`, `SITE_STATUS_V1.md` en `RESPONSIVE_AUDIT.md`.
+- Controleer de mobiele weergave opnieuw zodra logo, foto's of formulierkoppeling definitief zijn vervangen.
 
 Zie ook `PLACEHOLDER_REGISTRY.md` en `src/content/placeholders.ts` voor het centrale placeholderoverzicht.

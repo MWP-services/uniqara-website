@@ -18,8 +18,7 @@ export function SectionHeading({
   children,
 }: SectionHeadingProps) {
   const Heading = headingLevel;
-  const titleClass =
-    headingLevel === "h1" ? "text-display" : "text-heading text-3xl";
+  const titleClass = headingLevel === "h1" ? "text-display" : "text-heading";
 
   return (
     <div className={`content-measure ${className}`}>

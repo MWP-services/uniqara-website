@@ -10,8 +10,8 @@ import { brand } from "@/content/site";
 export function Footer() {
   return (
     <footer className="border-t border-border-soft bg-surface">
-      <Container className="py-12">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_0.9fr_1fr_1fr]">
+      <Container className="py-10 sm:py-12">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1fr_1fr] lg:gap-10">
           <section aria-label="Praktijkintro">
             <LogoPlaceholder placeholderKey="LOGO_FOOTER" />
             <p className="text-support mt-5 max-w-sm">
@@ -23,10 +23,13 @@ export function Footer() {
             <h2 className="text-base font-semibold text-brand-green">
               Navigatie
             </h2>
-            <ul className="text-support mt-4 space-y-2">
+            <ul className="text-support mt-4 grid gap-2">
               {navigation.footer.map((item) => (
                 <li key={item.href}>
-                  <Link className="hover:text-brand-green" href={item.href}>
+                  <Link
+                    className="inline-flex min-h-10 items-center hover:text-brand-green"
+                    href={item.href}
+                  >
                     {item.label}
                   </Link>
                 </li>
