@@ -2,6 +2,8 @@ export type PlaceholderKey =
   | "LOGO_PRIMARY"
   | "LOGO_FOOTER"
   | "HERO_IMAGE_HOOIBERG"
+  | "HERO_IMAGE_NATURE"
+  | "HERO_IMAGE_PRACTICE"
   | "CONTACT_EMAIL"
   | "CONTACT_PHONE"
   | "LOCATION_ADDRESS"
@@ -47,6 +49,18 @@ export const placeholders = {
     uiText: "FOTO PLACEHOLDER – HOOIBERG / NATUUR / PRAKTIJK",
     description: "Hero- of sfeerbeeld van De Hooiberg en groene omgeving.",
     replaceWith: "Echte foto of zorgvuldig gekozen beeld van locatie/natuur.",
+  },
+  HERO_IMAGE_NATURE: {
+    key: "HERO_IMAGE_NATURE",
+    uiText: "HERO_IMAGE_NATURE - foto van groen en natuur volgt",
+    description: "Ondersteunend sfeerbeeld van groen, rust en natuur.",
+    replaceWith: "Definitieve natuurfoto voor de homepage-hero.",
+  },
+  HERO_IMAGE_PRACTICE: {
+    key: "HERO_IMAGE_PRACTICE",
+    uiText: "HERO_IMAGE_PRACTICE - foto van praktijk of landelijke sfeer volgt",
+    description: "Ondersteunend sfeerbeeld van praktijkruimte of landelijke omgeving.",
+    replaceWith: "Definitieve praktijk- of sfeerfoto voor de homepage-hero.",
   },
   CONTACT_EMAIL: {
     key: "CONTACT_EMAIL",

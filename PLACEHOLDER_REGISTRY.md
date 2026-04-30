@@ -7,6 +7,8 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `LOGO_PRIMARY` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor headergebruik | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
 | `LOGO_FOOTER` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor footer | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
 | `HERO_IMAGE_HOOIBERG` | `FOTO PLACEHOLDER – HOOIBERG / NATUUR / PRAKTIJK` | Foto of beeld van De Hooiberg/groene omgeving | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `HERO_IMAGE_NATURE` | `HERO_IMAGE_NATURE - foto van groen en natuur volgt` | Ondersteunende foto van groen, rust en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `HERO_IMAGE_PRACTICE` | `HERO_IMAGE_PRACTICE - foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `CONTACT_EMAIL` | `CONTACT_EMAIL - e-mailadres volgt` | Publiek contactmailadres | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `CONTACT_PHONE` | `CONTACT_PHONE - telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |

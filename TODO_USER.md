@@ -2,7 +2,7 @@
 
 - Lever het definitieve Uniqara-logo aan voor `LOGO_PRIMARY` en `LOGO_FOOTER`.
 - Lever praktijkgegevens aan voor `CONTACT_EMAIL`, `CONTACT_PHONE`, `LOCATION_ADDRESS`, KvK/AGB indien van toepassing en gewenste contactroute.
-- Lever echte foto's aan voor `HERO_IMAGE_HOOIBERG` en `PRACTICE_PHOTOS`.
+- Lever echte foto's aan voor `HERO_IMAGE_HOOIBERG`, `HERO_IMAGE_NATURE`, `HERO_IMAGE_PRACTICE` en `PRACTICE_PHOTOS`.
 - Controleer de exacte zorgteksten voor doelgroep, aanbod, werkwijze, tarieven en verwijzingen voordat de site live gaat.
 - Vul de definitieve privacytekst en praktische informatie aan voor `PRIVACY_INFO`, `WAITLIST_INFO`, `TARIFFS_INFO`, verwijzingen en bereikbaarheid.
 - Controleer de FAQ-vragen en antwoorden voor `FAQ_CONTENT` in `src/content/faq.ts`.

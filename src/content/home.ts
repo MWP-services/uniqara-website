@@ -13,8 +13,13 @@ export type HomeContent = {
     intro: string;
     primaryCta: CtaLink;
     secondaryCta: CtaLink;
+    supportItems: string[];
     imagePlaceholderLabel: string;
     imagePlaceholderText: string;
+    imagePlaceholders: {
+      label: string;
+      text: string;
+    }[];
   };
   intro: {
     valueCardText: string;
@@ -59,10 +64,29 @@ export const home = {
       "Uniqara biedt rust, aandacht en professionele psychologische zorg.",
     intro:
       "Een warme praktijkplek waar kinderen, jongeren en gezinnen zich veilig mogen voelen. In een landelijke omgeving, met ruimte om zorgvuldig te kijken naar wat nodig is.",
-    primaryCta: { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
-    secondaryCta: { label: "Ontdek De Hooiberg", href: routes.locatie.href },
+    primaryCta: { label: "Neem contact op", href: routes.contact.href },
+    secondaryCta: { label: "Lees de werkwijze", href: routes.werkwijze.href },
+    supportItems: [
+      "Rustige praktijkplek",
+      "Groene landelijke omgeving",
+      "Zorgvuldig afgestemd traject",
+    ],
     imagePlaceholderLabel: "Visuele placeholder",
     imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
+    imagePlaceholders: [
+      {
+        label: "De Hooiberg",
+        text: placeholders.HERO_IMAGE_HOOIBERG.uiText,
+      },
+      {
+        label: "Natuur en groen",
+        text: placeholders.HERO_IMAGE_NATURE.uiText,
+      },
+      {
+        label: "Praktijk en sfeer",
+        text: placeholders.HERO_IMAGE_PRACTICE.uiText,
+      },
+    ],
   },
   intro: {
     valueCardText:
