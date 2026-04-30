@@ -28,3 +28,5 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `COPYRIGHT_INFO` | `COPYRIGHT_INFO - copyrighttekst volgt` | Copyrightregel en eventuele juridische footerregel | `src/content/placeholders.ts`, `src/components/layout/Footer.tsx` |
 
 Werkafspraak: voeg bij elke nieuwe ontbrekende input eerst een sleutel toe in `src/content/placeholders.ts`, registreer die hier, en verwijs ernaar in `TODO_USER.md`.
+
+Homepage-v1 gebruikt de centrale lijst `homepagePlaceholderKeys` in `src/content/placeholders.ts` als snel overzicht van placeholders die op of via de homepage zichtbaar zijn.

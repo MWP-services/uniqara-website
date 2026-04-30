@@ -26,20 +26,24 @@ export function AudienceSection({
     <Section id="voor-wie" variant="surface">
       <Container>
         <SectionHeading intro={intro} title={title} />
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {sections.map((section) => (
             <Card key={section.title} className="p-5">
               <h3 className="font-semibold text-brand-green">
                 {section.title}
               </h3>
               <p className="text-support mt-3">{section.body[0]}</p>
-              <Button href={ctaHref} className="mt-5 px-0 py-0" variant="ghost">
+              <Button
+                href={ctaHref}
+                className="mt-5 w-full justify-start"
+                variant="ghost"
+              >
                 {cardLinkLabel}
               </Button>
             </Card>
           ))}
         </div>
-        <Button href={ctaHref} className="mt-8" variant="ghost">
+        <Button href={ctaHref} className="mt-8" variant="secondary">
           {ctaLabel}
         </Button>
       </Container>

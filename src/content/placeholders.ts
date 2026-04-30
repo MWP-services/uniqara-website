@@ -165,3 +165,18 @@ export const placeholders = {
     replaceWith: "Definitieve copyrighttekst voor de footer.",
   },
 } satisfies Record<PlaceholderKey, PlaceholderRecord>;
+
+// Homepage-v1 gebruikt deze placeholders voor logo, fotografie en praktische gegevens.
+export const homepagePlaceholderKeys = [
+  "LOGO_PRIMARY",
+  "HERO_IMAGE_HOOIBERG",
+  "HERO_IMAGE_NATURE",
+  "HERO_IMAGE_PRACTICE",
+  "PRACTICE_PHOTOS",
+  "CONTACT_EMAIL",
+  "CONTACT_PHONE",
+  "LOCATION_ADDRESS",
+  "REGISTRATION_PROCESS",
+  "TARIFFS_INFO",
+  "WAITLIST_INFO",
+] satisfies PlaceholderKey[];

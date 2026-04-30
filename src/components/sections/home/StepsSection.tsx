@@ -26,7 +26,7 @@ export function StepsSection({
     <Section id="werkwijze" variant="surface">
       <Container>
         <SectionHeading intro={intro} title={title} />
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <Card key={step.title} className="p-5">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-pill bg-accent-yellow-soft text-sm font-semibold text-foreground">
@@ -36,13 +36,17 @@ export function StepsSection({
                 {step.title}
               </h3>
               <p className="text-support mt-3">{step.body[0]}</p>
-              <Button href={ctaHref} className="mt-5 px-0 py-0" variant="ghost">
+              <Button
+                href={ctaHref}
+                className="mt-5 w-full justify-start"
+                variant="ghost"
+              >
                 {stepLinkLabel}
               </Button>
             </Card>
           ))}
         </div>
-        <Button href={ctaHref} className="mt-8" variant="ghost">
+        <Button href={ctaHref} className="mt-8" variant="secondary">
           {ctaLabel}
         </Button>
       </Container>

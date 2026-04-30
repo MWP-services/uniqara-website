@@ -26,18 +26,22 @@ export function PracticalInfoSection({
     <Section id="praktisch" variant="surface">
       <Container>
         <SectionHeading intro={intro} title={title} />
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
             <Card key={item.title} className="p-5">
               <h3 className="font-semibold text-brand-green">{item.title}</h3>
               <p className="text-support mt-3">{item.body[0]}</p>
-              <Button href={ctaHref} className="mt-5 px-0 py-0" variant="ghost">
+              <Button
+                href={ctaHref}
+                className="mt-5 w-full justify-start"
+                variant="ghost"
+              >
                 {cardLinkLabel}
               </Button>
             </Card>
           ))}
         </div>
-        <Button href={ctaHref} className="mt-8" variant="ghost">
+        <Button href={ctaHref} className="mt-8" variant="secondary">
           {ctaLabel}
         </Button>
       </Container>

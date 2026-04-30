@@ -51,7 +51,7 @@ export function LocationSection({
             <p className="text-support mt-5">{locationDescription}</p>
             {/* HERO_IMAGE_HOOIBERG wordt later vervangen door echte locatie- of natuurbeelden. */}
             <div
-              className="mt-6 grid min-h-36 grid-cols-4 gap-2"
+              className="mt-6 grid min-h-40 grid-cols-2 gap-2 sm:grid-cols-4"
               aria-hidden="true"
             >
               <div className="rounded-soft bg-brand-green-soft" />

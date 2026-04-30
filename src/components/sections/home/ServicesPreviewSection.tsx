@@ -34,21 +34,25 @@ export function ServicesPreviewSection({
     <Section id="hulpvragen">
       <Container>
         <SectionHeading intro={intro} title={title} />
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_1fr]">
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+        <div className="mt-8 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
             {services.map((item) => (
               <Card key={item.title}>
                 <h3 className="text-xl font-semibold text-brand-green">
                   {item.title}
                 </h3>
                 <p className="text-body mt-4">{item.summary}</p>
-                <Button href={item.href} className="mt-5 px-0 py-0" variant="ghost">
+                <Button
+                  href={item.href}
+                  className="mt-5 w-full justify-start"
+                  variant="ghost"
+                >
                   {serviceLinkLabel}
                 </Button>
               </Card>
             ))}
           </div>
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
             {helpQuestions.map((question) => (
               <Card key={question.title} className="bg-surface p-5">
                 <h3 className="font-semibold text-foreground">
@@ -57,7 +61,7 @@ export function ServicesPreviewSection({
                 <p className="text-support mt-3">{question.description}</p>
                 <Button
                   href={primaryCtaHref}
-                  className="mt-5 px-0 py-0"
+                  className="mt-5 w-full justify-start"
                   variant="ghost"
                 >
                   {questionLinkLabel}

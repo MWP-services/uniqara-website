@@ -37,7 +37,7 @@ export function IntroSection({
           ))}
         </div>
         <div className="lg:col-start-2">
-          <Button href={ctaHref} variant="ghost">
+          <Button href={ctaHref} variant="secondary">
             {ctaLabel}
           </Button>
         </div>
