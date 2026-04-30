@@ -19,6 +19,12 @@ export type PageContent = {
   title: string;
   description: string;
   intro: string;
+  aside?: {
+    label: string;
+    title: string;
+    text: string;
+  };
+  showStepNumbers?: boolean;
   sections: PageSection[];
   ctas: PageLink[];
 };
@@ -43,12 +49,21 @@ export const pages = {
       "Maak kennis met Uniqara: een rustige psychologiepraktijk met aandacht voor veiligheid, vertrouwen en professionele begeleiding.",
     intro:
       "Uniqara is een plek waar zorgvuldigheid en warmte samenkomen. De praktijk is in opbouw; definitieve details worden stap voor stap aangevuld.",
+    aside: {
+      label: "Sfeerbeeld",
+      title: "Rust, groen en aandacht",
+      text: placeholders.PRACTICE_PHOTOS.uiText,
+    },
     sections: [
       {
         title: "Visie",
         body: [
           "Bij Uniqara staat de mens achter de hulpvraag centraal. Er is aandacht voor wat iemand meemaakt, nodig heeft en al in zich draagt.",
           "De begeleiding is helder, zorgvuldig en afgestemd op de situatie van kind, jongere, ouder of gezin.",
+        ],
+        links: [
+          { label: "Voor wie", href: routes.voorWie.href },
+          { label: "Werkwijze", href: routes.werkwijze.href },
         ],
       },
       {
@@ -57,12 +72,15 @@ export const pages = {
           "Er wordt rustig gekeken naar de vraag, de context en wat helpend kan zijn. Samen zoeken we naar taal, richting en passende ondersteuning.",
           placeholders.OWNER_NAME.uiText,
         ],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Sfeer en kernwaarden",
         body: [
           "De uitstraling van de praktijk is rustig, veilig en professioneel. Natuur, vertrouwen en aandacht vormen belangrijke uitgangspunten.",
+          "De landelijke locatie en de Hooiberg krijgen later een zichtbare plek met echte fotografie.",
         ],
+        links: [{ label: "Bekijk locatie", href: routes.locatie.href }],
       },
     ],
     ctas: [
@@ -77,6 +95,11 @@ export const pages = {
       "Uniqara biedt ondersteuning voor kinderen, jongeren, ouders en gezinnen, met ruimte voor afstemming met school of verwijzers.",
     intro:
       "Iedere hulpvraag heeft een eigen verhaal. Deze pagina geeft een eerste beeld van de doelgroepen waarvoor Uniqara ondersteuning kan bieden.",
+    aside: {
+      label: "Doelgroepen",
+      title: "Samen kijken wat past",
+      text: "De exacte doelgroepafbakening wordt later verder afgestemd met de praktijk.",
+    },
     sections: [
       {
         title: "Kinderen",
@@ -84,18 +107,26 @@ export const pages = {
           "Voor kinderen kan begeleiding helpen wanneer emoties, gedrag, ontwikkeling of spanning vragen oproepen.",
           "Er is aandacht voor veiligheid, tempo en de omgeving waarin het kind leeft.",
         ],
+        links: [
+          { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
+          { label: "Werkwijze", href: routes.werkwijze.href },
+        ],
       },
       {
         title: "Jongeren",
         body: [
           "Jongeren kunnen terecht wanneer zij vastlopen, veel druk ervaren of behoefte hebben aan iemand die rustig meedenkt.",
+          "De begeleiding sluit aan bij leeftijd, zelfstandigheid en wat de jongere zelf belangrijk vindt.",
         ],
+        links: [{ label: "Bekijk hulpvragen", href: routes.hulpvragen.href }],
       },
       {
         title: "Ouders en verzorgers",
         body: [
           "Ouders en verzorgers worden waar passend betrokken. Hun kennis van het kind en de thuissituatie is waardevol in het traject.",
+          "Samen ontstaat meer zicht op wat er speelt en welke ondersteuning helpend kan zijn.",
         ],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Scholen en verwijzers",
@@ -103,6 +134,7 @@ export const pages = {
           "Afstemming met scholen of verwijzers kan later onderdeel worden van de werkwijze.",
           placeholders.REFERRER_SCHOOL_INFO.uiText,
         ],
+        links: [{ label: "Praktische informatie", href: routes.praktischeInformatie.href }],
       },
     ],
     ctas: [
@@ -134,30 +166,44 @@ export const pages = {
       "Lees hoe een traject bij Uniqara rustig en zorgvuldig kan worden opgebouwd, van kennismaking tot evaluatie.",
     intro:
       "Een duidelijke werkwijze geeft houvast. De precieze invulling wordt afgestemd op de hulpvraag en de situatie.",
+    aside: {
+      label: "Aanmelden",
+      title: "Eerste stap",
+      text: placeholders.REGISTRATION_PROCESS.uiText,
+    },
+    showStepNumbers: true,
     sections: [
       {
         title: "Kennismaking",
         body: [
           "Een eerste contactmoment is bedoeld om kort te verkennen wat er speelt en of Uniqara passend kan zijn.",
+          "Er is ruimte voor praktische vragen en een eerste indruk van de hulpvraag.",
         ],
+        links: [{ label: "Contact", href: routes.contact.href }],
       },
       {
         title: "Intake",
         body: [
           "Tijdens de intake wordt de hulpvraag zorgvuldig besproken. Er is aandacht voor achtergrond, verwachtingen en praktische afspraken.",
+          "Waar passend worden ouders of verzorgers betrokken bij het verhelderen van de vraag.",
         ],
+        links: [{ label: "Voor wie", href: routes.voorWie.href }],
       },
       {
         title: "Traject en begeleiding",
         body: [
           "Daarna volgt een traject dat aansluit bij de vraag. Dit kan bestaan uit begeleiding, onderzoek, behandeling of oudergesprekken.",
+          "Het tempo en de vorm worden afgestemd op wat veilig, haalbaar en helpend is.",
         ],
+        links: [{ label: "Hulpvragen", href: routes.hulpvragen.href }],
       },
       {
         title: "Evaluatie en afstemming",
         body: [
           "Regelmatig wordt gekeken wat werkt, wat bijgesteld moet worden en welke afstemming met ouders, school of verwijzers helpend is.",
+          "Zo blijft het traject overzichtelijk en verbonden met de dagelijkse context.",
         ],
+        links: [{ label: "Praktische informatie", href: routes.praktischeInformatie.href }],
       },
     ],
     ctas: [

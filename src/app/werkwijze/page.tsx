@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContentPage } from "@/components/ContentPage";
+import { StructuredContentPage } from "@/components/pages/StructuredContentPage";
 import { pages } from "@/content/pages";
 
 const page = pages.werkwijze;
@@ -10,5 +10,11 @@ export const metadata: Metadata = {
 };
 
 export default function WerkwijzePage() {
-  return <ContentPage page={page} />;
+  return (
+    <StructuredContentPage
+      aside={page.aside}
+      page={page}
+      stepNumbers={page.showStepNumbers}
+    />
+  );
 }

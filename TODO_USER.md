@@ -14,5 +14,6 @@
 - Vul dossier- en privacyuitleg aan voor `PRIVACY_DOSSIER_INFO` en `PRIVACY_CONTACT_ROUTE`.
 - Vul de definitieve footer-/copyrighttekst aan voor `COPYRIGHT_INFO`.
 - Controleer voor livegang ook `HOMEPAGE_QA.md` voor openstaande homepagepunten.
+- Controleer de inhoud van `/over-uniqara`, `/voor-wie` en `/werkwijze`, vooral `OWNER_NAME`, `PRACTICE_PHOTOS`, `REFERRER_SCHOOL_INFO` en `REGISTRATION_PROCESS`.
 
 Zie ook `PLACEHOLDER_REGISTRY.md` en `src/content/placeholders.ts` voor het centrale placeholderoverzicht.
