@@ -44,7 +44,7 @@ export const placeholders = {
   },
   HERO_IMAGE_HOOIBERG: {
     key: "HERO_IMAGE_HOOIBERG",
-    uiText: "HERO_IMAGE_HOOIBERG - beeld van De Hooiberg volgt",
+    uiText: "FOTO PLACEHOLDER – HOOIBERG / NATUUR / PRAKTIJK",
     description: "Hero- of sfeerbeeld van De Hooiberg en groene omgeving.",
     replaceWith: "Echte foto of zorgvuldig gekozen beeld van locatie/natuur.",
   },

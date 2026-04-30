@@ -39,7 +39,7 @@ export const home = {
       "Een warme praktijkplek waar kinderen, jongeren en gezinnen zich veilig mogen voelen. In een landelijke omgeving, met ruimte om zorgvuldig te kijken naar wat nodig is.",
     primaryCta: { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
     secondaryCta: { label: "Ontdek De Hooiberg", href: routes.locatie.href },
-    imagePlaceholderLabel: "Beeldplaceholder",
+    imagePlaceholderLabel: "Visuele placeholder",
     imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
   },
   approach: {
