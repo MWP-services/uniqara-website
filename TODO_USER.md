@@ -5,6 +5,8 @@
 - Lever echte foto's aan voor `HERO_IMAGE_HOOIBERG`, `HERO_IMAGE_NATURE`, `HERO_IMAGE_PRACTICE` en `PRACTICE_PHOTOS`.
 - Controleer de exacte zorgteksten voor doelgroep, aanbod, werkwijze, tarieven en verwijzingen voordat de site live gaat.
 - Vul de definitieve privacytekst en praktische informatie aan voor `PRIVACY_INFO`, `WAITLIST_INFO`, `TARIFFS_INFO`, verwijzingen en bereikbaarheid.
+- Vul de definitieve vergoedingsinformatie aan voor `REIMBURSEMENT_INFO`.
+- Lever aan of er een kaart, routeblok of externe route-integratie gewenst is voor `LOCATION_MAP_PLACEHOLDER`.
 - Controleer de FAQ-vragen en antwoorden voor `FAQ_CONTENT` in `src/content/faq.ts`.
 - Vul eventueel de praktijkhouder of behandelaren aan voor `OWNER_NAME`.
 - Vul de aanmeldroute aan voor `REGISTRATION_PROCESS`.
@@ -15,5 +17,6 @@
 - Vul de definitieve footer-/copyrighttekst aan voor `COPYRIGHT_INFO`.
 - Controleer voor livegang ook `HOMEPAGE_QA.md` voor openstaande homepagepunten.
 - Controleer de inhoud van `/over-uniqara`, `/voor-wie` en `/werkwijze`, vooral `OWNER_NAME`, `PRACTICE_PHOTOS`, `REFERRER_SCHOOL_INFO` en `REGISTRATION_PROCESS`.
+- Controleer de inhoud van `/hulpvragen`, `/locatie` en `/praktische-informatie`, vooral `LOCATION_ADDRESS`, `ROUTE_PARKING_INFO`, `LOCATION_MAP_PLACEHOLDER`, `REIMBURSEMENT_INFO`, `TARIFFS_INFO`, `WAITLIST_INFO`, `CONTACT_ROUTE_INFO` en `FAQ_CONTENT`.
 
 Zie ook `PLACEHOLDER_REGISTRY.md` en `src/content/placeholders.ts` voor het centrale placeholderoverzicht.

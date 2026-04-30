@@ -9,10 +9,12 @@ export type PlaceholderKey =
   | "LOCATION_ADDRESS"
   | "OWNER_NAME"
   | "TARIFFS_INFO"
+  | "REIMBURSEMENT_INFO"
   | "WAITLIST_INFO"
   | "PRIVACY_INFO"
   | "FAQ_CONTENT"
   | "ROUTE_PARKING_INFO"
+  | "LOCATION_MAP_PLACEHOLDER"
   | "PRACTICE_PHOTOS"
   | "REGISTRATION_PROCESS"
   | "REFERRER_SCHOOL_INFO"
@@ -92,6 +94,12 @@ export const placeholders = {
     description: "Praktische informatie over tarieven en vergoedingen.",
     replaceWith: "Definitieve tariefinformatie en vergoedingsuitleg.",
   },
+  REIMBURSEMENT_INFO: {
+    key: "REIMBURSEMENT_INFO",
+    uiText: "REIMBURSEMENT_INFO - vergoedingsinformatie volgt",
+    description: "Uitleg over eventuele vergoedingen, verwijzing en betaalroute.",
+    replaceWith: "Definitieve informatie over vergoeding, verwijzing en betaling.",
+  },
   WAITLIST_INFO: {
     key: "WAITLIST_INFO",
     uiText: "WAITLIST_INFO - wachttijdinformatie volgt",
@@ -115,6 +123,12 @@ export const placeholders = {
     uiText: "ROUTE_PARKING_INFO - route en parkeren volgen",
     description: "Routebeschrijving, parkeren en aankomstinformatie.",
     replaceWith: "Definitieve praktische locatie-informatie.",
+  },
+  LOCATION_MAP_PLACEHOLDER: {
+    key: "LOCATION_MAP_PLACEHOLDER",
+    uiText: "LOCATION_MAP_PLACEHOLDER - kaart of routeblok volgt",
+    description: "Placeholder voor kaartweergave, routeblok of locatiekaart.",
+    replaceWith: "Definitieve kaart, routevisual of externe route-integratie.",
   },
   PRACTICE_PHOTOS: {
     key: "PRACTICE_PHOTOS",

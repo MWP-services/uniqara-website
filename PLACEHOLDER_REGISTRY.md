@@ -14,10 +14,12 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `OWNER_NAME` | `OWNER_NAME - praktijkhouder volgt` | Naam/namen van praktijkhouder of behandelaren | `src/content/placeholders.ts` |
 | `TARIFFS_INFO` | `TARIFFS_INFO - tarieven en vergoedingen volgen` | Tarieven, vergoedingen en betaalinformatie | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `REIMBURSEMENT_INFO` | `REIMBURSEMENT_INFO - vergoedingsinformatie volgt` | Vergoedingen, verwijzing en betaalroute | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `WAITLIST_INFO` | `WAITLIST_INFO - wachttijdinformatie volgt` | Wachttijd of aanmeldstatus | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRIVACY_INFO` | `PRIVACY_INFO - privacytekst volgt` | Privacyverklaring of samenvatting | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `FAQ_CONTENT` | `FAQ_CONTENT - definitieve antwoorden volgen` | Definitieve antwoorden op veelgestelde vragen | `src/content/placeholders.ts`, `src/content/faq.ts` |
 | `ROUTE_PARKING_INFO` | `ROUTE_PARKING_INFO - route en parkeren volgen` | Routebeschrijving, parkeren en aankomstinformatie | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `LOCATION_MAP_PLACEHOLDER` | `LOCATION_MAP_PLACEHOLDER - kaart of routeblok volgt` | Kaartweergave, routeblok of locatiekaart | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRACTICE_PHOTOS` | `PRACTICE_PHOTOS - praktijkfoto's volgen` | Foto's van praktijkruimte, erf en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `REGISTRATION_PROCESS` | `REGISTRATION_PROCESS - aanmeldproces volgt` | Aanmeldroute, eerste contact en processtappen | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `REFERRER_SCHOOL_INFO` | `REFERRER_SCHOOL_INFO - afspraken voor scholen en verwijzers volgen` | Afspraken voor scholen, huisartsen en andere verwijzers | `src/content/placeholders.ts`, `src/content/pages.ts` |
@@ -33,3 +35,6 @@ Homepage-v1 gebruikt de centrale lijst `homepagePlaceholderKeys` in `src/content
 
 Sprint 4A binnenpagina's gebruiken vooral bestaande placeholders:
 `OWNER_NAME`, `PRACTICE_PHOTOS`, `REFERRER_SCHOOL_INFO` en `REGISTRATION_PROCESS`.
+
+Sprint 4B informatiepagina's gebruiken daarnaast:
+`REIMBURSEMENT_INFO`, `LOCATION_MAP_PLACEHOLDER`, `LOCATION_ADDRESS`, `ROUTE_PARKING_INFO`, `WAITLIST_INFO`, `TARIFFS_INFO`, `CONTACT_ROUTE_INFO` en `FAQ_CONTENT`.

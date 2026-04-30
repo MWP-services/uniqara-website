@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContentPage } from "@/components/ContentPage";
+import { StructuredContentPage } from "@/components/pages/StructuredContentPage";
 import { pages } from "@/content/pages";
 
 const page = pages.praktischeInformatie;
@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function PraktischeInformatiePage() {
-  return <ContentPage page={page} />;
+  return <StructuredContentPage page={page} />;
 }

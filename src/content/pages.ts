@@ -149,10 +149,18 @@ export const pages = {
       "Een rustig overzicht van thema's waarmee kinderen, jongeren en ouders bij Uniqara terecht kunnen.",
     intro:
       "Hulpvragen kunnen klein beginnen of al langer spelen. Uniqara kijkt zorgvuldig mee zonder zware woorden groter te maken dan nodig.",
+    aside: {
+      label: "Overzicht",
+      title: "Zacht verkennen wat speelt",
+      text: "De thema's op deze pagina zijn bedoeld als herkenning en startpunt. De exacte vraag wordt altijd rustig samen bekeken.",
+    },
     sections: services.helpQuestions.map((question) => ({
       title: question.title,
       body: [question.description],
-      links: [{ label: "Lees over de werkwijze", href: routes.werkwijze.href }],
+      links: [
+        { label: "Lees over de werkwijze", href: routes.werkwijze.href },
+        { label: "Neem contact op", href: routes.contact.href },
+      ],
     })),
     ctas: [
       { label: "Voor wie is Uniqara", href: routes.voorWie.href },
@@ -218,20 +226,29 @@ export const pages = {
       "De locatie van Uniqara krijgt een rustige landelijke sfeer, met natuur, ruimte en De Hooiberg als herkenbare plek.",
     intro:
       "De plek waar zorg plaatsvindt doet ertoe. Uniqara wil een omgeving bieden die rustig, overzichtelijk en prettig voelt.",
+    aside: {
+      label: "Beeldplaceholder",
+      title: "De Hooiberg en groen",
+      text: placeholders.HERO_IMAGE_HOOIBERG.uiText,
+    },
     sections: [
-      {
-        title: "Landelijke sfeer",
-        body: [
-          "De praktijk krijgt een rustige uitstraling met veel aandacht voor groen, natuur en ruimte.",
-          placeholders.PRACTICE_PHOTOS.uiText,
-        ],
-      },
       {
         title: "De Hooiberg",
         body: [
-          "De Hooiberg vormt straks een herkenbare plek binnen de locatiebeleving.",
-          placeholders.HERO_IMAGE_HOOIBERG.uiText,
+          "De Hooiberg wordt een herkenbare plek binnen de locatiebeleving van Uniqara: landelijk, rustig en overzichtelijk.",
+          "Echte fotografie volgt later, zodat bezoekers vooraf al een eerlijk beeld krijgen van aankomst en sfeer.",
+          placeholders.PRACTICE_PHOTOS.uiText,
         ],
+        links: [{ label: "Bekijk praktische informatie", href: routes.praktischeInformatie.href }],
+      },
+      {
+        title: "Natuur en rust",
+        body: [
+          "Groen, ruimte en een rustige omgeving ondersteunen de veilige en warme uitstraling van de praktijk.",
+          "De locatiepagina blijft bewust helder en niet druk, zodat de sfeer rustig blijft aanvoelen.",
+          placeholders.HERO_IMAGE_NATURE.uiText,
+        ],
+        links: [{ label: "Lees over Uniqara", href: routes.overUniqara.href }],
       },
       {
         title: "Bereikbaarheid",
@@ -239,6 +256,15 @@ export const pages = {
           placeholders.LOCATION_ADDRESS.uiText,
           placeholders.ROUTE_PARKING_INFO.uiText,
         ],
+        links: [{ label: "Contactgegevens", href: routes.contact.href }],
+      },
+      {
+        title: "Route en kaart",
+        body: [
+          "Hier komt later een eenvoudig routeblok of kaartweergave, passend bij de rustige stijl van de site.",
+          placeholders.LOCATION_MAP_PLACEHOLDER.uiText,
+        ],
+        links: [{ label: "Naar contact", href: routes.contact.href }],
       },
     ],
     ctas: [
@@ -256,19 +282,44 @@ export const pages = {
     sections: [
       {
         title: "Aanmelden",
-        body: [placeholders.REGISTRATION_PROCESS.uiText],
+        body: [
+          "Aanmelden begint met een rustige eerste stap. De definitieve route wordt later ingevuld, zodat bezoekers precies weten wat zij kunnen verwachten.",
+          placeholders.REGISTRATION_PROCESS.uiText,
+        ],
+        links: [{ label: "Lees de werkwijze", href: routes.werkwijze.href }],
       },
       {
         title: "Tarieven en vergoedingen",
-        body: [placeholders.TARIFFS_INFO.uiText],
+        body: [
+          "Tarieven, betaalafspraken en eventuele vergoedingen worden transparant vermeld zodra deze definitief zijn.",
+          placeholders.TARIFFS_INFO.uiText,
+          placeholders.REIMBURSEMENT_INFO.uiText,
+        ],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Wachttijd",
-        body: [placeholders.WAITLIST_INFO.uiText],
+        body: [
+          "De actuele wachttijd of aanmeldstatus krijgt hier een duidelijke plek, zodat verwachtingen vanaf het begin helder zijn.",
+          placeholders.WAITLIST_INFO.uiText,
+        ],
+        links: [{ label: "Contactgegevens", href: routes.contact.href }],
       },
       {
         title: "Contactroute",
-        body: [placeholders.CONTACT_ROUTE_INFO.uiText],
+        body: [
+          "Voor vragen of aanmelding komt hier de gewenste contactroute te staan. Tot die tijd blijft de informatie bewust als placeholder zichtbaar.",
+          placeholders.CONTACT_ROUTE_INFO.uiText,
+        ],
+        links: [{ label: "Naar contact", href: routes.contact.href }],
+      },
+      {
+        title: "Veelgestelde vragen",
+        body: [
+          "Korte antwoorden op praktische vragen kunnen bezoekers later helpen om sneller overzicht te krijgen.",
+          placeholders.FAQ_CONTENT.uiText,
+        ],
+        links: [{ label: "Bekijk privacy", href: routes.privacy.href }],
       },
     ],
     ctas: [
