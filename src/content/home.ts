@@ -16,16 +16,38 @@ export type HomeContent = {
     imagePlaceholderLabel: string;
     imagePlaceholderText: string;
   };
+  intro: {
+    valueCardText: string;
+    ctaLabel: string;
+  };
+  audience: {
+    ctaLabel: string;
+  };
+  servicesPreview: {
+    title: string;
+    primaryCtaLabel: string;
+    secondaryCtaLabel: string;
+  };
   approach: {
     heading: string;
     intro: string;
     pathways: CtaLink[];
+    ctaLabel: string;
   };
   location: {
     heading: string;
     intro: string;
     cardLabel: string;
     cardText: string;
+    ctaLabel: string;
+  };
+  practicalInfo: {
+    ctaLabel: string;
+  };
+  contactCta: {
+    title: string;
+    primaryCtaLabel: string;
+    secondaryCtaLabel: string;
   };
 };
 
@@ -42,8 +64,21 @@ export const home = {
     imagePlaceholderLabel: "Visuele placeholder",
     imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
   },
+  intro: {
+    valueCardText:
+      "Een rustige basis voor contact, onderzoek en begeleiding.",
+    ctaLabel: "Meer over Uniqara",
+  },
+  audience: {
+    ctaLabel: "Bekijk alle doelgroepen",
+  },
+  servicesPreview: {
+    title: "Hulpvragen en aanbod",
+    primaryCtaLabel: "Bekijk hulpvragen",
+    secondaryCtaLabel: "Lees de werkwijze",
+  },
   approach: {
-    heading: "Warm, rustig en professioneel",
+    heading: "Werkwijze in duidelijke stappen",
     intro:
       "De site krijgt per onderwerp een eigen vervolgpagina, zodat de homepage licht en overzichtelijk blijft.",
     pathways: [
@@ -52,6 +87,7 @@ export const home = {
       { label: "Voor verwijzers", href: routes.voorWie.href },
       { label: "Praktische informatie", href: routes.praktischeInformatie.href },
     ],
+    ctaLabel: "Bekijk de volledige werkwijze",
   },
   location: {
     heading: "De Hooiberg als rustige praktijkplek",
@@ -59,5 +95,14 @@ export const home = {
       "De locatiebeleving mag straks voelbaar worden door echte beelden van groen, erf en landelijke stilte. Voor nu is de structuur alvast voorbereid.",
     cardLabel: "Locatieblok",
     cardText: placeholders.PRACTICE_PHOTOS.uiText,
+    ctaLabel: "Bekijk de locatie",
+  },
+  practicalInfo: {
+    ctaLabel: "Lees praktische informatie",
+  },
+  contactCta: {
+    title: "Contact opnemen",
+    primaryCtaLabel: "Naar contact",
+    secondaryCtaLabel: "Praktische info",
   },
 } satisfies HomeContent;
