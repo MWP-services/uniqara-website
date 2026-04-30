@@ -12,6 +12,11 @@ export type BrandContent = {
   values: string[];
 };
 
+export type SharedUiContent = {
+  pageCtaEyebrow: string;
+  pageCtaTitle: string;
+};
+
 // Pas hier de algemene merknaam, SEO-beschrijving en korte praktijkintro aan.
 export const site = {
   name: "Uniqara",
@@ -28,3 +33,8 @@ export const brand = {
     "Een rustige praktijkplek voor begeleiding, onderzoek en behandeling, met aandacht voor veiligheid, vertrouwen en groei.",
   values: ["Rust", "Vertrouwen", "Aandacht", "Natuur", "Professionaliteit"],
 } satisfies BrandContent;
+
+export const sharedUi = {
+  pageCtaEyebrow: "Vervolgstap",
+  pageCtaTitle: "Rustig verder kijken",
+} satisfies SharedUiContent;

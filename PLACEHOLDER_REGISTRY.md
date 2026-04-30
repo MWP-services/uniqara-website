@@ -45,3 +45,13 @@ Sprint 4B informatiepagina's gebruiken daarnaast:
 
 Sprint 4C contact en privacy gebruiken daarnaast:
 `CONTACT_FORM_HANDLER`, `PRIVACY_LEGAL_TEXT`, `PRIVACY_DATA_CATEGORIES` en `PRIVACY_RIGHTS_INFO`.
+
+## Belangrijkste beheerbestanden
+
+- Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
+- Homepagecopy: `src/content/home.ts`.
+- Binnenpagina's en CTA's: `src/content/pages.ts`.
+- Hulpvragen en aanbod: `src/content/services.ts`.
+- Contactgegevens en formulierplaceholder: `src/content/contact.ts`.
+- FAQ: `src/content/faq.ts`.
+- Alle placeholderwaarden: `src/content/placeholders.ts`.

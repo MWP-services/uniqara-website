@@ -3,16 +3,13 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import type { PageContent, PageSection } from "@/content/pages";
+import { PageCtaBand } from "@/components/pages/PageCtaBand";
+import { PageHero } from "@/components/pages/PageHero";
+import type { PageAside, PageContent, PageSection } from "@/content/pages";
 
 type StructuredContentPageProps = {
   page: PageContent;
-  aside?: {
-    label: string;
-    title: string;
-    text: string;
-  };
+  aside?: PageAside;
   stepNumbers?: boolean;
 };
 
@@ -27,27 +24,7 @@ export function StructuredContentPage({
 }: StructuredContentPageProps) {
   return (
     <main className="page-shell">
-      <section className="border-b border-border-soft bg-white">
-        <Container className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-          <SectionHeading
-            eyebrow={page.title}
-            headingLevel="h1"
-            intro={page.intro}
-            title={page.title}
-          />
-          {aside ? (
-            <Card className="border-dashed bg-surface p-5">
-              <p className="text-sm font-semibold uppercase text-brand-green">
-                {aside.label}
-              </p>
-              <h2 className="mt-3 text-xl font-semibold text-brand-green">
-                {aside.title}
-              </h2>
-              <p className="text-support mt-3">{aside.text}</p>
-            </Card>
-          ) : null}
-        </Container>
-      </section>
+      <PageHero aside={aside} intro={page.intro} title={page.title} />
 
       <section className="border-b border-border-soft bg-surface py-5">
         <Container>
@@ -108,34 +85,7 @@ export function StructuredContentPage({
         </Container>
       </Section>
 
-      <section className="bg-white py-12">
-        <Container>
-          <Card className="grid gap-5 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase text-brand-green">
-                Vervolgstap
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold text-brand-green">
-                Rustig verder kijken
-              </h2>
-            </div>
-            <nav
-              aria-label="Vervolgstappen"
-              className="flex flex-col gap-3 sm:flex-row"
-            >
-              {page.ctas.map((cta, index) => (
-                <Button
-                  key={cta.href}
-                  href={cta.href}
-                  variant={index === 0 ? "primary" : "secondary"}
-                >
-                  {cta.label}
-                </Button>
-              ))}
-            </nav>
-          </Card>
-        </Container>
-      </section>
+      <PageCtaBand links={page.ctas} />
     </main>
   );
 }

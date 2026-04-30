@@ -32,7 +32,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             autoComplete="name"
             className={inputClasses}
             name="name"
-            placeholder="Voor- en achternaam"
+            placeholder={form.fieldPlaceholders.name}
             required
             type="text"
           />
@@ -43,7 +43,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             autoComplete="email"
             className={inputClasses}
             name="email"
-            placeholder="naam@example.nl"
+            placeholder={form.fieldPlaceholders.email}
             required
             type="email"
           />
@@ -57,7 +57,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             autoComplete="tel"
             className={inputClasses}
             name="phone"
-            placeholder="Telefoonnummer volgt"
+            placeholder={form.fieldPlaceholders.phone}
             type="tel"
           />
         </label>
@@ -66,7 +66,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
           <input
             className={inputClasses}
             name="subject"
-            placeholder="Bijvoorbeeld: kennismaking"
+            placeholder={form.fieldPlaceholders.subject}
             type="text"
           />
         </label>
@@ -77,7 +77,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
         <textarea
           className={`${inputClasses} min-h-36 resize-y`}
           name="message"
-          placeholder="Schrijf kort waarover je contact zoekt."
+          placeholder={form.fieldPlaceholders.message}
           required
         />
       </label>

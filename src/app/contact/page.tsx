@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ContactFormPlaceholder } from "@/components/forms/ContactFormPlaceholder";
+import { PageCtaBand } from "@/components/pages/PageCtaBand";
+import { PageHero } from "@/components/pages/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -8,6 +10,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { contact } from "@/content/contact";
 import { pages } from "@/content/pages";
 import { routes } from "@/content/routes";
+import { site } from "@/content/site";
 
 const page = pages.contact;
 
@@ -19,27 +22,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="page-shell">
-      <section className="border-b border-border-soft bg-white">
-        <Container className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-          <SectionHeading
-            eyebrow={page.title}
-            headingLevel="h1"
-            intro={page.intro}
-            title={page.title}
-          />
-          {page.aside ? (
-            <Card className="border-dashed bg-surface p-5">
-              <p className="text-sm font-semibold uppercase text-brand-green">
-                {page.aside.label}
-              </p>
-              <h2 className="mt-3 text-xl font-semibold text-brand-green">
-                {page.aside.title}
-              </h2>
-              <p className="text-support mt-3">{page.aside.text}</p>
-            </Card>
-          ) : null}
-        </Container>
-      </section>
+      <PageHero aside={page.aside} intro={page.intro} title={page.title} />
 
       <Section variant="surface">
         <Container className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
@@ -48,7 +31,7 @@ export default function ContactPage() {
               <p className="text-sm font-semibold uppercase text-brand-green">
                 Contactgegevens
               </p>
-              <h2 className="mt-3 text-2xl">Uniqara</h2>
+              <h2 className="mt-3 text-2xl">{site.name}</h2>
               <dl className="mt-5 space-y-4">
                 <div>
                   <dt className="text-sm font-semibold text-foreground">
@@ -112,30 +95,17 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <section className="bg-white py-12">
-        <Container>
-          <Card className="grid gap-5 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase text-brand-green">
-                Vervolgstap
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold text-brand-green">
-                Liever eerst rustig lezen?
-              </h2>
-              <p className="text-body mt-3">{contact.reassurance}</p>
-            </div>
-            <nav
-              aria-label="Vervolglinks vanaf contact"
-              className="flex flex-col gap-3 sm:flex-row"
-            >
-              <Button href={routes.werkwijze.href}>Lees de werkwijze</Button>
-              <Button href={routes.praktischeInformatie.href} variant="secondary">
-                Praktische informatie
-              </Button>
-            </nav>
-          </Card>
-        </Container>
-      </section>
+      <PageCtaBand
+        intro={contact.reassurance}
+        links={[
+          { label: "Lees de werkwijze", href: routes.werkwijze.href },
+          {
+            label: "Praktische informatie",
+            href: routes.praktischeInformatie.href,
+          },
+        ]}
+        title="Liever eerst rustig lezen?"
+      />
     </main>
   );
 }

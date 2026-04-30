@@ -14,16 +14,18 @@ export type PageSection = {
   links?: PageLink[];
 };
 
+export type PageAside = {
+  label: string;
+  title: string;
+  text: string;
+};
+
 export type PageContent = {
   routeKey: RouteKey;
   title: string;
   description: string;
   intro: string;
-  aside?: {
-    label: string;
-    title: string;
-    text: string;
-  };
+  aside?: PageAside;
   showStepNumbers?: boolean;
   sections: PageSection[];
   ctas: PageLink[];

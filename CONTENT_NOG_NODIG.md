@@ -6,7 +6,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 
 | Onderdeel | Waarom nodig | Waar later invullen |
 | --- | --- | --- |
-| Definitief logo | Voor herkenbaarheid en een professionele eerste indruk. | `public/placeholders/logo-placeholder.svg`, `src/components/LogoPlaceholder.tsx`, placeholderkeys `LOGO_PRIMARY` en `LOGO_FOOTER` |
+| Definitief logo | Voor herkenbaarheid en een professionele eerste indruk. | `public/placeholders/logo-placeholder.svg`, `src/components/ui/LogoPlaceholder.tsx`, placeholderkeys `LOGO_PRIMARY` en `LOGO_FOOTER` |
 | Contactgegevens | Bezoekers moeten weten hoe ze contact kunnen opnemen. | `src/content/contact.ts`, placeholderkeys `CONTACT_EMAIL` en `CONTACT_PHONE` |
 | Formulierafhandeling | Nodig om berichten echt te kunnen ontvangen via het contactformulier. | `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx`, placeholderkey `CONTACT_FORM_HANDLER` |
 | Adres en bereikbaarheid | Nodig voor route, locatiepagina en praktische informatie. | `src/content/contact.ts`, placeholderkeys `LOCATION_ADDRESS` en `ROUTE_PARKING_INFO` |

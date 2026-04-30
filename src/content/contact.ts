@@ -28,6 +28,13 @@ export type ContactContent = {
       subject: string;
       message: string;
     };
+    fieldPlaceholders: {
+      name: string;
+      email: string;
+      phone: string;
+      subject: string;
+      message: string;
+    };
     submitLabel: string;
     successMessage: string;
   };
@@ -68,6 +75,13 @@ export const contact = {
       phone: "Telefoonnummer",
       subject: "Onderwerp",
       message: "Bericht",
+    },
+    fieldPlaceholders: {
+      name: "Voor- en achternaam",
+      email: "naam@example.nl",
+      phone: "Telefoonnummer",
+      subject: "Bijvoorbeeld: kennismaking",
+      message: "Schrijf kort waarover je contact zoekt.",
     },
     submitLabel: "Bericht controleren",
     successMessage:
