@@ -23,5 +23,6 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `CONTACT_ROUTE_INFO` | `CONTACT_ROUTE_INFO - contactroute volgt` | Beste manier om contact op te nemen | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRIVACY_DOSSIER_INFO` | `PRIVACY_DOSSIER_INFO - uitleg over dossier en gegevens volgt` | Uitleg over dossier, bewaartermijnen en rechten | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRIVACY_CONTACT_ROUTE` | `PRIVACY_CONTACT_ROUTE - contactroute voor privacyvragen volgt` | Contactroute voor privacyvragen | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `COPYRIGHT_INFO` | `COPYRIGHT_INFO - copyrighttekst volgt` | Copyrightregel en eventuele juridische footerregel | `src/content/placeholders.ts`, `src/components/layout/Footer.tsx` |
 
 Werkafspraak: voeg bij elke nieuwe ontbrekende input eerst een sleutel toe in `src/content/placeholders.ts`, registreer die hier, en verwijs ernaar in `TODO_USER.md`.

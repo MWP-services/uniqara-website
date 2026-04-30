@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -15,9 +13,7 @@ import { services } from "@/content/services";
 
 export default function Home() {
   return (
-    <div className="page-shell">
-      <SiteHeader />
-      <main>
+    <main className="page-shell">
         <section className="border-b border-border-soft bg-white">
           <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
@@ -270,8 +266,6 @@ export default function Home() {
             </Card>
           </Container>
         </section>
-      </main>
-      <SiteFooter />
-    </div>
+    </main>
   );
 }

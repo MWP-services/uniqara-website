@@ -16,6 +16,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 | Wachttijd | Bezoekers willen weten wanneer hulp mogelijk is. | `src/content/pages.ts`, placeholderkey `WAITLIST_INFO` |
 | Privacytekst | Nodig voor zorgvuldige uitleg over gegevens en dossiers. | `src/content/pages.ts`, placeholderkey `PRIVACY_INFO` |
 | Aanmeldinformatie | Maakt duidelijk hoe iemand de eerste stap zet. | `src/content/pages.ts`, placeholderkey `REGISTRATION_PROCESS` |
+| Footer- en copyrighttekst | Zorgt dat de onderkant van de site netjes en volledig is. | `src/content/placeholders.ts`, placeholderkey `COPYRIGHT_INFO` |
 
 ## Optioneel later
 
@@ -56,3 +57,4 @@ Belangrijkste placeholderkeys:
 - `CONTACT_ROUTE_INFO`
 - `PRIVACY_DOSSIER_INFO`
 - `PRIVACY_CONTACT_ROUTE`
+- `COPYRIGHT_INFO`

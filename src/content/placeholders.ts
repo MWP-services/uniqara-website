@@ -17,7 +17,8 @@ export type PlaceholderKey =
   | "OPENING_HOURS"
   | "CONTACT_ROUTE_INFO"
   | "PRIVACY_DOSSIER_INFO"
-  | "PRIVACY_CONTACT_ROUTE";
+  | "PRIVACY_CONTACT_ROUTE"
+  | "COPYRIGHT_INFO";
 
 export type PlaceholderRecord = {
   key: PlaceholderKey;
@@ -142,5 +143,11 @@ export const placeholders = {
     uiText: "PRIVACY_CONTACT_ROUTE - contactroute voor privacyvragen volgt",
     description: "Contactmogelijkheid voor vragen over privacy.",
     replaceWith: "Definitieve contactroute voor privacyvragen.",
+  },
+  COPYRIGHT_INFO: {
+    key: "COPYRIGHT_INFO",
+    uiText: "COPYRIGHT_INFO - copyrighttekst volgt",
+    description: "Copyrightregel en eventuele juridische footerregel.",
+    replaceWith: "Definitieve copyrighttekst voor de footer.",
   },
 } satisfies Record<PlaceholderKey, PlaceholderRecord>;
