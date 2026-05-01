@@ -259,3 +259,22 @@ export const homepagePlaceholderKeys = [
   "TARIFFS_INFO",
   "WAITLIST_INFO",
 ] satisfies PlaceholderKey[];
+
+// Sprint 6D launch-content check: deze placeholders hebben de meeste invloed op
+// vertrouwen, vindbaarheid en livegangkwaliteit.
+export const launchContentPlaceholderKeys = [
+  "CONTACT_EMAIL",
+  "CONTACT_PHONE",
+  "LOCATION_ADDRESS",
+  "OPENING_HOURS",
+  "OWNER_NAME",
+  "SEO_SITE_URL",
+  "SOCIAL_PROFILE_URLS",
+  "REGISTRATION_PROCESS",
+  "TARIFFS_INFO",
+  "REIMBURSEMENT_INFO",
+  "WAITLIST_INFO",
+  "PRIVACY_LEGAL_TEXT",
+  "PRIVACY_DATA_CATEGORIES",
+  "PRIVACY_RIGHTS_INFO",
+] satisfies PlaceholderKey[];

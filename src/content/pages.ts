@@ -50,7 +50,7 @@ export const pages = {
     description:
       "Maak kennis met Uniqara: een rustige psychologiepraktijk met aandacht voor veiligheid, vertrouwen en professionele begeleiding.",
     intro:
-      "Uniqara is een plek waar zorgvuldigheid en warmte samenkomen. Definitieve praktijkdetails worden later rustig aangevuld.",
+      "Uniqara is een plek waar zorgvuldigheid en warmte samenkomen. De persoonlijke praktijkdetails worden later rustig aangevuld.",
     aside: {
       label: "Sfeerbeeld",
       title: "Rust, groen en aandacht",
@@ -150,7 +150,7 @@ export const pages = {
     description:
       "Een rustig overzicht van thema's waarmee kinderen, jongeren en ouders bij Uniqara terecht kunnen.",
     intro:
-      "Hulpvragen kunnen klein beginnen of al langer spelen. Uniqara kijkt zorgvuldig mee zonder zware woorden groter te maken dan nodig.",
+      "Hulpvragen kunnen klein beginnen of al langer spelen. Uniqara kijkt zorgvuldig mee en houdt taal zo helder en licht mogelijk.",
     aside: {
       label: "Overzicht",
       title: "Zacht verkennen wat speelt",
@@ -310,7 +310,7 @@ export const pages = {
       {
         title: "Contactroute",
         body: [
-          "Voor vragen of aanmelding komt hier de gewenste contactroute te staan. Tot die tijd blijft de informatie bewust als placeholder zichtbaar.",
+          "Voor vragen of aanmelding komt hier de gewenste contactroute te staan. Nu staat alvast duidelijk aangegeven welke informatie nog volgt.",
           placeholders.CONTACT_ROUTE_INFO.uiText,
         ],
         links: [{ label: "Neem contact op", href: routes.contact.href }],
@@ -407,7 +407,7 @@ export const pages = {
       {
         title: "Rechten en verwijzingen",
         body: [
-          "Hier komt later te staan welke rechten bezoekers en clienten hebben rond inzage, correctie en verwijdering.",
+          "Hier komt later te staan welke rechten bezoekers en clienten hebben rond inzage, correctie en aanpassing van gegevens.",
           placeholders.PRIVACY_RIGHTS_INFO.uiText,
         ],
       },

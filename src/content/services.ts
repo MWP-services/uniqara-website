@@ -22,18 +22,18 @@ export type ServicesContent = {
 export const services = {
   heading: "Zorg met duidelijke stappen",
   intro:
-    "Korte teksten, heldere routes en rustige keuzes helpen bezoekers snel te vinden wat bij hun vraag past.",
+    "Een rustig overzicht helpt bezoekers herkennen welke ondersteuning mogelijk passend kan zijn.",
   items: [
     {
       title: "Begeleiding",
       summary:
-        "Ruimte om stil te staan bij klachten, patronen en vragen die aandacht nodig hebben.",
+        "Ruimte om stil te staan bij vragen, patronen en wat iemand nodig heeft.",
       href: routes.hulpvragen.href,
     },
     {
       title: "Onderzoek",
       summary:
-        "Heldere diagnostiek met oog voor het hele verhaal achter gedrag en ontwikkeling.",
+        "Zorgvuldig kijken naar gedrag, ontwikkeling en de context eromheen.",
       href: routes.hulpvragen.href,
     },
     {

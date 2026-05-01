@@ -18,3 +18,5 @@ De website gebruikt centrale contentbestanden in `src/content`. Daardoor kunnen 
 Laat componenten vooral in `src/components` en `src/app` staan. Pas voor tekstwijzigingen eerst de bestanden hierboven aan.
 
 Ontbrekende input staat ook centraal geregistreerd in `PLACEHOLDER_REGISTRY.md` en `TODO_USER.md` in de projectroot.
+
+Voor de launch-content check staat een korte niet-technische samenvatting in `CONTENT_REVIEW.md`.
