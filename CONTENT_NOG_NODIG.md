@@ -15,6 +15,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 | Foto's van De Hooiberg, natuur en praktijk | Versterkt de rustige, landelijke sfeer en maakt de plek concreet. | `src/content/home.ts`, `src/content/pages.ts`, placeholderkeys `HERO_IMAGE_HOOIBERG`, `HERO_IMAGE_NATURE`, `HERO_IMAGE_PRACTICE` en `PRACTICE_PHOTOS` |
 | Naam behandelaar / praktijkhouder | Geeft vertrouwen en maakt de praktijk persoonlijker. | `src/content/pages.ts`, placeholderkey `OWNER_NAME` |
 | Openingstijden | Helpt bezoekers begrijpen wanneer de praktijk bereikbaar is. | `src/content/contact.ts`, placeholderkey `OPENING_HOURS` |
+| Publieke profiel-links | Alleen nodig als Uniqara straks publieke profielpagina's wil opnemen in structured data. | `src/content/structuredData.ts`, placeholderkey `SOCIAL_PROFILE_URLS` |
 | Tarieven en vergoedingen | Belangrijk voor transparantie voordat iemand contact opneemt. | `src/content/pages.ts`, placeholderkey `TARIFFS_INFO` |
 | Vergoedingsinformatie | Maakt duidelijk of en hoe vergoeding, verwijzing of betaling werkt. | `src/content/pages.ts`, placeholderkey `REIMBURSEMENT_INFO` |
 | Wachttijd | Bezoekers willen weten wanneer hulp mogelijk is. | `src/content/pages.ts`, placeholderkey `WAITLIST_INFO` |
@@ -56,6 +57,8 @@ Belangrijkste placeholderkeys:
 - `CONTACT_FORM_HANDLER`
 - `LOCATION_ADDRESS`
 - `OWNER_NAME`
+- `SEO_SITE_URL`
+- `SOCIAL_PROFILE_URLS`
 - `TARIFFS_INFO`
 - `REIMBURSEMENT_INFO`
 - `WAITLIST_INFO`

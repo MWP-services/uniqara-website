@@ -18,6 +18,7 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `OWNER_NAME` | `OWNER_NAME - praktijkhouder volgt` | Naam/namen van praktijkhouder of behandelaren | `src/content/placeholders.ts` |
 | `SEO_SITE_URL` | `SEO_SITE_URL - definitief websitedomein volgt` | Definitieve publieke URL voor metadata, canonical links en share-data | `src/content/placeholders.ts`, `src/content/seo.ts` |
+| `SOCIAL_PROFILE_URLS` | `SOCIAL_PROFILE_URLS - eventuele social/profiel-links volgen` | Eventuele publieke social/profiel-URLs voor structured data | `src/content/placeholders.ts`, `src/content/structuredData.ts` |
 | `TARIFFS_INFO` | `TARIFFS_INFO - tarieven en vergoedingen volgen` | Tarieven, vergoedingen en betaalinformatie | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `REIMBURSEMENT_INFO` | `REIMBURSEMENT_INFO - vergoedingsinformatie volgt` | Vergoedingen, verwijzing en betaalroute | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `WAITLIST_INFO` | `WAITLIST_INFO - wachttijdinformatie volgt` | Wachttijd of aanmeldstatus | `src/content/placeholders.ts`, `src/content/pages.ts` |
@@ -57,10 +58,15 @@ Sprint 6B technische SEO gebruikt daarnaast:
 `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE`.
 Sitemap en robots gebruiken tijdelijk `https://uniqara.example` via `src/content/seo.ts` totdat `SEO_SITE_URL` definitief is.
 
+Sprint 6C structured data gebruikt daarnaast:
+`SOCIAL_PROFILE_URLS`, plus bestaande placeholders voor `SEO_SITE_URL`, `CONTACT_EMAIL`, `CONTACT_PHONE`, `LOCATION_ADDRESS`, `OPENING_HOURS`, `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE`.
+De JSON-LD basis staat centraal in `src/content/structuredData.ts` en wordt sitebreed geplaatst via `src/components/seo/StructuredData.tsx`.
+
 ## Belangrijkste beheerbestanden
 
 - Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
 - Metadata en SEO-basis: `src/content/seo.ts`.
+- Structured data: `src/content/structuredData.ts`, `src/components/seo/StructuredData.tsx`.
 - Technische SEO-bestanden: `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/manifest.ts`, `src/app/opengraph-image.tsx`, `src/app/twitter-image.tsx`, `src/app/icon.tsx`, `src/app/apple-icon.tsx`.
 - Homepagecopy: `src/content/home.ts`.
 - Binnenpagina's en CTA's: `src/content/pages.ts`.

@@ -13,6 +13,7 @@ export type PlaceholderKey =
   | "LOCATION_ADDRESS"
   | "OWNER_NAME"
   | "SEO_SITE_URL"
+  | "SOCIAL_PROFILE_URLS"
   | "TARIFFS_INFO"
   | "REIMBURSEMENT_INFO"
   | "WAITLIST_INFO"
@@ -125,6 +126,14 @@ export const placeholders = {
     uiText: "SEO_SITE_URL - definitief websitedomein volgt",
     description: "Definitieve publieke URL voor metadata, canonical links en share-data.",
     replaceWith: "Definitieve productie-URL, bijvoorbeeld het Vercel- of eigen domein.",
+  },
+  SOCIAL_PROFILE_URLS: {
+    key: "SOCIAL_PROFILE_URLS",
+    uiText: "SOCIAL_PROFILE_URLS - eventuele social/profiel-links volgen",
+    description:
+      "Eventuele publieke profielpagina's voor structured data en online herkenbaarheid.",
+    replaceWith:
+      "Definitieve URLs naar toegestane publieke profielen, of leeg laten als die er niet zijn.",
   },
   TARIFFS_INFO: {
     key: "TARIFFS_INFO",
