@@ -4,6 +4,7 @@ De website gebruikt centrale contentbestanden in `src/content`. Daardoor kunnen 
 
 - `site.ts`: sitenaam, merkbeschrijving, SEO-basisteksten en gedeelde UI-copy.
 - `seo.ts`: centrale metadata per pagina, inclusief titels, descriptions en Open Graph-basis.
+- Technische SEO-routes staan in `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/manifest.ts` en de gegenereerde share/icon-bestanden in `src/app`.
 - `navigation.ts`: hoofdmenu en footer-links.
 - `home.ts`: homepage-hero, werkwijze, CTA's en locatieblok.
 - `services.ts`: aanbod en hulpvragen.

@@ -17,11 +17,19 @@ export type SeoContent = {
   defaultTitle: string;
   defaultDescription: string;
   locale: string;
+  placeholderBaseUrl: string;
   siteUrlPlaceholder: string;
+  assets: {
+    faviconPlaceholder: string;
+    appIconPlaceholder: string;
+    socialPreviewPlaceholder: string;
+    socialPreviewAlt: string;
+  };
   pages: Record<RouteKey, SeoEntry>;
 };
 
 const homeTitle = `${site.name} | ${site.tagline}`;
+const placeholderBaseUrl = "https://uniqara.example";
 
 export const seo = {
   siteName: site.name,
@@ -29,7 +37,15 @@ export const seo = {
   defaultTitle: site.defaultTitle,
   defaultDescription: site.description,
   locale: "nl_NL",
+  placeholderBaseUrl,
   siteUrlPlaceholder: placeholders.SEO_SITE_URL.uiText,
+  assets: {
+    faviconPlaceholder: placeholders.FAVICON_PLACEHOLDER.uiText,
+    appIconPlaceholder: placeholders.APP_ICON_PLACEHOLDER.uiText,
+    socialPreviewPlaceholder: placeholders.SOCIAL_PREVIEW_IMAGE.uiText,
+    socialPreviewAlt:
+      "Uniqara - rustige psychologiepraktijk in een groene omgeving",
+  },
   pages: {
     home: {
       routeKey: "home",
@@ -89,6 +105,12 @@ export const seo = {
   },
 } satisfies SeoContent;
 
+export function absoluteUrl(path: string) {
+  return new URL(path, seo.placeholderBaseUrl).toString();
+}
+
+export const technicalSeoRoutes = Object.values(seo.pages);
+
 function openGraphFor(entry: SeoEntry): NonNullable<Metadata["openGraph"]> {
   return {
     title: entry.title,
@@ -110,6 +132,7 @@ export function createPageMetadata(routeKey: RouteKey): Metadata {
 }
 
 export const rootMetadata: Metadata = {
+  metadataBase: new URL(seo.placeholderBaseUrl),
   title: {
     default: seo.defaultTitle,
     template: seo.titleTemplate,

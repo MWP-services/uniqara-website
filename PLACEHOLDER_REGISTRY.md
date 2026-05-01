@@ -6,6 +6,9 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | --- | --- | --- | --- |
 | `LOGO_PRIMARY` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor headergebruik | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
 | `LOGO_FOOTER` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor footer | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
+| `FAVICON_PLACEHOLDER` | `[FAVICON_PLACEHOLDER] Tijdelijk Uniqara favicon` | Definitief favicon op basis van het echte logo | `src/content/placeholders.ts`, `src/app/icon.tsx` |
+| `APP_ICON_PLACEHOLDER` | `[APP_ICON_PLACEHOLDER] Tijdelijk Uniqara app-icoon` | Definitieve app-icon set voor manifest en devices | `src/content/placeholders.ts`, `src/app/apple-icon.tsx`, `src/app/manifest.ts` |
+| `SOCIAL_PREVIEW_IMAGE` | `[SOCIAL_PREVIEW_IMAGE] Tijdelijke social preview voor Uniqara` | Definitieve social preview image met logo/fotografie | `src/content/placeholders.ts`, `src/app/opengraph-image.tsx`, `src/app/twitter-image.tsx` |
 | `HERO_IMAGE_HOOIBERG` | `[HERO_IMAGE_HOOIBERG] Foto van De Hooiberg, natuur of praktijk volgt` | Foto of beeld van De Hooiberg/groene omgeving | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `HERO_IMAGE_NATURE` | `[HERO_IMAGE_NATURE] Foto van groen en natuur volgt` | Ondersteunende foto van groen, rust en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `HERO_IMAGE_PRACTICE` | `[HERO_IMAGE_PRACTICE] Foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
@@ -50,10 +53,15 @@ Sprint 4C contact en privacy gebruiken daarnaast:
 Sprint 6A metadata gebruikt daarnaast:
 `SEO_SITE_URL`. Canonical URLs, `metadataBase` en definitieve share-URL's worden pas gekoppeld zodra dit domein bekend is.
 
+Sprint 6B technische SEO gebruikt daarnaast:
+`FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE`.
+Sitemap en robots gebruiken tijdelijk `https://uniqara.example` via `src/content/seo.ts` totdat `SEO_SITE_URL` definitief is.
+
 ## Belangrijkste beheerbestanden
 
 - Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
 - Metadata en SEO-basis: `src/content/seo.ts`.
+- Technische SEO-bestanden: `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/manifest.ts`, `src/app/opengraph-image.tsx`, `src/app/twitter-image.tsx`, `src/app/icon.tsx`, `src/app/apple-icon.tsx`.
 - Homepagecopy: `src/content/home.ts`.
 - Binnenpagina's en CTA's: `src/content/pages.ts`.
 - Hulpvragen en aanbod: `src/content/services.ts`.

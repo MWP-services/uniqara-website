@@ -1,6 +1,9 @@
 export type PlaceholderKey =
   | "LOGO_PRIMARY"
   | "LOGO_FOOTER"
+  | "FAVICON_PLACEHOLDER"
+  | "APP_ICON_PLACEHOLDER"
+  | "SOCIAL_PREVIEW_IMAGE"
   | "HERO_IMAGE_HOOIBERG"
   | "HERO_IMAGE_NATURE"
   | "HERO_IMAGE_PRACTICE"
@@ -50,6 +53,24 @@ export const placeholders = {
     uiText: "LOGO PLACEHOLDER – UNIQARA",
     description: "Logo in de footer.",
     replaceWith: "Definitief Uniqara-logo voor footergebruik.",
+  },
+  FAVICON_PLACEHOLDER: {
+    key: "FAVICON_PLACEHOLDER",
+    uiText: "[FAVICON_PLACEHOLDER] Tijdelijk Uniqara favicon",
+    description: "Tijdelijk gegenereerd browsericoon voor Uniqara.",
+    replaceWith: "Definitief favicon op basis van het echte logo.",
+  },
+  APP_ICON_PLACEHOLDER: {
+    key: "APP_ICON_PLACEHOLDER",
+    uiText: "[APP_ICON_PLACEHOLDER] Tijdelijk Uniqara app-icoon",
+    description: "Tijdelijk gegenereerd app- en manifest-icoon.",
+    replaceWith: "Definitieve app-icon set op basis van het echte logo.",
+  },
+  SOCIAL_PREVIEW_IMAGE: {
+    key: "SOCIAL_PREVIEW_IMAGE",
+    uiText: "[SOCIAL_PREVIEW_IMAGE] Tijdelijke social preview voor Uniqara",
+    description: "Tijdelijke Open Graph en Twitter preview-afbeelding.",
+    replaceWith: "Definitieve social preview image met logo/fotografie.",
   },
   HERO_IMAGE_HOOIBERG: {
     key: "HERO_IMAGE_HOOIBERG",

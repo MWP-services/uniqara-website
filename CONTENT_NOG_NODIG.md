@@ -7,6 +7,7 @@ Dit overzicht laat zien welke informatie nog nodig is voordat de website live ka
 | Onderdeel | Waarom nodig | Waar later invullen |
 | --- | --- | --- |
 | Definitief logo | Voor herkenbaarheid en een professionele eerste indruk. | `public/placeholders/logo-placeholder.svg`, `src/components/ui/LogoPlaceholder.tsx`, placeholderkeys `LOGO_PRIMARY` en `LOGO_FOOTER` |
+| Favicon, app-icon en social preview | Nodig voor browser-tabs, delen via social/messaging en manifest-assets. | `src/app/icon.tsx`, `src/app/apple-icon.tsx`, `src/app/opengraph-image.tsx`, placeholderkeys `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE` |
 | Contactgegevens | Bezoekers moeten weten hoe ze contact kunnen opnemen. | `src/content/contact.ts`, placeholderkeys `CONTACT_EMAIL` en `CONTACT_PHONE` |
 | Formulierafhandeling | Nodig om berichten echt te kunnen ontvangen via het contactformulier. | `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx`, placeholderkey `CONTACT_FORM_HANDLER` |
 | Adres en bereikbaarheid | Nodig voor route, locatiepagina en praktische informatie. | `src/content/contact.ts`, placeholderkeys `LOCATION_ADDRESS` en `ROUTE_PARKING_INFO` |
@@ -44,6 +45,9 @@ Belangrijkste placeholderkeys:
 
 - `LOGO_PRIMARY`
 - `LOGO_FOOTER`
+- `FAVICON_PLACEHOLDER`
+- `APP_ICON_PLACEHOLDER`
+- `SOCIAL_PREVIEW_IMAGE`
 - `HERO_IMAGE_HOOIBERG`
 - `HERO_IMAGE_NATURE`
 - `HERO_IMAGE_PRACTICE`
