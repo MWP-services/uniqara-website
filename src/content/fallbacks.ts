@@ -35,7 +35,7 @@ export const fallbacks = {
     title: "Deze pagina lijkt niet te bestaan.",
     intro:
       "De gevraagde pagina is verplaatst, verwijderd of nog niet aangemaakt. Vanaf hier kun je rustig terug naar een bekende plek.",
-    note: `Contactgegevens zijn nog placeholders: ${placeholders.CONTACT_EMAIL.uiText}.`,
+    note: `Contactgegevens worden nog definitief ingevuld: ${placeholders.CONTACT_EMAIL.uiText}.`,
     links: [
       { label: "Terug naar home", href: routes.home.href },
       { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
@@ -47,7 +47,7 @@ export const fallbacks = {
     title: "De pagina kon niet goed worden geladen.",
     intro:
       "Probeer het opnieuw of ga terug naar een vaste pagina. De rest van de site blijft gewoon bereikbaar.",
-    note: `Voor contact gebruikt de site voorlopig nog: ${placeholders.CONTACT_EMAIL.uiText}.`,
+    note: `Voor contact staat voorlopig deze centrale waarde klaar: ${placeholders.CONTACT_EMAIL.uiText}.`,
     retryLabel: "Opnieuw proberen",
     links: [
       { label: "Terug naar home", href: routes.home.href },

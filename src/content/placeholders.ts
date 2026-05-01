@@ -278,3 +278,29 @@ export const launchContentPlaceholderKeys = [
   "PRIVACY_DATA_CATEGORIES",
   "PRIVACY_RIGHTS_INFO",
 ] satisfies PlaceholderKey[];
+
+// Sprint 7C finale QA: deze lijst bundelt de placeholders die voor een
+// productie-v1 het meest zichtbaar of kritisch zijn.
+export const finalQaPlaceholderKeys = [
+  "LOGO_PRIMARY",
+  "LOGO_FOOTER",
+  "FAVICON_PLACEHOLDER",
+  "APP_ICON_PLACEHOLDER",
+  "SOCIAL_PREVIEW_IMAGE",
+  "SEO_SITE_URL",
+  "CONTACT_EMAIL",
+  "CONTACT_PHONE",
+  "LOCATION_ADDRESS",
+  "OPENING_HOURS",
+  "OWNER_NAME",
+  "CONTACT_FORM_HANDLER",
+  "REGISTRATION_PROCESS",
+  "TARIFFS_INFO",
+  "REIMBURSEMENT_INFO",
+  "WAITLIST_INFO",
+  "PRIVACY_LEGAL_TEXT",
+  "PRIVACY_DATA_CATEGORIES",
+  "PRIVACY_RIGHTS_INFO",
+  "HERO_IMAGE_HOOIBERG",
+  "PRACTICE_PHOTOS",
+] satisfies PlaceholderKey[];

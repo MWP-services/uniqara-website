@@ -68,6 +68,8 @@ Sprint 7A deploymentvoorbereiding heeft geen nieuwe placeholderkeys toegevoegd. 
 
 Sprint 7B fallbackstates heeft geen nieuwe placeholderkeys toegevoegd. De 404-, error- en loadingcopy staat centraal in `src/content/fallbacks.ts` en gebruikt bestaande contactplaceholders waar echte contactdata nog ontbreekt.
 
+Sprint 7C finale QA heeft geen nieuwe placeholderkeys toegevoegd. De belangrijkste livegangplaceholders staan als `finalQaPlaceholderKeys` in `src/content/placeholders.ts` en zijn samengevat in `FINAL_QA_V1.md`.
+
 ## Belangrijkste beheerbestanden
 
 - Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
@@ -75,6 +77,7 @@ Sprint 7B fallbackstates heeft geen nieuwe placeholderkeys toegevoegd. De 404-, 
 - Structured data: `src/content/structuredData.ts`, `src/components/seo/StructuredData.tsx`.
 - Launch-content review: `CONTENT_REVIEW.md`.
 - Deployment: `DEPLOYMENT_GUIDE.md`.
+- Finale QA: `FINAL_QA_V1.md`.
 - Technische SEO-bestanden: `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/manifest.ts`, `src/app/opengraph-image.tsx`, `src/app/twitter-image.tsx`, `src/app/icon.tsx`, `src/app/apple-icon.tsx`.
 - Homepagecopy: `src/content/home.ts`.
 - Binnenpagina's en CTA's: `src/content/pages.ts`.
