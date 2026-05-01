@@ -17,6 +17,9 @@ export function Footer() {
             <p className="text-support mt-5 max-w-sm">
               {brand.shortDescription}
             </p>
+            <p className="mt-4 text-sm font-semibold text-brand-green">
+              Rustig, zorgvuldig en persoonlijk.
+            </p>
           </section>
 
           <nav aria-label="Footer navigatie">

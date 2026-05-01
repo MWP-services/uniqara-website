@@ -77,7 +77,7 @@ export const home = {
       "Groene landelijke omgeving",
       "Zorgvuldig afgestemd traject",
     ],
-    imagePlaceholderLabel: "Visuele placeholder",
+    imagePlaceholderLabel: "Sfeerbeeld volgt",
     imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
     imagePlaceholders: [
       {
@@ -113,7 +113,7 @@ export const home = {
   approach: {
     heading: "Werkwijze in duidelijke stappen",
     intro:
-      "De site krijgt per onderwerp een eigen vervolgpagina, zodat de homepage licht en overzichtelijk blijft.",
+      "Een traject krijgt stap voor stap vorm. Duidelijkheid over het proces helpt om met rust te beginnen.",
     pathways: [
       { label: "Voor ouders en kinderen", href: routes.voorWie.href },
       { label: "Voor jongeren", href: routes.voorWie.href },
@@ -126,7 +126,7 @@ export const home = {
   location: {
     heading: "De Hooiberg als rustige praktijkplek",
     intro:
-      "De locatiebeleving mag straks voelbaar worden door echte beelden van groen, erf en landelijke stilte. Voor nu is de structuur alvast voorbereid.",
+      "De locatiebeleving draait om rust, groen en een prettige aankomst. Echte fotografie maakt dit later nog concreter.",
     cardLabel: "Locatieblok",
     cardText: placeholders.PRACTICE_PHOTOS.uiText,
     ctaLabel: "Bekijk de locatie",

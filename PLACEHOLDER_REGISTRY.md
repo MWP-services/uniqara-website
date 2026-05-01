@@ -6,12 +6,12 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | --- | --- | --- | --- |
 | `LOGO_PRIMARY` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor headergebruik | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
 | `LOGO_FOOTER` | `LOGO PLACEHOLDER – UNIQARA` | Definitief logo voor footer | `src/content/placeholders.ts`, `public/placeholders/logo-placeholder.svg` |
-| `HERO_IMAGE_HOOIBERG` | `FOTO PLACEHOLDER – HOOIBERG / NATUUR / PRAKTIJK` | Foto of beeld van De Hooiberg/groene omgeving | `src/content/placeholders.ts`, `src/content/home.ts` |
-| `HERO_IMAGE_NATURE` | `HERO_IMAGE_NATURE - foto van groen en natuur volgt` | Ondersteunende foto van groen, rust en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
-| `HERO_IMAGE_PRACTICE` | `HERO_IMAGE_PRACTICE - foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `HERO_IMAGE_HOOIBERG` | `[HERO_IMAGE_HOOIBERG] Foto van De Hooiberg, natuur of praktijk volgt` | Foto of beeld van De Hooiberg/groene omgeving | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `HERO_IMAGE_NATURE` | `[HERO_IMAGE_NATURE] Foto van groen en natuur volgt` | Ondersteunende foto van groen, rust en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `HERO_IMAGE_PRACTICE` | `[HERO_IMAGE_PRACTICE] Foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `CONTACT_EMAIL` | `CONTACT_EMAIL - e-mailadres volgt` | Publiek contactmailadres | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `CONTACT_PHONE` | `CONTACT_PHONE - telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
-| `CONTACT_FORM_HANDLER` | `CONTACT_FORM_HANDLER - formulierkoppeling volgt` | Formulierbackend, mailservice of CRM-koppeling | `src/content/placeholders.ts`, `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx` |
+| `CONTACT_FORM_HANDLER` | `[CONTACT_FORM_HANDLER] Formulierverzending wordt later gekoppeld` | Formulierbackend, mailservice of CRM-koppeling | `src/content/placeholders.ts`, `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx` |
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `OWNER_NAME` | `OWNER_NAME - praktijkhouder volgt` | Naam/namen van praktijkhouder of behandelaren | `src/content/placeholders.ts` |
 | `TARIFFS_INFO` | `TARIFFS_INFO - tarieven en vergoedingen volgen` | Tarieven, vergoedingen en betaalinformatie | `src/content/placeholders.ts`, `src/content/pages.ts` |
@@ -23,8 +23,8 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `PRIVACY_RIGHTS_INFO` | `PRIVACY_RIGHTS_INFO - rechten en verwijzingen volgen` | Privacyrechten, inzage, correctie en klachtenroute | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `FAQ_CONTENT` | `FAQ_CONTENT - definitieve antwoorden volgen` | Definitieve antwoorden op veelgestelde vragen | `src/content/placeholders.ts`, `src/content/faq.ts` |
 | `ROUTE_PARKING_INFO` | `ROUTE_PARKING_INFO - route en parkeren volgen` | Routebeschrijving, parkeren en aankomstinformatie | `src/content/placeholders.ts`, `src/content/contact.ts` |
-| `LOCATION_MAP_PLACEHOLDER` | `LOCATION_MAP_PLACEHOLDER - kaart of routeblok volgt` | Kaartweergave, routeblok of locatiekaart | `src/content/placeholders.ts`, `src/content/pages.ts` |
-| `PRACTICE_PHOTOS` | `PRACTICE_PHOTOS - praktijkfoto's volgen` | Foto's van praktijkruimte, erf en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
+| `LOCATION_MAP_PLACEHOLDER` | `[LOCATION_MAP_PLACEHOLDER] Kaart of routeblok volgt` | Kaartweergave, routeblok of locatiekaart | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `PRACTICE_PHOTOS` | `[PRACTICE_PHOTOS] Praktijkfoto's volgen` | Foto's van praktijkruimte, erf en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `REGISTRATION_PROCESS` | `REGISTRATION_PROCESS - aanmeldproces volgt` | Aanmeldroute, eerste contact en processtappen | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `REFERRER_SCHOOL_INFO` | `REFERRER_SCHOOL_INFO - afspraken voor scholen en verwijzers volgen` | Afspraken voor scholen, huisartsen en andere verwijzers | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `OPENING_HOURS` | `OPENING_HOURS - openingstijden volgen` | Openingstijden en bereikbaarheid | `src/content/placeholders.ts`, `src/content/contact.ts`, `src/content/pages.ts` |
@@ -59,4 +59,5 @@ Sprint 4C contact en privacy gebruiken daarnaast:
 ## Weergave-afspraken
 
 - Sprint 5A heeft de mobiele weergave van logo-, foto-, locatie- en formulierplaceholders aangescherpt.
+- Sprint 5D heeft zichtbare foto-, locatie- en formulierplaceholderteksten rustiger gemaakt, met de sleutel nog duidelijk zichtbaar.
 - Er zijn geen nieuwe placeholderkeys toegevoegd; alle placeholderteksten blijven centraal beheerd in `src/content/placeholders.ts`.

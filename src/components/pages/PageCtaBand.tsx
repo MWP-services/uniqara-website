@@ -15,7 +15,7 @@ export function PageCtaBand({
   links,
   eyebrow = sharedUi.pageCtaEyebrow,
   title = sharedUi.pageCtaTitle,
-  intro,
+  intro = sharedUi.pageCtaIntro,
 }: PageCtaBandProps) {
   return (
     <section className="bg-white py-10 sm:py-12">

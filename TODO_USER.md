@@ -19,6 +19,7 @@
 - Controleer afspraken voor scholen en verwijzers voor `REFERRER_SCHOOL_INFO`.
 - Controleer de inhoud van `/over-uniqara`, `/voor-wie`, `/hulpvragen`, `/werkwijze`, `/locatie`, `/praktische-informatie`, `/contact` en `/privacy`.
 - Controleer later of CTA-teksten zoals "Neem contact op", "Lees de werkwijze" en "Praktische informatie" precies aansluiten bij de definitieve aanmeldroute.
+- Controleer de rustige vertrouwensteksten in footer, contact en CTA-banden zodra de definitieve praktijktoon bekend is.
 - Controleer voor livegang ook `HOMEPAGE_QA.md`, `SITE_STATUS_V1.md` en `RESPONSIVE_AUDIT.md`.
 - Controleer de mobiele weergave opnieuw zodra logo, foto's of formulierkoppeling definitief zijn vervangen.
 

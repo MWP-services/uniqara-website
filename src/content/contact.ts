@@ -67,7 +67,7 @@ export const contact = {
   form: {
     title: "Contactformulier",
     intro:
-      "Dit formulier is alvast vormgegeven als placeholder. De technische verzending wordt later gekoppeld.",
+      "Het formulier staat visueel klaar. De technische verzending wordt later gekoppeld.",
     handlerPlaceholder: placeholders.CONTACT_FORM_HANDLER.uiText,
     fields: {
       name: "Naam",
@@ -85,7 +85,7 @@ export const contact = {
     },
     submitLabel: "Bericht controleren",
     successMessage:
-      "Formulierplaceholder: je bericht is niet verzonden. De echte formulierafhandeling wordt later gekoppeld.",
+      "Voorbeeldmelding: je bericht is nog niet verzonden. De echte formulierafhandeling wordt later gekoppeld.",
   },
   cta: {
     label: "Neem contact op",

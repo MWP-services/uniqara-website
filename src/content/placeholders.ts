@@ -52,19 +52,19 @@ export const placeholders = {
   },
   HERO_IMAGE_HOOIBERG: {
     key: "HERO_IMAGE_HOOIBERG",
-    uiText: "FOTO PLACEHOLDER – HOOIBERG / NATUUR / PRAKTIJK",
+    uiText: "[HERO_IMAGE_HOOIBERG] Foto van De Hooiberg, natuur of praktijk volgt",
     description: "Hero- of sfeerbeeld van De Hooiberg en groene omgeving.",
     replaceWith: "Echte foto of zorgvuldig gekozen beeld van locatie/natuur.",
   },
   HERO_IMAGE_NATURE: {
     key: "HERO_IMAGE_NATURE",
-    uiText: "HERO_IMAGE_NATURE - foto van groen en natuur volgt",
+    uiText: "[HERO_IMAGE_NATURE] Foto van groen en natuur volgt",
     description: "Ondersteunend sfeerbeeld van groen, rust en natuur.",
     replaceWith: "Definitieve natuurfoto voor de homepage-hero.",
   },
   HERO_IMAGE_PRACTICE: {
     key: "HERO_IMAGE_PRACTICE",
-    uiText: "HERO_IMAGE_PRACTICE - foto van praktijk of landelijke sfeer volgt",
+    uiText: "[HERO_IMAGE_PRACTICE] Foto van praktijk of landelijke sfeer volgt",
     description: "Ondersteunend sfeerbeeld van praktijkruimte of landelijke omgeving.",
     replaceWith: "Definitieve praktijk- of sfeerfoto voor de homepage-hero.",
   },
@@ -82,7 +82,7 @@ export const placeholders = {
   },
   CONTACT_FORM_HANDLER: {
     key: "CONTACT_FORM_HANDLER",
-    uiText: "CONTACT_FORM_HANDLER - formulierkoppeling volgt",
+    uiText: "[CONTACT_FORM_HANDLER] Formulierverzending wordt later gekoppeld",
     description: "Technische afhandeling van het contactformulier.",
     replaceWith: "Definitieve formulierbackend, mailservice of CRM-koppeling.",
   },
@@ -154,13 +154,13 @@ export const placeholders = {
   },
   LOCATION_MAP_PLACEHOLDER: {
     key: "LOCATION_MAP_PLACEHOLDER",
-    uiText: "LOCATION_MAP_PLACEHOLDER - kaart of routeblok volgt",
+    uiText: "[LOCATION_MAP_PLACEHOLDER] Kaart of routeblok volgt",
     description: "Placeholder voor kaartweergave, routeblok of locatiekaart.",
     replaceWith: "Definitieve kaart, routevisual of externe route-integratie.",
   },
   PRACTICE_PHOTOS: {
     key: "PRACTICE_PHOTOS",
-    uiText: "PRACTICE_PHOTOS - praktijkfoto's volgen",
+    uiText: "[PRACTICE_PHOTOS] Praktijkfoto's volgen",
     description: "Foto's van praktijkruimte, erf, natuur en omgeving.",
     replaceWith: "Definitieve fotografie voor websitegebruik.",
   },

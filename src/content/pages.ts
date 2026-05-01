@@ -50,7 +50,7 @@ export const pages = {
     description:
       "Maak kennis met Uniqara: een rustige psychologiepraktijk met aandacht voor veiligheid, vertrouwen en professionele begeleiding.",
     intro:
-      "Uniqara is een plek waar zorgvuldigheid en warmte samenkomen. De praktijk is in opbouw; definitieve details worden stap voor stap aangevuld.",
+      "Uniqara is een plek waar zorgvuldigheid en warmte samenkomen. Definitieve praktijkdetails worden later rustig aangevuld.",
     aside: {
       label: "Sfeerbeeld",
       title: "Rust, groen en aandacht",
@@ -229,7 +229,7 @@ export const pages = {
     intro:
       "De plek waar zorg plaatsvindt doet ertoe. Uniqara wil een omgeving bieden die rustig, overzichtelijk en prettig voelt.",
     aside: {
-      label: "Beeldplaceholder",
+      label: "Sfeerbeeld volgt",
       title: "De Hooiberg en groen",
       text: placeholders.HERO_IMAGE_HOOIBERG.uiText,
     },

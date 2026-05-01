@@ -15,6 +15,7 @@ export type BrandContent = {
 export type SharedUiContent = {
   pageCtaEyebrow: string;
   pageCtaTitle: string;
+  pageCtaIntro: string;
 };
 
 // Pas hier de algemene merknaam, SEO-beschrijving en korte praktijkintro aan.
@@ -37,4 +38,6 @@ export const brand = {
 export const sharedUi = {
   pageCtaEyebrow: "Vervolgstap",
   pageCtaTitle: "Rustig verder kijken",
+  pageCtaIntro:
+    "Kies de route die nu het meest passend voelt. Er is altijd ruimte om eerst rustig te verkennen.",
 } satisfies SharedUiContent;
