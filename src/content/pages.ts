@@ -166,7 +166,7 @@ export const pages = {
     })),
     ctas: [
       { label: "Voor wie is Uniqara", href: routes.voorWie.href },
-      { label: "Contactgegevens bekijken", href: routes.contact.href },
+      { label: "Neem contact op", href: routes.contact.href },
     ],
   },
   werkwijze: {
@@ -189,7 +189,7 @@ export const pages = {
           "Een eerste contactmoment is bedoeld om kort te verkennen wat er speelt en of Uniqara passend kan zijn.",
           "Er is ruimte voor praktische vragen en een eerste indruk van de hulpvraag.",
         ],
-        links: [{ label: "Contact", href: routes.contact.href }],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Intake",
@@ -258,7 +258,7 @@ export const pages = {
           placeholders.LOCATION_ADDRESS.uiText,
           placeholders.ROUTE_PARKING_INFO.uiText,
         ],
-        links: [{ label: "Contactgegevens", href: routes.contact.href }],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Route en kaart",
@@ -266,12 +266,12 @@ export const pages = {
           "Hier komt later een eenvoudig routeblok of kaartweergave, passend bij de rustige stijl van de site.",
           placeholders.LOCATION_MAP_PLACEHOLDER.uiText,
         ],
-        links: [{ label: "Naar contact", href: routes.contact.href }],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
     ],
     ctas: [
       { label: "Praktische informatie", href: routes.praktischeInformatie.href },
-      { label: "Contact", href: routes.contact.href },
+      { label: "Neem contact op", href: routes.contact.href },
     ],
   },
   praktischeInformatie: {
@@ -305,7 +305,7 @@ export const pages = {
           "De actuele wachttijd of aanmeldstatus krijgt hier een duidelijke plek, zodat verwachtingen vanaf het begin helder zijn.",
           placeholders.WAITLIST_INFO.uiText,
         ],
-        links: [{ label: "Contactgegevens", href: routes.contact.href }],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Contactroute",
@@ -313,7 +313,7 @@ export const pages = {
           "Voor vragen of aanmelding komt hier de gewenste contactroute te staan. Tot die tijd blijft de informatie bewust als placeholder zichtbaar.",
           placeholders.CONTACT_ROUTE_INFO.uiText,
         ],
-        links: [{ label: "Naar contact", href: routes.contact.href }],
+        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
         title: "Veelgestelde vragen",
@@ -325,8 +325,8 @@ export const pages = {
       },
     ],
     ctas: [
-      { label: "Contact", href: routes.contact.href },
-      { label: "Privacy", href: routes.privacy.href },
+      { label: "Neem contact op", href: routes.contact.href },
+      { label: "Bekijk privacy", href: routes.privacy.href },
     ],
   },
   contact: {
@@ -421,7 +421,7 @@ export const pages = {
       },
     ],
     ctas: [
-      { label: "Contact", href: routes.contact.href },
+      { label: "Neem contact op", href: routes.contact.href },
       { label: "Praktische informatie", href: routes.praktischeInformatie.href },
     ],
   },

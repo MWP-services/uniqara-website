@@ -138,7 +138,7 @@ export const home = {
   },
   contactCta: {
     title: "Contact opnemen",
-    primaryCtaLabel: "Naar contact",
-    secondaryCtaLabel: "Praktische info",
+    primaryCtaLabel: "Neem contact op",
+    secondaryCtaLabel: "Praktische informatie",
   },
 } satisfies HomeContent;

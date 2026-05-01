@@ -88,7 +88,7 @@ export const contact = {
       "Formulierplaceholder: je bericht is niet verzonden. De echte formulierafhandeling wordt later gekoppeld.",
   },
   cta: {
-    label: "Contactgegevens volgen",
+    label: "Neem contact op",
     href: routes.contact.href,
   },
 } satisfies ContactContent;

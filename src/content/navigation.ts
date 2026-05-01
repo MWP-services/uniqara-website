@@ -8,6 +8,7 @@ export type NavigationItem = {
 export type NavigationContent = {
   main: NavigationItem[];
   footer: NavigationItem[];
+  headerCtaLabel: string;
 };
 
 // Pas hier het hoofdmenu en de footer-links aan wanneer pagina's worden toegevoegd.
@@ -18,7 +19,6 @@ export const navigation = {
     routes.hulpvragen,
     routes.werkwijze,
     routes.locatie,
-    routes.contact,
   ],
   footer: [
     routes.home,
@@ -31,4 +31,5 @@ export const navigation = {
     routes.contact,
     routes.privacy,
   ],
+  headerCtaLabel: "Neem contact op",
 } satisfies NavigationContent;

@@ -36,7 +36,7 @@ export function StructuredContentPage({
               <Link
                 key={section.title}
                 href={`#${sectionId(section)}`}
-                className="inline-flex min-h-10 items-center rounded-pill border border-border-soft bg-white px-4 py-2 text-sm font-semibold leading-snug text-brand-green transition hover:bg-brand-green-soft"
+                className="inline-flex min-h-10 items-center rounded-pill border border-border-soft bg-white px-4 py-2 text-sm font-semibold leading-snug text-brand-green transition hover:bg-brand-green-soft active:bg-accent-yellow-soft"
               >
                 {section.title}
               </Link>
