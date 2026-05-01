@@ -66,6 +66,8 @@ Sprint 6D contentpolish heeft geen nieuwe placeholderkeys toegevoegd. De belangr
 
 Sprint 7A deploymentvoorbereiding heeft geen nieuwe placeholderkeys toegevoegd. De Vercel-stappen en de melding dat deze v1 geen environment variables nodig heeft staan in `DEPLOYMENT_GUIDE.md`.
 
+Sprint 7B fallbackstates heeft geen nieuwe placeholderkeys toegevoegd. De 404-, error- en loadingcopy staat centraal in `src/content/fallbacks.ts` en gebruikt bestaande contactplaceholders waar echte contactdata nog ontbreekt.
+
 ## Belangrijkste beheerbestanden
 
 - Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
@@ -76,6 +78,7 @@ Sprint 7A deploymentvoorbereiding heeft geen nieuwe placeholderkeys toegevoegd. 
 - Technische SEO-bestanden: `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/manifest.ts`, `src/app/opengraph-image.tsx`, `src/app/twitter-image.tsx`, `src/app/icon.tsx`, `src/app/apple-icon.tsx`.
 - Homepagecopy: `src/content/home.ts`.
 - Binnenpagina's en CTA's: `src/content/pages.ts`.
+- Fallbackcopy: `src/content/fallbacks.ts`, `src/app/not-found.tsx`, `src/app/error.tsx`, `src/app/loading.tsx`.
 - Hulpvragen en aanbod: `src/content/services.ts`.
 - Contactgegevens en formulierplaceholder: `src/content/contact.ts`.
 - FAQ: `src/content/faq.ts`.

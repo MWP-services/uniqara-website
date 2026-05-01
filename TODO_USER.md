@@ -28,6 +28,7 @@
 - Controleer de rustige vertrouwensteksten in footer, contact en CTA-banden zodra de definitieve praktijktoon bekend is.
 - Gebruik `CONTENT_REVIEW.md` als korte launch-content checklist voor teksten die al sterk zijn en teksten die nog vervangen moeten worden.
 - Gebruik `DEPLOYMENT_GUIDE.md` voor GitHub/Vercel-stappen. Voor deze v1 zijn geen environment variables nodig.
+- Controleer de fallbackteksten in `src/content/fallbacks.ts` zodra echte contactgegevens en de definitieve praktijktoon bekend zijn.
 - Controleer voor livegang ook `HOMEPAGE_QA.md`, `SITE_STATUS_V1.md` en `RESPONSIVE_AUDIT.md`.
 - Controleer de mobiele weergave opnieuw zodra logo, foto's of formulierkoppeling definitief zijn vervangen.
 
