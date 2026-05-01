@@ -64,12 +64,15 @@ De JSON-LD basis staat centraal in `src/content/structuredData.ts` en wordt site
 
 Sprint 6D contentpolish heeft geen nieuwe placeholderkeys toegevoegd. De belangrijkste launch-content placeholders staan als `launchContentPlaceholderKeys` in `src/content/placeholders.ts` en worden samengevat in `CONTENT_REVIEW.md`.
 
+Sprint 7A deploymentvoorbereiding heeft geen nieuwe placeholderkeys toegevoegd. De Vercel-stappen en de melding dat deze v1 geen environment variables nodig heeft staan in `DEPLOYMENT_GUIDE.md`.
+
 ## Belangrijkste beheerbestanden
 
 - Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
 - Metadata en SEO-basis: `src/content/seo.ts`.
 - Structured data: `src/content/structuredData.ts`, `src/components/seo/StructuredData.tsx`.
 - Launch-content review: `CONTENT_REVIEW.md`.
+- Deployment: `DEPLOYMENT_GUIDE.md`.
 - Technische SEO-bestanden: `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/manifest.ts`, `src/app/opengraph-image.tsx`, `src/app/twitter-image.tsx`, `src/app/icon.tsx`, `src/app/apple-icon.tsx`.
 - Homepagecopy: `src/content/home.ts`.
 - Binnenpagina's en CTA's: `src/content/pages.ts`.
