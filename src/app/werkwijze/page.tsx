@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import { StructuredContentPage } from "@/components/pages/StructuredContentPage";
 import { pages } from "@/content/pages";
+import { pageMetadata } from "@/content/seo";
 
 const page = pages.werkwijze;
 
-export const metadata: Metadata = {
-  title: page.title,
-  description: page.description,
-};
+export const metadata = pageMetadata.werkwijze;
 
 export default function WerkwijzePage() {
   return (

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ContactFormPlaceholder } from "@/components/forms/ContactFormPlaceholder";
 import { PageCtaBand } from "@/components/pages/PageCtaBand";
 import { PageHero } from "@/components/pages/PageHero";
@@ -10,14 +9,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { contact } from "@/content/contact";
 import { pages } from "@/content/pages";
 import { routes } from "@/content/routes";
+import { pageMetadata } from "@/content/seo";
 import { site } from "@/content/site";
 
 const page = pages.contact;
 
-export const metadata: Metadata = {
-  title: page.title,
-  description: page.description,
-};
+export const metadata = pageMetadata.contact;
 
 export default function ContactPage() {
   return (

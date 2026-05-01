@@ -9,6 +9,7 @@ export type PlaceholderKey =
   | "CONTACT_FORM_HANDLER"
   | "LOCATION_ADDRESS"
   | "OWNER_NAME"
+  | "SEO_SITE_URL"
   | "TARIFFS_INFO"
   | "REIMBURSEMENT_INFO"
   | "WAITLIST_INFO"
@@ -97,6 +98,12 @@ export const placeholders = {
     uiText: "OWNER_NAME - praktijkhouder volgt",
     description: "Naam van praktijkhouder of behandelaren.",
     replaceWith: "Definitieve naam/namen en eventuele titels.",
+  },
+  SEO_SITE_URL: {
+    key: "SEO_SITE_URL",
+    uiText: "SEO_SITE_URL - definitief websitedomein volgt",
+    description: "Definitieve publieke URL voor metadata, canonical links en share-data.",
+    replaceWith: "Definitieve productie-URL, bijvoorbeeld het Vercel- of eigen domein.",
   },
   TARIFFS_INFO: {
     key: "TARIFFS_INFO",

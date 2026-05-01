@@ -10,8 +10,11 @@ import { contact } from "@/content/contact";
 import { home } from "@/content/home";
 import { pages } from "@/content/pages";
 import { routes } from "@/content/routes";
+import { pageMetadata } from "@/content/seo";
 import { services } from "@/content/services";
 import { brand } from "@/content/site";
+
+export const metadata = pageMetadata.home;
 
 export default function Home() {
   const audienceSections = pages.voorWie.sections.slice(0, 4);

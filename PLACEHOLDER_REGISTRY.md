@@ -14,6 +14,7 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `CONTACT_FORM_HANDLER` | `[CONTACT_FORM_HANDLER] Formulierverzending wordt later gekoppeld` | Formulierbackend, mailservice of CRM-koppeling | `src/content/placeholders.ts`, `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx` |
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `OWNER_NAME` | `OWNER_NAME - praktijkhouder volgt` | Naam/namen van praktijkhouder of behandelaren | `src/content/placeholders.ts` |
+| `SEO_SITE_URL` | `SEO_SITE_URL - definitief websitedomein volgt` | Definitieve publieke URL voor metadata, canonical links en share-data | `src/content/placeholders.ts`, `src/content/seo.ts` |
 | `TARIFFS_INFO` | `TARIFFS_INFO - tarieven en vergoedingen volgen` | Tarieven, vergoedingen en betaalinformatie | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `REIMBURSEMENT_INFO` | `REIMBURSEMENT_INFO - vergoedingsinformatie volgt` | Vergoedingen, verwijzing en betaalroute | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `WAITLIST_INFO` | `WAITLIST_INFO - wachttijdinformatie volgt` | Wachttijd of aanmeldstatus | `src/content/placeholders.ts`, `src/content/pages.ts` |
@@ -46,9 +47,13 @@ Sprint 4B informatiepagina's gebruiken daarnaast:
 Sprint 4C contact en privacy gebruiken daarnaast:
 `CONTACT_FORM_HANDLER`, `PRIVACY_LEGAL_TEXT`, `PRIVACY_DATA_CATEGORIES` en `PRIVACY_RIGHTS_INFO`.
 
+Sprint 6A metadata gebruikt daarnaast:
+`SEO_SITE_URL`. Canonical URLs, `metadataBase` en definitieve share-URL's worden pas gekoppeld zodra dit domein bekend is.
+
 ## Belangrijkste beheerbestanden
 
 - Algemene sitecopy: `src/content/site.ts`, `src/content/navigation.ts`, `src/content/routes.ts`.
+- Metadata en SEO-basis: `src/content/seo.ts`.
 - Homepagecopy: `src/content/home.ts`.
 - Binnenpagina's en CTA's: `src/content/pages.ts`.
 - Hulpvragen en aanbod: `src/content/services.ts`.

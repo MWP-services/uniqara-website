@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { site } from "@/content/site";
+import { rootMetadata } from "@/content/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,13 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: site.defaultTitle,
-    template: site.titleTemplate,
-  },
-  description: site.description,
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
