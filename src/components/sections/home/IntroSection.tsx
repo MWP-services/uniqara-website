@@ -29,7 +29,7 @@ export function IntroSection({
           {values.slice(0, 3).map((value) => (
             <Card key={value} className="flex flex-col p-5">
               <span className="inline-flex h-2 w-10 rounded-pill bg-accent-yellow" />
-              <h3 className="mt-4 text-lg font-semibold text-brand-green">
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
                 {value}
               </h3>
               <p className="text-support mt-3">{valueCardText}</p>

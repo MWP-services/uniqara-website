@@ -1,13 +1,31 @@
 export type RouteKey =
   | "home"
-  | "overUniqara"
+  | "wieZijnWij"
   | "voorWie"
-  | "hulpvragen"
+  | "voorWieKinderen"
+  | "voorWieJongeren"
+  | "voorWieOuders"
+  | "voorWieScholenVerwijzers"
+  | "hulpaanbod"
+  | "speltherapie"
+  | "kindertherapie"
+  | "jongerenbegeleiding"
+  | "ouderbegeleiding"
+  | "vaktherapieCreatieveTherapie"
+  | "psycholoogPedagoogBegeleiding"
   | "werkwijze"
-  | "locatie"
   | "praktischeInformatie"
+  | "praktischeAanmelden"
+  | "praktischeWachttijd"
+  | "praktischeTarievenVergoedingen"
+  | "praktischePrivacy"
+  | "praktischeAlgemeen"
+  | "praktischeFaq"
+  | "locatie"
   | "contact"
-  | "privacy";
+  | "overUniqaraLegacy"
+  | "hulpvragenLegacy"
+  | "privacyLegacy";
 
 export type RouteConfig = {
   key: RouteKey;
@@ -18,20 +36,156 @@ export type RouteConfig = {
 // Centrale routeconfig voor App Router pagina's en interne links.
 export const routes = {
   home: { key: "home", label: "Home", href: "/" },
-  overUniqara: {
-    key: "overUniqara",
-    label: "Over Uniqara",
-    href: "/over-uniqara",
+  wieZijnWij: {
+    key: "wieZijnWij",
+    label: "Wie zijn wij",
+    href: "/wie-zijn-wij",
   },
   voorWie: { key: "voorWie", label: "Voor wie", href: "/voor-wie" },
-  hulpvragen: { key: "hulpvragen", label: "Hulpvragen", href: "/hulpvragen" },
+  voorWieKinderen: {
+    key: "voorWieKinderen",
+    label: "Kinderen",
+    href: "/voor-wie/kinderen",
+  },
+  voorWieJongeren: {
+    key: "voorWieJongeren",
+    label: "Jongeren",
+    href: "/voor-wie/jongeren",
+  },
+  voorWieOuders: {
+    key: "voorWieOuders",
+    label: "Ouders / verzorgers",
+    href: "/voor-wie/ouders-verzorgers",
+  },
+  voorWieScholenVerwijzers: {
+    key: "voorWieScholenVerwijzers",
+    label: "Scholen / verwijzers",
+    href: "/voor-wie/scholen-verwijzers",
+  },
+  hulpaanbod: {
+    key: "hulpaanbod",
+    label: "Hulpaanbod",
+    href: "/hulpaanbod",
+  },
+  speltherapie: {
+    key: "speltherapie",
+    label: "Speltherapie",
+    href: "/hulpaanbod/speltherapie",
+  },
+  kindertherapie: {
+    key: "kindertherapie",
+    label: "Kindertherapie",
+    href: "/hulpaanbod/kindertherapie",
+  },
+  jongerenbegeleiding: {
+    key: "jongerenbegeleiding",
+    label: "Jongerenbegeleiding",
+    href: "/hulpaanbod/jongerenbegeleiding",
+  },
+  ouderbegeleiding: {
+    key: "ouderbegeleiding",
+    label: "Opvoedvragen / ouderbegeleiding",
+    href: "/hulpaanbod/ouderbegeleiding",
+  },
+  vaktherapieCreatieveTherapie: {
+    key: "vaktherapieCreatieveTherapie",
+    label: "Vaktherapie / creatieve therapie",
+    href: "/hulpaanbod/vaktherapie-creatieve-therapie",
+  },
+  psycholoogPedagoogBegeleiding: {
+    key: "psycholoogPedagoogBegeleiding",
+    label: "Psycholoog / pedagoog begeleiding",
+    href: "/hulpaanbod/psycholoog-pedagoog-begeleiding",
+  },
   werkwijze: { key: "werkwijze", label: "Werkwijze", href: "/werkwijze" },
-  locatie: { key: "locatie", label: "Locatie", href: "/locatie" },
   praktischeInformatie: {
     key: "praktischeInformatie",
     label: "Praktische informatie",
     href: "/praktische-informatie",
   },
+  praktischeAanmelden: {
+    key: "praktischeAanmelden",
+    label: "Aanmelden",
+    href: "/praktische-informatie/aanmelden",
+  },
+  praktischeWachttijd: {
+    key: "praktischeWachttijd",
+    label: "Wachttijd",
+    href: "/praktische-informatie/wachttijd",
+  },
+  praktischeTarievenVergoedingen: {
+    key: "praktischeTarievenVergoedingen",
+    label: "Tarieven / vergoedingen",
+    href: "/praktische-informatie/tarieven-vergoedingen",
+  },
+  praktischePrivacy: {
+    key: "praktischePrivacy",
+    label: "Privacy",
+    href: "/praktische-informatie/privacy",
+  },
+  praktischeAlgemeen: {
+    key: "praktischeAlgemeen",
+    label: "Algemene praktische informatie",
+    href: "/praktische-informatie/algemeen",
+  },
+  praktischeFaq: {
+    key: "praktischeFaq",
+    label: "FAQ",
+    href: "/praktische-informatie/faq",
+  },
+  locatie: { key: "locatie", label: "Locatie", href: "/locatie" },
   contact: { key: "contact", label: "Contact", href: "/contact" },
-  privacy: { key: "privacy", label: "Privacy", href: "/privacy" },
+  overUniqaraLegacy: {
+    key: "overUniqaraLegacy",
+    label: "Over Uniqara",
+    href: "/over-uniqara",
+  },
+  hulpvragenLegacy: {
+    key: "hulpvragenLegacy",
+    label: "Hulpvragen",
+    href: "/hulpvragen",
+  },
+  privacyLegacy: { key: "privacyLegacy", label: "Privacy", href: "/privacy" },
 } satisfies Record<RouteKey, RouteConfig>;
+
+export const primaryRoutes = [
+  routes.home,
+  routes.wieZijnWij,
+  routes.voorWie,
+  routes.hulpaanbod,
+  routes.werkwijze,
+  routes.praktischeInformatie,
+  routes.locatie,
+  routes.contact,
+] satisfies RouteConfig[];
+
+export const routeGroups = {
+  voorWie: [
+    routes.voorWieKinderen,
+    routes.voorWieJongeren,
+    routes.voorWieOuders,
+    routes.voorWieScholenVerwijzers,
+  ],
+  hulpaanbod: [
+    routes.speltherapie,
+    routes.kindertherapie,
+    routes.jongerenbegeleiding,
+    routes.ouderbegeleiding,
+    routes.vaktherapieCreatieveTherapie,
+    routes.psycholoogPedagoogBegeleiding,
+  ],
+  praktischeInformatie: [
+    routes.praktischeAanmelden,
+    routes.praktischeWachttijd,
+    routes.praktischeTarievenVergoedingen,
+    routes.praktischePrivacy,
+    routes.praktischeAlgemeen,
+    routes.praktischeFaq,
+  ],
+} satisfies Record<string, RouteConfig[]>;
+
+export const legacyRoutes = [
+  routes.overUniqaraLegacy,
+  routes.hulpvragenLegacy,
+  routes.privacyLegacy,
+] satisfies RouteConfig[];

@@ -18,10 +18,10 @@ export default function ErrorPage({ unstable_retry }: ErrorPageProps) {
       <Section variant="surface">
         <Container size="narrow">
           <Card className="text-center">
-            <p className="text-sm font-semibold uppercase text-brand-green">
+            <p className="text-sm font-semibold uppercase text-muted-foreground">
               {content.eyebrow}
             </p>
-            <h1 className="mt-4 text-3xl font-semibold text-brand-green sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-semibold text-foreground sm:text-4xl">
               {content.title}
             </h1>
             <p className="text-body mx-auto mt-4 max-w-2xl">{content.intro}</p>

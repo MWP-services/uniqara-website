@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { placeholders, type PlaceholderKey } from "@/content/placeholders";
+import type { PlaceholderKey } from "@/content/placeholders";
+import { site } from "@/content/site";
 
 type LogoPlaceholderProps = {
   className?: string;
@@ -9,9 +10,9 @@ type LogoPlaceholderProps = {
 };
 
 const sizeClasses = {
-  sm: "w-36",
-  md: "w-40 sm:w-48",
-  lg: "w-52 sm:w-64",
+  sm: "h-12 w-12 sm:h-14 sm:w-14",
+  md: "h-14 w-14 sm:h-20 sm:w-20",
+  lg: "h-24 w-24 sm:h-32 sm:w-32",
 };
 
 export function LogoPlaceholder({
@@ -20,16 +21,14 @@ export function LogoPlaceholder({
   placeholderKey = "LOGO_PRIMARY",
   size = "md",
 }: LogoPlaceholderProps) {
-  const placeholder = placeholders[placeholderKey];
-
   return (
     <Image
-      src="/placeholders/logo-placeholder.svg"
-      alt={placeholder.uiText}
-      width={320}
-      height={96}
+      src="/placeholders/logo.png"
+      alt={placeholderKey === "LOGO_PRIMARY" ? site.name : `${site.name} logo`}
+      width={1254}
+      height={1254}
       priority={priority}
-      className={`h-auto ${sizeClasses[size]} ${className}`}
+      className={`object-contain ${sizeClasses[size]} ${className}`}
     />
   );
 }

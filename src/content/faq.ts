@@ -1,5 +1,3 @@
-import { placeholders } from "./placeholders";
-
 export type FaqItem = {
   question: string;
   answer: string;
@@ -11,7 +9,6 @@ export type FaqContent = {
   items: FaqItem[];
 };
 
-// Vervang deze FAQ's later door definitieve antwoorden op veelgestelde vragen.
 export const faq = {
   heading: "Veelgestelde vragen",
   intro:
@@ -20,16 +17,17 @@ export const faq = {
     {
       question: "Voor wie is Uniqara bedoeld?",
       answer:
-        "Uniqara richt zich op kinderen, jongeren, ouders en gezinnen. De exacte doelgroep wordt later verder ingevuld.",
+        "Uniqara richt zich op kind en jeugd, volwassenen en relatievragen.",
     },
     {
       question: "Hoe kan ik mij aanmelden?",
-      answer: placeholders.FAQ_CONTENT.uiText,
+      answer:
+        "Aanmelden kan via het formulier op de contactpagina. Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in.",
     },
     {
       question: "Waar vindt de begeleiding plaats?",
       answer:
-        "De praktijk krijgt een plek bij De Hooiberg, in een rustige en groene omgeving.",
+        "Uniqara is gevestigd bij De Hooiberg. De volledige adresgegevens, routebeschrijving en parkeerinformatie worden nog aangevuld.",
     },
   ],
 } satisfies FaqContent;

@@ -2,10 +2,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { Section } from "@/components/ui/Section";
 import { PageCtaBand } from "@/components/pages/PageCtaBand";
 import { PageHero } from "@/components/pages/PageHero";
-import type { PageAside, PageContent, PageSection } from "@/content/pages";
+import type { PageAside, PageContent, PageIllustration, PageSection } from "@/content/pages";
 
 type StructuredContentPageProps = {
   page: PageContent;
@@ -17,6 +18,30 @@ function sectionId(section: PageSection) {
   return section.title.toLowerCase().replaceAll(" ", "-").replaceAll("/", "-");
 }
 
+const toneClasses = {
+  coral: "border-accent-coral/45 bg-accent-coral-soft",
+  neutral: "border-border-soft bg-card",
+  turquoise: "border-brand-green/35 bg-brand-green-soft",
+  yellow: "border-accent-yellow/70 bg-accent-yellow-soft",
+};
+
+function SectionIllustration({
+  illustration,
+}: {
+  illustration: PageIllustration;
+}) {
+  return (
+    <IllustrationFrame
+      alt={illustration.alt}
+      className={`mt-5 aspect-[4/3] ${toneClasses[illustration.tone ?? "neutral"]}`}
+      imageClassName="object-contain p-4 sm:p-5"
+      motion="up"
+      sizes="(min-width: 768px) 44vw, 100vw"
+      src={illustration.src}
+    />
+  );
+}
+
 export function StructuredContentPage({
   page,
   aside,
@@ -24,19 +49,24 @@ export function StructuredContentPage({
 }: StructuredContentPageProps) {
   return (
     <main className="page-shell">
-      <PageHero aside={aside} intro={page.intro} title={page.title} />
+      <PageHero
+        aside={aside}
+        illustration={page.illustration}
+        intro={page.intro}
+        title={page.title}
+      />
 
       <section className="border-b border-border-soft bg-surface py-4 sm:py-5">
         <Container>
           <nav
             aria-label={`Inhoud van ${page.title}`}
-            className="flex flex-wrap gap-2"
+            className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0"
           >
             {page.sections.map((section) => (
               <Link
                 key={section.title}
                 href={`#${sectionId(section)}`}
-                className="inline-flex min-h-10 items-center rounded-pill border border-border-soft bg-white px-4 py-2 text-sm font-semibold leading-snug text-brand-green transition hover:bg-brand-green-soft active:bg-accent-yellow-soft"
+                className="inline-flex min-h-10 shrink-0 items-center rounded-pill border border-border-soft bg-card px-4 py-2 text-sm font-semibold leading-snug text-foreground transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft"
               >
                 {section.title}
               </Link>
@@ -46,7 +76,7 @@ export function StructuredContentPage({
       </section>
 
       <Section variant="surface">
-        <Container className="grid gap-4 md:grid-cols-2 lg:gap-5">
+        <Container className="grid gap-3 sm:gap-4 md:grid-cols-2 lg:gap-5">
           {page.sections.map((section, index) => (
             <Card
               key={section.title}
@@ -68,6 +98,9 @@ export function StructuredContentPage({
                   </p>
                 ))}
               </div>
+              {section.illustration ? (
+                <SectionIllustration illustration={section.illustration} />
+              ) : null}
               {section.links ? (
                 <nav
                   aria-label={`Vervolglinks bij ${section.title}`}

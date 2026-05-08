@@ -15,8 +15,8 @@ export default function OpenGraphImage() {
     (
       <div
         style={{
-          background: "#ffffff",
-          color: "#111311",
+          background: "#FDF6EC",
+          color: "#3F4A4A",
           display: "flex",
           flexDirection: "column",
           height: "100%",
@@ -28,9 +28,9 @@ export default function OpenGraphImage() {
         <div
           style={{
             alignItems: "center",
-            border: "2px solid #dfe8df",
+            border: "2px solid #63CFC6",
             borderRadius: "18px",
-            color: "#2f7652",
+            color: "#3F4A4A",
             display: "flex",
             fontSize: 30,
             fontWeight: 700,
@@ -50,7 +50,7 @@ export default function OpenGraphImage() {
         >
           <p
             style={{
-              color: "#2f7652",
+              color: "#3F4A4A",
               fontSize: 30,
               fontWeight: 700,
               margin: 0,
@@ -61,7 +61,7 @@ export default function OpenGraphImage() {
           </p>
           <h1
             style={{
-              color: "#2f7652",
+              color: "#3F4A4A",
               fontSize: 72,
               lineHeight: 1.05,
               margin: 0,
@@ -72,7 +72,7 @@ export default function OpenGraphImage() {
           </h1>
           <p
             style={{
-              color: "#4f5a53",
+              color: "#536060",
               fontSize: 32,
               lineHeight: 1.35,
               margin: 0,
@@ -91,7 +91,7 @@ export default function OpenGraphImage() {
         >
           <div
             style={{
-              background: "#eaf3eb",
+              background: "#63CFC6",
               borderRadius: 16,
               height: 74,
               width: 220,
@@ -99,7 +99,7 @@ export default function OpenGraphImage() {
           />
           <div
             style={{
-              background: "#fff8df",
+              background: "#F8E98E",
               borderRadius: 16,
               height: 74,
               width: 220,
@@ -107,7 +107,7 @@ export default function OpenGraphImage() {
           />
           <div
             style={{
-              background: "#eef5ee",
+              background: "#F6A38C",
               borderRadius: 16,
               height: 74,
               width: 220,

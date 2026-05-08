@@ -25,7 +25,7 @@ export default function ContactPage() {
         <Container className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-6">
             <Card>
-              <p className="text-sm font-semibold uppercase text-brand-green">
+              <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Contactgegevens
               </p>
               <h2 className="mt-3 text-2xl">{site.name}</h2>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             </Card>
 
             <Card>
-              <p className="text-sm font-semibold uppercase text-brand-green">
+              <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Locatie
               </p>
               <h2 className="mt-3 text-2xl">{contact.address.name}</h2>

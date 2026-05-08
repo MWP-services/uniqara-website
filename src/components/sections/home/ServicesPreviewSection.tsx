@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { HelpQuestion, ServiceItem } from "@/content/services";
@@ -31,14 +32,22 @@ export function ServicesPreviewSection({
   questionLinkLabel,
 }: ServicesPreviewSectionProps) {
   return (
-    <Section id="hulpvragen">
+    <Section id="hulpaanbod">
       <Container>
         <SectionHeading intro={intro} title={title} />
+        <IllustrationFrame
+          alt="Zandbakillustratie bij spel, ontdekken en het verkennen van het hulpaanbod."
+          className="mt-8 aspect-[4/3] border-accent-yellow/70 bg-[linear-gradient(135deg,rgba(248,233,142,0.42),rgba(253,246,236,0.78),rgba(246,163,140,0.14))] sm:aspect-[16/7]"
+          imageClassName="object-contain p-4 sm:p-6"
+          motion="up"
+          sizes="(min-width: 1024px) 72rem, 100vw"
+          src="/assets/ZANDBAK.webp"
+        />
         <div className="mt-8 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
             {services.map((item) => (
               <Card key={item.title} className="flex flex-col">
-                <h3 className="text-xl font-semibold text-brand-green">
+                <h3 className="text-xl font-semibold text-foreground">
                   {item.title}
                 </h3>
                 <p className="text-body mt-4">{item.summary}</p>

@@ -25,22 +25,22 @@ export const services = {
     "Een rustig overzicht helpt bezoekers herkennen welke ondersteuning mogelijk passend kan zijn.",
   items: [
     {
-      title: "Begeleiding",
+      title: "Kind en jeugd",
       summary:
-        "Ruimte om stil te staan bij vragen, patronen en wat iemand nodig heeft.",
-      href: routes.hulpvragen.href,
+        "Ondersteuning voor kinderen, jongeren en ouders bij emoties, gedrag, ontwikkeling of spanning.",
+      href: routes.kindertherapie.href,
     },
     {
-      title: "Onderzoek",
+      title: "Volwassenen",
       summary:
-        "Zorgvuldig kijken naar gedrag, ontwikkeling en de context eromheen.",
-      href: routes.hulpvragen.href,
+        "Begeleiding bij persoonlijke vragen, spanning, vastlopen, verlies, onzekerheid of andere hulpvragen.",
+      href: routes.psycholoogPedagoogBegeleiding.href,
     },
     {
-      title: "Behandeling",
+      title: "Relatie",
       summary:
-        "Een zorgvuldig traject dat aansluit bij leeftijd, gezinssituatie en hulpvraag.",
-      href: routes.hulpvragen.href,
+        "EFT-relatietherapie voor partners die willen werken aan verbinding, patronen en communicatie.",
+      href: routes.hulpaanbod.href,
     },
   ],
   helpQuestions: [

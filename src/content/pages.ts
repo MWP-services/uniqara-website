@@ -1,7 +1,6 @@
-import { placeholders } from "./placeholders";
 import { contact } from "./contact";
-import { routes, type RouteKey } from "./routes";
-import { services } from "./services";
+import { placeholders } from "./placeholders";
+import { routes, routeGroups, type RouteKey } from "./routes";
 
 export type PageLink = {
   label: string;
@@ -11,7 +10,14 @@ export type PageLink = {
 export type PageSection = {
   title: string;
   body: string[];
+  illustration?: PageIllustration;
   links?: PageLink[];
+};
+
+export type PageIllustration = {
+  alt: string;
+  src: string;
+  tone?: "turquoise" | "yellow" | "coral" | "neutral";
 };
 
 export type PageAside = {
@@ -26,403 +32,771 @@ export type PageContent = {
   description: string;
   intro: string;
   aside?: PageAside;
+  illustration?: PageIllustration;
   showStepNumbers?: boolean;
   sections: PageSection[];
   ctas: PageLink[];
 };
 
-export type PagesContent = {
-  overUniqara: PageContent;
-  voorWie: PageContent;
-  hulpvragen: PageContent;
-  werkwijze: PageContent;
-  locatie: PageContent;
-  praktischeInformatie: PageContent;
-  contact: PageContent;
-  privacy: PageContent;
+export type PageRouteKey = Exclude<
+  RouteKey,
+  "home" | "overUniqaraLegacy" | "hulpvragenLegacy" | "privacyLegacy"
+>;
+
+const contactCta = { label: "Neem contact op", href: routes.contact.href };
+const practicalCta = {
+  label: "Praktische informatie",
+  href: routes.praktischeInformatie.href,
 };
 
-// Pagina-inhoud voor de App Router routes. Pas hier tekst aan, niet in de routebestanden.
 export const pages = {
-  overUniqara: {
-    routeKey: "overUniqara",
-    title: "Over Uniqara",
+  wieZijnWij: {
+    routeKey: "wieZijnWij",
+    title: "Wie zijn wij",
     description:
-      "Maak kennis met Uniqara: een rustige psychologiepraktijk met aandacht voor veiligheid, vertrouwen en professionele begeleiding.",
+      "Maak kennis met Uniqara: visie, missie, behandelaren, kernwaarden en persoonlijke benadering.",
     intro:
-      "Uniqara is een plek waar zorgvuldigheid en warmte samenkomen. De persoonlijke praktijkdetails worden later rustig aangevuld.",
+      "Uniqara biedt een rustige, professionele praktijkplek waar aandacht, veiligheid en groei centraal staan.",
+    illustration: {
+      alt: "Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding.",
+      src: "/assets/DIEREN.webp",
+      tone: "turquoise",
+    },
     aside: {
-      label: "Sfeerbeeld",
-      title: "Rust, groen en aandacht",
-      text: placeholders.PRACTICE_PHOTOS.uiText,
+      label: "Praktijk",
+      title: "Uniqara",
+      text: contact.ownerName,
     },
     sections: [
       {
-        title: "Visie",
+        title: "Visie en missie",
         body: [
-          "Bij Uniqara staat de mens achter de hulpvraag centraal. Er is aandacht voor wat iemand meemaakt, nodig heeft en al in zich draagt.",
-          "De begeleiding is helder, zorgvuldig en afgestemd op de situatie van kind, jongere, ouder of gezin.",
+          "Uniqara wil kinderen, jongeren, volwassenen en relaties ondersteunen bij vragen die aandacht, zorgvuldigheid en professionele begeleiding vragen.",
+          "De begeleiding is gericht op veiligheid, vertrouwen, groei en het ontdekken van nieuwe mogelijkheden.",
         ],
-        links: [
-          { label: "Voor wie", href: routes.voorWie.href },
-          { label: "Werkwijze", href: routes.werkwijze.href },
+        links: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }],
+      },
+      {
+        title: "Team en behandelaren",
+        body: [
+          contact.ownerName,
+          placeholders.TEAM_DETAILS.uiText,
+        ],
+        links: [{ label: "Contact", href: routes.contact.href }],
+      },
+      {
+        title: "Kernwaarden",
+        body: [
+          "Rust, aandacht, vertrouwen, professionaliteit en groei vormen de basis van de praktijk.",
+          "De communicatie blijft helder en overzichtelijk, zodat bezoekers snel weten waar zij terecht kunnen.",
         ],
       },
       {
         title: "Persoonlijke benadering",
         body: [
-          "Er wordt rustig gekeken naar de vraag, de context en wat helpend kan zijn. Samen zoeken we naar taal, richting en passende ondersteuning.",
-          placeholders.OWNER_NAME.uiText,
+          "Iedere hulpvraag wordt in context bekeken. Samen wordt gezocht naar wat passend, haalbaar en helpend is.",
+          "Bij kinderen en jongeren is er waar nodig aandacht voor ouders, verzorgers, school en verwijzers.",
         ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
-      },
-      {
-        title: "Sfeer en kernwaarden",
-        body: [
-          "De uitstraling van de praktijk is rustig, veilig en professioneel. Natuur, vertrouwen en aandacht vormen belangrijke uitgangspunten.",
-          "De landelijke locatie en de Hooiberg krijgen later een zichtbare plek met echte fotografie.",
-        ],
-        links: [{ label: "Bekijk locatie", href: routes.locatie.href }],
+        links: [{ label: "Lees de werkwijze", href: routes.werkwijze.href }],
       },
     ],
-    ctas: [
-      { label: "Bekijk voor wie", href: routes.voorWie.href },
-      { label: "Lees over de werkwijze", href: routes.werkwijze.href },
-    ],
+    ctas: [contactCta, { label: "Voor wie", href: routes.voorWie.href }],
   },
+
   voorWie: {
     routeKey: "voorWie",
     title: "Voor wie",
     description:
-      "Uniqara biedt ondersteuning voor kinderen, jongeren, ouders en gezinnen, met ruimte voor afstemming met school of verwijzers.",
+      "Overzicht van doelgroepen waarvoor Uniqara begeleiding kan bieden.",
     intro:
-      "Iedere hulpvraag heeft een eigen verhaal. Deze pagina geeft een eerste beeld van de doelgroepen waarvoor Uniqara ondersteuning kan bieden.",
-    aside: {
-      label: "Doelgroepen",
-      title: "Samen kijken wat past",
-      text: "De exacte doelgroepafbakening wordt later verder afgestemd met de praktijk.",
+      "Uniqara is er voor kinderen, jongeren, ouders/verzorgers en waar passend voor scholen of verwijzers.",
+    illustration: {
+      alt: "Dierenillustratie bij doelgroepen en verbinding.",
+      src: "/assets/DIEREN.webp",
+      tone: "turquoise",
     },
     sections: [
       {
         title: "Kinderen",
         body: [
-          "Voor kinderen kan begeleiding helpen wanneer emoties, gedrag, ontwikkeling of spanning vragen oproepen.",
-          "Er is aandacht voor veiligheid, tempo en de omgeving waarin het kind leeft.",
+          "Voor kinderen die vastlopen in emoties, gedrag, ontwikkeling, spanning of ingrijpende ervaringen.",
+          "Er wordt rustig gekeken naar wat het kind laat zien en wat helpend kan zijn.",
         ],
-        links: [
-          { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
-          { label: "Werkwijze", href: routes.werkwijze.href },
-        ],
+        links: [{ label: "Lees meer", href: routes.voorWieKinderen.href }],
       },
       {
         title: "Jongeren",
         body: [
-          "Jongeren kunnen terecht wanneer zij vastlopen, veel druk ervaren of behoefte hebben aan iemand die rustig meedenkt.",
-          "De begeleiding sluit aan bij leeftijd, zelfstandigheid en wat de jongere zelf belangrijk vindt.",
+          "Voor jongeren die druk ervaren, onzeker zijn, vastlopen of behoefte hebben aan iemand die meedenkt.",
+          "De begeleiding sluit aan bij leeftijd, zelfstandigheid en hulpvraag.",
         ],
-        links: [{ label: "Bekijk hulpvragen", href: routes.hulpvragen.href }],
+        links: [{ label: "Lees meer", href: routes.voorWieJongeren.href }],
       },
       {
-        title: "Ouders en verzorgers",
+        title: "Ouders / verzorgers",
         body: [
-          "Ouders en verzorgers worden waar passend betrokken. Hun kennis van het kind en de thuissituatie is waardevol in het traject.",
-          "Samen ontstaat meer zicht op wat er speelt en welke ondersteuning helpend kan zijn.",
+          "Voor ouders en verzorgers met vragen over opvoeding, gedrag, ontwikkeling of afstemming thuis en op school.",
+          "Samen ontstaat meer zicht op wat er speelt en welke steun passend is.",
         ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
+        links: [{ label: "Lees meer", href: routes.voorWieOuders.href }],
       },
       {
-        title: "Scholen en verwijzers",
+        title: "Scholen / verwijzers",
         body: [
-          "Afstemming met scholen of verwijzers kan later onderdeel worden van de werkwijze.",
+          "Voor scholen, huisartsen en andere verwijzers komt hier een heldere verwijzersroute.",
           placeholders.REFERRER_SCHOOL_INFO.uiText,
         ],
-        links: [{ label: "Praktische informatie", href: routes.praktischeInformatie.href }],
+        links: [
+          { label: "Lees meer", href: routes.voorWieScholenVerwijzers.href },
+        ],
       },
     ],
-    ctas: [
-      { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
-      { label: "Neem contact op", href: routes.contact.href },
-    ],
+    ctas: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }, contactCta],
   },
-  hulpvragen: {
-    routeKey: "hulpvragen",
-    title: "Hulpvragen",
-    description:
-      "Een rustig overzicht van thema's waarmee kinderen, jongeren en ouders bij Uniqara terecht kunnen.",
+
+  voorWieKinderen: {
+    routeKey: "voorWieKinderen",
+    title: "Kinderen",
+    description: "Informatie voor kinderen en hun ouders/verzorgers.",
     intro:
-      "Hulpvragen kunnen klein beginnen of al langer spelen. Uniqara kijkt zorgvuldig mee en houdt taal zo helder en licht mogelijk.",
-    aside: {
-      label: "Overzicht",
-      title: "Zacht verkennen wat speelt",
-      text: "De thema's op deze pagina zijn bedoeld als herkenning en startpunt. De exacte vraag wordt altijd rustig samen bekeken.",
+      "Kinderen laten vaak via gedrag, spel of emoties zien dat er iets speelt. Uniqara kijkt zorgvuldig mee.",
+    illustration: {
+      alt: "Zandbakillustratie bij spel en kindgerichte begeleiding.",
+      src: "/assets/ZANDBAK.webp",
+      tone: "yellow",
     },
-    sections: services.helpQuestions.map((question) => ({
-      title: question.title,
-      body: [question.description],
-      links: [
-        { label: "Lees over de werkwijze", href: routes.werkwijze.href },
-        { label: "Neem contact op", href: routes.contact.href },
-      ],
-    })),
-    ctas: [
-      { label: "Voor wie is Uniqara", href: routes.voorWie.href },
-      { label: "Neem contact op", href: routes.contact.href },
+    sections: [
+      {
+        title: "Wanneer kan begeleiding helpen?",
+        body: [
+          "Bij spanning, boosheid, verdriet, onzekerheid, prikkelgevoeligheid, nare ervaringen of veranderingen thuis of op school.",
+          "De definitieve voorbeelden en exclusiecriteria worden nog aangevuld.",
+        ],
+        links: [{ label: "Speltherapie", href: routes.speltherapie.href }],
+      },
+      {
+        title: "Samen met ouders",
+        body: [
+          "Ouders of verzorgers worden passend betrokken. Hun kennis van het kind is belangrijk.",
+          "Er wordt afgestemd wat het kind nodig heeft en hoe de omgeving kan ondersteunen.",
+        ],
+      },
     ],
+    ctas: [{ label: "Kindertherapie", href: routes.kindertherapie.href }, contactCta],
   },
+
+  voorWieJongeren: {
+    routeKey: "voorWieJongeren",
+    title: "Jongeren",
+    description: "Informatie voor jongeren die begeleiding zoeken.",
+    intro:
+      "Jongeren kunnen terecht wanneer zij vastlopen, veel druk ervaren of behoefte hebben aan overzicht.",
+    illustration: {
+      alt: "Blokkenillustratie bij bouwen aan overzicht en ontwikkeling.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "turquoise",
+    },
+    sections: [
+      {
+        title: "Hulpvragen",
+        body: [
+          "Denk aan piekeren, onzekerheid, somberheid, spanning, schooldruk, prikkels, verlies of vragen rond identiteit.",
+          "Samen wordt gekeken welke begeleiding past bij de situatie.",
+        ],
+        links: [
+          { label: "Jongerenbegeleiding", href: routes.jongerenbegeleiding.href },
+        ],
+      },
+      {
+        title: "Eigen tempo",
+        body: [
+          "Er is ruimte voor de stem van de jongere zelf. Tempo, vertrouwen en duidelijkheid zijn belangrijk.",
+          "Waar nodig worden ouders of verzorgers zorgvuldig betrokken.",
+        ],
+      },
+    ],
+    ctas: [{ label: "Werkwijze", href: routes.werkwijze.href }, contactCta],
+  },
+
+  voorWieOuders: {
+    routeKey: "voorWieOuders",
+    title: "Ouders / verzorgers",
+    description: "Informatie voor ouders en verzorgers.",
+    intro:
+      "Ouders en verzorgers kunnen terecht met vragen over opvoeding, gedrag, emoties of ontwikkeling.",
+    illustration: {
+      alt: "Dierenillustratie bij samen kijken naar veiligheid en verbinding.",
+      src: "/assets/DIEREN.webp",
+      tone: "turquoise",
+    },
+    sections: [
+      {
+        title: "Opvoedvragen",
+        body: [
+          "Soms is het helpend om samen te onderzoeken wat gedrag of emoties van een kind kunnen betekenen.",
+          "De begeleiding kan bestaan uit gesprekken, afstemming en praktische richting.",
+        ],
+        links: [{ label: "Ouderbegeleiding", href: routes.ouderbegeleiding.href }],
+      },
+      {
+        title: "Samen kijken wat past",
+        body: [
+          "Er wordt gekeken naar het kind, het gezin en de context eromheen.",
+          "Als Uniqara niet passend is, kan worden meegedacht over een andere route.",
+        ],
+      },
+    ],
+    ctas: [contactCta, practicalCta],
+  },
+
+  voorWieScholenVerwijzers: {
+    routeKey: "voorWieScholenVerwijzers",
+    title: "Scholen / verwijzers",
+    description: "Placeholderinformatie voor scholen en verwijzers.",
+    intro:
+      "Deze pagina krijgt later concrete informatie over verwijzing, afstemming en samenwerking.",
+    sections: [
+      {
+        title: "Verwijzen",
+        body: [
+          placeholders.REFERRER_SCHOOL_INFO.uiText,
+          "Vermeld bij contact zo concreet mogelijk de hulpvraag, leeftijd, woonplaats en betrokkenen.",
+        ],
+        links: [{ label: "Contact", href: routes.contact.href }],
+      },
+      {
+        title: "Afstemming",
+        body: [
+          "Afstemming met school of verwijzers gebeurt alleen wanneer dit passend is en met de juiste toestemming.",
+          "Definitieve afspraken rond bereikbaarheid en terugkoppeling worden nog toegevoegd.",
+        ],
+      },
+    ],
+    ctas: [contactCta, practicalCta],
+  },
+
+  hulpaanbod: {
+    routeKey: "hulpaanbod",
+    title: "Hulpaanbod",
+    description:
+      "Overzicht van het hulpaanbod van Uniqara met doorkliks naar losse thema's.",
+    intro:
+      "Het hulpaanbod is opgezet als overzichtspagina. Per onderdeel volgt een aparte pagina met meer uitleg.",
+    illustration: {
+      alt: "Speeltreinillustratie als beeld voor de route door het hulpaanbod.",
+      src: "/assets/SPELTREIN.webp",
+      tone: "coral",
+    },
+    sections: routeGroups.hulpaanbod.map((route) => ({
+      title: route.label,
+      body: [
+        `Korte introductie bij ${route.label.toLowerCase()}. ${placeholders.SERVICE_DETAIL_CONTENT.uiText}`,
+      ],
+      links: [{ label: "Lees meer", href: route.href }],
+    })),
+    ctas: [{ label: "Voor wie", href: routes.voorWie.href }, contactCta],
+  },
+
+  speltherapie: {
+    routeKey: "speltherapie",
+    title: "Speltherapie",
+    description: "Placeholderpagina over speltherapie bij Uniqara.",
+    intro:
+      "Speltherapie kan kinderen helpen om gevoelens, ervaringen en gedrag via spel te verkennen.",
+    illustration: {
+      alt: "Zandbakillustratie bij speltherapie.",
+      src: "/assets/ZANDBAK.webp",
+      tone: "yellow",
+    },
+    sections: [
+      {
+        title: "Wat is speltherapie?",
+        body: [
+          "Spel is voor kinderen een natuurlijke taal. In spel kan zichtbaar worden wat een kind bezighoudt.",
+          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+        ],
+        illustration: {
+          alt: "Zandbakillustratie bij speltherapie.",
+          src: "/assets/ZANDBAK.webp",
+          tone: "yellow",
+        },
+      },
+      {
+        title: "Voor wie",
+        body: [
+          "Deze pagina sluit vooral aan bij kinderen en ouders/verzorgers.",
+          "Bij aanmelding wordt samen gekeken of speltherapie passend is.",
+        ],
+        links: [{ label: "Kinderen", href: routes.voorWieKinderen.href }],
+      },
+    ],
+    ctas: [contactCta, { label: "Alle hulpaanbod", href: routes.hulpaanbod.href }],
+  },
+
+  kindertherapie: {
+    routeKey: "kindertherapie",
+    title: "Kindertherapie",
+    description: "Placeholderpagina over kindertherapie.",
+    intro:
+      "Kindertherapie richt zich op wat een kind nodig heeft om weer meer rust, vertrouwen of grip te ervaren.",
+    illustration: {
+      alt: "Blokkenillustratie bij ontwikkeling en groei.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "turquoise",
+    },
+    sections: [
+      {
+        title: "Mogelijke hulpvragen",
+        body: [
+          "Emoties, gedrag, spanning, onzekerheid, prikkels, ingrijpende gebeurtenissen of ontwikkeling kunnen aanleiding zijn.",
+          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+        ],
+      },
+      {
+        title: "Betrokkenheid van ouders",
+        body: [
+          "Ouders/verzorgers worden waar passend betrokken bij intake, afstemming en evaluatie.",
+        ],
+      },
+    ],
+    ctas: [{ label: "Kinderen", href: routes.voorWieKinderen.href }, contactCta],
+  },
+
+  jongerenbegeleiding: {
+    routeKey: "jongerenbegeleiding",
+    title: "Jongerenbegeleiding",
+    description: "Placeholderpagina over begeleiding voor jongeren.",
+    intro:
+      "Jongerenbegeleiding biedt ruimte om te ordenen wat speelt en stap voor stap verder te kijken.",
+    illustration: {
+      alt: "Speeltreinillustratie bij stap voor stap verder kijken.",
+      src: "/assets/SPELTREIN.webp",
+      tone: "coral",
+    },
+    sections: [
+      {
+        title: "Thema's",
+        body: [
+          "Denk aan schooldruk, piekeren, spanning, zelfbeeld, verlies, prikkels of vastlopen in dagelijkse situaties.",
+        ],
+      },
+      {
+        title: "Afstemming",
+        body: [
+          "De begeleiding wordt afgestemd op leeftijd, zelfstandigheid en de rol van ouders/verzorgers.",
+        ],
+      },
+    ],
+    ctas: [{ label: "Jongeren", href: routes.voorWieJongeren.href }, contactCta],
+  },
+
+  ouderbegeleiding: {
+    routeKey: "ouderbegeleiding",
+    title: "Opvoedvragen / ouderbegeleiding",
+    description: "Placeholderpagina over opvoedvragen en ouderbegeleiding.",
+    intro:
+      "Ouderbegeleiding helpt om gedrag, emoties en behoeften van een kind beter te begrijpen.",
+    illustration: {
+      alt: "Dierenillustratie bij verbinding tussen ouders en kind.",
+      src: "/assets/DIEREN.webp",
+      tone: "turquoise",
+    },
+    sections: [
+      {
+        title: "Vragen van ouders",
+        body: [
+          "Ouders kunnen vragen hebben over gedrag, grenzen, emoties, prikkels, school of gezinsdynamiek.",
+        ],
+      },
+      {
+        title: "Praktisch en zorgvuldig",
+        body: [
+          "Samen wordt gezocht naar een passende manier om het kind en de omgeving te ondersteunen.",
+        ],
+      },
+    ],
+    ctas: [{ label: "Ouders / verzorgers", href: routes.voorWieOuders.href }, contactCta],
+  },
+
+  vaktherapieCreatieveTherapie: {
+    routeKey: "vaktherapieCreatieveTherapie",
+    title: "Vaktherapie / creatieve therapie",
+    description: "Placeholderpagina over vaktherapie en creatieve therapie.",
+    intro:
+      "Deze pagina wordt later gevuld met definitieve informatie over creatieve of ervaringsgerichte werkvormen.",
+    illustration: {
+      alt: "Schilderillustratie bij creatieve en ervaringsgerichte werkvormen.",
+      src: "/assets/VERVEN.webp",
+      tone: "coral",
+    },
+    sections: [
+      {
+        title: "Werkvormen",
+        body: [
+          "Creatieve of ervaringsgerichte werkvormen kunnen helpen wanneer praten alleen niet genoeg is.",
+          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+        ],
+        illustration: {
+          alt: "Schilderillustratie bij creatieve werkvormen.",
+          src: "/assets/VERVEN.webp",
+          tone: "coral",
+        },
+      },
+    ],
+    ctas: [{ label: "Alle hulpaanbod", href: routes.hulpaanbod.href }, contactCta],
+  },
+
+  psycholoogPedagoogBegeleiding: {
+    routeKey: "psycholoogPedagoogBegeleiding",
+    title: "Psycholoog / pedagoog begeleiding",
+    description: "Placeholderpagina over psychologische en pedagogische begeleiding.",
+    intro:
+      "Psychologische en pedagogische begeleiding richt zich op inzicht, ontwikkeling, gedrag, emoties en context.",
+    illustration: {
+      alt: "Blokkenillustratie bij psychologische en pedagogische ontwikkeling.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "turquoise",
+    },
+    sections: [
+      {
+        title: "Begeleiding",
+        body: [
+          "De begeleiding kan bestaan uit gesprekken, observatie, psycho-educatie, oudergesprekken of afstemming.",
+          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+        ],
+      },
+    ],
+    ctas: [{ label: "Werkwijze", href: routes.werkwijze.href }, contactCta],
+  },
+
   werkwijze: {
     routeKey: "werkwijze",
     title: "Werkwijze",
     description:
-      "Lees hoe een traject bij Uniqara rustig en zorgvuldig kan worden opgebouwd, van kennismaking tot evaluatie.",
+      "Lees hoe een traject bij Uniqara is opgebouwd, van aanmelden tot evaluatie.",
     intro:
-      "Een duidelijke werkwijze geeft houvast. De precieze invulling wordt afgestemd op de hulpvraag en de situatie.",
-    aside: {
-      label: "Aanmelden",
-      title: "Eerste stap",
-      text: placeholders.REGISTRATION_PROCESS.uiText,
+      "Een duidelijke werkwijze geeft houvast. De precieze invulling wordt afgestemd op hulpvraag en situatie.",
+    illustration: {
+      alt: "Speeltreinillustratie bij de stappen van de werkwijze.",
+      src: "/assets/SPELTREIN.webp",
+      tone: "coral",
     },
     showStepNumbers: true,
     sections: [
       {
-        title: "Kennismaking",
+        title: "Aanmelden",
         body: [
-          "Een eerste contactmoment is bedoeld om kort te verkennen wat er speelt en of Uniqara passend kan zijn.",
-          "Er is ruimte voor praktische vragen en een eerste indruk van de hulpvraag.",
+          "Aanmelden kan via het aanmeldformulier of door contact op te nemen.",
+          "Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in.",
         ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
+        illustration: {
+          alt: "Speeltreinillustratie bij de start van het traject.",
+          src: "/assets/SPELTREIN.webp",
+          tone: "coral",
+        },
+        links: [{ label: "Aanmelden", href: routes.praktischeAanmelden.href }],
       },
       {
-        title: "Intake",
+        title: "Kennismaking / intake",
         body: [
-          "Tijdens de intake wordt de hulpvraag zorgvuldig besproken. Er is aandacht voor achtergrond, verwachtingen en praktische afspraken.",
-          "Waar passend worden ouders of verzorgers betrokken bij het verhelderen van de vraag.",
+          "Tijdens de kennismaking of intake wordt de hulpvraag zorgvuldig verkend.",
+          "Er is aandacht voor achtergrond, verwachtingen en praktische afspraken.",
         ],
-        links: [{ label: "Voor wie", href: routes.voorWie.href }],
       },
       {
-        title: "Traject en begeleiding",
+        title: "Begeleiding / behandeltraject",
         body: [
-          "Daarna volgt een traject dat aansluit bij de vraag. Dit kan bestaan uit begeleiding, onderzoek, behandeling of oudergesprekken.",
-          "Het tempo en de vorm worden afgestemd op wat veilig, haalbaar en helpend is.",
+          "Daarna volgt een traject dat aansluit bij de vraag. Dit kan bestaan uit begeleiding, behandeling, oudergesprekken of afstemming.",
         ],
-        links: [{ label: "Hulpvragen", href: routes.hulpvragen.href }],
+        illustration: {
+          alt: "Blokkenillustratie bij bouwen aan begeleiding en ontwikkeling.",
+          src: "/assets/BLOKKEN.webp",
+          tone: "turquoise",
+        },
       },
       {
-        title: "Evaluatie en afstemming",
+        title: "Evaluatie / afstemming",
         body: [
-          "Regelmatig wordt gekeken wat werkt, wat bijgesteld moet worden en welke afstemming met ouders, school of verwijzers helpend is.",
-          "Zo blijft het traject overzichtelijk en verbonden met de dagelijkse context.",
+          "Regelmatig wordt gekeken wat werkt, wat bijgesteld moet worden en welke vervolgstap passend is.",
         ],
-        links: [{ label: "Praktische informatie", href: routes.praktischeInformatie.href }],
       },
     ],
-    ctas: [
-      { label: "Praktische informatie", href: routes.praktischeInformatie.href },
-      { label: "Neem contact op", href: routes.contact.href },
-    ],
+    ctas: [practicalCta, contactCta],
   },
+
+  praktischeInformatie: {
+    routeKey: "praktischeInformatie",
+    title: "Praktische informatie",
+    description:
+      "Overzicht van aanmelden, wachttijd, tarieven, privacy, algemene informatie en FAQ.",
+    intro:
+      "Alle praktische onderwerpen zijn gebundeld onder één onderdeel, zodat bezoekers snel de juiste informatie vinden.",
+    illustration: {
+      alt: "Blokkenillustratie bij overzicht en praktische stappen.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "neutral",
+    },
+    sections: routeGroups.praktischeInformatie.map((route) => ({
+      title: route.label,
+      body: [
+        `Korte introductie bij ${route.label.toLowerCase()}. ${placeholders.PRACTICAL_DETAIL_CONTENT.uiText}`,
+      ],
+      links: [{ label: "Lees meer", href: route.href }],
+    })),
+    ctas: [contactCta, { label: "Werkwijze", href: routes.werkwijze.href }],
+  },
+
+  praktischeAanmelden: {
+    routeKey: "praktischeAanmelden",
+    title: "Aanmelden",
+    description: "Praktische informatie over aanmelden bij Uniqara.",
+    intro:
+      "Aanmelden begint met een eerste bericht via het formulier of per e-mail.",
+    illustration: {
+      alt: "Speeltreinillustratie bij aanmelden en starten.",
+      src: "/assets/SPELTREIN.webp",
+      tone: "coral",
+    },
+    sections: [
+      {
+        title: "Welke informatie is nodig?",
+        body: [
+          "Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in. Kies in het formulier voor kind en jeugd, volwassenen of relatie.",
+          placeholders.REGISTRATION_PROCESS.uiText,
+        ],
+        illustration: {
+          alt: "Speeltreinillustratie bij aanmelden.",
+          src: "/assets/SPELTREIN.webp",
+          tone: "coral",
+        },
+        links: [{ label: "Contactformulier", href: routes.contact.href }],
+      },
+    ],
+    ctas: [contactCta, { label: "Wachttijd", href: routes.praktischeWachttijd.href }],
+  },
+
+  praktischeWachttijd: {
+    routeKey: "praktischeWachttijd",
+    title: "Wachttijd",
+    description: "Actuele wachttijd en aanmeldstatus.",
+    intro:
+      "De wachttijd krijgt een vaste plek zodat deze makkelijk bijgehouden kan worden.",
+    illustration: {
+      alt: "Blokkenillustratie bij overzicht en wachttijd.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "turquoise",
+    },
+    sections: [
+      {
+        title: "Actuele status",
+        body: [
+          "Actuele wachttijd: wordt nog ingevuld.",
+          placeholders.WAITLIST_INFO.uiText,
+        ],
+      },
+    ],
+    ctas: [contactCta, { label: "Aanmelden", href: routes.praktischeAanmelden.href }],
+  },
+
+  praktischeTarievenVergoedingen: {
+    routeKey: "praktischeTarievenVergoedingen",
+    title: "Tarieven / vergoedingen",
+    description: "Korte uitleg over tarieven, verwijzing en vergoeding.",
+    intro:
+      "Hier staat de praktische uitleg over kosten, verwijzing, vergoeding en eigen betaling.",
+    illustration: {
+      alt: "Blokkenillustratie bij praktische informatie.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "neutral",
+    },
+    sections: [
+      {
+        title: "Volwassenen",
+        body: [
+          "Voor volwassenen wordt onderscheid gemaakt tussen verzekerde GGZ-zorg en zorg die niet vanuit het basispakket wordt vergoed.",
+          "Vergoeding loopt via de zorgverzekeraar en kan invloed hebben op het eigen risico.",
+        ],
+      },
+      {
+        title: "Jeugd",
+        body: [
+          "Voor jeugd kan vergoeding via gemeente of Jeugdwet mogelijk zijn wanneer er een geldige beschikking of verwijzing is.",
+          "Definitieve contracten, tarieven en voorwaarden van Uniqara worden nog aangevuld.",
+        ],
+      },
+      {
+        title: "Afzeggen",
+        body: [
+          "Afspraken die te laat worden afgezegd kunnen in rekening worden gebracht. Definitieve termijn en tarief worden nog bevestigd.",
+        ],
+      },
+    ],
+    ctas: [contactCta, { label: "Privacy", href: routes.praktischePrivacy.href }],
+  },
+
+  praktischePrivacy: {
+    routeKey: "praktischePrivacy",
+    title: "Privacy",
+    description:
+      "Privacy-informatie, dossiervoering en omgaan met persoonsgegevens.",
+    intro:
+      "Uniqara gaat zorgvuldig om met persoonsgegevens en gezondheidsgegevens. Definitieve juridische controle volgt nog.",
+    sections: [
+      {
+        title: "Welke gegevens",
+        body: [
+          "Uniqara kan gegevens verwerken zoals naam, contactgegevens, woonplaats, hulpvraag, verwijsinformatie, afspraken en verslaglegging.",
+          "Bij kind en jeugd kunnen ook gegevens van ouders/verzorgers, school of verwijzers relevant zijn.",
+        ],
+      },
+      {
+        title: "Dossier en veiligheid",
+        body: [
+          "Voor goede en veilige zorg wordt een dossier bijgehouden met informatie die nodig is voor begeleiding, behandeling of wettelijke verplichtingen.",
+          placeholders.PRIVACY_LEGAL_TEXT.uiText,
+        ],
+      },
+      {
+        title: "Rechten",
+        body: [
+          "Je hebt volgens de AVG onder andere recht op informatie, inzage, correctie en in sommige gevallen verwijdering van gegevens.",
+        ],
+      },
+    ],
+    ctas: [contactCta, practicalCta],
+  },
+
+  praktischeAlgemeen: {
+    routeKey: "praktischeAlgemeen",
+    title: "Algemene praktische informatie",
+    description: "Algemene praktische informatie over afspraken en bereikbaarheid.",
+    intro:
+      "Deze pagina bundelt praktische informatie die niet onder tarieven, privacy of wachttijd valt.",
+    sections: [
+      {
+        title: "Bereikbaarheid",
+        body: [contact.openingHours, contact.routeNote],
+      },
+      {
+        title: "Afspraken",
+        body: [
+          placeholders.PRACTICAL_DETAIL_CONTENT.uiText,
+        ],
+      },
+    ],
+    ctas: [contactCta, { label: "Locatie", href: routes.locatie.href }],
+  },
+
+  praktischeFaq: {
+    routeKey: "praktischeFaq",
+    title: "FAQ",
+    description: "Veelgestelde vragen over Uniqara.",
+    intro:
+      "Korte antwoorden helpen bezoekers snel begrijpen wat zij kunnen verwachten.",
+    illustration: {
+      alt: "Blokkenillustratie bij veelgestelde vragen en overzicht.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "neutral",
+    },
+    sections: [
+      {
+        title: "Voor wie is Uniqara bedoeld?",
+        body: ["Uniqara richt zich op kind en jeugd, volwassenen en relatievragen."],
+      },
+      {
+        title: "Hoe kan ik mij aanmelden?",
+        body: [
+          "Aanmelden kan via het formulier op de contactpagina. Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in.",
+        ],
+      },
+      {
+        title: "Waar vindt begeleiding plaats?",
+        body: [
+          "Uniqara is gevestigd bij De Hooiberg. De volledige adresgegevens, routebeschrijving en parkeerinformatie worden nog aangevuld.",
+        ],
+      },
+    ],
+    ctas: [contactCta, practicalCta],
+  },
+
   locatie: {
     routeKey: "locatie",
     title: "Locatie",
     description:
-      "De locatie van Uniqara krijgt een rustige landelijke sfeer, met natuur, ruimte en De Hooiberg als herkenbare plek.",
+      "Informatie over De Hooiberg, landelijke omgeving, bereikbaarheid en route.",
     intro:
-      "De plek waar zorg plaatsvindt doet ertoe. Uniqara wil een omgeving bieden die rustig, overzichtelijk en prettig voelt.",
+      "De locatiepagina bundelt praktische aankomstinformatie en ruimte voor foto’s of locatieblokken.",
+    illustration: {
+      alt: "Blokkenillustratie bij locatie en aankomstinformatie.",
+      src: "/assets/BLOKKEN.webp",
+      tone: "turquoise",
+    },
     aside: {
-      label: "Sfeerbeeld volgt",
-      title: "De Hooiberg en groen",
-      text: placeholders.HERO_IMAGE_HOOIBERG.uiText,
+      label: "Adres",
+      title: contact.address.name,
+      text: `${contact.address.street} - ${contact.address.postalCodeCity}`,
     },
     sections: [
       {
         title: "De Hooiberg",
         body: [
-          "De Hooiberg wordt een herkenbare plek binnen de locatiebeleving van Uniqara: landelijk, rustig en overzichtelijk.",
-          "Echte fotografie volgt later, zodat bezoekers vooraf al een eerlijk beeld krijgen van aankomst en sfeer.",
-          placeholders.PRACTICE_PHOTOS.uiText,
+          contact.address.name,
+          contact.address.street,
+          contact.address.postalCodeCity,
         ],
-        links: [{ label: "Bekijk praktische informatie", href: routes.praktischeInformatie.href }],
       },
       {
-        title: "Natuur en rust",
+        title: "Landelijke omgeving",
         body: [
-          "Groen, ruimte en een rustige omgeving ondersteunen de veilige en warme uitstraling van de praktijk.",
-          "De locatiepagina blijft bewust helder en niet druk, zodat de sfeer rustig blijft aanvoelen.",
-          placeholders.HERO_IMAGE_NATURE.uiText,
+          "De omgeving wordt later verder beschreven met concrete locatie-informatie en eventuele foto's.",
+          placeholders.PRACTICE_PHOTOS.uiText,
         ],
-        links: [{ label: "Lees over Uniqara", href: routes.overUniqara.href }],
       },
       {
         title: "Bereikbaarheid",
         body: [
-          placeholders.LOCATION_ADDRESS.uiText,
-          placeholders.ROUTE_PARKING_INFO.uiText,
+          "De bereikbaarheid wordt nog concreet aangevuld met informatie voor fiets, auto en openbaar vervoer.",
+          contact.routeNote,
         ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
       {
-        title: "Route en kaart",
+        title: "Adres / route",
         body: [
-          "Hier komt later een eenvoudig routeblok of kaartweergave, passend bij de rustige stijl van de site.",
+          placeholders.LOCATION_ADDRESS.uiText,
           placeholders.LOCATION_MAP_PLACEHOLDER.uiText,
         ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
       },
     ],
-    ctas: [
-      { label: "Praktische informatie", href: routes.praktischeInformatie.href },
-      { label: "Neem contact op", href: routes.contact.href },
-    ],
+    ctas: [contactCta, practicalCta],
   },
-  praktischeInformatie: {
-    routeKey: "praktischeInformatie",
-    title: "Praktische informatie",
-    description:
-      "Praktische informatie over aanmelden, tarieven, vergoedingen, wachttijd en contactroute bij Uniqara.",
-    intro:
-      "Deze pagina verzamelt de praktische informatie die bezoekers nodig hebben voordat zij contact opnemen.",
-    sections: [
-      {
-        title: "Aanmelden",
-        body: [
-          "Aanmelden begint met een rustige eerste stap. De definitieve route wordt later ingevuld, zodat bezoekers precies weten wat zij kunnen verwachten.",
-          placeholders.REGISTRATION_PROCESS.uiText,
-        ],
-        links: [{ label: "Lees de werkwijze", href: routes.werkwijze.href }],
-      },
-      {
-        title: "Tarieven en vergoedingen",
-        body: [
-          "Tarieven, betaalafspraken en eventuele vergoedingen worden transparant vermeld zodra deze definitief zijn.",
-          placeholders.TARIFFS_INFO.uiText,
-          placeholders.REIMBURSEMENT_INFO.uiText,
-        ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
-      },
-      {
-        title: "Wachttijd",
-        body: [
-          "De actuele wachttijd of aanmeldstatus krijgt hier een duidelijke plek, zodat verwachtingen vanaf het begin helder zijn.",
-          placeholders.WAITLIST_INFO.uiText,
-        ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
-      },
-      {
-        title: "Contactroute",
-        body: [
-          "Voor vragen of aanmelding komt hier de gewenste contactroute te staan. Nu staat alvast duidelijk aangegeven welke informatie nog volgt.",
-          placeholders.CONTACT_ROUTE_INFO.uiText,
-        ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
-      },
-      {
-        title: "Veelgestelde vragen",
-        body: [
-          "Korte antwoorden op praktische vragen kunnen bezoekers later helpen om sneller overzicht te krijgen.",
-          placeholders.FAQ_CONTENT.uiText,
-        ],
-        links: [{ label: "Bekijk privacy", href: routes.privacy.href }],
-      },
-    ],
-    ctas: [
-      { label: "Neem contact op", href: routes.contact.href },
-      { label: "Bekijk privacy", href: routes.privacy.href },
-    ],
-  },
+
   contact: {
     routeKey: "contact",
     title: "Contact",
     description:
-      "Contactgegevens en route-informatie voor psychologiepraktijk Uniqara.",
+      "Contactgegevens, aanmeldformulier, route en adres van Uniqara.",
     intro: contact.intro,
     aside: {
       label: "Eerste stap",
-      title: "Rustig contact opnemen",
+      title: "Laagdrempelig contact",
       text: contact.reassurance,
     },
     sections: [
       {
         title: "Contactgegevens",
-        body: [
-          placeholders.CONTACT_EMAIL.uiText,
-          placeholders.CONTACT_PHONE.uiText,
-          placeholders.OPENING_HOURS.uiText,
-          placeholders.OWNER_NAME.uiText,
-        ],
+        body: [contact.email, contact.phone, contact.openingHours, contact.ownerName],
       },
       {
-        title: "Locatie",
-        body: [
-          "Uniqara krijgt een rustige plek bij De Hooiberg.",
-          placeholders.LOCATION_ADDRESS.uiText,
-        ],
+        title: "Route / adres",
+        body: [contact.address.name, contact.address.street, contact.address.postalCodeCity, contact.routeNote],
       },
       {
-        title: "Route en aankomst",
-        body: [placeholders.ROUTE_PARKING_INFO.uiText],
+        title: "Aanmelden",
+        body: [
+          "Gebruik het formulier op deze pagina en vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
+        ],
       },
     ],
-    ctas: [
-      { label: "Bekijk locatie", href: routes.locatie.href },
-      { label: "Praktische informatie", href: routes.praktischeInformatie.href },
-    ],
+    ctas: [{ label: "Locatie", href: routes.locatie.href }, practicalCta],
   },
-  privacy: {
-    routeKey: "privacy",
-    title: "Privacy",
-    description:
-      "Placeholder voor privacy-informatie, dossiervoering en zorgvuldig omgaan met gegevens bij Uniqara.",
-    intro:
-      "Zorgvuldige omgang met gegevens is belangrijk. Deze pagina staat klaar als professionele placeholder tot de definitieve privacytekst is aangeleverd.",
-    aside: {
-      label: "Juridische tekst",
-      title: "Definitieve controle volgt",
-      text: placeholders.PRIVACY_LEGAL_TEXT.uiText,
-    },
-    sections: [
-      {
-        title: "Welke gegevens",
-        body: [
-          "Hier komt later helder te staan welke gegevens mogelijk worden verwerkt wanneer iemand contact opneemt of begeleiding start.",
-          placeholders.PRIVACY_DATA_CATEGORIES.uiText,
-        ],
-        links: [{ label: "Neem contact op", href: routes.contact.href }],
-      },
-      {
-        title: "Dossier en gegevens",
-        body: [
-          "Voor zorgvuldige begeleiding kan dossiervoering nodig zijn. De definitieve uitleg wordt later juridisch en inhoudelijk aangevuld.",
-          placeholders.PRIVACY_DOSSIER_INFO.uiText,
-        ],
-        links: [{ label: "Praktische informatie", href: routes.praktischeInformatie.href }],
-      },
-      {
-        title: "Privacyverklaring",
-        body: [
-          "De volledige privacyverklaring wordt later vervangen door de definitieve tekst van de praktijk.",
-          placeholders.PRIVACY_INFO.uiText,
-          placeholders.PRIVACY_LEGAL_TEXT.uiText,
-        ],
-      },
-      {
-        title: "Rechten en verwijzingen",
-        body: [
-          "Hier komt later te staan welke rechten bezoekers en clienten hebben rond inzage, correctie en aanpassing van gegevens.",
-          placeholders.PRIVACY_RIGHTS_INFO.uiText,
-        ],
-      },
-      {
-        title: "Contact over privacy",
-        body: [
-          placeholders.PRIVACY_CONTACT_ROUTE.uiText,
-          placeholders.CONTACT_EMAIL.uiText,
-        ],
-        links: [{ label: "Contactpagina", href: routes.contact.href }],
-      },
-    ],
-    ctas: [
-      { label: "Neem contact op", href: routes.contact.href },
-      { label: "Praktische informatie", href: routes.praktischeInformatie.href },
-    ],
-  },
-} satisfies PagesContent;
+} satisfies Record<PageRouteKey, PageContent>;

@@ -45,7 +45,7 @@ export const structuredData: JsonLdGraph = {
       url: absoluteUrl(routes.home.href),
       description: brand.shortDescription,
       image: absoluteUrl("/opengraph-image"),
-      logo: absoluteUrl("/icon"),
+      logo: absoluteUrl("/placeholders/logo.jpeg"),
       telephone: contact.phone,
       email: contact.email,
       openingHours: contact.openingHours,

@@ -1,4 +1,3 @@
-import { placeholders } from "./placeholders";
 import { routes } from "./routes";
 
 export type CtaLink = {
@@ -24,6 +23,11 @@ export type HomeContent = {
   intro: {
     valueCardText: string;
     ctaLabel: string;
+  };
+  routeOverview: {
+    title: string;
+    intro: string;
+    items: Array<CtaLink & { description: string }>;
   };
   audience: {
     ctaLabel: string;
@@ -65,32 +69,34 @@ export type HomeContent = {
 // Homepage-copy: dit zijn de teksten die het vaakst worden aangepast.
 export const home = {
   hero: {
-    eyebrow: "Nieuwe psychologiepraktijk in het groen",
+    eyebrow: "Psychologiepraktijk met aandacht voor groei",
     title:
       "Uniqara biedt rust, aandacht en professionele psychologische zorg.",
     intro:
-      "Een warme praktijkplek waar kinderen, jongeren en gezinnen zich veilig mogen voelen. In een landelijke omgeving, met ruimte om zorgvuldig te kijken naar wat nodig is.",
+      "Een warme praktijkplek voor kinderen, jongeren, volwassenen en relaties. Met rust, aandacht en ruimte om samen te kijken naar nieuwe mogelijkheden.",
     primaryCta: { label: "Neem contact op", href: routes.contact.href },
     secondaryCta: { label: "Lees de werkwijze", href: routes.werkwijze.href },
     supportItems: [
       "Rustige praktijkplek",
-      "Groene landelijke omgeving",
+      "Groen, helder en overzichtelijk",
       "Zorgvuldig afgestemd traject",
+      "Wachttijd wordt actueel bijgehouden",
     ],
-    imagePlaceholderLabel: "Sfeerbeeld volgt",
-    imagePlaceholderText: placeholders.HERO_IMAGE_HOOIBERG.uiText,
+    imagePlaceholderLabel: "Ontwikkeling",
+    imagePlaceholderText:
+      "Illustratie rond spel, groei en onderweg zijn naar nieuwe mogelijkheden.",
     imagePlaceholders: [
       {
-        label: "De Hooiberg",
-        text: placeholders.HERO_IMAGE_HOOIBERG.uiText,
+        label: "Natuur en groei",
+        text: "Sfeerbeeld rond natuur, groei en onderweg zijn naar nieuwe mogelijkheden volgt later.",
       },
       {
         label: "Natuur en groen",
-        text: placeholders.HERO_IMAGE_NATURE.uiText,
+        text: "Rustige illustratie rond veiligheid, verbinding en groei.",
       },
       {
         label: "Praktijk en sfeer",
-        text: placeholders.HERO_IMAGE_PRACTICE.uiText,
+        text: "Kindvriendelijke illustratie die de praktijk warm en overzichtelijk ondersteunt.",
       },
     ],
   },
@@ -99,16 +105,53 @@ export const home = {
       "Een rustige basis voor contact, onderzoek en begeleiding.",
     ctaLabel: "Meer over Uniqara",
   },
+  routeOverview: {
+    title: "Snel naar de juiste pagina",
+    intro:
+      "De homepage geeft alleen een kort overzicht. De inhoud staat overzichtelijk verdeeld over aparte pagina's.",
+    items: [
+      {
+        label: "Wie zijn wij",
+        href: routes.wieZijnWij.href,
+        description: "Visie, missie, behandelaren, kernwaarden en persoonlijke benadering.",
+      },
+      {
+        label: "Voor wie",
+        href: routes.voorWie.href,
+        description: "Aparte pagina's voor kinderen, jongeren, ouders en verwijzers.",
+      },
+      {
+        label: "Hulpaanbod",
+        href: routes.hulpaanbod.href,
+        description: "Een overzicht met doorkliks naar de verschillende vormen van begeleiding.",
+      },
+      {
+        label: "Werkwijze",
+        href: routes.werkwijze.href,
+        description: "Aanmelden, kennismaking, begeleiding en evaluatie in duidelijke stappen.",
+      },
+      {
+        label: "Praktische informatie",
+        href: routes.praktischeInformatie.href,
+        description: "Aanmelden, wachttijd, tarieven, privacy, algemene informatie en FAQ.",
+      },
+      {
+        label: "Contact",
+        href: routes.contact.href,
+        description: "Contactgegevens, formulier, adres en een laagdrempelige eerste stap.",
+      },
+    ],
+  },
   audience: {
     ctaLabel: "Bekijk alle doelgroepen",
     cardLinkLabel: "Voor wie",
   },
   servicesPreview: {
-    title: "Hulpvragen en aanbod",
-    primaryCtaLabel: "Bekijk hulpvragen",
+    title: "Hulpaanbod",
+    primaryCtaLabel: "Bekijk hulpaanbod",
     secondaryCtaLabel: "Lees de werkwijze",
     serviceLinkLabel: "Meer over aanbod",
-    questionLinkLabel: "Bekijk hulpvragen",
+    questionLinkLabel: "Bekijk aanbod",
   },
   approach: {
     heading: "Werkwijze in duidelijke stappen",
@@ -124,11 +167,12 @@ export const home = {
     stepLinkLabel: "Stap bekijken",
   },
   location: {
-    heading: "De Hooiberg als rustige praktijkplek",
+    heading: "Een rustige plek voor groei",
     intro:
-      "De locatiebeleving draait om rust, groen en een prettige aankomst. Echte fotografie maakt dit later nog concreter.",
+      "De locatie-informatie blijft helder en praktisch: adres, bereikbaarheid, routebeschrijving, parkeren en openingstijden.",
     cardLabel: "Locatieblok",
-    cardText: placeholders.PRACTICE_PHOTOS.uiText,
+    cardText:
+      "Illustratie rond ontwikkeling, bouwen en stap voor stap verder groeien.",
     ctaLabel: "Bekijk de locatie",
     secondaryCtaLabel: "Praktische route-info",
   },

@@ -9,6 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: route.routeKey === "home" ? "monthly" : "yearly",
     priority:
-      route.routeKey === "home" ? 1 : route.routeKey === "privacy" ? 0.3 : 0.8,
+      route.routeKey === "home"
+        ? 1
+        : route.routeKey === "praktischePrivacy"
+          ? 0.3
+          : 0.8,
   }));
 }

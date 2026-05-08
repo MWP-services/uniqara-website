@@ -10,27 +10,27 @@ import { brand } from "@/content/site";
 export function Footer() {
   return (
     <footer className="border-t border-border-soft bg-surface">
-      <Container className="py-10 sm:py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1fr_1fr] lg:gap-10">
+      <Container className="py-8 sm:py-12">
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1fr_1fr] lg:gap-10">
           <section aria-label="Praktijkintro">
             <LogoPlaceholder placeholderKey="LOGO_FOOTER" />
             <p className="text-support mt-5 max-w-sm">
               {brand.shortDescription}
             </p>
-            <p className="mt-4 text-sm font-semibold text-brand-green">
+            <p className="mt-4 text-sm font-semibold text-foreground">
               Rustig, zorgvuldig en persoonlijk.
             </p>
           </section>
 
           <nav aria-label="Footer navigatie">
-            <h2 className="text-base font-semibold text-brand-green">
+            <h2 className="text-base font-semibold text-foreground">
               Navigatie
             </h2>
-            <ul className="text-support mt-4 grid gap-2">
+            <ul className="text-support mt-4 grid gap-1.5">
               {navigation.footer.map((item) => (
                 <li key={item.href}>
                   <Link
-                    className="inline-flex min-h-10 items-center hover:text-brand-green"
+                    className="inline-flex min-h-9 items-center hover:text-foreground hover:underline decoration-brand-green decoration-2 underline-offset-4"
                     href={item.href}
                   >
                     {item.label}
@@ -43,7 +43,7 @@ export function Footer() {
           <section aria-labelledby="footer-contact">
             <h2
               id="footer-contact"
-              className="text-base font-semibold text-brand-green"
+              className="text-base font-semibold text-foreground"
             >
               Contact
             </h2>
@@ -60,7 +60,7 @@ export function Footer() {
           <section aria-labelledby="footer-location">
             <h2
               id="footer-location"
-              className="text-base font-semibold text-brand-green"
+              className="text-base font-semibold text-foreground"
             >
               Locatie
             </h2>

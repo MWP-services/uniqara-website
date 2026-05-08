@@ -1,4 +1,3 @@
-import { placeholders } from "./placeholders";
 import { routes } from "./routes";
 
 export type FallbackLink = {
@@ -35,10 +34,10 @@ export const fallbacks = {
     title: "Deze pagina lijkt niet te bestaan.",
     intro:
       "De gevraagde pagina is verplaatst, verwijderd of nog niet aangemaakt. Vanaf hier kun je rustig terug naar een bekende plek.",
-    note: `Contactgegevens worden nog definitief ingevuld: ${placeholders.CONTACT_EMAIL.uiText}.`,
+    note: "Voor contact kun je mailen naar contact@uniqara.nl.",
     links: [
       { label: "Terug naar home", href: routes.home.href },
-      { label: "Bekijk hulpvragen", href: routes.hulpvragen.href },
+      { label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href },
       { label: "Neem contact op", href: routes.contact.href },
     ],
   },
@@ -47,7 +46,7 @@ export const fallbacks = {
     title: "De pagina kon niet goed worden geladen.",
     intro:
       "Probeer het opnieuw of ga terug naar een vaste pagina. De rest van de site blijft gewoon bereikbaar.",
-    note: `Voor contact staat voorlopig deze centrale waarde klaar: ${placeholders.CONTACT_EMAIL.uiText}.`,
+    note: "Voor contact kun je mailen naar contact@uniqara.nl.",
     retryLabel: "Opnieuw proberen",
     links: [
       { label: "Terug naar home", href: routes.home.href },

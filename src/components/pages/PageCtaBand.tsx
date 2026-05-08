@@ -18,14 +18,14 @@ export function PageCtaBand({
   intro = sharedUi.pageCtaIntro,
 }: PageCtaBandProps) {
   return (
-    <section className="bg-white py-10 sm:py-12">
+    <section className="bg-background py-10 sm:py-12">
       <Container>
-        <Card className="grid gap-5 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <Card className="grid gap-5 border-accent-coral/45 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase text-brand-green">
+            <p className="text-sm font-semibold uppercase text-muted-foreground">
               {eyebrow}
             </p>
-            <h2 className="mt-3 text-2xl font-semibold text-brand-green sm:text-3xl">
+            <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
               {title}
             </h2>
             {intro ? <p className="text-body mt-3">{intro}</p> : null}

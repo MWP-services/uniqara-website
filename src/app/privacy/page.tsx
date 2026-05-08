@@ -1,11 +1,6 @@
-import { StructuredContentPage } from "@/components/pages/StructuredContentPage";
-import { pages } from "@/content/pages";
-import { pageMetadata } from "@/content/seo";
-
-const page = pages.privacy;
-
-export const metadata = pageMetadata.privacy;
+import { redirect } from "next/navigation";
+import { routes } from "@/content/routes";
 
 export default function PrivacyPage() {
-  return <StructuredContentPage aside={page.aside} page={page} />;
+  redirect(routes.praktischePrivacy.href);
 }

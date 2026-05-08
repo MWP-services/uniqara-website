@@ -31,6 +31,9 @@ export type PlaceholderKey =
   | "CONTACT_ROUTE_INFO"
   | "PRIVACY_DOSSIER_INFO"
   | "PRIVACY_CONTACT_ROUTE"
+  | "TEAM_DETAILS"
+  | "SERVICE_DETAIL_CONTENT"
+  | "PRACTICAL_DETAIL_CONTENT"
   | "COPYRIGHT_INFO";
 
 export type PlaceholderRecord = {
@@ -236,6 +239,24 @@ export const placeholders = {
     uiText: "PRIVACY_CONTACT_ROUTE - contactroute voor privacyvragen volgt",
     description: "Contactmogelijkheid voor vragen over privacy.",
     replaceWith: "Definitieve contactroute voor privacyvragen.",
+  },
+  TEAM_DETAILS: {
+    key: "TEAM_DETAILS",
+    uiText: "TEAM_DETAILS - aanvullende teaminformatie volgt",
+    description: "Aanvullende informatie over behandelaren, registraties en specialisaties.",
+    replaceWith: "Definitieve teamtekst met functies, registraties en specialisaties.",
+  },
+  SERVICE_DETAIL_CONTENT: {
+    key: "SERVICE_DETAIL_CONTENT",
+    uiText: "SERVICE_DETAIL_CONTENT - definitieve aanbodtekst volgt",
+    description: "Definitieve inhoud per hulpaanbodpagina.",
+    replaceWith: "Definitieve uitleg per hulpvorm, doelgroep en werkwijze.",
+  },
+  PRACTICAL_DETAIL_CONTENT: {
+    key: "PRACTICAL_DETAIL_CONTENT",
+    uiText: "PRACTICAL_DETAIL_CONTENT - praktische details volgen",
+    description: "Ontbrekende praktische details per subpagina.",
+    replaceWith: "Definitieve praktische informatie per onderwerp.",
   },
   COPYRIGHT_INFO: {
     key: "COPYRIGHT_INFO",

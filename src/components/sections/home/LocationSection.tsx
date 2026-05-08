@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -42,17 +42,17 @@ export function LocationSection({
               </Button>
             </div>
           </SectionHeading>
-          <Card className="overflow-hidden bg-white p-0">
-            <div className="relative min-h-64 overflow-hidden sm:min-h-80">
-              <Image
-                src="/assets/Hooiberg-2-768x1024.webp"
+          <Card className="overflow-hidden bg-card p-0">
+            <div className="relative">
+              <IllustrationFrame
                 alt={imageText}
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-center"
+                className="aspect-[4/3] border-0 bg-[linear-gradient(135deg,rgba(99,207,198,0.15),rgba(248,233,142,0.24),rgba(246,163,140,0.12))] shadow-none"
+                imageClassName="object-contain p-4 sm:p-6"
+                motion="reveal"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                src="/assets/BLOKKEN.webp"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(19,41,30,0.08)_0%,rgba(19,41,30,0.52)_100%)]" />
-              <p className="absolute bottom-4 left-4 rounded-pill border border-white/25 bg-white/18 px-4 py-2 text-sm font-semibold uppercase text-white shadow-card backdrop-blur">
+              <p className="absolute bottom-4 left-4 rounded-pill border border-brand-green/30 bg-background/85 px-4 py-2 text-sm font-semibold uppercase text-foreground shadow-card backdrop-blur">
                 {imageLabel}
               </p>
             </div>

@@ -10,7 +10,7 @@ export function Card({ children, className = "", id }: CardProps) {
   return (
     <div
       id={id}
-      className={`surface-card h-full p-5 transition-[box-shadow,border-color] hover:border-border-strong hover:shadow-soft focus-within:border-border-strong focus-within:shadow-soft sm:p-6 ${className}`}
+      className={`surface-card h-full p-4 transition-[box-shadow,border-color] hover:border-border-strong hover:shadow-soft focus-within:border-border-strong focus-within:shadow-soft sm:p-6 ${className}`}
     >
       {children}
     </div>

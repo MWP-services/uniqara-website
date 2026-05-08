@@ -11,10 +11,10 @@ export default function Loading() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-[1fr_0.45fr] lg:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase text-brand-green">
+              <p className="text-sm font-semibold uppercase text-muted-foreground">
                 {content.eyebrow}
               </p>
-              <h1 className="mt-4 max-w-3xl text-3xl font-semibold text-brand-green sm:text-4xl">
+              <h1 className="mt-4 max-w-3xl text-3xl font-semibold text-foreground sm:text-4xl">
                 {content.title}
               </h1>
               <p className="text-body mt-4 max-w-2xl">{content.intro}</p>

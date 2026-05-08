@@ -9,7 +9,7 @@ type ContactFormPlaceholderProps = {
 };
 
 const inputClasses =
-  "mt-2 min-h-12 w-full rounded-soft border border-border-soft bg-white px-4 py-3 text-base text-foreground shadow-none transition placeholder:text-muted focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
+  "mt-2 min-h-12 w-full rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:text-muted focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
 
 export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
   const [status, setStatus] = useState<string | null>(null);
@@ -60,6 +60,38 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             placeholder={form.fieldPlaceholders.phone}
             type="tel"
           />
+        </label>
+        <label className="block text-sm font-semibold text-foreground">
+          {form.fields.city}
+          <input
+            autoComplete="address-level2"
+            className={inputClasses}
+            name="city"
+            placeholder={form.fieldPlaceholders.city}
+            required
+            type="text"
+          />
+        </label>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="block text-sm font-semibold text-foreground">
+          {form.fields.careType}
+          <select
+            className={inputClasses}
+            defaultValue=""
+            name="careType"
+            required
+          >
+            <option disabled value="">
+              Kies een optie
+            </option>
+            {form.careTypeOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="block text-sm font-semibold text-foreground">
           {form.fields.subject}

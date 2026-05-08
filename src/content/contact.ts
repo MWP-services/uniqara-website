@@ -1,4 +1,3 @@
-import { placeholders } from "./placeholders";
 import { routes } from "./routes";
 
 export type ContactContent = {
@@ -25,6 +24,8 @@ export type ContactContent = {
       name: string;
       email: string;
       phone: string;
+      city: string;
+      careType: string;
       subject: string;
       message: string;
     };
@@ -32,9 +33,11 @@ export type ContactContent = {
       name: string;
       email: string;
       phone: string;
+      city: string;
       subject: string;
       message: string;
     };
+    careTypeOptions: string[];
     submitLabel: string;
     successMessage: string;
   };
@@ -44,45 +47,53 @@ export type ContactContent = {
   };
 };
 
-// Vervang de gekoppelde placeholders zodra de definitieve praktijkgegevens bekend zijn.
 export const contact = {
   heading: "Contact",
   intro:
-    "Neem rustig contact op wanneer je wilt verkennen of Uniqara passend kan zijn. De definitieve contactgegevens worden later ingevuld.",
+    "Neem gerust contact op wanneer je wilt verkennen of Uniqara passend kan zijn. Voor vragen, aanmelding of een kennismaking kun je mailen, bellen of het formulier invullen.",
   reassurance:
-    "Een eerste bericht hoeft nog niet volledig te zijn. Kort aangeven wat de vraag is, is genoeg om samen te bepalen wat een passende vervolgstap kan zijn.",
-  email: placeholders.CONTACT_EMAIL.uiText,
-  phone: placeholders.CONTACT_PHONE.uiText,
-  openingHours: placeholders.OPENING_HOURS.uiText,
-  ownerName: placeholders.OWNER_NAME.uiText,
+    "Een eerste bericht hoeft nog niet volledig te zijn. Vermeld in ieder geval je woonplaats, hulpvraag, telefoonnummer en e-mailadres, dan kan er gericht worden meegedacht.",
+  email: "contact@uniqara.nl",
+  phone: "06 3603 6772",
+  openingHours:
+    "Openingstijden worden nog definitief aangevuld. Tijdens afspraken kan de telefoon niet altijd direct worden opgenomen; spreek gerust de voicemail in of stuur een e-mail.",
+  ownerName:
+    "Elise Honkoop-de Visser, psycholoog NIP en EFT-relatietherapeut. Zzp'er: Annemarie van den Heuvel-de Jager.",
   address: {
-    name: "Uniqara - De Hooiberg",
-    street: placeholders.LOCATION_ADDRESS.uiText,
-    postalCodeCity: placeholders.LOCATION_ADDRESS.uiText,
+    name: "Uniqara",
+    street: "De Hooiberg",
+    postalCodeCity: "Adresgegevens worden nog aangevuld",
     country: "Nederland",
   },
   locationDescription:
-    "Een rustige praktijklocatie in een landelijke omgeving, met groen, ruimte en een veilige sfeer.",
-  routeNote: placeholders.ROUTE_PARKING_INFO.uiText,
+    "Uniqara is gevestigd bij De Hooiberg. De volledige adresgegevens, routebeschrijving en praktische aankomstinformatie worden nog aangevuld.",
+  routeNote:
+    "Bereikbaarheid, routebeschrijving en parkeren worden hier nog concreet ingevuld. Vermeld bij contact gerust hoe je wilt reizen, dan kan er alvast worden meegedacht.",
   form: {
-    title: "Contactformulier",
+    title: "Aanmeldformulier",
     intro:
-      "Het formulier staat visueel klaar. De technische verzending wordt later gekoppeld.",
-    handlerPlaceholder: placeholders.CONTACT_FORM_HANDLER.uiText,
+      "Gebruik het formulier voor een eerste aanmelding of vraag. Kies de richting die het beste past en beschrijf kort de hulpvraag.",
+    handlerPlaceholder:
+      "De technische verzending wordt later gekoppeld. Tot die tijd kan contact via contact@uniqara.nl.",
     fields: {
       name: "Naam",
       email: "E-mailadres",
       phone: "Telefoonnummer",
+      city: "Woonplaats",
+      careType: "Waarvoor zoek je hulp?",
       subject: "Onderwerp",
-      message: "Bericht",
+      message: "Hulpvraag of bericht",
     },
     fieldPlaceholders: {
       name: "Voor- en achternaam",
-      email: "naam@example.nl",
-      phone: "Telefoonnummer",
-      subject: "Bijvoorbeeld: kennismaking",
-      message: "Schrijf kort waarover je contact zoekt.",
+      email: "naam@voorbeeld.nl",
+      phone: "06 1234 5678",
+      city: "Woonplaats",
+      subject: "Bijvoorbeeld: aanmelding of kennismaking",
+      message:
+        "Beschrijf kort de hulpvraag, leeftijd en wat je graag wilt bespreken.",
     },
+    careTypeOptions: ["Kind en jeugd", "Volwassenen", "Relatie"],
     submitLabel: "Bericht controleren",
     successMessage:
       "Voorbeeldmelding: je bericht is nog niet verzonden. De echte formulierafhandeling wordt later gekoppeld.",

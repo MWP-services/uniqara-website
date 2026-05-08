@@ -34,9 +34,9 @@ function NavigationLinks({
             key={item.href}
             aria-current={isActive ? "page" : undefined}
             href={item.href}
-            className={`rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-surface hover:text-brand-green active:bg-brand-green-soft ${
+            className={`rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft ${
               isActive
-                ? "bg-brand-green-soft text-brand-green"
+                ? "bg-brand-green-soft text-foreground"
                 : "text-foreground"
             }`}
           >
@@ -53,9 +53,9 @@ export function Header() {
   const contactIsActive = isActivePath(pathname, routes.contact.href);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border-soft bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-border-soft bg-background/95 backdrop-blur">
       <Container>
-        <div className="flex min-h-20 items-center justify-between gap-3 py-3 sm:min-h-24 sm:gap-4">
+        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:gap-4 sm:py-3">
           <Link href={routes.home.href} aria-label={`${site.name} home`}>
             <LogoPlaceholder priority />
           </Link>
@@ -76,10 +76,10 @@ export function Header() {
           </div>
 
           <details className="group relative lg:hidden">
-            <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-white px-4 py-3 text-sm font-semibold text-brand-green shadow-card transition hover:bg-surface">
+            <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft">
               Menu
             </summary>
-            <div className="absolute right-0 z-40 mt-3 max-h-[calc(100vh-7rem)] w-[min(88vw,22rem)] overflow-auto rounded-medium border border-border-soft bg-white p-4 shadow-soft">
+            <div className="absolute right-0 z-40 mt-3 max-h-[calc(100vh-5.5rem)] w-[min(88vw,22rem)] overflow-auto rounded-medium border border-border-soft bg-card p-4 shadow-soft">
               <NavigationLinks
                 ariaLabel="Mobiele navigatie"
                 className="grid gap-1"
