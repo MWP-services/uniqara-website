@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section";
 import { PageCtaBand } from "@/components/pages/PageCtaBand";
 import { PageHero } from "@/components/pages/PageHero";
 import type { PageAside, PageContent, PageIllustration, PageSection } from "@/content/pages";
+import { routes } from "@/content/routes";
 
 type StructuredContentPageProps = {
   page: PageContent;
@@ -47,6 +48,8 @@ export function StructuredContentPage({
   aside,
   stepNumbers = false,
 }: StructuredContentPageProps) {
+  const isWhoWeArePage = page.title === routes.wieZijnWij.label;
+
   return (
     <main className="page-shell">
       <PageHero
@@ -118,7 +121,10 @@ export function StructuredContentPage({
         </Container>
       </Section>
 
-      <PageCtaBand links={page.ctas} />
+      <PageCtaBand
+        links={page.ctas}
+        sectionClassName={isWhoWeArePage ? "page-cta-band-who-we-are" : ""}
+      />
     </main>
   );
 }

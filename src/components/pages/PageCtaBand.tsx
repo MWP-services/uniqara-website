@@ -9,6 +9,7 @@ type PageCtaBandProps = {
   eyebrow?: string;
   title?: string;
   intro?: string;
+  sectionClassName?: string;
 };
 
 export function PageCtaBand({
@@ -16,9 +17,10 @@ export function PageCtaBand({
   eyebrow = sharedUi.pageCtaEyebrow,
   title = sharedUi.pageCtaTitle,
   intro = sharedUi.pageCtaIntro,
+  sectionClassName = "",
 }: PageCtaBandProps) {
   return (
-    <section className="bg-background py-10 sm:py-12">
+    <section className={`bg-background py-10 sm:py-12 ${sectionClassName}`}>
       <Container>
         <Card className="grid gap-5 border-accent-coral/45 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>

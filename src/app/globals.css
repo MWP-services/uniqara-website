@@ -367,6 +367,20 @@
     font-weight: 650;
     line-height: 1.4;
   }
+
+  .page-hero-who-we-are {
+    background: #f29a82;
+  }
+
+  .page-hero-who-we-are .eyebrow,
+  .page-hero-who-we-are .text-display,
+  .page-hero-who-we-are .text-body {
+    color: #ffffff;
+  }
+
+  .page-cta-band-who-we-are {
+    background: #f6e57a;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

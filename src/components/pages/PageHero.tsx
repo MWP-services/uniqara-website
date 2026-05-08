@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { PageAside, PageIllustration } from "@/content/pages";
+import { routes } from "@/content/routes";
 
 type PageHeroProps = {
   title: string;
@@ -19,8 +20,14 @@ const toneClasses = {
 };
 
 export function PageHero({ title, intro, aside, illustration }: PageHeroProps) {
+  const isWhoWeArePage = title === routes.wieZijnWij.label;
+
   return (
-    <section className="border-b border-border-soft bg-background">
+    <section
+      className={`border-b border-border-soft ${
+        isWhoWeArePage ? "page-hero-who-we-are" : "bg-background"
+      }`}
+    >
       <Container className="grid gap-6 py-12 sm:gap-8 sm:py-16 lg:grid-cols-[1fr_0.42fr] lg:items-end">
         <SectionHeading
           eyebrow={title}
