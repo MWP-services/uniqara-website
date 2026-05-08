@@ -1,8 +1,7 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import type { HomeContent } from "@/content/home";
 
 type HeroSectionProps = {
@@ -11,80 +10,55 @@ type HeroSectionProps = {
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section className="overflow-hidden border-b border-border-soft bg-white">
-      <Container className="grid gap-8 py-12 sm:gap-10 sm:py-20 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
+    <section className="relative isolate min-h-[82vh] overflow-hidden border-b border-border-soft bg-brand-green-deep text-white sm:min-h-[88vh]">
+      <Image
+        src="/assets/Hooiberg-2-768x1024.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="hero-image-motion -z-20 object-cover object-center"
+      />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,35,25,0.82)_0%,rgba(25,57,40,0.66)_42%,rgba(65,57,37,0.38)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.94)_100%)]" />
+
+      <Container className="flex min-h-[82vh] items-center py-16 sm:min-h-[88vh] sm:py-24">
         <div className="max-w-3xl">
-          <Badge className="mb-5">{hero.eyebrow}</Badge>
-          <h1 className="text-display max-w-3xl">{hero.title}</h1>
-          <p className="text-body mt-5 max-w-2xl text-base sm:mt-6 sm:text-lg">
+          <Badge className="hero-reveal hero-reveal-1 mb-5 border-white/25 bg-white/15 text-white shadow-card backdrop-blur">
+            {hero.eyebrow}
+          </Badge>
+          <h1 className="hero-reveal hero-reveal-2 max-w-3xl text-[clamp(2.5rem,9vw,5.6rem)] font-semibold leading-[1.02] text-white">
+            {hero.title}
+          </h1>
+          <p className="hero-reveal hero-reveal-3 mt-5 max-w-2xl text-base leading-8 text-white/90 sm:mt-6 sm:text-xl">
             {hero.intro}
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-            <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
-            <Button href={hero.secondaryCta.href} variant="secondary">
+          <div className="hero-reveal hero-reveal-4 mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+            <Button
+              href={hero.primaryCta.href}
+              className="bg-white text-brand-green hover:bg-accent-yellow-soft active:bg-accent-yellow-soft"
+            >
+              {hero.primaryCta.label}
+            </Button>
+            <Button
+              href={hero.secondaryCta.href}
+              variant="secondary"
+              className="border-white/35 bg-white/10 text-white backdrop-blur hover:bg-white/20 active:bg-white/25"
+            >
               {hero.secondaryCta.label}
             </Button>
           </div>
-          <ul className="mt-7 grid gap-3 text-support sm:mt-8 sm:grid-cols-3">
+          <ul className="hero-reveal hero-reveal-5 mt-7 grid gap-3 text-sm leading-6 text-white/88 sm:mt-8 sm:grid-cols-3">
             {hero.supportItems.map((item) => (
               <li
                 key={item}
-                className="rounded-soft border border-border-soft bg-surface px-4 py-3"
+                className="rounded-soft border border-white/18 bg-white/12 px-4 py-3 shadow-card backdrop-blur"
               >
                 {item}
               </li>
             ))}
           </ul>
         </div>
-
-        <Card className="bg-surface p-4 shadow-soft sm:p-6">
-          <div className="grid gap-4">
-            <div className="rounded-soft border border-border-soft bg-white p-4 shadow-card">
-              <p className="mb-3 text-xs font-semibold uppercase text-muted-foreground">
-                Logo positie
-              </p>
-              <LogoPlaceholder size="lg" className="max-w-full" />
-            </div>
-
-            <div className="rounded-medium border border-dashed border-border-strong bg-white p-5">
-              {/* HERO_IMAGE_HOOIBERG wordt later vervangen door echte locatie- of natuurbeelden. */}
-              <div className="flex min-h-52 flex-col justify-between rounded-soft bg-surface p-4 sm:min-h-56 sm:p-5">
-                <div>
-                  <p className="text-sm font-semibold uppercase text-brand-green">
-                    {hero.imagePlaceholderLabel}
-                  </p>
-                  <p className="mt-3 break-words text-xl font-semibold leading-snug text-foreground sm:text-2xl">
-                    {hero.imagePlaceholderText}
-                  </p>
-                </div>
-                <div
-                  className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:gap-3"
-                  aria-hidden="true"
-                >
-                  <div className="h-16 rounded-soft bg-brand-green-soft sm:h-20" />
-                  <div className="h-16 rounded-soft bg-accent-yellow-soft sm:h-20" />
-                  <div className="h-16 rounded-soft bg-surface-strong sm:h-20" />
-                </div>
-              </div>
-
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                {hero.imagePlaceholders.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-soft border border-border-soft bg-white p-3"
-                  >
-                    <p className="text-xs font-semibold uppercase text-brand-green">
-                      {item.label}
-                    </p>
-                    <p className="mt-2 break-words text-xs leading-5 text-muted">
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Card>
       </Container>
     </section>
   );

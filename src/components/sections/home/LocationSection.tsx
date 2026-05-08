@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -41,23 +42,25 @@ export function LocationSection({
               </Button>
             </div>
           </SectionHeading>
-          <Card className="border-dashed bg-white p-5">
-            <p className="text-sm font-semibold uppercase text-brand-green">
-              {imageLabel}
-            </p>
-            <p className="mt-3 break-words text-lg font-semibold text-foreground sm:text-xl">
-              {imageText}
-            </p>
-            <p className="text-support mt-5">{locationDescription}</p>
-            {/* HERO_IMAGE_HOOIBERG wordt later vervangen door echte locatie- of natuurbeelden. */}
-            <div
-              className="mt-6 grid min-h-32 grid-cols-2 gap-2 sm:min-h-40 sm:grid-cols-4"
-              aria-hidden="true"
-            >
-              <div className="rounded-soft bg-brand-green-soft" />
-              <div className="rounded-soft bg-surface-strong" />
-              <div className="rounded-soft bg-accent-yellow-soft" />
-              <div className="rounded-soft bg-surface-strong" />
+          <Card className="overflow-hidden bg-white p-0">
+            <div className="relative min-h-64 overflow-hidden sm:min-h-80">
+              <Image
+                src="/assets/Hooiberg-2-768x1024.webp"
+                alt={imageText}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(19,41,30,0.08)_0%,rgba(19,41,30,0.52)_100%)]" />
+              <p className="absolute bottom-4 left-4 rounded-pill border border-white/25 bg-white/18 px-4 py-2 text-sm font-semibold uppercase text-white shadow-card backdrop-blur">
+                {imageLabel}
+              </p>
+            </div>
+            <div className="p-5 sm:p-6">
+              <p className="break-words text-lg font-semibold text-foreground sm:text-xl">
+                {imageText}
+              </p>
+              <p className="text-support mt-4">{locationDescription}</p>
             </div>
           </Card>
         </div>
