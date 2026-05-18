@@ -61,6 +61,7 @@ export type HomeContent = {
   };
   contactCta: {
     title: string;
+    intro: string;
     primaryCtaLabel: string;
     secondaryCtaLabel: string;
   };
@@ -69,19 +70,13 @@ export type HomeContent = {
 // Homepage-copy: dit zijn de teksten die het vaakst worden aangepast.
 export const home = {
   hero: {
-    eyebrow: "Psychologiepraktijk met aandacht voor groei",
-    title:
-      "Uniqara biedt rust, aandacht en professionele psychologische zorg.",
+    eyebrow: "Psychologiepraktijk",
+    title: "Groeien begint met gezien worden.",
     intro:
-      "Een warme praktijkplek voor kinderen, jongeren, volwassenen en relaties. Met rust, aandacht en ruimte om samen te kijken naar nieuwe mogelijkheden.",
+      "Persoonlijke begeleiding voor kinderen, jongeren en gezinnen. Met aandacht voor ontwikkeling, vertrouwen en welzijn.",
     primaryCta: { label: "Neem contact op", href: routes.contact.href },
     secondaryCta: { label: "Lees de werkwijze", href: routes.werkwijze.href },
-    supportItems: [
-      "Rustige praktijkplek",
-      "Groen, helder en overzichtelijk",
-      "Zorgvuldig afgestemd traject",
-      "Wachttijd wordt actueel bijgehouden",
-    ],
+    supportItems: [],
     imagePlaceholderLabel: "Ontwikkeling",
     imagePlaceholderText:
       "Illustratie rond spel, groei en onderweg zijn naar nieuwe mogelijkheden.",
@@ -102,43 +97,43 @@ export const home = {
   },
   intro: {
     valueCardText:
-      "Een rustige basis voor contact, onderzoek en begeleiding.",
+      "Een zachte basis om te beginnen.",
     ctaLabel: "Meer over Uniqara",
   },
   routeOverview: {
-    title: "Snel naar de juiste pagina",
+    title: "Waar wil je meer over weten?",
     intro:
-      "De homepage geeft alleen een kort overzicht. De inhoud staat overzichtelijk verdeeld over aparte pagina's.",
+      "Kies rustig wat nu bij je vraag past.",
     items: [
       {
         label: "Wie zijn wij",
         href: routes.wieZijnWij.href,
-        description: "Visie, missie, behandelaren, kernwaarden en persoonlijke benadering.",
+        description: "Maak kennis met de praktijk en de manier van werken.",
       },
       {
         label: "Voor wie",
         href: routes.voorWie.href,
-        description: "Aparte pagina's voor kinderen, jongeren, ouders en verwijzers.",
+        description: "Informatie voor kinderen, jongeren, ouders en verwijzers.",
       },
       {
         label: "Hulpaanbod",
         href: routes.hulpaanbod.href,
-        description: "Een overzicht met doorkliks naar de verschillende vormen van begeleiding.",
+        description: "Bekijk welke begeleiding mogelijk is.",
       },
       {
         label: "Werkwijze",
         href: routes.werkwijze.href,
-        description: "Aanmelden, kennismaking, begeleiding en evaluatie in duidelijke stappen.",
+        description: "Lees hoe een traject meestal begint.",
       },
       {
         label: "Praktische informatie",
         href: routes.praktischeInformatie.href,
-        description: "Aanmelden, wachttijd, tarieven, privacy, algemene informatie en FAQ.",
+        description: "Aanmelden, wachttijd, tarieven en privacy.",
       },
       {
         label: "Contact",
         href: routes.contact.href,
-        description: "Contactgegevens, formulier, adres en een laagdrempelige eerste stap.",
+        description: "Stel een vraag of meld je rustig aan.",
       },
     ],
   },
@@ -181,7 +176,9 @@ export const home = {
     cardLinkLabel: "Meer informatie",
   },
   contactCta: {
-    title: "Contact opnemen",
+    title: "Een eerste bericht is genoeg",
+    intro:
+      "Je hoeft nog niet alles precies te weten. Stuur gerust een korte vraag.",
     primaryCtaLabel: "Neem contact op",
     secondaryCtaLabel: "Praktische informatie",
   },

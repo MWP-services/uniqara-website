@@ -9,7 +9,7 @@ import { brand } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border-soft bg-surface">
+    <footer className="site-footer-pastel backdrop-blur">
       <Container className="py-8 sm:py-12">
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1fr_1fr] lg:gap-10">
           <section aria-label="Praktijkintro">
@@ -73,7 +73,7 @@ export function Footer() {
           </section>
         </div>
 
-        <div className="mt-10 border-t border-border-soft pt-6">
+        <div className="mt-10 pt-6">
           <p className="text-support">{placeholders.COPYRIGHT_INFO.uiText}</p>
         </div>
       </Container>

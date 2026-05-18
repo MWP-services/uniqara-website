@@ -9,7 +9,7 @@ Deze gids beschrijft hoe de Uniqara website als normale Next.js site op Vercel g
 - Build command: `npm run build`.
 - Lint command: `npm run lint`.
 - Output: standaard Next.js/Vercel output. Geen aparte output-map instellen.
-- Environment variables: niet nodig voor deze placeholder-v1.
+- Environment variables: nodig voor de contactformulierintegratie.
 
 ## Voorbereiden voor GitHub
 
@@ -58,7 +58,7 @@ git push
    - Install Command: `npm install`
    - Build Command: `npm run build`
    - Output Directory: leeg laten
-5. Voeg geen environment variables toe, tenzij er later een echte formulierintegratie of andere externe dienst komt.
+5. Voeg de contactformulier environment variables toe in Vercel.
 6. Klik op `Deploy`.
 
 ## Na de eerste deployment
@@ -67,7 +67,7 @@ Vervang na livegang zo snel mogelijk:
 
 - `SEO_SITE_URL`: zet het definitieve domein in `src/content/seo.ts`.
 - `CONTACT_EMAIL`, `CONTACT_PHONE`, `LOCATION_ADDRESS`, `OPENING_HOURS`: vul echte praktijkgegevens in via `src/content/contact.ts`.
-- `CONTACT_FORM_HANDLER`: koppel later een echte formulierafhandeling.
+- `CONTACT_FORM_HANDLER`: is gekoppeld via de Next.js route `/api/contact` en Resend.
 - `LOGO_PRIMARY`, `LOGO_FOOTER`, `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER`, `SOCIAL_PREVIEW_IMAGE`: vervang placeholders door definitieve branding.
 - `HERO_IMAGE_HOOIBERG`, `HERO_IMAGE_NATURE`, `HERO_IMAGE_PRACTICE`, `PRACTICE_PHOTOS`: vervang beeldplaceholders door echte fotografie.
 - `PRIVACY_LEGAL_TEXT`, `PRIVACY_DATA_CATEGORIES`, `PRIVACY_RIGHTS_INFO`: vul juridisch gecontroleerde privacy-informatie in.
@@ -83,6 +83,12 @@ Vervang na livegang zo snel mogelijk:
 
 ## Environment variables
 
-Voor deze v1 zijn geen environment variables nodig.
+Voor het contactformulier zijn deze environment variables nodig:
 
-Later kan dit veranderen als er bijvoorbeeld een formulierbackend, CRM, analytics of e-mailservice wordt gekoppeld. Voeg die variabelen dan pas toe in Vercel en documenteer ze in dit bestand.
+```bash
+RESEND_API_KEY=...
+CONTACT_FORM_FROM=Uniqara <noreply@uniqara.nl>
+CONTACT_FORM_TO=contact@uniqara.nl
+```
+
+`RESEND_API_KEY` komt uit Resend. `CONTACT_FORM_FROM` moet een afzender zijn op een domein dat in Resend is geverifieerd. `CONTACT_FORM_TO` is standaard het praktijkadres waar de berichten binnenkomen.

@@ -13,10 +13,9 @@ type PageHeroProps = {
 
 export function PageHero({ title, intro, aside, illustration }: PageHeroProps) {
   return (
-    <section className="page-hero-branded border-b border-border-soft">
+    <section className="page-hero-branded">
       <Container className="grid gap-6 py-12 sm:gap-8 sm:py-16 lg:grid-cols-[1fr_0.42fr] lg:items-end">
         <SectionHeading
-          eyebrow={title}
           headingLevel="h1"
           intro={intro}
           title={title}

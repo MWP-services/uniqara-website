@@ -74,7 +74,7 @@ export const contact = {
     intro:
       "Gebruik het formulier voor een eerste aanmelding of vraag. Kies de richting die het beste past en beschrijf kort de hulpvraag.",
     handlerPlaceholder:
-      "De technische verzending wordt later gekoppeld. Tot die tijd kan contact via contact@uniqara.nl.",
+      "Je bericht wordt veilig doorgestuurd naar de praktijkmailbox. Deel geen acute of spoedeisende informatie via dit formulier.",
     fields: {
       name: "Naam",
       email: "E-mailadres",
@@ -94,9 +94,9 @@ export const contact = {
         "Beschrijf kort de hulpvraag, leeftijd en wat je graag wilt bespreken.",
     },
     careTypeOptions: ["Kind en jeugd", "Volwassenen", "Relatie"],
-    submitLabel: "Bericht controleren",
+    submitLabel: "Bericht versturen",
     successMessage:
-      "Voorbeeldmelding: je bericht is nog niet verzonden. De echte formulierafhandeling wordt later gekoppeld.",
+      "Bedankt, je bericht is verzonden. We nemen zo snel mogelijk contact met je op.",
   },
   cta: {
     label: "Neem contact op",

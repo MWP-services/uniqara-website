@@ -59,7 +59,7 @@ export function StructuredContentPage({
         title={page.title}
       />
 
-      <section className="border-b border-border-soft bg-surface py-4 sm:py-5">
+      <section className="section-surface py-4 sm:py-5">
         <Container>
           <nav
             aria-label={`Inhoud van ${page.title}`}

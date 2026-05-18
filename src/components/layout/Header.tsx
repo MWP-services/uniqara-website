@@ -53,7 +53,7 @@ export function Header() {
   const contactIsActive = isActivePath(pathname, routes.contact.href);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border-soft bg-background/95 backdrop-blur">
+    <header className="site-header-pastel sticky top-0 z-30 backdrop-blur">
       <Container>
         <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:gap-4 sm:py-3">
           <Link href={routes.home.href} aria-label={`${site.name} home`}>

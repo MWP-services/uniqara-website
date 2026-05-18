@@ -7,7 +7,7 @@
 3. Vul het definitieve websitedomein aan voor `SEO_SITE_URL`, zodat later canonical URLs, metadataBase, structured data en share-URL's gekoppeld kunnen worden.
 4. Geef aan of er publieke social/profiel-links gebruikt mogen worden voor `SOCIAL_PROFILE_URLS`, of laat dit bewust leeg.
 5. Vervang de tijdelijke branding-assets voor `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE` zodra het echte logo en eventuele fotografie beschikbaar zijn.
-6. Kies en koppel later de echte formulierafhandeling voor `CONTACT_FORM_HANDLER` voordat het contactformulier live gebruikt wordt.
+6. Maak een Resend-account/API key aan en zet `RESEND_API_KEY`, `CONTACT_FORM_FROM` en `CONTACT_FORM_TO` in Vercel voordat het contactformulier live gebruikt wordt.
 7. Vul de aanmeldroute, wachttijd, tarieven en vergoedingen aan voor `REGISTRATION_PROCESS`, `WAITLIST_INFO`, `TARIFFS_INFO` en `REIMBURSEMENT_INFO`.
 8. Laat de privacy-inhoud juridisch controleren en vul aan voor `PRIVACY_INFO`, `PRIVACY_LEGAL_TEXT`, `PRIVACY_DATA_CATEGORIES`, `PRIVACY_DOSSIER_INFO`, `PRIVACY_RIGHTS_INFO`, `PRIVACY_CONTACT_ROUTE` en eventuele praktijkgegevens.
 9. Lever echte foto's aan voor `HERO_IMAGE_HOOIBERG`, `HERO_IMAGE_NATURE`, `HERO_IMAGE_PRACTICE` en `PRACTICE_PHOTOS`.
@@ -27,7 +27,7 @@
 - Controleer voor livegang `src/content/structuredData.ts` zodra domein, adres, telefoon, openingstijden en eventuele profiel-links definitief zijn.
 - Controleer de rustige vertrouwensteksten in footer, contact en CTA-banden zodra de definitieve praktijktoon bekend is.
 - Gebruik `CONTENT_REVIEW.md` als korte launch-content checklist voor teksten die al sterk zijn en teksten die nog vervangen moeten worden.
-- Gebruik `DEPLOYMENT_GUIDE.md` voor GitHub/Vercel-stappen. Voor deze v1 zijn geen environment variables nodig.
+- Gebruik `DEPLOYMENT_GUIDE.md` voor GitHub/Vercel-stappen. Voor het contactformulier zijn Resend environment variables nodig.
 - Controleer de fallbackteksten in `src/content/fallbacks.ts` zodra echte contactgegevens en de definitieve praktijktoon bekend zijn.
 - Gebruik `FINAL_QA_V1.md` als laatste overzicht van wat technisch klaar is en wat voor livegang idealiter nog vervangen wordt.
 - Gebruik `HANDOFF_FOR_USER.md` als startpunt voor beheer, tekstwijzigingen en veilige vervolgopdrachten aan Codex.

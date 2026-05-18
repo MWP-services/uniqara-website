@@ -71,8 +71,8 @@ export const pages = {
       {
         title: "Visie en missie",
         body: [
-          "Uniqara wil kinderen, jongeren, volwassenen en relaties ondersteunen bij vragen die aandacht, zorgvuldigheid en professionele begeleiding vragen.",
-          "De begeleiding is gericht op veiligheid, vertrouwen, groei en het ontdekken van nieuwe mogelijkheden.",
+          "Missie: Uniqara helpt kinderen, jongeren en gezinnen om met vertrouwen en passende ondersteuning stappen vooruit te zetten in hun ontwikkeling en welzijn.",
+          "Visie: Wij geloven dat ontwikkeling ontstaat wanneer kinderen zich gezien, gehoord en begrepen voelen binnen een veilige en betrokken omgeving.",
         ],
         links: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }],
       },

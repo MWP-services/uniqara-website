@@ -1,6 +1,7 @@
 type VideoFrameProps = {
   className?: string;
   motion?: "hero";
+  plain?: boolean;
   poster?: string;
   src: string;
 };
@@ -12,20 +13,25 @@ const motionClasses = {
 export function VideoFrame({
   className = "",
   motion,
+  plain = false,
   poster,
   src,
 }: VideoFrameProps) {
   const motionClass = motion ? motionClasses[motion] : "";
+  const frameClass = plain
+    ? `overflow-visible bg-transparent ${motionClass} ${className}`
+    : `overflow-hidden rounded-medium border border-border-soft bg-card shadow-card ${motionClass} ${className}`;
+  const videoClass = plain
+    ? "block h-full w-full object-contain"
+    : "block h-full w-full rounded-[inherit] object-contain p-2 sm:p-3";
 
   return (
-    <div
-      className={`overflow-hidden rounded-medium border border-border-soft bg-card shadow-card ${motionClass} ${className}`}
-    >
+    <div className={frameClass}>
       <div className={motion ? "illustration-motion-inner h-full w-full" : "h-full w-full"}>
         <video
           aria-hidden="true"
           autoPlay
-          className="block h-full w-full rounded-[inherit] object-contain p-2 sm:p-3"
+          className={videoClass}
           loop
           muted
           playsInline

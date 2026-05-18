@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/Badge";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { VideoFrame } from "@/components/ui/VideoFrame";
@@ -10,14 +10,20 @@ type HeroSectionProps = {
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-border-soft bg-background text-foreground">
-      <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(circle_at_82%_20%,rgba(99,207,198,0.22),transparent_34rem)]" />
+    <section className="relative isolate overflow-hidden bg-background text-foreground">
+      <Image
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-top"
+        fill
+        priority
+        sizes="100vw"
+        src="/assets/achtergrond.png"
+      />
+      <div aria-hidden="true" className="hero-pastel-background absolute inset-0 z-[1]" />
 
-      <Container className="grid items-center gap-8 py-10 sm:min-h-[78vh] sm:gap-10 sm:py-16 lg:min-h-[84vh] lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:py-20 xl:grid-cols-[0.8fr_1.2fr]">
+      <Container className="relative z-10 grid items-center gap-8 py-10 sm:min-h-[78vh] sm:gap-10 sm:py-16 lg:min-h-[84vh] lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:py-20 xl:grid-cols-[0.8fr_1.2fr]">
         <div className="max-w-3xl">
-          <Badge className="hero-reveal hero-reveal-1 mb-5 border-brand-green/30 bg-brand-green-soft text-foreground shadow-card backdrop-blur">
-            {hero.eyebrow}
-          </Badge>
           <h1 className="hero-reveal hero-reveal-2 max-w-3xl text-[clamp(2.25rem,12vw,5.6rem)] font-semibold leading-[1.02] text-foreground">
             {hero.title}
           </h1>
@@ -39,20 +45,23 @@ export function HeroSection({ hero }: HeroSectionProps) {
               {hero.secondaryCta.label}
             </Button>
           </div>
-          <ul className="hero-reveal hero-reveal-5 mt-7 grid gap-3 text-sm leading-6 text-muted-foreground sm:mt-8 sm:grid-cols-3">
-            {hero.supportItems.map((item) => (
-              <li
-                key={item}
-                className="rounded-soft border border-border-soft bg-card px-4 py-3 shadow-card backdrop-blur"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          {hero.supportItems.length > 0 ? (
+            <ul className="hero-reveal hero-reveal-5 mt-7 grid gap-3 text-sm leading-6 text-muted-foreground sm:mt-8 sm:grid-cols-3">
+              {hero.supportItems.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-soft border border-border-soft bg-card px-4 py-3 shadow-card backdrop-blur"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
         <VideoFrame
-          className="mx-auto aspect-[4/3] w-full max-w-[42rem] border-brand-green/35 bg-[linear-gradient(135deg,rgba(248,233,142,0.58),rgba(99,207,198,0.18),rgba(246,163,140,0.13))] lg:aspect-[1.16/1] lg:max-w-none xl:-mr-4"
+          className="hero-video-cutout mx-auto aspect-[4/3] w-full max-w-[42rem] lg:aspect-[1.16/1] lg:max-w-none xl:-mr-4"
           motion="hero"
+          plain
           poster="/assets/HOMEPAGE.webp"
           src="/assets/HOMEPAGE-ANIMATED.mp4"
         />

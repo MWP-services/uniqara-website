@@ -13,7 +13,8 @@ export function Section({
   id,
   variant = "white",
 }: SectionProps) {
-  const variantClass = variant === "surface" ? "bg-surface" : "bg-background";
+  const variantClass =
+    variant === "surface" ? "section-surface" : "section-white";
 
   return (
     <section id={id} className={`section-shell ${variantClass} ${className}`}>

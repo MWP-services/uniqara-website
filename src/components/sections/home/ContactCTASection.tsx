@@ -20,7 +20,7 @@ export function ContactCTASection({
   secondaryCtaHref,
 }: ContactCTASectionProps) {
   return (
-    <section className="border-t border-border-soft bg-background py-10 sm:py-14">
+    <section className="section-white py-10 sm:py-14">
       <Container>
         <Card className="grid gap-6 border-accent-coral/45 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
