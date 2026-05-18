@@ -27,7 +27,7 @@ export const faq = {
     {
       question: "Waar vindt de begeleiding plaats?",
       answer:
-        "Uniqara is gevestigd bij De Hooiberg. De volledige adresgegevens, routebeschrijving en parkeerinformatie worden nog aangevuld.",
+        "Uniqara is gevestigd bij Speltherapie Krimpenerwaard, Kerkweg 139a, 2935 AC Ouderkerk aan den IJssel.",
     },
   ],
 } satisfies FaqContent;

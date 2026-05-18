@@ -20,7 +20,7 @@ export function PageCtaBand({
   sectionClassName = "",
 }: PageCtaBandProps) {
   return (
-    <section className={`bg-background py-10 sm:py-12 ${sectionClassName}`}>
+    <section className={`page-cta-band-branded py-10 sm:py-12 ${sectionClassName}`}>
       <Container>
         <Card className="grid gap-5 border-accent-coral/45 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>

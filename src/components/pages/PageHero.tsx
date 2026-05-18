@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { PageAside, PageIllustration } from "@/content/pages";
-import { routes } from "@/content/routes";
 
 type PageHeroProps = {
   title: string;
@@ -12,22 +11,9 @@ type PageHeroProps = {
   illustration?: PageIllustration;
 };
 
-const toneClasses = {
-  coral: "border-accent-coral/45 bg-accent-coral-soft",
-  neutral: "border-border-soft bg-card",
-  turquoise: "border-brand-green/35 bg-brand-green-soft",
-  yellow: "border-accent-yellow/70 bg-accent-yellow-soft",
-};
-
 export function PageHero({ title, intro, aside, illustration }: PageHeroProps) {
-  const isWhoWeArePage = title === routes.wieZijnWij.label;
-
   return (
-    <section
-      className={`border-b border-border-soft ${
-        isWhoWeArePage ? "page-hero-who-we-are" : "bg-background"
-      }`}
-    >
+    <section className="page-hero-branded border-b border-border-soft">
       <Container className="grid gap-6 py-12 sm:gap-8 sm:py-16 lg:grid-cols-[1fr_0.42fr] lg:items-end">
         <SectionHeading
           eyebrow={title}
@@ -38,14 +24,14 @@ export function PageHero({ title, intro, aside, illustration }: PageHeroProps) {
         {illustration ? (
           <IllustrationFrame
             alt={illustration.alt}
-            className={`aspect-[4/3] ${toneClasses[illustration.tone ?? "neutral"]}`}
-            imageClassName="object-contain p-4 sm:p-5"
+            className="page-hero-branded-visual aspect-[4/3]"
+            imageClassName="page-hero-branded-image object-contain"
             motion="reveal"
             sizes="(min-width: 1024px) 32vw, 100vw"
             src={illustration.src}
           />
         ) : aside ? (
-          <Card className="border-dashed bg-surface p-5">
+          <Card className="border-dashed bg-card/94 p-5 shadow-soft">
             <p className="text-sm font-semibold uppercase text-muted-foreground">
               {aside.label}
             </p>

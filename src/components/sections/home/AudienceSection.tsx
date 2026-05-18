@@ -33,7 +33,7 @@ export function AudienceSection({
           imageClassName="object-contain p-4 sm:p-6"
           motion="float"
           sizes="(min-width: 1024px) 72rem, 100vw"
-          src="/assets/DIEREN.webp"
+          src="/assets/DIEREN.jpg"
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {sections.map((section) => (

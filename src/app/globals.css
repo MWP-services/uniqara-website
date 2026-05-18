@@ -368,18 +368,50 @@
     line-height: 1.4;
   }
 
-  .page-hero-who-we-are {
+  .page-hero-branded {
     background: #f29a82;
   }
 
-  .page-hero-who-we-are .eyebrow,
-  .page-hero-who-we-are .text-display,
-  .page-hero-who-we-are .text-body {
+  .page-hero-branded .eyebrow,
+  .page-hero-branded .text-display,
+  .page-hero-branded .text-body {
     color: #ffffff;
   }
 
-  .page-cta-band-who-we-are {
-    background: #f6e57a;
+  .page-hero-branded .eyebrow {
+    border-color: rgb(255 255 255 / 0.42);
+    background: rgb(255 255 255 / 0.18);
+  }
+
+  .page-hero-branded-visual {
+    position: relative;
+    overflow: visible;
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .page-hero-branded-visual::before {
+    position: absolute;
+    inset: 8% 2% 0;
+    z-index: 0;
+    border-radius: 42% 58% 48% 52% / 54% 44% 56% 46%;
+    background: rgb(255 255 255 / 0.28);
+    content: "";
+  }
+
+  .page-hero-branded-visual .illustration-motion-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-hero-branded-image {
+    border-radius: 1.75rem;
+    filter: drop-shadow(0 1.25rem 2rem rgb(63 74 74 / 0.14));
+  }
+
+  .page-cta-band-branded {
+    background: #58c7be;
   }
 }
 

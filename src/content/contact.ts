@@ -60,15 +60,15 @@ export const contact = {
   ownerName:
     "Elise Honkoop-de Visser, psycholoog NIP en EFT-relatietherapeut. Zzp'er: Annemarie van den Heuvel-de Jager.",
   address: {
-    name: "Uniqara",
-    street: "De Hooiberg",
-    postalCodeCity: "Adresgegevens worden nog aangevuld",
+    name: "Speltherapie Krimpenerwaard",
+    street: "Kerkweg 139a",
+    postalCodeCity: "2935 AC Ouderkerk aan den IJssel",
     country: "Nederland",
   },
   locationDescription:
-    "Uniqara is gevestigd bij De Hooiberg. De volledige adresgegevens, routebeschrijving en praktische aankomstinformatie worden nog aangevuld.",
+    "Uniqara is gevestigd bij Speltherapie Krimpenerwaard aan de Kerkweg 139a in Ouderkerk aan den IJssel.",
   routeNote:
-    "Bereikbaarheid, routebeschrijving en parkeren worden hier nog concreet ingevuld. Vermeld bij contact gerust hoe je wilt reizen, dan kan er alvast worden meegedacht.",
+    "Bekijk de locatie op Google Maps voor de route vanaf je eigen vertrekpunt.",
   form: {
     title: "Aanmeldformulier",
     intro:

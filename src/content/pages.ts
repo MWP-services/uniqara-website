@@ -59,7 +59,7 @@ export const pages = {
       "Uniqara biedt een rustige, professionele praktijkplek waar aandacht, veiligheid en groei centraal staan.",
     illustration: {
       alt: "Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding.",
-      src: "/assets/DIEREN.webp",
+      src: "/assets/DIEREN.jpg",
       tone: "turquoise",
     },
     aside: {
@@ -112,7 +112,7 @@ export const pages = {
       "Uniqara is er voor kinderen, jongeren, ouders/verzorgers en waar passend voor scholen of verwijzers.",
     illustration: {
       alt: "Dierenillustratie bij doelgroepen en verbinding.",
-      src: "/assets/DIEREN.webp",
+      src: "/assets/DIEREN.jpg",
       tone: "turquoise",
     },
     sections: [
@@ -193,7 +193,7 @@ export const pages = {
       "Jongeren kunnen terecht wanneer zij vastlopen, veel druk ervaren of behoefte hebben aan overzicht.",
     illustration: {
       alt: "Blokkenillustratie bij bouwen aan overzicht en ontwikkeling.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "turquoise",
     },
     sections: [
@@ -226,7 +226,7 @@ export const pages = {
       "Ouders en verzorgers kunnen terecht met vragen over opvoeding, gedrag, emoties of ontwikkeling.",
     illustration: {
       alt: "Dierenillustratie bij samen kijken naar veiligheid en verbinding.",
-      src: "/assets/DIEREN.webp",
+      src: "/assets/DIEREN.jpg",
       tone: "turquoise",
     },
     sections: [
@@ -341,7 +341,7 @@ export const pages = {
       "Kindertherapie richt zich op wat een kind nodig heeft om weer meer rust, vertrouwen of grip te ervaren.",
     illustration: {
       alt: "Blokkenillustratie bij ontwikkeling en groei.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "turquoise",
     },
     sections: [
@@ -398,7 +398,7 @@ export const pages = {
       "Ouderbegeleiding helpt om gedrag, emoties en behoeften van een kind beter te begrijpen.",
     illustration: {
       alt: "Dierenillustratie bij verbinding tussen ouders en kind.",
-      src: "/assets/DIEREN.webp",
+      src: "/assets/DIEREN.jpg",
       tone: "turquoise",
     },
     sections: [
@@ -454,7 +454,7 @@ export const pages = {
       "Psychologische en pedagogische begeleiding richt zich op inzicht, ontwikkeling, gedrag, emoties en context.",
     illustration: {
       alt: "Blokkenillustratie bij psychologische en pedagogische ontwikkeling.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "turquoise",
     },
     sections: [
@@ -510,7 +510,7 @@ export const pages = {
         ],
         illustration: {
           alt: "Blokkenillustratie bij bouwen aan begeleiding en ontwikkeling.",
-          src: "/assets/BLOKKEN.webp",
+          src: "/assets/BLOKKEN.png",
           tone: "turquoise",
         },
       },
@@ -533,7 +533,7 @@ export const pages = {
       "Alle praktische onderwerpen zijn gebundeld onder één onderdeel, zodat bezoekers snel de juiste informatie vinden.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en praktische stappen.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "neutral",
     },
     sections: routeGroups.praktischeInformatie.map((route) => ({
@@ -583,7 +583,7 @@ export const pages = {
       "De wachttijd krijgt een vaste plek zodat deze makkelijk bijgehouden kan worden.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en wachttijd.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "turquoise",
     },
     sections: [
@@ -606,7 +606,7 @@ export const pages = {
       "Hier staat de praktische uitleg over kosten, verwijzing, vergoeding en eigen betaling.",
     illustration: {
       alt: "Blokkenillustratie bij praktische informatie.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "neutral",
     },
     sections: [
@@ -695,7 +695,7 @@ export const pages = {
       "Korte antwoorden helpen bezoekers snel begrijpen wat zij kunnen verwachten.",
     illustration: {
       alt: "Blokkenillustratie bij veelgestelde vragen en overzicht.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "neutral",
     },
     sections: [
@@ -712,7 +712,7 @@ export const pages = {
       {
         title: "Waar vindt begeleiding plaats?",
         body: [
-          "Uniqara is gevestigd bij De Hooiberg. De volledige adresgegevens, routebeschrijving en parkeerinformatie worden nog aangevuld.",
+          "Uniqara is gevestigd bij Speltherapie Krimpenerwaard, Kerkweg 139a, 2935 AC Ouderkerk aan den IJssel.",
         ],
       },
     ],
@@ -723,12 +723,12 @@ export const pages = {
     routeKey: "locatie",
     title: "Locatie",
     description:
-      "Informatie over De Hooiberg, landelijke omgeving, bereikbaarheid en route.",
+      "Adres, Google Maps kaart en route-informatie voor de locatie van Uniqara.",
     intro:
-      "De locatiepagina bundelt praktische aankomstinformatie en ruimte voor foto’s of locatieblokken.",
+      "Uniqara is gevestigd aan de Kerkweg 139a in Ouderkerk aan den IJssel. Op deze pagina vind je het adres en de kaart.",
     illustration: {
       alt: "Blokkenillustratie bij locatie en aankomstinformatie.",
-      src: "/assets/BLOKKEN.webp",
+      src: "/assets/BLOKKEN.png",
       tone: "turquoise",
     },
     aside: {
@@ -738,7 +738,7 @@ export const pages = {
     },
     sections: [
       {
-        title: "De Hooiberg",
+        title: "Adres",
         body: [
           contact.address.name,
           contact.address.street,
@@ -746,24 +746,24 @@ export const pages = {
         ],
       },
       {
-        title: "Landelijke omgeving",
+        title: "Omgeving",
         body: [
-          "De omgeving wordt later verder beschreven met concrete locatie-informatie en eventuele foto's.",
+          "De praktijk ligt in Ouderkerk aan den IJssel, in de Krimpenerwaard.",
           placeholders.PRACTICE_PHOTOS.uiText,
         ],
       },
       {
         title: "Bereikbaarheid",
         body: [
-          "De bereikbaarheid wordt nog concreet aangevuld met informatie voor fiets, auto en openbaar vervoer.",
+          "Gebruik de kaart op deze pagina om de route vanaf je eigen vertrekpunt te bekijken.",
           contact.routeNote,
         ],
       },
       {
-        title: "Adres / route",
+        title: "Kaart en route",
         body: [
-          placeholders.LOCATION_ADDRESS.uiText,
-          placeholders.LOCATION_MAP_PLACEHOLDER.uiText,
+          "Onder deze informatie staat een Google Maps kaart met de locatie.",
+          "Met de routeknop open je Google Maps in een nieuw tabblad.",
         ],
       },
     ],
