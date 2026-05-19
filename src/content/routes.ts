@@ -110,7 +110,7 @@ export const routes = {
   },
   praktischeWachttijd: {
     key: "praktischeWachttijd",
-    label: "Wachttijd",
+    label: "Wachttijden",
     href: "/praktische-informatie/wachttijd",
   },
   praktischeTarievenVergoedingen: {

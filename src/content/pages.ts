@@ -577,10 +577,10 @@ export const pages = {
 
   praktischeWachttijd: {
     routeKey: "praktischeWachttijd",
-    title: "Wachttijd",
+    title: "Wachttijden",
     description: "Actuele wachttijd en aanmeldstatus.",
     intro:
-      "De wachttijd krijgt een vaste plek zodat deze makkelijk bijgehouden kan worden.",
+      "De wachttijden krijgen een vaste plek zodat ze makkelijk bijgehouden kunnen worden.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en wachttijd.",
       src: "/assets/BLOKKEN.png",
@@ -590,8 +590,8 @@ export const pages = {
       {
         title: "Actuele status",
         body: [
-          "Actuele wachttijd: wordt nog ingevuld.",
-          placeholders.WAITLIST_INFO.uiText,
+          "Onder het introductieblok staat een tabel met de actuele wachttijden per onderdeel.",
+          "Neem bij twijfel altijd contact op voor de meest passende actuele route.",
         ],
       },
     ],

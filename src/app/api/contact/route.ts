@@ -39,6 +39,8 @@ const successMessage =
   "Bedankt, je bericht is verzonden. We nemen zo snel mogelijk contact met je op.";
 const fallbackErrorMessage =
   "Het bericht kon niet worden verzonden. Probeer het later opnieuw of mail direct naar contact@uniqara.nl.";
+const developmentMissingConfigMessage =
+  "Ontwikkelmodus: het formulier werkt, maar er is nog geen e-mail verzonden omdat de Resend-configuratie ontbreekt.";
 
 function asTrimmedString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -152,9 +154,16 @@ export async function POST(request: Request) {
   if (!apiKey || !from) {
     console.error("Contact form email configuration is incomplete.");
 
+    if (process.env.NODE_ENV !== "production") {
+      return Response.json({
+        ok: true,
+        message: developmentMissingConfigMessage,
+      });
+    }
+
     return Response.json(
       { ok: false, message: fallbackErrorMessage },
-      { status: 500 },
+      { status: 503 },
     );
   }
 

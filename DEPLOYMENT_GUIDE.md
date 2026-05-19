@@ -89,6 +89,9 @@ Voor het contactformulier zijn deze environment variables nodig:
 RESEND_API_KEY=...
 CONTACT_FORM_FROM=Uniqara <noreply@uniqara.nl>
 CONTACT_FORM_TO=contact@uniqara.nl
+WAITING_TIMES_CSV_URL=https://docs.google.com/spreadsheets/d/.../pub?output=csv
 ```
 
 `RESEND_API_KEY` komt uit Resend. `CONTACT_FORM_FROM` moet een afzender zijn op een domein dat in Resend is geverifieerd. `CONTACT_FORM_TO` is standaard het praktijkadres waar de berichten binnenkomen.
+
+`WAITING_TIMES_CSV_URL` is de publieke CSV-link van de Google Sheet met wachttijden. De site leest deze server-side uit en vernieuwt de gegevens ongeveer elke 5 minuten.
