@@ -72,9 +72,11 @@
     scroll-behavior: smooth;
     background: var(--background);
     text-size-adjust: 100%;
+    overflow-x: clip;
   }
 
   body {
+    overflow-x: clip;
     min-height: 100vh;
     background:
       linear-gradient(
@@ -119,6 +121,26 @@
 
   p {
     text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  dd,
+  dt,
+  a,
+  button {
+    overflow-wrap: break-word;
+  }
+
+  img,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
   }
 
   a,
@@ -321,6 +343,7 @@
   }
 
   .content-measure {
+    min-width: 0;
     max-width: 42rem;
   }
 
@@ -354,6 +377,7 @@
 
   .surface-card {
     position: relative;
+    min-width: 0;
     border: 1px solid var(--border-soft);
     border-top: 0.28rem solid var(--brand-green);
     border-radius: var(--radius-soft);

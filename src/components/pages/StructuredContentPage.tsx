@@ -63,13 +63,13 @@ export function StructuredContentPage({
         <Container>
           <nav
             aria-label={`Inhoud van ${page.title}`}
-            className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0"
+            className="flex flex-wrap gap-2"
           >
             {page.sections.map((section) => (
               <Link
                 key={section.title}
                 href={`#${sectionId(section)}`}
-                className="inline-flex min-h-10 shrink-0 items-center rounded-pill border border-border-soft bg-card px-4 py-2 text-sm font-semibold leading-snug text-foreground transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft"
+                className="inline-flex min-h-11 max-w-full items-center rounded-pill border border-border-soft bg-card px-4 py-2 text-sm font-semibold leading-snug text-foreground transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft"
               >
                 {section.title}
               </Link>

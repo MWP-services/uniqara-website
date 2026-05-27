@@ -20,8 +20,49 @@ export async function WaitingTimesSection() {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="min-w-[46rem] w-full border-collapse text-left">
+          <div className="grid gap-3 p-4 md:hidden">
+            {waitingTimes.rows.map((row) => (
+              <article
+                key={`${row.item}-${row.waitingTime}-${row.status}`}
+                className="rounded-soft border border-border-soft bg-card p-4"
+              >
+                <h3 className="text-base font-semibold text-foreground">
+                  {row.item || "Algemeen"}
+                </h3>
+                <dl className="mt-3 grid gap-3 text-sm">
+                  <div>
+                    <dt className="font-semibold text-foreground">
+                      Wachttijd
+                    </dt>
+                    <dd className="mt-1 text-muted">
+                      {row.waitingTime || "Nog niet bekend"}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-foreground">Status</dt>
+                    <dd className="mt-1 text-muted">
+                      {row.status || "Nog niet bekend"}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-foreground">
+                      Toelichting
+                    </dt>
+                    <dd className="mt-1 text-muted">{row.note || "-"}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-foreground">
+                      Bijgewerkt
+                    </dt>
+                    <dd className="mt-1 text-muted">{row.updatedAt || "-"}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="hidden overflow-x-auto md:block">
+            <table className="w-full min-w-full border-collapse text-left">
               <caption className="sr-only">
                 Overzicht van actuele wachttijden bij Uniqara
               </caption>

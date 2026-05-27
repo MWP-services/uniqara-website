@@ -214,7 +214,7 @@ export function Button({
   variant = "primary",
   ...props
 }: ButtonProps) {
-  const classes = `inline-flex min-h-11 items-center justify-center gap-2 rounded-pill px-5 py-3 text-center text-sm font-semibold leading-snug transition focus-visible:ring-4 focus-visible:ring-focus-ring/25 disabled:cursor-not-allowed disabled:opacity-60 aria-[current=page]:ring-2 aria-[current=page]:ring-focus-ring/40 ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-pill px-5 py-3 text-center text-sm font-semibold leading-snug transition focus-visible:ring-4 focus-visible:ring-focus-ring/25 disabled:cursor-not-allowed disabled:opacity-60 aria-[current=page]:ring-2 aria-[current=page]:ring-focus-ring/40 ${variantClasses[variant]} ${className}`;
 
   if ("href" in props) {
     const { href, ...linkProps } = props as ButtonAsLinkProps;

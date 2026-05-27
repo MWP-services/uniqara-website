@@ -31,7 +31,7 @@ export function IllustrationFrame({
 
   return (
     <div
-      className={`overflow-hidden rounded-medium border border-border-soft bg-card shadow-card ${motionClass} ${className}`}
+      className={`min-w-0 overflow-hidden rounded-medium border border-border-soft bg-card shadow-card ${motionClass} ${className}`}
     >
       <div className={motion ? "illustration-motion-inner h-full w-full" : "h-full w-full"}>
         <Image

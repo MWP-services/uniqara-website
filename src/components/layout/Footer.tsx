@@ -30,7 +30,7 @@ export function Footer() {
               {navigation.footer.map((item) => (
                 <li key={item.href}>
                   <Link
-                    className="inline-flex min-h-9 items-center hover:text-foreground hover:underline decoration-brand-green decoration-2 underline-offset-4"
+                    className="inline-flex min-h-11 items-center hover:text-foreground hover:underline decoration-brand-green decoration-2 underline-offset-4 lg:min-h-9"
                     href={item.href}
                   >
                     {item.label}

@@ -34,7 +34,7 @@ function NavigationLinks({
             key={item.href}
             aria-current={isActive ? "page" : undefined}
             href={item.href}
-            className={`rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft ${
+            className={`flex min-h-11 items-center rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft ${
               isActive
                 ? "bg-brand-green-soft text-foreground"
                 : "text-foreground"
@@ -79,7 +79,7 @@ export function Header() {
             <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft">
               Menu
             </summary>
-            <div className="absolute right-0 z-40 mt-3 max-h-[calc(100vh-5.5rem)] w-[min(88vw,22rem)] overflow-auto rounded-medium border border-border-soft bg-card p-4 shadow-soft">
+            <div className="absolute right-0 z-40 mt-3 max-h-[calc(100vh-5.5rem)] w-[min(calc(100vw-2rem),22rem)] overflow-auto rounded-medium border border-border-soft bg-card p-4 shadow-soft">
               <NavigationLinks
                 ariaLabel="Mobiele navigatie"
                 className="grid gap-1"

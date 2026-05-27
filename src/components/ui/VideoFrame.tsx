@@ -19,8 +19,8 @@ export function VideoFrame({
 }: VideoFrameProps) {
   const motionClass = motion ? motionClasses[motion] : "";
   const frameClass = plain
-    ? `overflow-visible bg-transparent ${motionClass} ${className}`
-    : `overflow-hidden rounded-medium border border-border-soft bg-card shadow-card ${motionClass} ${className}`;
+    ? `min-w-0 overflow-visible bg-transparent ${motionClass} ${className}`
+    : `min-w-0 overflow-hidden rounded-medium border border-border-soft bg-card shadow-card ${motionClass} ${className}`;
   const videoClass = plain
     ? "block h-full w-full object-contain"
     : "block h-full w-full rounded-[inherit] object-contain p-2 sm:p-3";

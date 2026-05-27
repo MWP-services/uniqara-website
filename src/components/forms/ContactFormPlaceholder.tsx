@@ -9,7 +9,9 @@ type ContactFormPlaceholderProps = {
 };
 
 const inputClasses =
-  "mt-2 min-h-12 w-full rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:text-muted focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
+  "mt-2 min-h-12 w-full min-w-0 rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:text-muted focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
+
+const labelClasses = "block min-w-0 text-sm font-semibold text-foreground";
 
 type FormStatus = {
   message: string;
@@ -76,7 +78,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
       onSubmit={handleSubmit}
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-semibold text-foreground">
+        <label className={labelClasses}>
           {form.fields.name}
           <input
             autoComplete="name"
@@ -87,7 +89,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             type="text"
           />
         </label>
-        <label className="block text-sm font-semibold text-foreground">
+        <label className={labelClasses}>
           {form.fields.email}
           <input
             autoComplete="email"
@@ -101,7 +103,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-semibold text-foreground">
+        <label className={labelClasses}>
           {form.fields.phone}
           <input
             autoComplete="tel"
@@ -111,7 +113,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             type="tel"
           />
         </label>
-        <label className="block text-sm font-semibold text-foreground">
+        <label className={labelClasses}>
           {form.fields.city}
           <input
             autoComplete="address-level2"
@@ -125,7 +127,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-semibold text-foreground">
+        <label className={labelClasses}>
           {form.fields.careType}
           <select
             className={inputClasses}
@@ -143,7 +145,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
             ))}
           </select>
         </label>
-        <label className="block text-sm font-semibold text-foreground">
+        <label className={labelClasses}>
           {form.fields.subject}
           <input
             className={inputClasses}
@@ -154,7 +156,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
         </label>
       </div>
 
-      <label className="block text-sm font-semibold text-foreground">
+      <label className={labelClasses}>
         {form.fields.message}
         <textarea
           className={`${inputClasses} min-h-36 resize-y`}
@@ -180,7 +182,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
       </p>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Button disabled={isSubmitting} type="submit">
+        <Button className="w-full sm:w-auto" disabled={isSubmitting} type="submit">
           {isSubmitting ? "Bezig met versturen..." : form.submitLabel}
         </Button>
         {status ? (

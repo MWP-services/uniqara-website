@@ -52,7 +52,7 @@ export function LocationSection({
                 sizes="(min-width: 1024px) 42vw, 100vw"
                 src="/assets/BLOKKEN.png"
               />
-              <p className="absolute bottom-4 left-4 rounded-pill border border-brand-green/30 bg-background/85 px-4 py-2 text-sm font-semibold uppercase text-foreground shadow-card backdrop-blur">
+              <p className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] rounded-pill border border-brand-green/30 bg-background/85 px-4 py-2 text-sm font-semibold uppercase text-foreground shadow-card backdrop-blur">
                 {imageLabel}
               </p>
             </div>
