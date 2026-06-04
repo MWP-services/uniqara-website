@@ -18,7 +18,7 @@ export function Footer() {
               {brand.shortDescription}
             </p>
             <p className="mt-4 text-sm font-semibold text-foreground">
-              Rustig, zorgvuldig en persoonlijk.
+              {brand.footerShortTagline}
             </p>
           </section>
 
@@ -70,6 +70,16 @@ export function Footer() {
               <p>{contact.address.postalCodeCity}</p>
               <p>{contact.routeNote}</p>
             </div>
+            <Button
+              href={contact.googleMapsUrl}
+              icon="route"
+              className="mt-4"
+              rel="noreferrer"
+              target="_blank"
+              variant="secondary"
+            >
+              Bekijk op Google Maps
+            </Button>
           </section>
         </div>
 

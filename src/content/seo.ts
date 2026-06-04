@@ -56,7 +56,7 @@ export const seo = {
     appIconPlaceholder: placeholders.APP_ICON_PLACEHOLDER.uiText,
     socialPreviewPlaceholder: placeholders.SOCIAL_PREVIEW_IMAGE.uiText,
     socialPreviewAlt:
-      "Uniqara - rustige psychologiepraktijk voor kinderen, jongeren, volwassenen en relaties",
+      "Uniqara - psychologiepraktijk voor kinderen, jongeren, volwassenen en relaties",
   },
   pages: {
     home: {
@@ -64,7 +64,7 @@ export const seo = {
       path: routes.home.href,
       title: homeTitle,
       description:
-        "Uniqara is een rustige en professionele psychologiepraktijk met aandacht voor kinderen, jongeren, volwassenen, ouders en relaties.",
+        "Uniqara is een professionele psychologiepraktijk met aandacht voor kinderen, jongeren, volwassenen, ouders en relaties.",
     },
     ...contentPageSeo,
   },

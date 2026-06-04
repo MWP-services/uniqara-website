@@ -3,6 +3,6 @@ import { pageMetadata } from "@/content/seo";
 
 export const metadata = pageMetadata.jongerenbegeleiding;
 
-export default function JongerenbegeleidingPage() {
+export default function JeugdhulpPage() {
   return <ContentRoutePage routeKey="jongerenbegeleiding" />;
 }

@@ -37,8 +37,7 @@ const fieldLimits = {
 
 const successMessage =
   "Bedankt, je bericht is verzonden. We nemen zo snel mogelijk contact met je op.";
-const fallbackErrorMessage =
-  "Het bericht kon niet worden verzonden. Probeer het later opnieuw of mail direct naar contact@uniqara.nl.";
+const fallbackErrorMessage = `Het bericht kon niet worden verzonden. Probeer het later opnieuw of mail direct naar ${contact.email}.`;
 const developmentMissingConfigMessage =
   "Ontwikkelmodus: het formulier werkt, maar er is nog geen e-mail verzonden omdat de Resend-configuratie ontbreekt.";
 

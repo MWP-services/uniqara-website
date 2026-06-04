@@ -29,6 +29,12 @@ export function HeroSection({ hero }: HeroSectionProps) {
           </h1>
           <p className="hero-reveal hero-reveal-3 mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-6 sm:text-xl sm:leading-8">
             {hero.intro}
+            {hero.introSecondary ? (
+              <>
+                <br />
+                {hero.introSecondary}
+              </>
+            ) : null}
           </p>
           <div className="hero-reveal hero-reveal-4 mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <Button

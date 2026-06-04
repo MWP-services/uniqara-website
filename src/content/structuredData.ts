@@ -20,6 +20,9 @@ export type JsonLdGraph = {
 const organizationId = absoluteUrl("/#organization");
 const websiteId = absoluteUrl("/#website");
 const placeId = absoluteUrl("/#practice-location");
+const hasPublicPhone =
+  contact.phone !== placeholders.CONTACT_PHONE.uiText &&
+  contact.phone !== placeholders.TELEFOONNUMMER_VOLGT.uiText;
 
 // Structured data gebruikt placeholders totdat domein, contactgegevens,
 // openingstijden en social profielen definitief zijn aangeleverd.
@@ -46,7 +49,7 @@ export const structuredData: JsonLdGraph = {
       description: brand.shortDescription,
       image: absoluteUrl("/opengraph-image"),
       logo: absoluteUrl("/placeholders/logo.jpeg"),
-      telephone: contact.phone,
+      ...(hasPublicPhone ? { telephone: contact.phone } : {}),
       email: contact.email,
       openingHours: contact.openingHours,
       sameAs: [placeholders.SOCIAL_PROFILE_URLS.uiText],

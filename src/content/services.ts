@@ -22,7 +22,7 @@ export type ServicesContent = {
 export const services = {
   heading: "Zorg met duidelijke stappen",
   intro:
-    "Een rustig overzicht helpt bezoekers herkennen welke ondersteuning mogelijk passend kan zijn.",
+    "Een kort overzicht van mogelijke ondersteuning.",
   items: [
     {
       title: "Kind en jeugd",
@@ -33,7 +33,7 @@ export const services = {
     {
       title: "Volwassenen",
       summary:
-        "Begeleiding bij persoonlijke vragen, spanning, vastlopen, verlies, onzekerheid of andere hulpvragen.",
+        "Zorg bij persoonlijke vragen, spanning, vastlopen, verlies, onzekerheid of andere hulpvragen.",
       href: routes.psycholoogPedagoogBegeleiding.href,
     },
     {
@@ -47,22 +47,22 @@ export const services = {
     {
       title: "Angst, spanning of piekeren",
       description:
-        "Ondersteuning wanneer zorgen, spanning of piekergedachten veel ruimte innemen.",
+        "Ondersteuning wanneer zorgen, spanning of piekeren veel vraagt.",
     },
     {
       title: "Emoties en gedrag",
       description:
-        "Samen kijken naar signalen, behoeften en wat helpt om weer meer overzicht te ervaren.",
+        "Samen kijken naar signalen, behoeften en wat overzicht kan geven.",
     },
     {
       title: "Zelfvertrouwen en weerbaarheid",
       description:
-        "Aandacht voor onzekerheid, grenzen aangeven en stap voor stap steviger staan.",
+        "Aandacht voor onzekerheid, grenzen aangeven en steviger staan.",
     },
     {
       title: "School, druk en prikkels",
       description:
-        "Rustig verkennen wat school of dagelijkse prikkels zwaar maakt en welke steun passend is.",
+        "Verkennen wat school of dagelijkse prikkels zwaar maakt en welke steun passend is.",
     },
     {
       title: "Gezin en opvoeding",
@@ -72,7 +72,7 @@ export const services = {
     {
       title: "Ontwikkeling en levensfase",
       description:
-        "Ruimte voor vragen rond groei, verandering, identiteit en de context waarin iemand leeft.",
+        "Vragen rond groei, verandering, identiteit en context.",
     },
   ],
 } satisfies ServicesContent;

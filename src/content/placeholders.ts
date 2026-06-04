@@ -9,6 +9,12 @@ export type PlaceholderKey =
   | "HERO_IMAGE_PRACTICE"
   | "CONTACT_EMAIL"
   | "CONTACT_PHONE"
+  | "TELEFOONNUMMER_VOLGT"
+  | "HULPAANBOD_BANNER_VARIANT"
+  | "FOOTER_SHORT_TAGLINE"
+  | "KINDERTHERAPIE_BEHANDELVORMEN"
+  | "VERWIJSROUTE_DETAILS"
+  | "GOOGLE_MAPS_LINK"
   | "CONTACT_FORM_HANDLER"
   | "LOCATION_ADDRESS"
   | "OWNER_NAME"
@@ -33,6 +39,7 @@ export type PlaceholderKey =
   | "PRIVACY_CONTACT_ROUTE"
   | "TEAM_DETAILS"
   | "SERVICE_DETAIL_CONTENT"
+  | "TREATMENT_METHOD_CONTENT"
   | "PRACTICAL_DETAIL_CONTENT"
   | "COPYRIGHT_INFO";
 
@@ -102,9 +109,46 @@ export const placeholders = {
   },
   CONTACT_PHONE: {
     key: "CONTACT_PHONE",
-    uiText: "CONTACT_PHONE - telefoonnummer volgt",
+    uiText: "Nieuw telefoonnummer volgt",
     description: "Publiek telefoonnummer van de praktijk.",
     replaceWith: "Definitief telefoonnummer of keuze om geen telefoon te tonen.",
+  },
+  TELEFOONNUMMER_VOLGT: {
+    key: "TELEFOONNUMMER_VOLGT",
+    uiText: "Nieuw telefoonnummer volgt",
+    description: "Tijdelijke telefoonplaceholder totdat het nieuwe nummer bekend is.",
+    replaceWith: "Definitief telefoonnummer of keuze om geen telefoon te tonen.",
+  },
+  HULPAANBOD_BANNER_VARIANT: {
+    key: "HULPAANBOD_BANNER_VARIANT",
+    uiText: "green",
+    description: "Visuele kleurvariant voor de Hulpaanbod-banner.",
+    replaceWith: "Kies na visuele beoordeling: green, yellow of terra.",
+  },
+  FOOTER_SHORT_TAGLINE: {
+    key: "FOOTER_SHORT_TAGLINE",
+    uiText: "Persoonlijk, zorgvuldig en met aandacht.",
+    description: "Korte footerregel onder de praktijkintro.",
+    replaceWith: "Definitieve korte footerregel in de gewenste praktijktoon.",
+  },
+  KINDERTHERAPIE_BEHANDELVORMEN: {
+    key: "KINDERTHERAPIE_BEHANDELVORMEN",
+    uiText: "EMDR, ACT en CGT",
+    description: "Voorlopige behandelvormen bij kindertherapie.",
+    replaceWith: "Definitieve lijst met behandelvormen of aanvullende uitleg.",
+  },
+  VERWIJSROUTE_DETAILS: {
+    key: "VERWIJSROUTE_DETAILS",
+    uiText: "Basisroute toevoegen, details later verfijnen",
+    description: "Nog te verfijnen details rond verwijzen en afstemming.",
+    replaceWith: "Definitieve verwijsroute, voorwaarden, aanleverwijze en terugkoppeling.",
+  },
+  GOOGLE_MAPS_LINK: {
+    key: "GOOGLE_MAPS_LINK",
+    uiText:
+      "https://www.google.com/maps/search/?api=1&query=Kerkweg%20139a%2C%202935%20AC%20Ouderkerk%20aan%20den%20IJssel",
+    description: "Google Maps-link naar de praktijklocatie.",
+    replaceWith: "Definitief gecontroleerde Google Maps-link.",
   },
   CONTACT_FORM_HANDLER: {
     key: "CONTACT_FORM_HANDLER",
@@ -252,6 +296,12 @@ export const placeholders = {
     description: "Definitieve inhoud per hulpaanbodpagina.",
     replaceWith: "Definitieve uitleg per hulpvorm, doelgroep en werkwijze.",
   },
+  TREATMENT_METHOD_CONTENT: {
+    key: "TREATMENT_METHOD_CONTENT",
+    uiText: "TREATMENT_METHOD_CONTENT - definitieve behandelvormtekst volgt",
+    description: "Definitieve praktijkteksten voor EMDR, ACT en CGT.",
+    replaceWith: "Definitieve uitleg per behandelvorm, toepassing en werkwijze.",
+  },
   PRACTICAL_DETAIL_CONTENT: {
     key: "PRACTICAL_DETAIL_CONTENT",
     uiText: "PRACTICAL_DETAIL_CONTENT - praktische details volgen",
@@ -260,7 +310,7 @@ export const placeholders = {
   },
   COPYRIGHT_INFO: {
     key: "COPYRIGHT_INFO",
-    uiText: "COPYRIGHT_INFO - copyrighttekst volgt",
+    uiText: "Definitieve copyrighttekst volgt.",
     description: "Copyrightregel en eventuele juridische footerregel.",
     replaceWith: "Definitieve copyrighttekst voor de footer.",
   },
@@ -275,6 +325,8 @@ export const homepagePlaceholderKeys = [
   "PRACTICE_PHOTOS",
   "CONTACT_EMAIL",
   "CONTACT_PHONE",
+  "TELEFOONNUMMER_VOLGT",
+  "GOOGLE_MAPS_LINK",
   "LOCATION_ADDRESS",
   "REGISTRATION_PROCESS",
   "TARIFFS_INFO",
@@ -286,6 +338,12 @@ export const homepagePlaceholderKeys = [
 export const launchContentPlaceholderKeys = [
   "CONTACT_EMAIL",
   "CONTACT_PHONE",
+  "TELEFOONNUMMER_VOLGT",
+  "GOOGLE_MAPS_LINK",
+  "HULPAANBOD_BANNER_VARIANT",
+  "FOOTER_SHORT_TAGLINE",
+  "KINDERTHERAPIE_BEHANDELVORMEN",
+  "VERWIJSROUTE_DETAILS",
   "LOCATION_ADDRESS",
   "OPENING_HOURS",
   "OWNER_NAME",
@@ -311,6 +369,12 @@ export const finalQaPlaceholderKeys = [
   "SEO_SITE_URL",
   "CONTACT_EMAIL",
   "CONTACT_PHONE",
+  "TELEFOONNUMMER_VOLGT",
+  "GOOGLE_MAPS_LINK",
+  "HULPAANBOD_BANNER_VARIANT",
+  "FOOTER_SHORT_TAGLINE",
+  "KINDERTHERAPIE_BEHANDELVORMEN",
+  "VERWIJSROUTE_DETAILS",
   "LOCATION_ADDRESS",
   "OPENING_HOURS",
   "OWNER_NAME",

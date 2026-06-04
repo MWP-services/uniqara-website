@@ -1,3 +1,4 @@
+import { placeholders } from "./placeholders";
 import { routes } from "./routes";
 
 export type ContactContent = {
@@ -8,6 +9,7 @@ export type ContactContent = {
   phone: string;
   openingHours: string;
   ownerName: string;
+  googleMapsUrl: string;
   address: {
     name: string;
     street: string;
@@ -50,29 +52,31 @@ export type ContactContent = {
 export const contact = {
   heading: "Contact",
   intro:
-    "Neem gerust contact op wanneer je wilt verkennen of Uniqara passend kan zijn. Voor vragen, aanmelding of een kennismaking kun je mailen, bellen of het formulier invullen.",
+    "Neem contact op voor vragen, aanmelding of een kennismaking. Je kunt mailen of het formulier invullen.",
   reassurance:
-    "Een eerste bericht hoeft nog niet volledig te zijn. Vermeld in ieder geval je woonplaats, hulpvraag, telefoonnummer en e-mailadres, dan kan er gericht worden meegedacht.",
-  email: "contact@uniqara.nl",
-  phone: "06 3603 6772",
+    "Een eerste bericht hoeft niet volledig te zijn. Vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
+  email: "info@uniqara.nl",
+  phone: placeholders.TELEFOONNUMMER_VOLGT.uiText,
   openingHours:
-    "Openingstijden worden nog definitief aangevuld. Tijdens afspraken kan de telefoon niet altijd direct worden opgenomen; spreek gerust de voicemail in of stuur een e-mail.",
+    "Werkdagen van 9.00 tot 17.00 uur. Tijdens afspraken kan de telefoon niet altijd direct worden opgenomen; spreek gerust de voicemail in of stuur een e-mail.",
   ownerName:
     "Elise Honkoop-de Visser, psycholoog NIP en EFT-relatietherapeut. Zzp'er: Annemarie van den Heuvel-de Jager.",
+  googleMapsUrl:
+    placeholders.GOOGLE_MAPS_LINK.uiText,
   address: {
-    name: "Speltherapie Krimpenerwaard",
+    name: "Hooiberg",
     street: "Kerkweg 139a",
     postalCodeCity: "2935 AC Ouderkerk aan den IJssel",
     country: "Nederland",
   },
   locationDescription:
-    "Uniqara is gevestigd bij Speltherapie Krimpenerwaard aan de Kerkweg 139a in Ouderkerk aan den IJssel.",
+    "Uniqara is gevestigd bij Hooiberg aan de Kerkweg 139a in Ouderkerk aan den IJssel.",
   routeNote:
-    "Bekijk de locatie op Google Maps voor de route vanaf je eigen vertrekpunt.",
+    "Bekijk de locatie op Google Maps voor de route.",
   form: {
     title: "Aanmeldformulier",
     intro:
-      "Gebruik het formulier voor een eerste aanmelding of vraag. Kies de richting die het beste past en beschrijf kort de hulpvraag.",
+      "Gebruik het formulier voor een eerste aanmelding of vraag. Beschrijf kort de hulpvraag.",
     handlerPlaceholder:
       "Je bericht wordt veilig doorgestuurd naar de praktijkmailbox. Deel geen acute of spoedeisende informatie via dit formulier.",
     fields: {
@@ -87,11 +91,11 @@ export const contact = {
     fieldPlaceholders: {
       name: "Voor- en achternaam",
       email: "naam@voorbeeld.nl",
-      phone: "06 1234 5678",
+      phone: "Telefoonnummer",
       city: "Woonplaats",
       subject: "Bijvoorbeeld: aanmelding of kennismaking",
       message:
-        "Beschrijf kort de hulpvraag, leeftijd en wat je graag wilt bespreken.",
+        "Beschrijf kort de hulpvraag, leeftijd en je vraag.",
     },
     careTypeOptions: ["Kind en jeugd", "Volwassenen", "Relatie"],
     submitLabel: "Bericht versturen",

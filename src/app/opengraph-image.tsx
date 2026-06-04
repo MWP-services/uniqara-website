@@ -80,7 +80,7 @@ export default function OpenGraphImage() {
               maxWidth: 860,
             }}
           >
-            Rustige psychologiepraktijk in een groene omgeving.
+            Psychologiepraktijk met aandacht in een groene omgeving.
           </p>
         </div>
         <div

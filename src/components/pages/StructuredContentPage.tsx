@@ -54,6 +54,9 @@ export function StructuredContentPage({
     <main className="page-shell">
       <PageHero
         aside={aside}
+        eyebrow={page.heroEyebrow}
+        heroBannerVariant={page.heroBannerVariant}
+        heroVariant={page.heroVariant}
         illustration={page.illustration}
         intro={page.intro}
         title={page.title}
@@ -79,12 +82,12 @@ export function StructuredContentPage({
       </section>
 
       <Section variant="surface">
-        <Container className="grid gap-3 sm:gap-4 md:grid-cols-2 lg:gap-5">
+        <Container className="grid min-w-0 grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:gap-5">
           {page.sections.map((section, index) => (
             <Card
               key={section.title}
               id={sectionId(section)}
-              className="scroll-mt-32"
+              className="flex w-full min-w-0 scroll-mt-32 flex-col"
             >
               {stepNumbers ? (
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-pill bg-accent-yellow-soft text-sm font-semibold text-foreground">
@@ -107,7 +110,7 @@ export function StructuredContentPage({
               {section.links ? (
                 <nav
                   aria-label={`Vervolglinks bij ${section.title}`}
-                  className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap"
+                  className="mt-auto flex flex-col gap-2 pt-5 sm:flex-row sm:flex-wrap"
                 >
                   {section.links.map((link) => (
                     <Button key={link.href} href={link.href} variant="ghost">
@@ -123,7 +126,12 @@ export function StructuredContentPage({
 
       {afterSections}
 
-      <PageCtaBand links={page.ctas} />
+      <PageCtaBand
+        eyebrow={page.ctaBand?.eyebrow}
+        intro={page.ctaBand?.intro}
+        links={page.ctas}
+        title={page.ctaBand?.title}
+      />
     </main>
   );
 }

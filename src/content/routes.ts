@@ -13,6 +13,9 @@ export type RouteKey =
   | "ouderbegeleiding"
   | "vaktherapieCreatieveTherapie"
   | "psycholoogPedagoogBegeleiding"
+  | "watIsEmdr"
+  | "watIsAct"
+  | "watIsCgt"
   | "werkwijze"
   | "praktischeInformatie"
   | "praktischeAanmelden"
@@ -79,23 +82,38 @@ export const routes = {
   },
   jongerenbegeleiding: {
     key: "jongerenbegeleiding",
-    label: "Jongerenbegeleiding",
-    href: "/hulpaanbod/jongerenbegeleiding",
+    label: "Jeugdhulp",
+    href: "/hulpaanbod/jeugdhulp",
   },
   ouderbegeleiding: {
     key: "ouderbegeleiding",
-    label: "Opvoedvragen / ouderbegeleiding",
-    href: "/hulpaanbod/ouderbegeleiding",
+    label: "Ouderbegeleiding / oudertherapie",
+    href: "/hulpaanbod/ouderbegeleiding-oudertherapie",
   },
   vaktherapieCreatieveTherapie: {
     key: "vaktherapieCreatieveTherapie",
-    label: "Vaktherapie / creatieve therapie",
-    href: "/hulpaanbod/vaktherapie-creatieve-therapie",
+    label: "Vaktherapie / beeldende therapie",
+    href: "/hulpaanbod/vaktherapie-beeldende-therapie",
   },
   psycholoogPedagoogBegeleiding: {
     key: "psycholoogPedagoogBegeleiding",
-    label: "Psycholoog / pedagoog begeleiding",
-    href: "/hulpaanbod/psycholoog-pedagoog-begeleiding",
+    label: "Psycholoog / pedagoog",
+    href: "/hulpaanbod/psycholoog-pedagoog",
+  },
+  watIsEmdr: {
+    key: "watIsEmdr",
+    label: "Wat is EMDR",
+    href: "/hulpaanbod/kindertherapie/emdr",
+  },
+  watIsAct: {
+    key: "watIsAct",
+    label: "Wat is ACT",
+    href: "/hulpaanbod/kindertherapie/act",
+  },
+  watIsCgt: {
+    key: "watIsCgt",
+    label: "Wat is CGT",
+    href: "/hulpaanbod/kindertherapie/cgt",
   },
   werkwijze: { key: "werkwijze", label: "Werkwijze", href: "/werkwijze" },
   praktischeInformatie: {
@@ -173,6 +191,11 @@ export const routeGroups = {
     routes.ouderbegeleiding,
     routes.vaktherapieCreatieveTherapie,
     routes.psycholoogPedagoogBegeleiding,
+  ],
+  behandelvormen: [
+    routes.watIsEmdr,
+    routes.watIsAct,
+    routes.watIsCgt,
   ],
   praktischeInformatie: [
     routes.praktischeAanmelden,

@@ -3,6 +3,6 @@ import { pageMetadata } from "@/content/seo";
 
 export const metadata = pageMetadata.vaktherapieCreatieveTherapie;
 
-export default function VaktherapieCreatieveTherapiePage() {
+export default function VaktherapieBeeldendeTherapiePage() {
   return <ContentRoutePage routeKey="vaktherapieCreatieveTherapie" />;
 }

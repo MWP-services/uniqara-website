@@ -3,6 +3,6 @@ import { pageMetadata } from "@/content/seo";
 
 export const metadata = pageMetadata.psycholoogPedagoogBegeleiding;
 
-export default function PsycholoogPedagoogBegeleidingPage() {
+export default function PsycholoogPedagoogPage() {
   return <ContentRoutePage routeKey="psycholoogPedagoogBegeleiding" />;
 }

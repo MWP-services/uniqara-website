@@ -10,6 +10,7 @@ export type HomeContent = {
     eyebrow: string;
     title: string;
     intro: string;
+    introSecondary?: string;
     primaryCta: CtaLink;
     secondaryCta: CtaLink;
     supportItems: string[];
@@ -73,7 +74,8 @@ export const home = {
     eyebrow: "Psychologiepraktijk",
     title: "Groeien begint met gezien worden.",
     intro:
-      "Persoonlijke begeleiding voor kinderen, jongeren en gezinnen. Met aandacht voor ontwikkeling, vertrouwen en welzijn.",
+      "Basis GGZ, jeugdhulp voor kinderen, jongeren en gezinnen",
+    introSecondary: "Met aandacht voor ontwikkeling, vertrouwen en welzijn.",
     primaryCta: { label: "Neem contact op", href: routes.contact.href },
     secondaryCta: { label: "Lees de werkwijze", href: routes.werkwijze.href },
     supportItems: [],
@@ -87,7 +89,7 @@ export const home = {
       },
       {
         label: "Natuur en groen",
-        text: "Rustige illustratie rond veiligheid, verbinding en groei.",
+        text: "Illustratie rond veiligheid, verbinding en groei.",
       },
       {
         label: "Praktijk en sfeer",
@@ -97,13 +99,13 @@ export const home = {
   },
   intro: {
     valueCardText:
-      "Een zachte basis om te beginnen.",
+      "Een veilige basis om te beginnen.",
     ctaLabel: "Meer over Uniqara",
   },
   routeOverview: {
     title: "Waar wil je meer over weten?",
     intro:
-      "Kies rustig wat nu bij je vraag past.",
+      "Kies wat nu bij je vraag past.",
     items: [
       {
         label: "Wie zijn wij",
@@ -118,7 +120,7 @@ export const home = {
       {
         label: "Hulpaanbod",
         href: routes.hulpaanbod.href,
-        description: "Bekijk welke begeleiding mogelijk is.",
+        description: "Bekijk welke hulp mogelijk is.",
       },
       {
         label: "Werkwijze",
@@ -133,7 +135,7 @@ export const home = {
       {
         label: "Contact",
         href: routes.contact.href,
-        description: "Stel een vraag of meld je rustig aan.",
+        description: "Stel een vraag of meld je aan.",
       },
     ],
   },
@@ -151,28 +153,28 @@ export const home = {
   approach: {
     heading: "Werkwijze in duidelijke stappen",
     intro:
-      "Een traject krijgt stap voor stap vorm. Duidelijkheid over het proces helpt om met rust te beginnen.",
+      "Een traject krijgt stap voor stap vorm. Duidelijkheid helpt om met vertrouwen te beginnen.",
     pathways: [
       { label: "Voor ouders en kinderen", href: routes.voorWie.href },
       { label: "Voor jongeren", href: routes.voorWie.href },
       { label: "Voor verwijzers", href: routes.voorWie.href },
-      { label: "Praktische informatie", href: routes.praktischeInformatie.href },
+      { label: "Bekijk praktische informatie", href: routes.praktischeInformatie.href },
     ],
-    ctaLabel: "Bekijk de volledige werkwijze",
+    ctaLabel: "Lees de werkwijze",
     stepLinkLabel: "Stap bekijken",
   },
   location: {
-    heading: "Een rustige plek voor groei",
+    heading: "Een plek voor groei",
     intro:
-      "De locatie-informatie blijft helder en praktisch: adres, bereikbaarheid, routebeschrijving, parkeren en openingstijden.",
+      "Adres, bereikbaarheid, routebeschrijving en openingstijden staan overzichtelijk bij elkaar.",
     cardLabel: "Locatieblok",
     cardText:
-      "Illustratie rond ontwikkeling, bouwen en stap voor stap verder groeien.",
+      "Illustratie rond ontwikkeling, bouwen en verder groeien.",
     ctaLabel: "Bekijk de locatie",
     secondaryCtaLabel: "Praktische route-info",
   },
   practicalInfo: {
-    ctaLabel: "Lees praktische informatie",
+    ctaLabel: "Bekijk praktische informatie",
     cardLinkLabel: "Meer informatie",
   },
   contactCta: {
@@ -180,6 +182,6 @@ export const home = {
     intro:
       "Je hoeft nog niet alles precies te weten. Stuur gerust een korte vraag.",
     primaryCtaLabel: "Neem contact op",
-    secondaryCtaLabel: "Praktische informatie",
+    secondaryCtaLabel: "Bekijk praktische informatie",
   },
 } satisfies HomeContent;

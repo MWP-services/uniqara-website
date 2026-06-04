@@ -24,7 +24,7 @@ export default function ContactPage() {
       <Section variant="surface">
         <Container className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-6">
-            <Card>
+            <Card className="!h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Contactgegevens
               </p>
@@ -57,7 +57,7 @@ export default function ContactPage() {
               </dl>
             </Card>
 
-            <Card>
+            <Card className="!h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Locatie
               </p>
@@ -71,10 +71,13 @@ export default function ContactPage() {
               <p className="text-support mt-3">{contact.routeNote}</p>
               <Button
                 className="mt-5"
-                href={routes.locatie.href}
+                href={contact.googleMapsUrl}
+                icon="route"
+                rel="noreferrer"
+                target="_blank"
                 variant="secondary"
               >
-                Bekijk locatie
+                Bekijk op Google Maps
               </Button>
             </Card>
           </div>
@@ -86,7 +89,10 @@ export default function ContactPage() {
               title={contact.form.title}
             />
             <div className="mt-7">
-              <ContactFormPlaceholder form={contact.form} />
+              <ContactFormPlaceholder
+                form={contact.form}
+                supportEmail={contact.email}
+              />
             </div>
           </Card>
         </Container>
@@ -97,11 +103,11 @@ export default function ContactPage() {
         links={[
           { label: "Lees de werkwijze", href: routes.werkwijze.href },
           {
-            label: "Praktische informatie",
+            label: "Bekijk praktische informatie",
             href: routes.praktischeInformatie.href,
           },
         ]}
-        title="Liever eerst rustig lezen?"
+        title="Liever eerst verder lezen?"
       />
     </main>
   );

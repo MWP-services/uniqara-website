@@ -34,7 +34,7 @@ function NavigationLinks({
             key={item.href}
             aria-current={isActive ? "page" : undefined}
             href={item.href}
-            className={`flex min-h-11 items-center rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft ${
+            className={`flex min-h-11 items-center whitespace-nowrap rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft lg:text-[0.95rem] ${
               isActive
                 ? "bg-brand-green-soft text-foreground"
                 : "text-foreground"
@@ -55,21 +55,25 @@ export function Header() {
   return (
     <header className="site-header-pastel sticky top-0 z-30 backdrop-blur">
       <Container>
-        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:gap-4 sm:py-3">
-          <Link href={routes.home.href} aria-label={`${site.name} home`}>
-            <LogoPlaceholder priority />
+        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:gap-4 sm:py-3 lg:min-h-28">
+          <Link
+            href={routes.home.href}
+            aria-label={`${site.name} home`}
+            className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1 transition hover:bg-card/70 focus-visible:bg-card/70"
+          >
+            <LogoPlaceholder priority size="header" />
           </Link>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             <NavigationLinks
               ariaLabel="Hoofdnavigatie"
-              className="flex items-center gap-1"
+              className="flex items-center gap-1.5 xl:gap-2"
               pathname={pathname}
             />
             <Button
               aria-current={contactIsActive ? "page" : undefined}
               href={routes.contact.href}
-              className={`ml-2 ${contactIsActive ? "ring-2 ring-focus-ring/40" : ""}`}
+              className={`ml-2 whitespace-nowrap ${contactIsActive ? "ring-2 ring-focus-ring/40" : ""}`}
             >
               {navigation.headerCtaLabel}
             </Button>

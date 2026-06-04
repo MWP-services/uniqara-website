@@ -1,3 +1,5 @@
+import { contact } from "./contact";
+
 export type FaqItem = {
   question: string;
   answer: string;
@@ -25,9 +27,8 @@ export const faq = {
         "Aanmelden kan via het formulier op de contactpagina. Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in.",
     },
     {
-      question: "Waar vindt de begeleiding plaats?",
-      answer:
-        "Uniqara is gevestigd bij Speltherapie Krimpenerwaard, Kerkweg 139a, 2935 AC Ouderkerk aan den IJssel.",
+      question: "Waar vindt de hulp plaats?",
+      answer: `Uniqara is gevestigd bij ${contact.address.name}, ${contact.address.street}, ${contact.address.postalCodeCity}.`,
     },
   ],
 } satisfies FaqContent;

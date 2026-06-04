@@ -6,6 +6,7 @@ import type { ContactContent } from "@/content/contact";
 
 type ContactFormPlaceholderProps = {
   form: ContactContent["form"];
+  supportEmail: string;
 };
 
 const inputClasses =
@@ -18,7 +19,10 @@ type FormStatus = {
   type: "error" | "success";
 };
 
-export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
+export function ContactFormPlaceholder({
+  form,
+  supportEmail,
+}: ContactFormPlaceholderProps) {
   const [status, setStatus] = useState<FormStatus | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -63,7 +67,7 @@ export function ContactFormPlaceholder({ form }: ContactFormPlaceholderProps) {
     } catch {
       setStatus({
         message:
-          "Het bericht kon niet worden verzonden. Controleer je verbinding of mail direct naar contact@uniqara.nl.",
+          `Het bericht kon niet worden verzonden. Controleer je verbinding of mail direct naar ${supportEmail}.`,
         type: "error",
       });
     } finally {

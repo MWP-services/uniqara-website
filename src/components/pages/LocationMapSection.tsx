@@ -12,7 +12,6 @@ const fullAddress = [
 
 const encodedAddress = encodeURIComponent(fullAddress);
 const mapSrc = `https://www.google.com/maps?q=${encodedAddress}&output=embed`;
-const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
 
 export function LocationMapSection() {
   return (
@@ -34,13 +33,13 @@ export function LocationMapSection() {
               <p className="mt-4 text-support">{contact.routeNote}</p>
               <div className="mt-6">
                 <Button
-                  href={directionsHref}
+                  href={contact.googleMapsUrl}
                   icon="route"
                   rel="noreferrer"
                   target="_blank"
                   variant="secondary"
                 >
-                  Open route in Google Maps
+                  Bekijk op Google Maps
                 </Button>
               </div>
             </div>

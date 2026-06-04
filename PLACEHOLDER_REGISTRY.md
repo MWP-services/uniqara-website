@@ -13,10 +13,17 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `HERO_IMAGE_NATURE` | `[HERO_IMAGE_NATURE] Foto van groen en natuur volgt` | Ondersteunende foto van groen, rust en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `HERO_IMAGE_PRACTICE` | `[HERO_IMAGE_PRACTICE] Foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `CONTACT_EMAIL` | `CONTACT_EMAIL - e-mailadres volgt` | Publiek contactmailadres | `src/content/placeholders.ts`, `src/content/contact.ts` |
-| `CONTACT_PHONE` | `CONTACT_PHONE - telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `CONTACT_PHONE` | `Nieuw telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `TELEFOONNUMMER_VOLGT` | `Nieuw telefoonnummer volgt` | Definitief nieuw telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `GOOGLE_MAPS_LINK` | Google Maps-link naar Kerkweg 139a | Definitief controleren na livegang of bij wijziging locatie | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `HULPAANBOD_BANNER_VARIANT` | `green` | Later visueel beoordelen; opties: groen, geel, terra | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `FOOTER_SHORT_TAGLINE` | `Persoonlijk, zorgvuldig en met aandacht.` | Later definitief beoordelen | `src/content/placeholders.ts`, `src/content/site.ts`, `src/components/layout/Footer.tsx` |
+| `KINDERTHERAPIE_BEHANDELVORMEN` | `EMDR, ACT en CGT` | Later eventueel uitbreiden of tekstueel verfijnen | `src/content/placeholders.ts`, `src/content/pages.ts` |
+| `VERWIJSROUTE_DETAILS` | Basisroute aanwezig, details later verfijnen | Definitieve verwijsroute, voorwaarden, aanleverwijze en terugkoppeling | `src/content/placeholders.ts`, `src/content/pages.ts`, `TODO_USER.md` |
 | `CONTACT_FORM_HANDLER` | `[CONTACT_FORM_HANDLER] Formulierverzending wordt later gekoppeld` | Formulierbackend, mailservice of CRM-koppeling | `src/content/placeholders.ts`, `src/content/contact.ts`, `src/components/forms/ContactFormPlaceholder.tsx` |
 | `LOCATION_ADDRESS` | `LOCATION_ADDRESS - adres volgt` | Straat, huisnummer, postcode en plaats | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `OWNER_NAME` | `OWNER_NAME - praktijkhouder volgt` | Naam/namen van praktijkhouder of behandelaren | `src/content/placeholders.ts` |
+| `TEAM_DETAILS` | `TEAM_DETAILS - aanvullende teaminformatie volgt` | Definitieve teamtekst, functies, registraties en specialisaties | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `SEO_SITE_URL` | `SEO_SITE_URL - definitief websitedomein volgt` | Definitieve publieke URL voor metadata, canonical links en share-data | `src/content/placeholders.ts`, `src/content/seo.ts` |
 | `SOCIAL_PROFILE_URLS` | `SOCIAL_PROFILE_URLS - eventuele social/profiel-links volgen` | Eventuele publieke social/profiel-URLs voor structured data | `src/content/placeholders.ts`, `src/content/structuredData.ts` |
 | `TARIFFS_INFO` | `TARIFFS_INFO - tarieven en vergoedingen volgen` | Tarieven, vergoedingen en betaalinformatie | `src/content/placeholders.ts`, `src/content/pages.ts` |
@@ -36,7 +43,8 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `CONTACT_ROUTE_INFO` | `CONTACT_ROUTE_INFO - contactroute volgt` | Beste manier om contact op te nemen | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRIVACY_DOSSIER_INFO` | `PRIVACY_DOSSIER_INFO - uitleg over dossier en gegevens volgt` | Uitleg over dossier, bewaartermijnen en rechten | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `PRIVACY_CONTACT_ROUTE` | `PRIVACY_CONTACT_ROUTE - contactroute voor privacyvragen volgt` | Contactroute voor privacyvragen | `src/content/placeholders.ts`, `src/content/pages.ts` |
-| `COPYRIGHT_INFO` | `COPYRIGHT_INFO - copyrighttekst volgt` | Copyrightregel en eventuele juridische footerregel | `src/content/placeholders.ts`, `src/components/layout/Footer.tsx` |
+| `COPYRIGHT_INFO` | `Definitieve copyrighttekst volgt.` | Copyrightregel en eventuele juridische footerregel | `src/content/placeholders.ts`, `src/components/layout/Footer.tsx` |
+| `TREATMENT_METHOD_CONTENT` | Geen zichtbare UI-placeholder | Definitieve praktijkteksten voor EMDR, ACT en CGT | `src/content/pages.ts`, `TODO_USER.md` |
 
 Werkafspraak: voeg bij elke nieuwe ontbrekende input eerst een sleutel toe in `src/content/placeholders.ts`, registreer die hier, en verwijs ernaar in `TODO_USER.md`.
 
@@ -90,5 +98,5 @@ Sprint 7C finale QA heeft geen nieuwe placeholderkeys toegevoegd. De belangrijks
 ## Weergave-afspraken
 
 - Sprint 5A heeft de mobiele weergave van logo-, foto-, locatie- en formulierplaceholders aangescherpt.
-- Sprint 5D heeft zichtbare foto-, locatie- en formulierplaceholderteksten rustiger gemaakt, met de sleutel nog duidelijk zichtbaar.
+- Sprint 5D heeft zichtbare foto-, locatie- en formulierplaceholderteksten aangescherpt, met de sleutel nog duidelijk zichtbaar.
 - Er zijn geen nieuwe placeholderkeys toegevoegd; alle placeholderteksten blijven centraal beheerd in `src/content/placeholders.ts`.

@@ -1,3 +1,5 @@
+import { placeholders } from "./placeholders";
+
 export type SiteMetadata = {
   name: string;
   tagline: string;
@@ -9,6 +11,7 @@ export type SiteMetadata = {
 export type BrandContent = {
   name: string;
   shortDescription: string;
+  footerShortTagline: string;
   values: string[];
 };
 
@@ -21,7 +24,7 @@ export type SharedUiContent = {
 // Pas hier de algemene merknaam, SEO-beschrijving en korte praktijkintro aan.
 export const site = {
   name: "Uniqara",
-  tagline: "Psychologiepraktijk in een rustige, groene omgeving",
+  tagline: "Psychologiepraktijk in een groene omgeving",
   description:
     "Uniqara is een warme en professionele psychologiepraktijk met aandacht voor kinderen, jongeren, ouders en gezinnen.",
   defaultTitle: "Uniqara | Psychologiepraktijk",
@@ -31,13 +34,14 @@ export const site = {
 export const brand = {
   name: "Uniqara",
   shortDescription:
-    "Een rustige praktijkplek voor begeleiding, onderzoek en behandeling, met aandacht voor veiligheid, vertrouwen en groei.",
-  values: ["Rust", "Vertrouwen", "Aandacht", "Natuur", "Professionaliteit"],
+    "Een professionele praktijkplek voor zorg, onderzoek en behandeling, met aandacht voor veiligheid, vertrouwen en groei.",
+  footerShortTagline: placeholders.FOOTER_SHORT_TAGLINE.uiText,
+  values: ["Aandacht", "Vertrouwen", "Veiligheid", "Groei", "Professionaliteit"],
 } satisfies BrandContent;
 
 export const sharedUi = {
   pageCtaEyebrow: "Vervolgstap",
-  pageCtaTitle: "Rustig verder kijken",
+  pageCtaTitle: "Verder kijken",
   pageCtaIntro:
-    "Kies de route die nu het meest passend voelt. Er is altijd ruimte om eerst rustig te verkennen.",
+    "Kies de route die nu past. Je kunt stap voor stap verkennen wat aansluit.",
 } satisfies SharedUiContent;

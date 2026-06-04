@@ -6,10 +6,11 @@ type LogoPlaceholderProps = {
   className?: string;
   priority?: boolean;
   placeholderKey?: Extract<PlaceholderKey, "LOGO_PRIMARY" | "LOGO_FOOTER">;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "header";
 };
 
 const sizeClasses = {
+  header: "h-14 w-14 sm:h-16 sm:w-16 lg:h-24 lg:w-24",
   sm: "h-12 w-12 sm:h-14 sm:w-14",
   md: "h-14 w-14 sm:h-20 sm:w-20",
   lg: "h-24 w-24 sm:h-32 sm:w-32",

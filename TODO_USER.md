@@ -3,7 +3,7 @@
 ## Prioriteit voor livegang
 
 1. Lever het definitieve Uniqara-logo aan voor `LOGO_PRIMARY` en `LOGO_FOOTER`.
-2. Lever praktijkgegevens aan voor `CONTACT_EMAIL`, `CONTACT_PHONE`, `LOCATION_ADDRESS`, `OPENING_HOURS`, `OWNER_NAME`, KvK/AGB indien van toepassing en gewenste contactroute.
+2. Lever praktijkgegevens aan voor `CONTACT_EMAIL`, `CONTACT_PHONE`, `TELEFOONNUMMER_VOLGT`, `LOCATION_ADDRESS`, `OPENING_HOURS`, `OWNER_NAME`, KvK/AGB indien van toepassing en gewenste contactroute.
 3. Vul het definitieve websitedomein aan voor `SEO_SITE_URL`, zodat later canonical URLs, metadataBase, structured data en share-URL's gekoppeld kunnen worden.
 4. Geef aan of er publieke social/profiel-links gebruikt mogen worden voor `SOCIAL_PROFILE_URLS`, of laat dit bewust leeg.
 5. Vervang de tijdelijke branding-assets voor `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE` zodra het echte logo en eventuele fotografie beschikbaar zijn.
@@ -15,18 +15,27 @@
 11. Lever aan of er een kaart, routeblok of externe route-integratie gewenst is voor `LOCATION_MAP_PLACEHOLDER`.
 12. Vul route, parkeren en aankomstinformatie aan voor `ROUTE_PARKING_INFO`.
 13. Vul de definitieve footer-/copyrighttekst aan voor `COPYRIGHT_INFO`.
+14. Vul definitieve teaminformatie aan voor `TEAM_DETAILS`, inclusief functies, registraties en specialisaties van Elise Honkoop-de Visser en Annemarie van den Heuvel-de Jager.
 
 ## Inhoud controleren
 
+- Open punt `TELEFOONNUMMER_VOLGT`: nieuw telefoonnummer nog aanleveren; huidige UI toont "Nieuw telefoonnummer volgt".
+- Open punt `HULPAANBOD_BANNER_VARIANT`: bannerkleur later visueel beoordelen; opties zijn groen, geel en terra.
+- Open punt `FOOTER_SHORT_TAGLINE`: voorlopige tekst is "Persoonlijk, zorgvuldig en met aandacht."; later definitief beoordelen.
+- Open punt `KINDERTHERAPIE_BEHANDELVORMEN`: voorlopige opties zijn EMDR, ACT en CGT; later eventueel uitbreiden.
+- Open punt `VERWIJSROUTE_DETAILS`: basisroute staat op de site; details later verfijnen.
+- Open punt `GOOGLE_MAPS_LINK`: Google Maps-link is toegevoegd; later controleren.
 - Controleer de exacte zorgteksten voor doelgroep, aanbod, hulpvragen, werkwijze, tarieven en verwijzingen voordat de site live gaat.
+- Controleer en vul de definitieve praktijkteksten aan voor `TREATMENT_METHOD_CONTENT`: EMDR, ACT en CGT.
 - Controleer de FAQ-vragen en antwoorden voor `FAQ_CONTENT` in `src/content/faq.ts`.
 - Controleer afspraken voor scholen en verwijzers voor `REFERRER_SCHOOL_INFO`.
+- Vul definitieve verwijsroute-details voor scholen, huisartsen en verwijzers aan, waaronder exacte aanleverwijze, eventuele verwijsvoorwaarden, terugkoppeling en bereikbaarheid.
 - Controleer de inhoud van `/over-uniqara`, `/voor-wie`, `/hulpvragen`, `/werkwijze`, `/locatie`, `/praktische-informatie`, `/contact` en `/privacy`.
 - Controleer later of CTA-teksten zoals "Neem contact op", "Lees de werkwijze" en "Praktische informatie" precies aansluiten bij de definitieve aanmeldroute.
 - Controleer de metadata in `src/content/seo.ts`, vooral homepage-positionering, locatieomschrijving en beschrijvingen per pagina.
 - Controleer voor livegang `src/app/sitemap.ts`, `src/app/robots.ts` en `src/app/manifest.ts` zodra het echte domein bekend is.
 - Controleer voor livegang `src/content/structuredData.ts` zodra domein, adres, telefoon, openingstijden en eventuele profiel-links definitief zijn.
-- Controleer de rustige vertrouwensteksten in footer, contact en CTA-banden zodra de definitieve praktijktoon bekend is.
+- Controleer de vertrouwensteksten in footer, contact en CTA-banden zodra de definitieve praktijktoon bekend is.
 - Gebruik `CONTENT_REVIEW.md` als korte launch-content checklist voor teksten die al sterk zijn en teksten die nog vervangen moeten worden.
 - Gebruik `DEPLOYMENT_GUIDE.md` voor deployment-stappen en vertaal de environment variables naar Azure Application settings. Voor het contactformulier zijn Resend environment variables nodig; voor wachttijden is `WAITING_TIMES_CSV_URL` nodig.
 - Controleer de fallbackteksten in `src/content/fallbacks.ts` zodra echte contactgegevens en de definitieve praktijktoon bekend zijn.

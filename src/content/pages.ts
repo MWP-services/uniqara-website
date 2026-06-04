@@ -20,6 +20,8 @@ export type PageIllustration = {
   tone?: "turquoise" | "yellow" | "coral" | "neutral";
 };
 
+export type PageBannerVariant = "green" | "yellow" | "terra";
+
 export type PageAside = {
   label: string;
   title: string;
@@ -32,6 +34,14 @@ export type PageContent = {
   description: string;
   intro: string;
   aside?: PageAside;
+  ctaBand?: {
+    eyebrow?: string;
+    title?: string;
+    intro?: string;
+  };
+  heroEyebrow?: string;
+  heroVariant?: "default" | "connected" | "banner";
+  heroBannerVariant?: PageBannerVariant;
   illustration?: PageIllustration;
   showStepNumbers?: boolean;
   sections: PageSection[];
@@ -45,9 +55,29 @@ export type PageRouteKey = Exclude<
 
 const contactCta = { label: "Neem contact op", href: routes.contact.href };
 const practicalCta = {
-  label: "Praktische informatie",
+  label: "Bekijk praktische informatie",
   href: routes.praktischeInformatie.href,
 };
+
+// Wissel hier later de Hulpaanbod-bannerkleur via HULPAANBOD_BANNER_VARIANT:
+// "green", "yellow" of "terra".
+export const hulpaanbodBannerVariant =
+  placeholders.HULPAANBOD_BANNER_VARIANT.uiText as PageBannerVariant;
+
+const hulpaanbodSummaries = {
+  speltherapie:
+    "Speltherapie helpt kinderen via spel te laten zien wat hen bezighoudt. In een veilige setting kunnen ervaringen, gevoelens en gedrag beter worden begrepen.",
+  kindertherapie:
+    "Kindertherapie is een paraplubegrip voor hulp aan kinderen die vastlopen door bijvoorbeeld trauma, complexe rouw, pesten of een ingewikkelde thuissituatie.",
+  jongerenbegeleiding:
+    "Jeugdhulp is er voor jongeren die vastlopen op school, thuis of in contact met anderen. Denk aan somberheid, terugtrekken, boze buien of onzekerheid.",
+  ouderbegeleiding:
+    "Ouders hebben soms een zetje, extra kennis of nieuwe blik nodig wanneer een kind meer vraagt in de opvoedsituatie. We kijken contextueel en systemisch naar het gezin.",
+  vaktherapieCreatieveTherapie:
+    "Vaktherapie en beeldende therapie bieden een veilige setting om te maken, te ervaren en nieuw gedrag te oefenen.",
+  psycholoogPedagoogBegeleiding:
+    "Bij onderzoeksvragen of vragen over classificatie kan een psycholoog of pedagoog worden ingezet binnen de basis GGZ / ZPM GGZ.",
+} satisfies Partial<Record<RouteKey, string>>;
 
 export const pages = {
   wieZijnWij: {
@@ -56,7 +86,8 @@ export const pages = {
     description:
       "Maak kennis met Uniqara: visie, missie, behandelaren, kernwaarden en persoonlijke benadering.",
     intro:
-      "Uniqara biedt een rustige, professionele praktijkplek waar aandacht, veiligheid en groei centraal staan.",
+      "Uniqara is een professionele praktijkplek met aandacht voor veiligheid, vertrouwen en groei.",
+    heroVariant: "connected",
     illustration: {
       alt: "Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding.",
       src: "/assets/DIEREN.jpg",
@@ -71,24 +102,24 @@ export const pages = {
       {
         title: "Visie en missie",
         body: [
-          "Missie: Uniqara helpt kinderen, jongeren en gezinnen om met vertrouwen en passende ondersteuning stappen vooruit te zetten in hun ontwikkeling en welzijn.",
-          "Visie: Wij geloven dat ontwikkeling ontstaat wanneer kinderen zich gezien, gehoord en begrepen voelen binnen een veilige en betrokken omgeving.",
+          "Uniqara biedt basis GGZ en jeugdhulp aan kinderen, jongeren en gezinnen.",
+          "We kijken met aandacht naar wat nodig is voor ontwikkeling, vertrouwen en welzijn.",
         ],
         links: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }],
       },
       {
         title: "Team en behandelaren",
         body: [
-          contact.ownerName,
-          placeholders.TEAM_DETAILS.uiText,
+          "Elise Honkoop-de Visser is psycholoog NIP en EFT-relatietherapeut.",
+          "Annemarie van den Heuvel-de Jager is speltherapeut.",
         ],
         links: [{ label: "Contact", href: routes.contact.href }],
       },
       {
         title: "Kernwaarden",
         body: [
-          "Rust, aandacht, vertrouwen, professionaliteit en groei vormen de basis van de praktijk.",
-          "De communicatie blijft helder en overzichtelijk, zodat bezoekers snel weten waar zij terecht kunnen.",
+          "Aandacht, vertrouwen, professionaliteit en groei vormen de basis van de praktijk.",
+          "De communicatie blijft helder en overzichtelijk.",
         ],
       },
       {
@@ -107,7 +138,7 @@ export const pages = {
     routeKey: "voorWie",
     title: "Voor wie",
     description:
-      "Overzicht van doelgroepen waarvoor Uniqara begeleiding kan bieden.",
+      "Overzicht van doelgroepen waarvoor Uniqara hulp kan bieden.",
     intro:
       "Uniqara is er voor kinderen, jongeren, ouders/verzorgers en waar passend voor scholen of verwijzers.",
     illustration: {
@@ -120,7 +151,7 @@ export const pages = {
         title: "Kinderen",
         body: [
           "Voor kinderen die vastlopen in emoties, gedrag, ontwikkeling, spanning of ingrijpende ervaringen.",
-          "Er wordt rustig gekeken naar wat het kind laat zien en wat helpend kan zijn.",
+          "Er wordt met aandacht gekeken naar wat het kind laat zien en wat kan helpen.",
         ],
         links: [{ label: "Lees meer", href: routes.voorWieKinderen.href }],
       },
@@ -128,7 +159,7 @@ export const pages = {
         title: "Jongeren",
         body: [
           "Voor jongeren die druk ervaren, onzeker zijn, vastlopen of behoefte hebben aan iemand die meedenkt.",
-          "De begeleiding sluit aan bij leeftijd, zelfstandigheid en hulpvraag.",
+          "De hulp sluit aan bij leeftijd, zelfstandigheid en hulpvraag.",
         ],
         links: [{ label: "Lees meer", href: routes.voorWieJongeren.href }],
       },
@@ -136,21 +167,26 @@ export const pages = {
         title: "Ouders / verzorgers",
         body: [
           "Voor ouders en verzorgers met vragen over opvoeding, gedrag, ontwikkeling of afstemming thuis en op school.",
-          "Samen ontstaat meer zicht op wat er speelt en welke steun passend is.",
+          "Samen ontstaat meer zicht op wat er speelt en wat het kind nodig heeft.",
         ],
         links: [{ label: "Lees meer", href: routes.voorWieOuders.href }],
       },
       {
         title: "Scholen / verwijzers",
         body: [
-          "Voor scholen, huisartsen en andere verwijzers komt hier een heldere verwijzersroute.",
-          placeholders.REFERRER_SCHOOL_INFO.uiText,
+          "Voor scholen, huisartsen en andere verwijzers die willen afstemmen over passende hulp.",
+          "De verdiepingspagina licht contact, verwijzing en afstemming toe.",
         ],
         links: [
           { label: "Lees meer", href: routes.voorWieScholenVerwijzers.href },
         ],
       },
     ],
+    ctaBand: {
+      title: "Verder kijken",
+      intro:
+        "Kies de route die nu past. Je kunt stap voor stap bekijken welke hulp aansluit.",
+    },
     ctas: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }, contactCta],
   },
 
@@ -159,18 +195,18 @@ export const pages = {
     title: "Kinderen",
     description: "Informatie voor kinderen en hun ouders/verzorgers.",
     intro:
-      "Kinderen laten vaak via gedrag, spel of emoties zien dat er iets speelt. Uniqara kijkt zorgvuldig mee.",
+      "Kinderen laten via gedrag, spel of emoties zien dat er iets speelt. Uniqara kijkt met aandacht mee.",
     illustration: {
-      alt: "Zandbakillustratie bij spel en kindgerichte begeleiding.",
+      alt: "Zandbakillustratie bij spel en kindgerichte hulp.",
       src: "/assets/ZANDBAK.webp",
       tone: "yellow",
     },
     sections: [
       {
-        title: "Wanneer kan begeleiding helpen?",
+        title: "Wanneer kan hulp helpen?",
         body: [
           "Bij spanning, boosheid, verdriet, onzekerheid, prikkelgevoeligheid, nare ervaringen of veranderingen thuis of op school.",
-          "De definitieve voorbeelden en exclusiecriteria worden nog aangevuld.",
+          "Definitieve voorbeelden en exclusiecriteria worden nog aangevuld.",
         ],
         links: [{ label: "Speltherapie", href: routes.speltherapie.href }],
       },
@@ -178,7 +214,7 @@ export const pages = {
         title: "Samen met ouders",
         body: [
           "Ouders of verzorgers worden passend betrokken. Hun kennis van het kind is belangrijk.",
-          "Er wordt afgestemd wat het kind nodig heeft en hoe de omgeving kan ondersteunen.",
+          "Samen wordt afgestemd wat het kind en de omgeving nodig hebben.",
         ],
       },
     ],
@@ -188,7 +224,7 @@ export const pages = {
   voorWieJongeren: {
     routeKey: "voorWieJongeren",
     title: "Jongeren",
-    description: "Informatie voor jongeren die begeleiding zoeken.",
+    description: "Informatie voor jongeren die hulp zoeken.",
     intro:
       "Jongeren kunnen terecht wanneer zij vastlopen, veel druk ervaren of behoefte hebben aan overzicht.",
     illustration: {
@@ -201,16 +237,16 @@ export const pages = {
         title: "Hulpvragen",
         body: [
           "Denk aan piekeren, onzekerheid, somberheid, spanning, schooldruk, prikkels, verlies of vragen rond identiteit.",
-          "Samen wordt gekeken welke begeleiding past bij de situatie.",
+          "Samen wordt bekeken welke hulp past.",
         ],
         links: [
-          { label: "Jongerenbegeleiding", href: routes.jongerenbegeleiding.href },
+          { label: "Jeugdhulp", href: routes.jongerenbegeleiding.href },
         ],
       },
       {
         title: "Eigen tempo",
         body: [
-          "Er is ruimte voor de stem van de jongere zelf. Tempo, vertrouwen en duidelijkheid zijn belangrijk.",
+          "De stem van de jongere zelf is belangrijk. Tempo en duidelijkheid doen ertoe.",
           "Waar nodig worden ouders of verzorgers zorgvuldig betrokken.",
         ],
       },
@@ -234,7 +270,7 @@ export const pages = {
         title: "Opvoedvragen",
         body: [
           "Soms is het helpend om samen te onderzoeken wat gedrag of emoties van een kind kunnen betekenen.",
-          "De begeleiding kan bestaan uit gesprekken, afstemming en praktische richting.",
+          "De hulp kan bestaan uit gesprekken, afstemming en praktische richting.",
         ],
         links: [{ label: "Ouderbegeleiding", href: routes.ouderbegeleiding.href }],
       },
@@ -242,7 +278,7 @@ export const pages = {
         title: "Samen kijken wat past",
         body: [
           "Er wordt gekeken naar het kind, het gezin en de context eromheen.",
-          "Als Uniqara niet passend is, kan worden meegedacht over een andere route.",
+          "Als Uniqara niet passend is, wordt meegedacht over een andere route.",
         ],
       },
     ],
@@ -252,27 +288,49 @@ export const pages = {
   voorWieScholenVerwijzers: {
     routeKey: "voorWieScholenVerwijzers",
     title: "Scholen / verwijzers",
-    description: "Placeholderinformatie voor scholen en verwijzers.",
+    description: "Informatie voor scholen, huisartsen en verwijzers.",
+    heroEyebrow: "Voor wie",
     intro:
-      "Deze pagina krijgt later concrete informatie over verwijzing, afstemming en samenwerking.",
+      "Informatie over verwijzen, afstemmen en passende hulp voor kinderen en jongeren.",
     sections: [
       {
-        title: "Verwijzen",
+        title: "Voor (huis)artsen",
         body: [
-          placeholders.REFERRER_SCHOOL_INFO.uiText,
-          "Vermeld bij contact zo concreet mogelijk de hulpvraag, leeftijd, woonplaats en betrokkenen.",
+          "Een verwijzing helpt om de aanvraag zorgvuldig te verwerken. Vermeld bij voorkeur een datum vóór de eerste afspraak, een korte klachtbeschrijving, een eventueel DSM-5-vermoeden en de naam en AGB-code van de verwijzer.",
         ],
         links: [{ label: "Contact", href: routes.contact.href }],
       },
       {
-        title: "Afstemming",
+        title: "Voor scholen",
+        body: [
+          "Scholen kunnen contact opnemen bij vragen rond persoonlijke problemen van kinderen, uitdagingen in de klas, rouw, trauma of verwante onderwerpen. Er kan advies of hulp op maat worden aangevraagd.",
+        ],
+        links: [{ label: "Contact", href: routes.contact.href }],
+      },
+      {
+        title: "Verwijsroute",
+        body: [
+          "Neem contact op.",
+          "Stuur de benodigde verwijsinformatie.",
+          "De aanvraag wordt beoordeeld.",
+          "Er volgt afstemming over de vervolgstap.",
+        ],
+        links: [{ label: "Contact", href: routes.contact.href }],
+      },
+      {
+        title: "Afstemming met school of verwijzers",
         body: [
           "Afstemming met school of verwijzers gebeurt alleen wanneer dit passend is en met de juiste toestemming.",
-          "Definitieve afspraken rond bereikbaarheid en terugkoppeling worden nog toegevoegd.",
         ],
+        links: [{ label: "Contact", href: routes.contact.href }],
       },
     ],
-    ctas: [contactCta, practicalCta],
+    ctaBand: {
+      title: "Vragen over verwijzen?",
+      intro:
+        "Neem contact op voor overleg over een verwijzing, schoolvraag of vervolgstap.",
+    },
+    ctas: [contactCta, { label: "Voor wie is Uniqara?", href: routes.voorWie.href }],
   },
 
   hulpaanbod: {
@@ -280,29 +338,29 @@ export const pages = {
     title: "Hulpaanbod",
     description:
       "Overzicht van het hulpaanbod van Uniqara met doorkliks naar losse thema's.",
-    intro:
-      "Het hulpaanbod is opgezet als overzichtspagina. Per onderdeel volgt een aparte pagina met meer uitleg.",
+    intro: "",
+    heroVariant: "banner",
+    heroBannerVariant: hulpaanbodBannerVariant,
     illustration: {
-      alt: "Speeltreinillustratie als beeld voor de route door het hulpaanbod.",
+      alt: "Speeltreinillustratie als beeld bij het hulpaanbod.",
       src: "/assets/SPELTREIN.webp",
       tone: "coral",
     },
     sections: routeGroups.hulpaanbod.map((route) => ({
       title: route.label,
-      body: [
-        `Korte introductie bij ${route.label.toLowerCase()}. ${placeholders.SERVICE_DETAIL_CONTENT.uiText}`,
-      ],
+      body: [hulpaanbodSummaries[route.key] ?? ""],
       links: [{ label: "Lees meer", href: route.href }],
     })),
-    ctas: [{ label: "Voor wie", href: routes.voorWie.href }, contactCta],
+    ctas: [{ label: "Voor wie is Uniqara?", href: routes.voorWie.href }, contactCta],
   },
 
   speltherapie: {
     routeKey: "speltherapie",
     title: "Speltherapie",
-    description: "Placeholderpagina over speltherapie bij Uniqara.",
+    description: "Informatie over speltherapie bij Uniqara.",
+    heroEyebrow: "Hulpaanbod",
     intro:
-      "Speltherapie kan kinderen helpen om gevoelens, ervaringen en gedrag via spel te verkennen.",
+      "Speltherapie helpt kinderen via spel te laten zien wat hen bezighoudt.",
     illustration: {
       alt: "Zandbakillustratie bij speltherapie.",
       src: "/assets/ZANDBAK.webp",
@@ -312,8 +370,8 @@ export const pages = {
       {
         title: "Wat is speltherapie?",
         body: [
-          "Spel is voor kinderen een natuurlijke taal. In spel kan zichtbaar worden wat een kind bezighoudt.",
-          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+          "Speltherapie helpt kinderen via spel te laten zien wat hen bezighoudt.",
+          "In een veilige setting kunnen ervaringen, gevoelens en gedrag beter worden begrepen.",
         ],
         illustration: {
           alt: "Zandbakillustratie bij speltherapie.",
@@ -325,7 +383,7 @@ export const pages = {
         title: "Voor wie",
         body: [
           "Deze pagina sluit vooral aan bij kinderen en ouders/verzorgers.",
-          "Bij aanmelding wordt samen gekeken of speltherapie passend is.",
+          "Bij aanmelding wordt bekeken of speltherapie passend is.",
         ],
         links: [{ label: "Kinderen", href: routes.voorWieKinderen.href }],
       },
@@ -336,9 +394,10 @@ export const pages = {
   kindertherapie: {
     routeKey: "kindertherapie",
     title: "Kindertherapie",
-    description: "Placeholderpagina over kindertherapie.",
+    description: "Informatie over kindertherapie bij Uniqara.",
+    heroEyebrow: "Hulpaanbod",
     intro:
-      "Kindertherapie richt zich op wat een kind nodig heeft om weer meer rust, vertrouwen of grip te ervaren.",
+      "Kindertherapie is een paraplubegrip voor hulp aan kinderen die vastlopen.",
     illustration: {
       alt: "Blokkenillustratie bij ontwikkeling en groei.",
       src: "/assets/BLOKKEN.png",
@@ -348,8 +407,20 @@ export const pages = {
       {
         title: "Mogelijke hulpvragen",
         body: [
-          "Emoties, gedrag, spanning, onzekerheid, prikkels, ingrijpende gebeurtenissen of ontwikkeling kunnen aanleiding zijn.",
-          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+          "Kindertherapie kan passen bij trauma, complexe rouw, pesten of een ingewikkelde thuissituatie.",
+          "Samen wordt bekeken welke hulp aansluit bij kind, vraag en context.",
+        ],
+      },
+      {
+        title: "Behandelvormen",
+        body: [
+          "Binnen kindertherapie kunnen onder andere EMDR, ACT en CGT worden ingezet.",
+          "Welke vorm passend is, wordt afgestemd op de hulpvraag.",
+        ],
+        links: [
+          { label: "Wat is EMDR", href: routes.watIsEmdr.href },
+          { label: "Wat is ACT", href: routes.watIsAct.href },
+          { label: "Wat is CGT", href: routes.watIsCgt.href },
         ],
       },
       {
@@ -364,10 +435,11 @@ export const pages = {
 
   jongerenbegeleiding: {
     routeKey: "jongerenbegeleiding",
-    title: "Jongerenbegeleiding",
-    description: "Placeholderpagina over begeleiding voor jongeren.",
+    title: "Jeugdhulp",
+    description: "Informatie over jeugdhulp voor jongeren.",
+    heroEyebrow: "Hulpaanbod",
     intro:
-      "Jongerenbegeleiding biedt ruimte om te ordenen wat speelt en stap voor stap verder te kijken.",
+      "Jeugdhulp is er voor jongeren die vastlopen op school, thuis of in contact met anderen.",
     illustration: {
       alt: "Speeltreinillustratie bij stap voor stap verder kijken.",
       src: "/assets/SPELTREIN.webp",
@@ -377,13 +449,14 @@ export const pages = {
       {
         title: "Thema's",
         body: [
-          "Denk aan schooldruk, piekeren, spanning, zelfbeeld, verlies, prikkels of vastlopen in dagelijkse situaties.",
+          "Denk aan somberheid, terugtrekken, boze buien, onzekerheid of het gevoel niet meer verder te kunnen.",
+          "Er wordt bekeken wat de jongere nodig heeft en wie daarbij betrokken moet worden.",
         ],
       },
       {
         title: "Afstemming",
         body: [
-          "De begeleiding wordt afgestemd op leeftijd, zelfstandigheid en de rol van ouders/verzorgers.",
+          "De hulp sluit aan bij leeftijd, zelfstandigheid en de rol van ouders/verzorgers.",
         ],
       },
     ],
@@ -392,10 +465,11 @@ export const pages = {
 
   ouderbegeleiding: {
     routeKey: "ouderbegeleiding",
-    title: "Opvoedvragen / ouderbegeleiding",
-    description: "Placeholderpagina over opvoedvragen en ouderbegeleiding.",
+    title: "Ouderbegeleiding / oudertherapie",
+    description: "Informatie over ouderbegeleiding en oudertherapie.",
+    heroEyebrow: "Hulpaanbod",
     intro:
-      "Ouderbegeleiding helpt om gedrag, emoties en behoeften van een kind beter te begrijpen.",
+      "Ouders hebben soms een zetje, extra kennis of een nieuwe blik nodig.",
     illustration: {
       alt: "Dierenillustratie bij verbinding tussen ouders en kind.",
       src: "/assets/DIEREN.jpg",
@@ -405,11 +479,12 @@ export const pages = {
       {
         title: "Vragen van ouders",
         body: [
-          "Ouders kunnen vragen hebben over gedrag, grenzen, emoties, prikkels, school of gezinsdynamiek.",
+          "Soms vraagt een kind meer in de opvoedsituatie dan ouders alleen kunnen overzien.",
+          "We kijken contextueel en systemisch naar wat ieder nodig heeft.",
         ],
       },
       {
-        title: "Praktisch en zorgvuldig",
+        title: "Praktisch en met aandacht",
         body: [
           "Samen wordt gezocht naar een passende manier om het kind en de omgeving te ondersteunen.",
         ],
@@ -420,12 +495,13 @@ export const pages = {
 
   vaktherapieCreatieveTherapie: {
     routeKey: "vaktherapieCreatieveTherapie",
-    title: "Vaktherapie / creatieve therapie",
-    description: "Placeholderpagina over vaktherapie en creatieve therapie.",
+    title: "Vaktherapie / beeldende therapie",
+    description: "Informatie over vaktherapie en beeldende therapie.",
+    heroEyebrow: "Hulpaanbod",
     intro:
-      "Deze pagina wordt later gevuld met definitieve informatie over creatieve of ervaringsgerichte werkvormen.",
+      "Vaktherapie en beeldende therapie bieden een veilige setting om nieuwe ervaringen op te doen.",
     illustration: {
-      alt: "Schilderillustratie bij creatieve en ervaringsgerichte werkvormen.",
+      alt: "Schilderillustratie bij beeldende en ervaringsgerichte werkvormen.",
       src: "/assets/VERVEN.webp",
       tone: "coral",
     },
@@ -433,11 +509,11 @@ export const pages = {
       {
         title: "Werkvormen",
         body: [
-          "Creatieve of ervaringsgerichte werkvormen kunnen helpen wanneer praten alleen niet genoeg is.",
-          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+          "Door te maken en te ervaren kan nieuw gedrag worden geoefend.",
+          "Beeldende therapie maakt zichtbaar wat soms lastig in woorden te vangen is.",
         ],
         illustration: {
-          alt: "Schilderillustratie bij creatieve werkvormen.",
+          alt: "Schilderillustratie bij beeldende werkvormen.",
           src: "/assets/VERVEN.webp",
           tone: "coral",
         },
@@ -448,10 +524,11 @@ export const pages = {
 
   psycholoogPedagoogBegeleiding: {
     routeKey: "psycholoogPedagoogBegeleiding",
-    title: "Psycholoog / pedagoog begeleiding",
-    description: "Placeholderpagina over psychologische en pedagogische begeleiding.",
+    title: "Psycholoog / pedagoog",
+    description: "Informatie over psychologische en pedagogische zorg.",
+    heroEyebrow: "Hulpaanbod",
     intro:
-      "Psychologische en pedagogische begeleiding richt zich op inzicht, ontwikkeling, gedrag, emoties en context.",
+      "Een psycholoog of pedagoog kan worden ingezet bij onderzoeksvragen of behandeling binnen de basis GGZ / ZPM GGZ.",
     illustration: {
       alt: "Blokkenillustratie bij psychologische en pedagogische ontwikkeling.",
       src: "/assets/BLOKKEN.png",
@@ -459,14 +536,92 @@ export const pages = {
     },
     sections: [
       {
-        title: "Begeleiding",
+        title: "Zorg",
         body: [
-          "De begeleiding kan bestaan uit gesprekken, observatie, psycho-educatie, oudergesprekken of afstemming.",
-          placeholders.SERVICE_DETAIL_CONTENT.uiText,
+          "Bij psychodiagnostische onderzoeksvragen of vragen over classificatie kan een psycholoog of pedagoog worden ingezet.",
+          "Ook kan een psycholoog of pedagoog kindertherapie bieden binnen de basis GGZ / ZPM GGZ.",
         ],
       },
     ],
     ctas: [{ label: "Werkwijze", href: routes.werkwijze.href }, contactCta],
+  },
+
+  watIsEmdr: {
+    routeKey: "watIsEmdr",
+    title: "Wat is EMDR",
+    description: "Korte uitleg over EMDR als mogelijke behandelvorm.",
+    heroEyebrow: "Kindertherapie",
+    intro:
+      "EMDR is een behandelvorm die kan worden ingezet bij klachten na ingrijpende ervaringen.",
+    sections: [
+      {
+        title: "Korte uitleg",
+        body: [
+          "Bij EMDR wordt gericht gewerkt met herinneringen die spanning oproepen.",
+          "Of EMDR passend is, wordt beoordeeld binnen de hulpvraag.",
+        ],
+      },
+      {
+        title: "Binnen Uniqara",
+        body: [
+          "Definitieve praktijkinformatie over toepassing, voorwaarden en werkwijze volgt later.",
+        ],
+        links: [{ label: "Kindertherapie", href: routes.kindertherapie.href }],
+      },
+    ],
+    ctas: [{ label: "Kindertherapie", href: routes.kindertherapie.href }, contactCta],
+  },
+
+  watIsAct: {
+    routeKey: "watIsAct",
+    title: "Wat is ACT",
+    description: "Korte uitleg over ACT als mogelijke behandelvorm.",
+    heroEyebrow: "Kindertherapie",
+    intro:
+      "ACT helpt om anders om te gaan met gedachten, gevoelens en gedragspatronen.",
+    sections: [
+      {
+        title: "Korte uitleg",
+        body: [
+          "ACT staat voor Acceptance and Commitment Therapy.",
+          "De behandeling richt zich op omgaan met gedachten en kiezen wat belangrijk is.",
+        ],
+      },
+      {
+        title: "Binnen Uniqara",
+        body: [
+          "Definitieve praktijkinformatie over toepassing, voorwaarden en werkwijze volgt later.",
+        ],
+        links: [{ label: "Kindertherapie", href: routes.kindertherapie.href }],
+      },
+    ],
+    ctas: [{ label: "Kindertherapie", href: routes.kindertherapie.href }, contactCta],
+  },
+
+  watIsCgt: {
+    routeKey: "watIsCgt",
+    title: "Wat is CGT",
+    description: "Korte uitleg over CGT als mogelijke behandelvorm.",
+    heroEyebrow: "Kindertherapie",
+    intro:
+      "CGT onderzoekt de samenhang tussen gedachten, gevoelens en gedrag.",
+    sections: [
+      {
+        title: "Korte uitleg",
+        body: [
+          "CGT staat voor cognitieve gedragstherapie.",
+          "Binnen CGT wordt gekeken naar patronen en manieren om daarmee te oefenen.",
+        ],
+      },
+      {
+        title: "Binnen Uniqara",
+        body: [
+          "Definitieve praktijkinformatie over toepassing, voorwaarden en werkwijze volgt later.",
+        ],
+        links: [{ label: "Kindertherapie", href: routes.kindertherapie.href }],
+      },
+    ],
+    ctas: [{ label: "Kindertherapie", href: routes.kindertherapie.href }, contactCta],
   },
 
   werkwijze: {
@@ -475,7 +630,7 @@ export const pages = {
     description:
       "Lees hoe een traject bij Uniqara is opgebouwd, van aanmelden tot evaluatie.",
     intro:
-      "Een duidelijke werkwijze geeft houvast. De precieze invulling wordt afgestemd op hulpvraag en situatie.",
+      "Een duidelijke werkwijze geeft houvast. De invulling wordt afgestemd op hulpvraag en situatie.",
     illustration: {
       alt: "Speeltreinillustratie bij de stappen van de werkwijze.",
       src: "/assets/SPELTREIN.webp",
@@ -487,7 +642,7 @@ export const pages = {
         title: "Aanmelden",
         body: [
           "Aanmelden kan via het aanmeldformulier of door contact op te nemen.",
-          "Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in.",
+          "Vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
         ],
         illustration: {
           alt: "Speeltreinillustratie bij de start van het traject.",
@@ -499,17 +654,17 @@ export const pages = {
       {
         title: "Kennismaking / intake",
         body: [
-          "Tijdens de kennismaking of intake wordt de hulpvraag zorgvuldig verkend.",
+          "Tijdens de kennismaking of intake wordt de hulpvraag verkend.",
           "Er is aandacht voor achtergrond, verwachtingen en praktische afspraken.",
         ],
       },
       {
-        title: "Begeleiding / behandeltraject",
+        title: "Behandeltraject",
         body: [
-          "Daarna volgt een traject dat aansluit bij de vraag. Dit kan bestaan uit begeleiding, behandeling, oudergesprekken of afstemming.",
+          "Daarna volgt een traject dat aansluit bij de vraag, zoals behandeling, oudergesprekken of afstemming.",
         ],
         illustration: {
-          alt: "Blokkenillustratie bij bouwen aan begeleiding en ontwikkeling.",
+          alt: "Blokkenillustratie bij bouwen aan behandeling en ontwikkeling.",
           src: "/assets/BLOKKEN.png",
           tone: "turquoise",
         },
@@ -517,7 +672,7 @@ export const pages = {
       {
         title: "Evaluatie / afstemming",
         body: [
-          "Regelmatig wordt gekeken wat werkt, wat bijgesteld moet worden en welke vervolgstap passend is.",
+          "Regelmatig wordt bekeken wat werkt en welke vervolgstap passend is.",
         ],
       },
     ],
@@ -530,20 +685,25 @@ export const pages = {
     description:
       "Overzicht van aanmelden, wachttijd, tarieven, privacy, algemene informatie en FAQ.",
     intro:
-      "Alle praktische onderwerpen zijn gebundeld onder één onderdeel, zodat bezoekers snel de juiste informatie vinden.",
+      "Aanmelden, wachttijd, tarieven, privacy en veelgestelde vragen staan hier bij elkaar.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en praktische stappen.",
       src: "/assets/BLOKKEN.png",
       tone: "neutral",
     },
-    sections: routeGroups.praktischeInformatie.map((route) => ({
-      title: route.label,
-      body: [
-        `Korte introductie bij ${route.label.toLowerCase()}. ${placeholders.PRACTICAL_DETAIL_CONTENT.uiText}`,
-      ],
-      links: [{ label: "Lees meer", href: route.href }],
-    })),
-    ctas: [contactCta, { label: "Werkwijze", href: routes.werkwijze.href }],
+    sections: routeGroups.praktischeInformatie.map((route) => {
+      const topic =
+        route.label === "FAQ"
+          ? "veelgestelde vragen"
+          : route.label.toLowerCase();
+
+      return {
+        title: route.label,
+        body: [`Korte informatie over ${topic}. Definitieve details volgen later.`],
+        links: [{ label: "Lees meer", href: route.href }],
+      };
+    }),
+    ctas: [contactCta, { label: "Lees de werkwijze", href: routes.werkwijze.href }],
   },
 
   praktischeAanmelden: {
@@ -561,8 +721,8 @@ export const pages = {
       {
         title: "Welke informatie is nodig?",
         body: [
-          "Vul woonplaats, hulpvraag, telefoonnummer en e-mailadres in. Kies in het formulier voor kind en jeugd, volwassenen of relatie.",
-          placeholders.REGISTRATION_PROCESS.uiText,
+          "Vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
+          "De definitieve aanmeldroute wordt later aangevuld.",
         ],
         illustration: {
           alt: "Speeltreinillustratie bij aanmelden.",
@@ -580,7 +740,7 @@ export const pages = {
     title: "Wachttijden",
     description: "Actuele wachttijd en aanmeldstatus.",
     intro:
-      "De wachttijden krijgen een vaste plek zodat ze makkelijk bijgehouden kunnen worden.",
+      "De actuele wachttijd en aanmeldstatus staan hier bij elkaar.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en wachttijd.",
       src: "/assets/BLOKKEN.png",
@@ -590,8 +750,8 @@ export const pages = {
       {
         title: "Actuele status",
         body: [
-          "Onder het introductieblok staat een tabel met de actuele wachttijden per onderdeel.",
-          "Neem bij twijfel altijd contact op voor de meest passende actuele route.",
+          "Onder het introductieblok staat de actuele wachttijd per onderdeel.",
+          "Neem bij twijfel contact op voor de passende route.",
         ],
       },
     ],
@@ -603,7 +763,7 @@ export const pages = {
     title: "Tarieven / vergoedingen",
     description: "Korte uitleg over tarieven, verwijzing en vergoeding.",
     intro:
-      "Hier staat de praktische uitleg over kosten, verwijzing, vergoeding en eigen betaling.",
+      "Hier staat praktische uitleg over kosten, verwijzing, vergoeding en eigen betaling.",
     illustration: {
       alt: "Blokkenillustratie bij praktische informatie.",
       src: "/assets/BLOKKEN.png",
@@ -621,7 +781,7 @@ export const pages = {
         title: "Jeugd",
         body: [
           "Voor jeugd kan vergoeding via gemeente of Jeugdwet mogelijk zijn wanneer er een geldige beschikking of verwijzing is.",
-          "Definitieve contracten, tarieven en voorwaarden van Uniqara worden nog aangevuld.",
+          "Definitieve contracten, tarieven en voorwaarden worden nog aangevuld.",
         ],
       },
       {
@@ -640,20 +800,20 @@ export const pages = {
     description:
       "Privacy-informatie, dossiervoering en omgaan met persoonsgegevens.",
     intro:
-      "Uniqara gaat zorgvuldig om met persoonsgegevens en gezondheidsgegevens. Definitieve juridische controle volgt nog.",
+      "Uniqara gaat zorgvuldig om met persoonsgegevens en gezondheidsgegevens.",
     sections: [
       {
         title: "Welke gegevens",
         body: [
-          "Uniqara kan gegevens verwerken zoals naam, contactgegevens, woonplaats, hulpvraag, verwijsinformatie, afspraken en verslaglegging.",
+          "Uniqara kan gegevens verwerken zoals naam, contactgegevens, woonplaats, hulpvraag, verwijsinformatie en afspraken.",
           "Bij kind en jeugd kunnen ook gegevens van ouders/verzorgers, school of verwijzers relevant zijn.",
         ],
       },
       {
         title: "Dossier en veiligheid",
         body: [
-          "Voor goede en veilige zorg wordt een dossier bijgehouden met informatie die nodig is voor begeleiding, behandeling of wettelijke verplichtingen.",
-          placeholders.PRIVACY_LEGAL_TEXT.uiText,
+          "Voor goede en veilige zorg wordt een dossier bijgehouden met informatie die nodig is voor behandeling, afstemming of wettelijke verplichtingen.",
+          "Definitieve juridische privacytekst volgt later.",
         ],
       },
       {
@@ -671,7 +831,7 @@ export const pages = {
     title: "Algemene praktische informatie",
     description: "Algemene praktische informatie over afspraken en bereikbaarheid.",
     intro:
-      "Deze pagina bundelt praktische informatie die niet onder tarieven, privacy of wachttijd valt.",
+      "Deze pagina bundelt algemene praktische informatie.",
     sections: [
       {
         title: "Bereikbaarheid",
@@ -679,9 +839,7 @@ export const pages = {
       },
       {
         title: "Afspraken",
-        body: [
-          placeholders.PRACTICAL_DETAIL_CONTENT.uiText,
-        ],
+        body: ["Definitieve afsprakeninformatie wordt later aangevuld."],
       },
     ],
     ctas: [contactCta, { label: "Locatie", href: routes.locatie.href }],
@@ -710,10 +868,8 @@ export const pages = {
         ],
       },
       {
-        title: "Waar vindt begeleiding plaats?",
-        body: [
-          "Uniqara is gevestigd bij Speltherapie Krimpenerwaard, Kerkweg 139a, 2935 AC Ouderkerk aan den IJssel.",
-        ],
+        title: "Waar vindt hulp plaats?",
+        body: [contact.locationDescription],
       },
     ],
     ctas: [contactCta, practicalCta],
@@ -725,7 +881,7 @@ export const pages = {
     description:
       "Adres, Google Maps kaart en route-informatie voor de locatie van Uniqara.",
     intro:
-      "Uniqara is gevestigd aan de Kerkweg 139a in Ouderkerk aan den IJssel. Op deze pagina vind je het adres en de kaart.",
+      `Uniqara is gevestigd bij ${contact.address.name} aan de ${contact.address.street} in ${contact.address.postalCodeCity.replace(/^\d{4}\s?[A-Z]{2}\s/, "")}. Op deze pagina vind je het adres en de kaart.`,
     illustration: {
       alt: "Blokkenillustratie bij locatie en aankomstinformatie.",
       src: "/assets/BLOKKEN.png",
@@ -749,21 +905,27 @@ export const pages = {
         title: "Omgeving",
         body: [
           "De praktijk ligt in Ouderkerk aan den IJssel, in de Krimpenerwaard.",
-          placeholders.PRACTICE_PHOTOS.uiText,
+          "Foto's van de praktijk en omgeving worden later toegevoegd.",
         ],
       },
       {
         title: "Bereikbaarheid",
         body: [
-          "Gebruik de kaart op deze pagina om de route vanaf je eigen vertrekpunt te bekijken.",
+          "Gebruik de kaart om de route vanaf je eigen vertrekpunt te bekijken.",
           contact.routeNote,
         ],
       },
       {
         title: "Kaart en route",
         body: [
-          "Onder deze informatie staat een Google Maps kaart met de locatie.",
-          "Met de routeknop open je Google Maps in een nieuw tabblad.",
+          "Onder deze informatie staat een Google Maps-kaart.",
+          "Met de knop open je de locatie in een nieuw tabblad.",
+        ],
+        links: [
+          {
+            label: "Bekijk op Google Maps",
+            href: contact.googleMapsUrl,
+          },
         ],
       },
     ],

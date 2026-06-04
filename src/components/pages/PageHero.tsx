@@ -2,20 +2,117 @@ import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import type { PageAside, PageIllustration } from "@/content/pages";
+import type {
+  PageAside,
+  PageBannerVariant,
+  PageIllustration,
+} from "@/content/pages";
 
 type PageHeroProps = {
   title: string;
   intro: string;
   aside?: PageAside;
+  eyebrow?: string;
+  heroBannerVariant?: PageBannerVariant;
+  heroVariant?: "default" | "connected" | "banner";
   illustration?: PageIllustration;
 };
 
-export function PageHero({ title, intro, aside, illustration }: PageHeroProps) {
+const bannerVariantClasses: Record<
+  PageBannerVariant,
+  { panel: string; visual: string }
+> = {
+  green: {
+    panel:
+      "border-brand-green/55 bg-[linear-gradient(135deg,rgba(210,244,238,0.98),rgba(255,246,181,0.72))]",
+    visual: "bg-brand-green-soft",
+  },
+  terra: {
+    panel:
+      "border-[#cbb7aa]/65 bg-[linear-gradient(135deg,rgba(232,221,214,0.98),rgba(250,252,249,0.82))]",
+    visual: "bg-[#ece0d8]",
+  },
+  yellow: {
+    panel:
+      "border-accent-yellow/90 bg-[linear-gradient(135deg,rgba(255,246,181,0.98),rgba(210,244,238,0.66))]",
+    visual: "bg-accent-yellow-soft",
+  },
+};
+
+export function PageHero({
+  title,
+  intro,
+  aside,
+  eyebrow,
+  heroBannerVariant = "green",
+  heroVariant = "default",
+  illustration,
+}: PageHeroProps) {
+  if (heroVariant === "banner") {
+    const variantClasses = bannerVariantClasses[heroBannerVariant];
+
+    return (
+      <section className="page-hero-branded page-hero-banner">
+        <Container className="py-7 sm:py-9 lg:py-10">
+          <div
+            className={`page-hero-banner-panel grid min-w-0 grid-cols-1 overflow-hidden rounded-medium border shadow-soft md:grid-cols-[1fr_16rem] md:items-stretch lg:grid-cols-[1fr_20rem] ${variantClasses.panel}`}
+          >
+            <div className="min-w-0 p-5 sm:p-7 lg:p-8">
+              <SectionHeading
+                eyebrow={eyebrow}
+                headingLevel="h1"
+                intro={intro || undefined}
+                title={title}
+              />
+            </div>
+            {illustration ? (
+              <IllustrationFrame
+                alt={illustration.alt}
+                className={`page-hero-banner-visual min-h-40 rounded-none border-0 shadow-none md:min-h-full ${variantClasses.visual}`}
+                imageClassName="object-contain p-3 sm:p-4 md:p-5"
+                motion="reveal"
+                sizes="(min-width: 1024px) 20rem, (min-width: 768px) 16rem, 100vw"
+                src={illustration.src}
+              />
+            ) : null}
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
+  if (heroVariant === "connected" && illustration) {
+    return (
+      <section className="page-hero-branded page-hero-connected">
+        <Container className="py-8 sm:py-10 lg:py-12">
+          <div className="page-hero-connected-panel grid overflow-hidden rounded-medium border border-brand-green/30 bg-brand-green-soft shadow-soft lg:grid-cols-[1fr_0.46fr] lg:items-stretch">
+            <div className="p-6 sm:p-8 lg:p-10">
+              <SectionHeading
+                eyebrow={eyebrow}
+                headingLevel="h1"
+                intro={intro}
+                title={title}
+              />
+            </div>
+            <IllustrationFrame
+              alt={illustration.alt}
+              className="page-hero-connected-visual min-h-72 rounded-none border-0 shadow-none lg:h-full"
+              imageClassName="page-hero-branded-image object-contain p-5 sm:p-7 lg:p-8"
+              motion="reveal"
+              sizes="(min-width: 1024px) 32vw, 100vw"
+              src={illustration.src}
+            />
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section className="page-hero-branded">
       <Container className="grid gap-6 py-12 sm:gap-8 sm:py-16 lg:grid-cols-[1fr_0.42fr] lg:items-end">
         <SectionHeading
+          eyebrow={eyebrow}
           headingLevel="h1"
           intro={intro}
           title={title}
