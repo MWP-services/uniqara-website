@@ -110,10 +110,10 @@ export const pages = {
       {
         title: "Team en behandelaren",
         body: [
-          "Elise Honkoop-de Visser is psycholoog NIP en EFT-relatietherapeut.",
-          "Annemarie van den Heuvel-de Jager is speltherapeut.",
+          "Maak kennis met de behandelaren die betrokken zijn bij Uniqara.",
+          "Op de teampagina lees je per behandelaar kort welke expertise en ervaring zij meebrengt.",
         ],
-        links: [{ label: "Contact", href: routes.contact.href }],
+        links: [{ label: "Bekijk alle behandelaren", href: "/wie-zijn-wij/team" }],
       },
       {
         title: "Kernwaarden",
