@@ -117,6 +117,14 @@ export const pages = {
         links: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }],
       },
       {
+        title: "Team en behandelaren",
+        body: [
+          "Elise Honkoop-de Visser is psycholoog NIP en EFT-relatietherapeut.",
+          "Annemarie van den Heuvel-de Jager is speltherapeut.",
+        ],
+        links: [{ label: "Contact", href: routes.contact.href }],
+      },
+      {
         title: "Kernwaarden",
         body: [
           "Aandacht, vertrouwen, professionaliteit en groei vormen de basis van de praktijk.",
