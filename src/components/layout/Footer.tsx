@@ -10,7 +10,7 @@ import { brand } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="site-footer-pastel backdrop-blur">
+    <footer id="site-footer" className="site-footer-pastel backdrop-blur">
       <Container className="py-8 sm:py-12">
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1fr_1fr] lg:gap-10">
           <section aria-label="Praktijkintro">

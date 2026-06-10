@@ -23,8 +23,8 @@ export function HeroSection({ hero }: HeroSectionProps) {
       <div aria-hidden="true" className="hero-pastel-background absolute inset-0 z-[1]" />
 
       <Container className="relative z-10 grid items-center gap-8 py-10 sm:min-h-[78vh] sm:gap-10 sm:py-16 lg:min-h-[84vh] lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:py-20 xl:grid-cols-[0.8fr_1.2fr]">
-        <div className="max-w-3xl">
-          <h1 className="hero-reveal hero-reveal-2 max-w-3xl text-[clamp(2.25rem,12vw,5.6rem)] font-semibold leading-[1.02] text-foreground">
+        <div className="min-w-0 max-w-3xl">
+          <h1 className="hero-reveal hero-reveal-2 max-w-full text-balance break-words text-[clamp(2.25rem,12vw,5.6rem)] font-semibold leading-[1.02] text-foreground">
             {hero.title}
           </h1>
           <p className="hero-reveal hero-reveal-3 mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-6 sm:text-xl sm:leading-8">

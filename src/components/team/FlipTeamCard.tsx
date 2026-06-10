@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useId, useState } from "react";
+import { type KeyboardEvent, useId, useState } from "react";
 
 type FlipTeamCardProps = {
   name: string;
@@ -27,6 +27,17 @@ export function FlipTeamCard({
   const [isFlipped, setIsFlipped] = useState(false);
   const contentId = useId();
   const paragraphs = backText.split("\n\n").filter(Boolean);
+  const flipCardClassName = `team-flip-card group block h-full w-full min-w-0 cursor-pointer rounded-soft text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring ${
+    isFlipped ? "is-flipped" : ""
+  }`;
+  const toggleCard = () => setIsFlipped((current) => !current);
+
+  function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleCard();
+    }
+  }
 
   return (
     <button
@@ -39,8 +50,10 @@ export function FlipTeamCard({
           : `Lees meer over ${name}`
       }
       aria-pressed={isFlipped}
-      className="team-flip-card group block h-full w-full min-w-0 cursor-pointer rounded-soft text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
-      onClick={() => setIsFlipped((current) => !current)}
+      className={flipCardClassName}
+      onClick={toggleCard}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
     >
       <span className="team-flip-card__scene block h-full">
         <span

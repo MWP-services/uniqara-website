@@ -22,7 +22,7 @@ export function ContactCTASection({
   return (
     <section className="section-white py-10 sm:py-14">
       <Container>
-        <Card className="grid gap-6 border-accent-coral/45 bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <Card className="grid gap-6 border-brand-green/45 bg-card p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase text-muted-foreground">
               Volgende stap

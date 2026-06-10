@@ -29,7 +29,7 @@ export function StepsSection({
         <SectionHeading intro={intro} title={title} />
         <IllustrationFrame
           alt="Speeltreinillustratie bij de stappen van de werkwijze."
-          className="mt-8 aspect-[4/3] border-accent-coral/45 bg-[linear-gradient(135deg,rgba(246,163,140,0.18),rgba(253,246,236,0.78),rgba(99,207,198,0.14))] sm:aspect-[16/7]"
+          className="mt-8 aspect-[4/3] border-accent-coral/45 bg-[linear-gradient(135deg,#f0dadd,#fff8ed,#d8eee5)] sm:aspect-[16/7]"
           imageClassName="object-contain p-4 sm:p-6"
           motion="left"
           sizes="(min-width: 1024px) 72rem, 100vw"

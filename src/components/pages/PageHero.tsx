@@ -23,19 +23,16 @@ const bannerVariantClasses: Record<
   { panel: string; visual: string }
 > = {
   green: {
-    panel:
-      "border-brand-green/60 bg-[linear-gradient(135deg,rgba(181,239,232,0.98),rgba(255,240,135,0.74))]",
-    visual: "bg-[rgba(181,239,232,0.82)]",
+    panel: "border-brand-green bg-brand-green-soft",
+    visual: "bg-accent-yellow-soft",
   },
   terra: {
-    panel:
-      "border-[#cbb7aa]/65 bg-[linear-gradient(135deg,rgba(232,221,214,0.98),rgba(250,252,249,0.82))]",
-    visual: "bg-[#ece0d8]",
+    panel: "border-accent-coral/70 bg-accent-coral-soft",
+    visual: "bg-accent-coral-soft",
   },
   yellow: {
-    panel:
-      "border-accent-yellow/90 bg-[linear-gradient(135deg,rgba(255,246,181,0.98),rgba(210,244,238,0.66))]",
-    visual: "bg-accent-yellow-soft",
+    panel: "border-accent-yellow bg-accent-yellow-soft",
+    visual: "bg-brand-green-soft",
   },
 };
 
@@ -85,7 +82,7 @@ export function PageHero({
     return (
       <section className="page-hero-branded page-hero-connected">
         <Container className="py-8 sm:py-10 lg:py-12">
-          <div className="page-hero-connected-panel grid overflow-hidden rounded-medium border border-brand-green/30 bg-brand-green-soft shadow-soft lg:grid-cols-[1fr_0.46fr] lg:items-stretch">
+          <div className="page-hero-connected-panel grid overflow-hidden rounded-medium border border-brand-green/40 shadow-soft lg:grid-cols-[1fr_0.46fr] lg:items-stretch">
             <div className="p-6 sm:p-8 lg:p-10">
               <SectionHeading
                 eyebrow={eyebrow}

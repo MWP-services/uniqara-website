@@ -30,8 +30,8 @@ function sectionId(section: PageSection) {
 const toneClasses = {
   coral: "border-accent-coral/45 bg-accent-coral-soft",
   neutral: "border-border-soft bg-card",
-  turquoise: "border-brand-green/35 bg-brand-green-soft",
-  yellow: "border-accent-yellow/70 bg-accent-yellow-soft",
+  turquoise: "border-brand-green/45 bg-brand-green-soft",
+  yellow: "border-accent-yellow bg-accent-yellow-soft",
 };
 
 function SectionIllustration({
@@ -94,7 +94,7 @@ function FeaturedSection({
       <Container>
         <div
           id={sectionId(section)}
-          className="scroll-mt-32 overflow-hidden rounded-medium border border-brand-green/25 bg-card shadow-soft"
+          className="scroll-mt-32 overflow-hidden rounded-medium border border-border-soft bg-card shadow-soft"
         >
           <div className="p-5 sm:p-8 lg:p-10">
             <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">

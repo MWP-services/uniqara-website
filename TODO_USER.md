@@ -3,7 +3,7 @@
 ## Prioriteit voor livegang
 
 1. Lever het definitieve Uniqara-logo aan voor `LOGO_PRIMARY` en `LOGO_FOOTER`.
-2. Lever praktijkgegevens aan voor `CONTACT_EMAIL`, `CONTACT_PHONE`, `TELEFOONNUMMER_VOLGT`, `LOCATION_ADDRESS`, `OPENING_HOURS`, `OWNER_NAME`, KvK/AGB indien van toepassing en gewenste contactroute.
+2. Controleer de overige praktijkgegevens voor `LOCATION_ADDRESS`, `OPENING_HOURS`, `OWNER_NAME`, KvK/AGB indien van toepassing en gewenste contactroute. Het publieke telefoonnummer is aangeleverd en wordt bewust met sterretje getoond.
 3. Vul het definitieve websitedomein aan voor `SEO_SITE_URL`, zodat later canonical URLs, metadataBase, structured data en share-URL's gekoppeld kunnen worden.
 4. Geef aan of er publieke social/profiel-links gebruikt mogen worden voor `SOCIAL_PROFILE_URLS`, of laat dit bewust leeg.
 5. Vervang de tijdelijke branding-assets voor `FAVICON_PLACEHOLDER`, `APP_ICON_PLACEHOLDER` en `SOCIAL_PREVIEW_IMAGE` zodra het echte logo en eventuele fotografie beschikbaar zijn.
@@ -19,7 +19,7 @@
 
 ## Inhoud controleren
 
-- Open punt `TELEFOONNUMMER_VOLGT`: nieuw telefoonnummer nog aanleveren; huidige UI toont "Nieuw telefoonnummer volgt".
+- Afgerond `TELEFOONNUMMER_VOLGT`: telefoonnummer is aangeleverd; huidige UI toont bewust `06* 486 468 40` en gebruikt geen telefoonlink.
 - Open punt `HULPAANBOD_BANNER_VARIANT`: bannerkleur later visueel beoordelen; opties zijn groen, geel en terra.
 - Open punt `FOOTER_SHORT_TAGLINE`: voorlopige tekst is "Persoonlijk, zorgvuldig en met aandacht."; later definitief beoordelen.
 - Open punt `KINDERTHERAPIE_BEHANDELVORMEN`: voorlopige opties zijn EMDR, ACT en CGT; later eventueel uitbreiden.

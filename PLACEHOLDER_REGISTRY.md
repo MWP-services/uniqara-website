@@ -13,8 +13,8 @@ Centraal overzicht van ontbrekende input. Gebruik dezelfde sleutel in UI, conten
 | `HERO_IMAGE_NATURE` | `[HERO_IMAGE_NATURE] Foto van groen en natuur volgt` | Ondersteunende foto van groen, rust en natuur | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `HERO_IMAGE_PRACTICE` | `[HERO_IMAGE_PRACTICE] Foto van praktijk of landelijke sfeer volgt` | Foto van praktijkruimte of landelijke sfeer | `src/content/placeholders.ts`, `src/content/home.ts` |
 | `CONTACT_EMAIL` | `CONTACT_EMAIL - e-mailadres volgt` | Publiek contactmailadres | `src/content/placeholders.ts`, `src/content/contact.ts` |
-| `CONTACT_PHONE` | `Nieuw telefoonnummer volgt` | Publiek telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
-| `TELEFOONNUMMER_VOLGT` | `Nieuw telefoonnummer volgt` | Definitief nieuw telefoonnummer of keuze om geen telefoon te tonen | `src/content/placeholders.ts`, `src/content/contact.ts` |
+| `CONTACT_PHONE` | `06* 486 468 40` | Aangeleverd; bewust niet als telefoonlink gebruiken | `src/content/contact.ts` |
+| `TELEFOONNUMMER_VOLGT` | `06* 486 468 40` | Afgerond; historisch placeholderkey blijft alleen voor beheer vindbaar | `TODO_USER.md` |
 | `GOOGLE_MAPS_LINK` | Google Maps-link naar Kerkweg 139a | Definitief controleren na livegang of bij wijziging locatie | `src/content/placeholders.ts`, `src/content/contact.ts` |
 | `HULPAANBOD_BANNER_VARIANT` | `green` | Later visueel beoordelen; opties: groen, geel, terra | `src/content/placeholders.ts`, `src/content/pages.ts` |
 | `FOOTER_SHORT_TAGLINE` | `Persoonlijk, zorgvuldig en met aandacht.` | Later definitief beoordelen | `src/content/placeholders.ts`, `src/content/site.ts`, `src/components/layout/Footer.tsx` |

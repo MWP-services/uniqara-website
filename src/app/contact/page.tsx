@@ -27,16 +27,15 @@ export default function ContactPage() {
           <div className="space-y-6">
             <Card className="!h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
-                Contactgegevens
+                Contact
               </p>
-              <h2 className="mt-3 text-2xl">{site.name}</h2>
-              <dl className="mt-5 space-y-4">
-                <div>
-                  <dt className="text-sm font-semibold text-foreground">
-                    E-mail
-                  </dt>
-                  <dd className="text-body">{contact.email}</dd>
-                </div>
+              <h2 className="mt-3 text-2xl">{contact.heading}</h2>
+              <div className="text-body mt-4 space-y-3">
+                {contact.intro.split("\n\n").map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <dl className="mt-6 grid gap-4 rounded-soft border border-border-soft bg-card/70 p-4 sm:grid-cols-2">
                 <div>
                   <dt className="text-sm font-semibold text-foreground">
                     Telefoon
@@ -45,9 +44,16 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <dt className="text-sm font-semibold text-foreground">
-                    Praktijkhouder
+                    E-mail
                   </dt>
-                  <dd className="text-body">{contact.ownerName}</dd>
+                  <dd className="text-body break-words">
+                    <a
+                      className="hover:text-foreground hover:underline decoration-brand-green decoration-2 underline-offset-4"
+                      href={`mailto:${contact.email}`}
+                    >
+                      {contact.email}
+                    </a>
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-sm font-semibold text-foreground">
@@ -55,7 +61,16 @@ export default function ContactPage() {
                   </dt>
                   <dd className="text-body">{contact.openingHours}</dd>
                 </div>
+                <div>
+                  <dt className="text-sm font-semibold text-foreground">
+                    Praktijk
+                  </dt>
+                  <dd className="text-body">{site.name}</dd>
+                </div>
               </dl>
+              <Button className="mt-6" href="#contactformulier">
+                Naar het contactformulier
+              </Button>
             </Card>
 
             <Card className="!h-auto">
@@ -94,7 +109,7 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          <Card className="p-6 sm:p-8">
+          <Card className="p-6 sm:p-8" id="contactformulier">
             <SectionHeading
               headingLevel="h2"
               intro={contact.form.intro}

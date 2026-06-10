@@ -46,7 +46,7 @@ export function LocationSection({
             <div className="relative">
               <IllustrationFrame
                 alt={imageText}
-                className="aspect-[4/3] border-0 bg-[linear-gradient(135deg,rgba(99,207,198,0.15),rgba(248,233,142,0.24),rgba(246,163,140,0.12))] shadow-none"
+                className="aspect-[4/3] border-0 bg-[linear-gradient(135deg,#fff8ed,#f7e6a5,#d8eee5)] shadow-none"
                 imageClassName="object-contain p-4 sm:p-6"
                 motion="reveal"
                 sizes="(min-width: 1024px) 42vw, 100vw"

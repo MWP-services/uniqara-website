@@ -1,5 +1,4 @@
 import { contact } from "./contact";
-import { placeholders } from "./placeholders";
 import { routes, routeGroups, type RouteKey } from "./routes";
 import { teamMembers, type TeamMember } from "./team";
 
@@ -62,11 +61,6 @@ const practicalCta = {
   href: routes.praktischeInformatie.href,
 };
 
-// Wissel hier later de Hulpaanbod-bannerkleur via HULPAANBOD_BANNER_VARIANT:
-// "green", "yellow" of "terra".
-export const hulpaanbodBannerVariant =
-  placeholders.HULPAANBOD_BANNER_VARIANT.uiText as PageBannerVariant;
-
 const hulpaanbodSummaries = {
   speltherapie:
     "Speltherapie helpt kinderen via spel te laten zien wat hen bezighoudt. In een veilige setting kunnen ervaringen, gevoelens en gedrag beter worden begrepen.",
@@ -90,7 +84,6 @@ export const pages = {
       "Maak kennis met Uniqara: visie, missie, behandelaren, kernwaarden en persoonlijke benadering.",
     intro:
       "Uniqara is een professionele praktijkplek met aandacht voor veiligheid, vertrouwen en groei.",
-    heroVariant: "connected",
     illustration: {
       alt: "Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding.",
       src: "/assets/DIEREN.jpg",
@@ -348,12 +341,10 @@ export const pages = {
     description:
       "Overzicht van het hulpaanbod van Uniqara met doorkliks naar losse thema's.",
     intro: "",
-    heroVariant: "banner",
-    heroBannerVariant: hulpaanbodBannerVariant,
     illustration: {
       alt: "Speeltreinillustratie als beeld bij het hulpaanbod.",
       src: "/assets/SPELTREIN.webp",
-      tone: "coral",
+      tone: "turquoise",
     },
     sections: routeGroups.hulpaanbod.map((route) => ({
       title: route.label,
@@ -949,7 +940,7 @@ export const pages = {
     title: "Contact",
     description:
       "Contactgegevens, aanmeldformulier, route en adres van Uniqara.",
-    intro: contact.intro,
+    intro: contact.heroIntro,
     aside: {
       label: "Eerste stap",
       title: "Laagdrempelig contact",

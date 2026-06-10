@@ -37,7 +37,7 @@ export function ServicesPreviewSection({
         <SectionHeading intro={intro} title={title} />
         <IllustrationFrame
           alt="Zandbakillustratie bij spel, ontdekken en het verkennen van het hulpaanbod."
-          className="mt-8 aspect-[4/3] border-accent-yellow/70 bg-[linear-gradient(135deg,rgba(248,233,142,0.42),rgba(253,246,236,0.78),rgba(246,163,140,0.14))] sm:aspect-[16/7]"
+          className="mt-8 aspect-[4/3] border-accent-yellow bg-[linear-gradient(135deg,#f7e6a5,#fff8ed,#d8eee5)] sm:aspect-[16/7]"
           imageClassName="object-contain p-4 sm:p-6"
           motion="up"
           sizes="(min-width: 1024px) 72rem, 100vw"

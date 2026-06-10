@@ -3,6 +3,7 @@ import { routes } from "./routes";
 
 export type ContactContent = {
   heading: string;
+  heroIntro: string;
   intro: string;
   reassurance: string;
   email: string;
@@ -59,13 +60,15 @@ export type ContactContent = {
 };
 
 export const contact = {
-  heading: "Contact",
+  heading: "Kom in contact met Uniqara",
+  heroIntro:
+    "Voor korte vragen, aanmelding of het maken van een afspraak kun je telefonisch contact opnemen of het formulier gebruiken.",
   intro:
-    "Neem contact op voor vragen, aanmelding of een kennismaking. Je kunt mailen of het formulier invullen.",
+    "Uniqara is telefonisch bereikbaar voor korte vragen en berichten via 06* 486 468 40. Tijdens afspraken kan de telefoon niet altijd direct worden opgenomen.\n\nVoor vragen over behandelmogelijkheden, aanmeldingen of het maken van een afspraak kun je gebruikmaken van het contactformulier. We nemen daarna zo zorgvuldig mogelijk contact met je op.",
   reassurance:
     "Een eerste bericht hoeft niet volledig te zijn. Vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
   email: "info@uniqara.nl",
-  phone: placeholders.TELEFOONNUMMER_VOLGT.uiText,
+  phone: "06* 486 468 40",
   openingHours:
     "Werkdagen van 9.00 tot 17.00 uur.",
   ownerName:

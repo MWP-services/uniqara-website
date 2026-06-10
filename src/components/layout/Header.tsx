@@ -53,13 +53,13 @@ export function Header() {
   const contactIsActive = isActivePath(pathname, routes.contact.href);
 
   return (
-    <header className="site-header-pastel sticky top-0 z-30 backdrop-blur">
+    <header className="site-header-pastel sticky top-0 z-30 w-full max-w-[100vw] overflow-x-clip backdrop-blur">
       <Container>
         <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
           <Link
             href={routes.home.href}
             aria-label={`${site.name} home`}
-            className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1.5 transition hover:bg-card/70 focus-visible:bg-card/70"
+            className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1.5 transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
           >
             <LogoPlaceholder priority size="header" />
           </Link>
