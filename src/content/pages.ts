@@ -43,6 +43,7 @@ export type PageContent = {
   heroVariant?: "default" | "connected" | "banner";
   heroBannerVariant?: PageBannerVariant;
   illustration?: PageIllustration;
+  featuredSection?: PageSection;
   showStepNumbers?: boolean;
   sections: PageSection[];
   ctas: PageLink[];
@@ -98,6 +99,14 @@ export const pages = {
       title: "Uniqara",
       text: contact.ownerName,
     },
+    featuredSection: {
+      title: "Team en behandelaren",
+      body: [
+        "Bij Uniqara werken Elise Honkoop-de Visser en Annemarie van den Heuvel-de Jager vanuit een betrokken, professionele praktijkbasis.",
+        "Elise is psycholoog NIP en EFT-relatietherapeut. Annemarie is speltherapeut.",
+      ],
+      links: [{ label: "Neem contact op", href: routes.contact.href }],
+    },
     sections: [
       {
         title: "Visie en missie",
@@ -106,14 +115,6 @@ export const pages = {
           "We kijken met aandacht naar wat nodig is voor ontwikkeling, vertrouwen en welzijn.",
         ],
         links: [{ label: "Bekijk hulpaanbod", href: routes.hulpaanbod.href }],
-      },
-      {
-        title: "Team en behandelaren",
-        body: [
-          "Elise Honkoop-de Visser is psycholoog NIP en EFT-relatietherapeut.",
-          "Annemarie van den Heuvel-de Jager is speltherapeut.",
-        ],
-        links: [{ label: "Contact", href: routes.contact.href }],
       },
       {
         title: "Kernwaarden",
