@@ -7,13 +7,13 @@ import { Section } from "@/components/ui/Section";
 import { teamMembers } from "@/content/team";
 
 export const metadata: Metadata = {
-  title: "Team en behandelaren",
+  title: "Team en behandelaars",
   description:
-    "Maak kennis met de behandelaren die betrokken zijn bij Uniqara.",
+    "Maak kennis met de behandelaars die betrokken zijn bij Uniqara.",
   openGraph: {
-    title: "Team en behandelaren",
+    title: "Team en behandelaars",
     description:
-      "Maak kennis met de behandelaren die betrokken zijn bij Uniqara.",
+      "Maak kennis met de behandelaars die betrokken zijn bij Uniqara.",
     siteName: "Uniqara",
     locale: "nl_NL",
     type: "website",
@@ -24,8 +24,8 @@ export default function TeamPage() {
   return (
     <main className="page-shell">
       <PageHero
-        title="Team en behandelaren"
-        intro="Maak kennis met de behandelaren die betrokken zijn bij Uniqara. Ieder brengt eigen expertise mee binnen diagnostiek, behandeling en jeugdhulp."
+        title="Team en behandelaars"
+        intro="Maak kennis met de behandelaars die betrokken zijn bij Uniqara. Ieder brengt eigen expertise mee binnen diagnostiek, behandeling en jeugdhulp."
         heroVariant="connected"
         illustration={{
           alt: "Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding.",
@@ -42,7 +42,10 @@ export default function TeamPage() {
                 key={member.name}
                 name={member.name}
                 role={member.role}
+                summary={member.summary}
                 image={member.image}
+                imageAlt={member.imageAlt}
+                initials={member.initials}
                 backText={member.backText}
                 tags={member.tags}
               />

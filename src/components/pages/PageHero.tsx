@@ -24,8 +24,8 @@ const bannerVariantClasses: Record<
 > = {
   green: {
     panel:
-      "border-brand-green/55 bg-[linear-gradient(135deg,rgba(210,244,238,0.98),rgba(255,246,181,0.72))]",
-    visual: "bg-brand-green-soft",
+      "border-brand-green/60 bg-[linear-gradient(135deg,rgba(181,239,232,0.98),rgba(255,240,135,0.74))]",
+    visual: "bg-[rgba(181,239,232,0.82)]",
   },
   terra: {
     panel:
@@ -53,7 +53,7 @@ export function PageHero({
 
     return (
       <section className="page-hero-branded page-hero-banner">
-        <Container className="py-7 sm:py-9 lg:py-10">
+        <Container className="py-6 sm:py-8 lg:py-9">
           <div
             className={`page-hero-banner-panel grid min-w-0 grid-cols-1 overflow-hidden rounded-medium border shadow-soft md:grid-cols-[1fr_16rem] md:items-stretch lg:grid-cols-[1fr_20rem] ${variantClasses.panel}`}
           >

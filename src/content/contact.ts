@@ -18,6 +18,15 @@ export type ContactContent = {
   };
   locationDescription: string;
   routeNote: string;
+  complaint: {
+    title: string;
+    intro: string;
+    href: string;
+    buttonAlt: string;
+    buttonAriaLabel: string;
+    contactImageSrc: string;
+    footerImageSrc: string;
+  };
   form: {
     title: string;
     intro: string;
@@ -58,7 +67,7 @@ export const contact = {
   email: "info@uniqara.nl",
   phone: placeholders.TELEFOONNUMMER_VOLGT.uiText,
   openingHours:
-    "Werkdagen van 9.00 tot 17.00 uur. Tijdens afspraken kan de telefoon niet altijd direct worden opgenomen; spreek gerust de voicemail in of stuur een e-mail.",
+    "Werkdagen van 9.00 tot 17.00 uur.",
   ownerName:
     "Elise Honkoop-de Visser, psycholoog NIP en EFT-relatietherapeut. Zzp'er: Annemarie van den Heuvel-de Jager.",
   googleMapsUrl:
@@ -73,6 +82,18 @@ export const contact = {
     "Uniqara is gevestigd bij Hooiberg aan de Kerkweg 139a in Ouderkerk aan den IJssel.",
   routeNote:
     "Bekijk de locatie op Google Maps voor de route.",
+  complaint: {
+    title: "Onvrede melden",
+    intro:
+      "Ben je ergens niet tevreden over of wil je onvrede melden? We vinden het belangrijk dat je je gehoord voelt. Via Erisietsmisgegaan.nl kun je je melding doorgeven.",
+    href: "https://erisietsmisgegaan.nl/onvrede-melden/",
+    buttonAlt: "Onvrede melden",
+    buttonAriaLabel: "Onvrede melden via Erisietsmisgegaan.nl",
+    contactImageSrc:
+      "https://erisietsmisgegaan.nl/wp-content/uploads/2018/10/erisietsmisgegaan-onvredemelden2.png",
+    footerImageSrc:
+      "https://erisietsmisgegaan.nl/wp-content/uploads/2018/10/erisietsmisgegaan-onvredemelden3.png",
+  },
   form: {
     title: "Aanmeldformulier",
     intro:
