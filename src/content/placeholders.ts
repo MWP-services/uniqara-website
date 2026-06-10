@@ -310,7 +310,7 @@ export const placeholders = {
   },
   COPYRIGHT_INFO: {
     key: "COPYRIGHT_INFO",
-    uiText: "Definitieve copyrighttekst volgt.",
+    uiText: "© Uniqara. Alle rechten voorbehouden.",
     description: "Copyrightregel en eventuele juridische footerregel.",
     replaceWith: "Definitieve copyrighttekst voor de footer.",
   },

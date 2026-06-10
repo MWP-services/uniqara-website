@@ -85,7 +85,7 @@ export const home = {
     imagePlaceholders: [
       {
         label: "Natuur en groei",
-        text: "Sfeerbeeld rond natuur, groei en onderweg zijn naar nieuwe mogelijkheden volgt later.",
+        text: "Sfeerbeeld rond natuur, groei en onderweg zijn naar nieuwe mogelijkheden.",
       },
       {
         label: "Natuur en groen",

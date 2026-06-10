@@ -7,7 +7,14 @@ import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { Section } from "@/components/ui/Section";
 import { PageCtaBand } from "@/components/pages/PageCtaBand";
 import { PageHero } from "@/components/pages/PageHero";
-import type { PageAside, PageContent, PageIllustration, PageSection } from "@/content/pages";
+import { FlipTeamCard } from "@/components/team/FlipTeamCard";
+import type {
+  PageAside,
+  PageContent,
+  PageIllustration,
+  PageSection,
+} from "@/content/pages";
+import type { TeamMember } from "@/content/team";
 
 type StructuredContentPageProps = {
   page: PageContent;
@@ -75,45 +82,61 @@ function SectionLinks({ section }: { section: PageSection }) {
   );
 }
 
-function FeaturedSection({ section }: { section: PageSection }) {
+function FeaturedSection({
+  section,
+  therapists = [],
+}: {
+  section: PageSection;
+  therapists?: TeamMember[];
+}) {
   return (
     <Section variant="white">
       <Container>
         <div
           id={sectionId(section)}
-          className="scroll-mt-32 overflow-hidden rounded-medium border border-brand-green/35 bg-brand-green-soft shadow-soft"
+          className="scroll-mt-32 overflow-hidden rounded-medium border border-brand-green/25 bg-card shadow-soft"
         >
-          <div className="grid gap-0 md:grid-cols-[1fr_0.45fr] md:items-stretch">
-            <div className="p-5 sm:p-8 lg:p-10">
+          <div className="p-5 sm:p-8 lg:p-10">
+            <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+                  Praktijkteam
+                </span>
+                <h2 className="mt-3 max-w-2xl text-heading">{section.title}</h2>
+              </div>
+              <div className="max-w-3xl lg:justify-self-end">
+                <SectionBody section={section} />
+              </div>
+            </div>
+
+            {therapists.length > 0 ? (
+              <div className="mt-7 grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2 lg:mt-8 lg:gap-5">
+                {therapists.map((therapist) => (
+                  <FlipTeamCard
+                    key={therapist.name}
+                    name={therapist.name}
+                    role={therapist.role}
+                    summary={therapist.summary}
+                    backText={therapist.backText}
+                    image={therapist.image}
+                    imageAlt={therapist.imageAlt}
+                    initials={therapist.initials}
+                    tags={therapist.tags}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="mt-6">
               <span className="text-xs font-semibold uppercase tracking-wide text-muted">
-                Praktijkteam
+                Informatie
               </span>
-              <h2 className="mt-3 max-w-2xl text-heading">{section.title}</h2>
               <div className="max-w-3xl">
                 <SectionBody section={section} />
               </div>
-              <SectionLinks section={section} />
-            </div>
-            <div className="border-t border-brand-green/25 bg-card/55 p-5 md:border-l md:border-t-0 sm:p-7">
-              <div className="grid h-full content-center gap-3">
-                <div className="rounded-soft border border-border-soft bg-card p-4 shadow-card">
-                  <p className="text-sm font-semibold text-foreground">
-                    Elise Honkoop-de Visser
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-muted">
-                    Psycholoog NIP en EFT-relatietherapeut
-                  </p>
-                </div>
-                <div className="rounded-soft border border-border-soft bg-card p-4 shadow-card">
-                  <p className="text-sm font-semibold text-foreground">
-                    Annemarie van den Heuvel-de Jager
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-muted">
-                    Speltherapeut
-                  </p>
-                </div>
               </div>
-            </div>
+            )}
+
+            <SectionLinks section={section} />
           </div>
         </div>
       </Container>
@@ -163,7 +186,10 @@ export function StructuredContentPage({
       </section>
 
       {page.featuredSection ? (
-        <FeaturedSection section={page.featuredSection} />
+        <FeaturedSection
+          section={page.featuredSection}
+          therapists={page.featuredTeamMembers}
+        />
       ) : null}
 
       <Section variant="surface">

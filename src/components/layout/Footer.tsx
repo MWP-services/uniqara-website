@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { ErisietsmisgegaanButton } from "@/components/ui/ErisietsmisgegaanButton";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import { contact } from "@/content/contact";
 import { navigation } from "@/content/navigation";
@@ -48,13 +49,23 @@ export function Footer() {
               Contact
             </h2>
             <div className="text-support mt-4 space-y-1">
-              <p>{contact.email}</p>
+              <p>
+                <Link
+                  className="hover:text-foreground hover:underline decoration-brand-green decoration-2 underline-offset-4"
+                  href={`mailto:${contact.email}`}
+                >
+                  {contact.email}
+                </Link>
+              </p>
               <p>{contact.phone}</p>
               <p>{contact.openingHours}</p>
             </div>
             <Button href={contact.cta.href} className="mt-4" variant="secondary">
               {contact.cta.label}
             </Button>
+            <div className="mt-4">
+              <ErisietsmisgegaanButton variant="footer" />
+            </div>
           </section>
 
           <section aria-labelledby="footer-location">

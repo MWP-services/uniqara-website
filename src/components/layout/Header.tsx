@@ -34,7 +34,7 @@ function NavigationLinks({
             key={item.href}
             aria-current={isActive ? "page" : undefined}
             href={item.href}
-            className={`flex min-h-11 items-center whitespace-nowrap rounded-pill px-3 py-2.5 text-sm font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft lg:text-[0.95rem] ${
+            className={`flex min-h-11 items-center whitespace-nowrap rounded-pill px-3.5 py-2.5 text-[0.95rem] font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-yellow-soft lg:text-base ${
               isActive
                 ? "bg-brand-green-soft text-foreground"
                 : "text-foreground"
@@ -55,11 +55,11 @@ export function Header() {
   return (
     <header className="site-header-pastel sticky top-0 z-30 backdrop-blur">
       <Container>
-        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:gap-4 sm:py-3 lg:min-h-28">
+        <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
           <Link
             href={routes.home.href}
             aria-label={`${site.name} home`}
-            className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1 transition hover:bg-card/70 focus-visible:bg-card/70"
+            className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1.5 transition hover:bg-card/70 focus-visible:bg-card/70"
           >
             <LogoPlaceholder priority size="header" />
           </Link>
