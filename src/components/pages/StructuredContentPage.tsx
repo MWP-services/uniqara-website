@@ -91,11 +91,11 @@ function FeaturedSection({
 }) {
   return (
     <Section variant="white">
-      <Container>
-        <div
-          id={sectionId(section)}
-          className="scroll-mt-32 overflow-hidden rounded-medium border border-border-soft bg-card shadow-soft"
-        >
+        <Container>
+          <div
+            id={sectionId(section)}
+            className="scroll-mt-32 overflow-hidden rounded-medium border border-border-soft bg-card shadow-soft"
+          >
           <div className="p-5 sm:p-8 lg:p-10">
             <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
               <div>

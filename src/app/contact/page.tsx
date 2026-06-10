@@ -86,6 +86,17 @@ export default function ContactPage() {
 
             <Card className="!h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
+                Feedback
+              </p>
+              <h2 className="mt-3 text-2xl">{contact.complaint.title}</h2>
+              <p className="text-body mt-4">{contact.complaint.intro}</p>
+              <div className="mt-5">
+                <ErisietsmisgegaanButton variant="contact" />
+              </div>
+            </Card>
+
+            <Card className="!h-auto">
+              <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Locatie
               </p>
               <h2 className="mt-3 text-2xl">{contact.address.name}</h2>
