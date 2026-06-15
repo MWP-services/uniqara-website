@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { VideoFrame } from "@/components/ui/VideoFrame";
@@ -11,15 +10,6 @@ type HeroSectionProps = {
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
     <section className="relative isolate overflow-hidden bg-background text-foreground">
-      <Image
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-top"
-        fill
-        priority
-        sizes="100vw"
-        src="/assets/achtergrond.png"
-      />
       <div aria-hidden="true" className="hero-pastel-background absolute inset-0 z-[1]" />
 
       <Container className="relative z-10 grid items-center gap-8 py-10 sm:min-h-[78vh] sm:gap-10 sm:py-16 lg:min-h-[84vh] lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:py-20 xl:grid-cols-[0.8fr_1.2fr]">
@@ -39,7 +29,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
           <div className="hero-reveal hero-reveal-4 mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <Button
               href={hero.primaryCta.href}
-              className="bg-brand-green text-foreground hover:bg-accent-yellow active:bg-accent-yellow"
+              className="bg-brand-green text-white hover:bg-brand-green-deep active:bg-brand-green-deep"
             >
               {hero.primaryCta.label}
             </Button>

@@ -23,6 +23,59 @@ type StructuredContentPageProps = {
   stepNumbers?: boolean;
 };
 
+const routeThemeGroups = {
+  contact: new Set(["contact", "locatie"]),
+  forWho: new Set([
+    "voorWie",
+    "voorWieKinderen",
+    "voorWieJongeren",
+    "voorWieOuders",
+    "voorWieScholenVerwijzers",
+  ]),
+  help: new Set([
+    "hulpaanbod",
+    "speltherapie",
+    "kindertherapie",
+    "jongerenbegeleiding",
+    "ouderbegeleiding",
+    "vaktherapieCreatieveTherapie",
+    "psycholoogPedagoogBegeleiding",
+    "watIsEmdr",
+    "watIsAct",
+    "watIsCgt",
+  ]),
+  practical: new Set([
+    "praktischeInformatie",
+    "praktischeAanmelden",
+    "praktischeWachttijd",
+    "praktischeTarievenVergoedingen",
+    "praktischePrivacy",
+    "praktischeAlgemeen",
+    "praktischeFaq",
+  ]),
+  work: new Set(["werkwijze"]),
+};
+
+function pageThemeClass(routeKey: PageContent["routeKey"]) {
+  if (routeThemeGroups.forWho.has(routeKey)) {
+    return "page-theme-for-who";
+  }
+  if (routeThemeGroups.help.has(routeKey)) {
+    return "page-theme-help";
+  }
+  if (routeThemeGroups.work.has(routeKey)) {
+    return "page-theme-work";
+  }
+  if (routeThemeGroups.practical.has(routeKey)) {
+    return "page-theme-practical";
+  }
+  if (routeThemeGroups.contact.has(routeKey)) {
+    return "page-theme-contact";
+  }
+
+  return "page-theme-practice";
+}
+
 function sectionId(section: PageSection) {
   return section.title.toLowerCase().replaceAll(" ", "-").replaceAll("/", "-");
 }
@@ -82,6 +135,95 @@ function SectionLinks({ section }: { section: PageSection }) {
   );
 }
 
+function PageAnchorBand({
+  navSections,
+  page,
+}: {
+  navSections: PageSection[];
+  page: PageContent;
+}) {
+  return (
+    <section className="page-anchor-band">
+      <Container className="grid gap-5 py-5 sm:py-6 lg:grid-cols-[0.38fr_0.62fr] lg:items-center">
+        <p className="max-w-xl text-support">{page.description}</p>
+        <nav
+          aria-label={`Inhoud van ${page.title}`}
+          className="flex flex-wrap gap-2 lg:justify-end"
+        >
+          {navSections.map((section) => (
+            <Link
+              key={section.title}
+              href={`#${sectionId(section)}`}
+              className="compact-link-card inline-flex min-h-11 max-w-full items-center rounded-pill border border-border-soft bg-card/70 px-4 py-2 text-sm font-semibold leading-snug text-foreground shadow-card transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft"
+            >
+              {section.title}
+            </Link>
+          ))}
+        </nav>
+      </Container>
+    </section>
+  );
+}
+
+function PageVisualAccent({ page }: { page: PageContent }) {
+  if (!page.illustration) {
+    return null;
+  }
+
+  return (
+    <IllustrationFrame
+      alt={page.illustration.alt}
+      className={`content-visual-accent aspect-[4/3] ${toneClasses[page.illustration.tone ?? "neutral"]}`}
+      imageClassName="object-contain p-4 sm:p-6"
+      motion="up"
+      sizes="(min-width: 1024px) 28rem, 100vw"
+      src={page.illustration.src}
+    />
+  );
+}
+
+function ContentCard({
+  index,
+  section,
+  stepNumbers,
+  variant = "default",
+}: {
+  index: number;
+  section: PageSection;
+  stepNumbers?: boolean;
+  variant?: "default" | "highlight" | "compact" | "timeline";
+}) {
+  const variantClass =
+    variant === "highlight"
+      ? "content-card content-card--highlight md:col-span-2"
+      : variant === "compact"
+        ? "content-card content-card--compact"
+        : variant === "timeline"
+          ? "content-card content-card--timeline"
+          : "content-card";
+
+  return (
+    <Card
+      id={sectionId(section)}
+      className={`flex w-full min-w-0 scroll-mt-32 flex-col ${variantClass}`}
+    >
+      {stepNumbers ? (
+        <span className="step-number-marker">
+          {index + 1}
+        </span>
+      ) : null}
+      <h2 className={stepNumbers ? "mt-5 text-2xl" : "text-2xl"}>
+        {section.title}
+      </h2>
+      <SectionBody section={section} />
+      {section.illustration ? (
+        <SectionIllustration illustration={section.illustration} />
+      ) : null}
+      <SectionLinks section={section} />
+    </Card>
+  );
+}
+
 function FeaturedSection({
   section,
   therapists = [],
@@ -90,11 +232,11 @@ function FeaturedSection({
   therapists?: TeamMember[];
 }) {
   return (
-    <Section variant="white">
+    <Section className="featured-rhythm-section" variant="white">
         <Container>
           <div
             id={sectionId(section)}
-            className="scroll-mt-32 overflow-hidden rounded-medium border border-border-soft bg-card shadow-soft"
+            className="featured-panel scroll-mt-32 overflow-hidden rounded-medium border border-border-soft bg-card/70 shadow-soft"
           >
           <div className="p-5 sm:p-8 lg:p-10">
             <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
@@ -144,6 +286,141 @@ function FeaturedSection({
   );
 }
 
+function TimelineSections({
+  page,
+  sections,
+}: {
+  page: PageContent;
+  sections: PageSection[];
+}) {
+  return (
+    <Section className="content-rhythm-section content-rhythm-section--timeline" variant="surface">
+      <Container>
+        <div className="content-rhythm-heading">
+          <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+            Stap voor stap
+          </span>
+          <h2 className="mt-2 text-2xl sm:text-3xl">Een helder traject</h2>
+          <p className="mt-3 max-w-3xl text-body">{page.description}</p>
+        </div>
+        <div className="timeline-layout">
+          {sections.map((section, index) => (
+            <ContentCard
+              key={section.title}
+              index={index}
+              section={section}
+              stepNumbers
+              variant="timeline"
+            />
+          ))}
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
+function ShortNarrativeSections({
+  page,
+  sections,
+}: {
+  page: PageContent;
+  sections: PageSection[];
+}) {
+  const [firstSection, ...restSections] = sections;
+
+  if (!firstSection) {
+    return null;
+  }
+
+  return (
+    <Section className="content-rhythm-section content-rhythm-section--split" variant="surface">
+      <Container>
+        <div className="content-split-layout">
+          <ContentCard
+            index={0}
+            section={firstSection}
+            variant="highlight"
+          />
+          <aside className="content-side-rail" aria-label={`Verdieping bij ${page.title}`}>
+            <PageVisualAccent page={page} />
+            {restSections.map((section, index) => (
+              <ContentCard
+                key={section.title}
+                index={index + 1}
+                section={section}
+                variant="compact"
+              />
+            ))}
+          </aside>
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
+function MosaicSections({
+  page,
+  sections,
+}: {
+  page: PageContent;
+  sections: PageSection[];
+}) {
+  return (
+    <Section className="content-rhythm-section content-rhythm-section--mosaic" variant="surface">
+      <Container>
+        {page.featuredSection ? (
+          <div className="content-rhythm-heading">
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+              Deelonderwerpen
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl">Meer over Uniqara</h2>
+          </div>
+        ) : (
+          <div className="content-rhythm-heading content-rhythm-heading--wide">
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+              Verdieping
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl">Kies wat nu past</h2>
+            <p className="mt-3 max-w-3xl text-body">{page.description}</p>
+          </div>
+        )}
+        <div
+          className={`content-mosaic-grid grid min-w-0 grid-cols-1 gap-3 sm:gap-4 lg:gap-5 ${
+            page.featuredSection ? "md:grid-cols-3" : "md:grid-cols-2"
+          }`}
+        >
+          {sections.map((section, index) => (
+            <ContentCard
+              key={section.title}
+              index={index}
+              section={section}
+              variant={index === 0 && sections.length > 3 ? "highlight" : "default"}
+            />
+          ))}
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
+function PageContentSections({
+  page,
+  stepNumbers,
+}: {
+  page: PageContent;
+  stepNumbers?: boolean;
+}) {
+  if (stepNumbers) {
+    return <TimelineSections page={page} sections={page.sections} />;
+  }
+
+  if (!page.featuredSection && page.sections.length <= 2) {
+    return <ShortNarrativeSections page={page} sections={page.sections} />;
+  }
+
+  return <MosaicSections page={page} sections={page.sections} />;
+}
+
 export function StructuredContentPage({
   afterSections,
   page,
@@ -153,9 +430,10 @@ export function StructuredContentPage({
   const navSections = page.featuredSection
     ? [page.featuredSection, ...page.sections]
     : page.sections;
+  const themeClass = pageThemeClass(page.routeKey);
 
   return (
-    <main className="page-shell">
+    <main className={`page-shell ${themeClass}`}>
       <PageHero
         aside={aside}
         eyebrow={page.heroEyebrow}
@@ -166,24 +444,7 @@ export function StructuredContentPage({
         title={page.title}
       />
 
-      <section className="section-surface py-4 sm:py-5">
-        <Container>
-          <nav
-            aria-label={`Inhoud van ${page.title}`}
-            className="flex flex-wrap gap-2"
-          >
-            {navSections.map((section) => (
-              <Link
-                key={section.title}
-                href={`#${sectionId(section)}`}
-                className="inline-flex min-h-11 max-w-full items-center rounded-pill border border-border-soft bg-card px-4 py-2 text-sm font-semibold leading-snug text-foreground transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft"
-              >
-                {section.title}
-              </Link>
-            ))}
-          </nav>
-        </Container>
-      </section>
+      <PageAnchorBand navSections={navSections} page={page} />
 
       {page.featuredSection ? (
         <FeaturedSection
@@ -192,45 +453,7 @@ export function StructuredContentPage({
         />
       ) : null}
 
-      <Section variant="surface">
-        <Container>
-          {page.featuredSection ? (
-            <div className="mb-5 sm:mb-6">
-              <span className="text-xs font-semibold uppercase tracking-wide text-muted">
-                Deelonderwerpen
-              </span>
-              <h2 className="mt-2 text-2xl">Meer over Uniqara</h2>
-            </div>
-          ) : null}
-          <div
-            className={`grid min-w-0 grid-cols-1 gap-3 sm:gap-4 lg:gap-5 ${
-              page.featuredSection ? "md:grid-cols-3" : "md:grid-cols-2"
-            }`}
-          >
-            {page.sections.map((section, index) => (
-              <Card
-                key={section.title}
-                id={sectionId(section)}
-                className="flex w-full min-w-0 scroll-mt-32 flex-col"
-              >
-                {stepNumbers ? (
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-pill bg-accent-yellow-soft text-sm font-semibold text-foreground">
-                    {index + 1}
-                  </span>
-                ) : null}
-                <h2 className={stepNumbers ? "mt-5 text-2xl" : "text-2xl"}>
-                  {section.title}
-                </h2>
-                <SectionBody section={section} />
-                {section.illustration ? (
-                  <SectionIllustration illustration={section.illustration} />
-                ) : null}
-                <SectionLinks section={section} />
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <PageContentSections page={page} stepNumbers={stepNumbers} />
 
       {afterSections}
 
@@ -238,6 +461,7 @@ export function StructuredContentPage({
         eyebrow={page.ctaBand?.eyebrow}
         intro={page.ctaBand?.intro}
         links={page.ctas}
+        sectionClassName={themeClass}
         title={page.ctaBand?.title}
       />
     </main>

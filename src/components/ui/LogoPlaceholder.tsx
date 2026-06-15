@@ -24,12 +24,12 @@ export function LogoPlaceholder({
 }: LogoPlaceholderProps) {
   return (
     <Image
-      src="/assets/logo-clean.jpeg"
+      src="/assets/logo-transparent.png"
       alt={placeholderKey === "LOGO_PRIMARY" ? site.name : `${site.name} logo`}
       width={1254}
       height={1254}
       priority={priority}
-      className={`block object-contain ${sizeClasses[size]} ${className}`}
+      className={`site-logo-image block object-contain ${sizeClasses[size]} ${className}`}
     />
   );
 }

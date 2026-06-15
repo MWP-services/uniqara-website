@@ -37,9 +37,9 @@ type ButtonProps = ButtonAsLinkProps | ButtonAsButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-green text-foreground shadow-card hover:bg-accent-yellow active:bg-accent-yellow",
+    "primary-button bg-brand-green text-white shadow-card hover:bg-brand-green-deep active:bg-brand-green-deep",
   secondary:
-    "border border-border-soft bg-card text-foreground hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft",
+    "secondary-button border border-border-soft bg-card/75 text-foreground shadow-card backdrop-blur hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft",
   ghost:
     "text-foreground hover:bg-brand-green-soft hover:text-brand-green-deep active:bg-accent-yellow-soft",
 };
@@ -214,7 +214,7 @@ export function Button({
   variant = "primary",
   ...props
 }: ButtonProps) {
-  const classes = `inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-pill px-5 py-3 text-center text-sm font-semibold leading-snug transition focus-visible:ring-4 focus-visible:ring-focus-ring/25 disabled:cursor-not-allowed disabled:opacity-60 aria-[current=page]:ring-2 aria-[current=page]:ring-focus-ring/40 ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-pill px-5 py-3 text-center text-sm font-semibold leading-snug transition-[background-color,border-color,box-shadow,color,transform] hover:-translate-y-0.5 focus-visible:ring-4 focus-visible:ring-focus-ring/25 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 aria-[current=page]:ring-2 aria-[current=page]:ring-focus-ring/40 ${variantClasses[variant]} ${className}`;
 
   if ("href" in props) {
     const { href, ...linkProps } = props as ButtonAsLinkProps;
