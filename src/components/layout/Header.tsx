@@ -53,7 +53,7 @@ export function Header() {
   const contactIsActive = isActivePath(pathname, routes.contact.href);
 
   return (
-    <header className="site-header-pastel sticky top-0 z-30 w-full max-w-[100vw] overflow-x-clip backdrop-blur">
+    <header className="site-header-pastel sticky top-0 z-50 w-full max-w-[100vw] overflow-visible backdrop-blur">
       <Container>
         <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
           <Link
@@ -79,11 +79,11 @@ export function Header() {
             </Button>
           </div>
 
-          <details className="group relative lg:hidden">
+          <details className="group relative z-50 lg:hidden">
             <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft">
               Menu
             </summary>
-            <div className="absolute right-0 z-40 mt-3 max-h-[calc(100vh-5.5rem)] w-[min(calc(100vw-2rem),22rem)] overflow-auto rounded-medium border border-border-soft bg-card p-4 shadow-soft">
+            <div className="absolute right-0 z-50 mt-3 max-h-[calc(100vh-5.5rem)] w-[min(calc(100vw-2rem),22rem)] overflow-auto rounded-medium border border-border-soft bg-card p-4 shadow-soft">
               <NavigationLinks
                 ariaLabel="Mobiele navigatie"
                 className="grid gap-1"

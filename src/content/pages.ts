@@ -229,7 +229,7 @@ export const pages = {
       "Jongeren kunnen terecht wanneer zij vastlopen, veel druk ervaren of behoefte hebben aan overzicht.",
     illustration: {
       alt: "Blokkenillustratie bij bouwen aan overzicht en ontwikkeling.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "turquoise",
     },
     sections: [
@@ -400,7 +400,7 @@ export const pages = {
       "Kindertherapie is een paraplubegrip voor hulp aan kinderen die vastlopen.",
     illustration: {
       alt: "Blokkenillustratie bij ontwikkeling en groei.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "turquoise",
     },
     sections: [
@@ -531,7 +531,7 @@ export const pages = {
       "Een psycholoog of pedagoog kan worden ingezet bij onderzoeksvragen of behandeling binnen de basis GGZ / ZPM GGZ.",
     illustration: {
       alt: "Blokkenillustratie bij psychologische en pedagogische ontwikkeling.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "turquoise",
     },
     sections: [
@@ -668,7 +668,7 @@ export const pages = {
         ],
         illustration: {
           alt: "Blokkenillustratie bij bouwen aan behandeling en ontwikkeling.",
-          src: "/assets/BLOKKEN.png",
+          src: "/assets/BLOKKEN.webp",
           tone: "turquoise",
         },
       },
@@ -691,7 +691,7 @@ export const pages = {
       "Aanmelden, wachttijd, tarieven, privacy en veelgestelde vragen staan hier bij elkaar.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en praktische stappen.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "neutral",
     },
     sections: routeGroups.praktischeInformatie.map((route) => {
@@ -746,7 +746,7 @@ export const pages = {
       "De actuele wachttijd en aanmeldstatus staan hier bij elkaar.",
     illustration: {
       alt: "Blokkenillustratie bij overzicht en wachttijd.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "turquoise",
     },
     sections: [
@@ -769,7 +769,7 @@ export const pages = {
       "Hier staat praktische uitleg over kosten, verwijzing, vergoeding en eigen betaling.",
     illustration: {
       alt: "Blokkenillustratie bij praktische informatie.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "neutral",
     },
     sections: [
@@ -856,7 +856,7 @@ export const pages = {
       "Korte antwoorden helpen bezoekers snel begrijpen wat zij kunnen verwachten.",
     illustration: {
       alt: "Blokkenillustratie bij veelgestelde vragen en overzicht.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "neutral",
     },
     sections: [
@@ -887,7 +887,7 @@ export const pages = {
       `Uniqara is gevestigd bij ${contact.address.name} aan de ${contact.address.street} in ${contact.address.postalCodeCity.replace(/^\d{4}\s?[A-Z]{2}\s/, "")}. Op deze pagina vind je het adres en de kaart.`,
     illustration: {
       alt: "Blokkenillustratie bij locatie en aankomstinformatie.",
-      src: "/assets/BLOKKEN.png",
+      src: "/assets/BLOKKEN.webp",
       tone: "turquoise",
     },
     aside: {
