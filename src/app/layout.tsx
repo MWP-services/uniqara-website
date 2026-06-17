@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { StructuredData } from "@/components/seo/StructuredData";
+import { ViewTransitionProvider } from "@/components/ui/ViewTransitionProvider";
 import { rootMetadata } from "@/content/seo";
 import "./globals.css";
 
@@ -30,9 +31,11 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <StructuredData />
-        <Header />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <ViewTransitionProvider>
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </ViewTransitionProvider>
       </body>
     </html>
   );

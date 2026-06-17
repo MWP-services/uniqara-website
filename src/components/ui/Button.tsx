@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonIcon =
@@ -221,10 +221,10 @@ export function Button({
     const resolvedIcon = icon ?? iconForButton({ children, href });
 
     return (
-      <Link href={href} className={classes} {...linkProps}>
+      <TransitionLink href={href} className={classes} {...linkProps}>
         <Icon name={resolvedIcon} />
         {children}
-      </Link>
+      </TransitionLink>
     );
   }
 

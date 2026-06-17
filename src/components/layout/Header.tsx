@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { navigation } from "@/content/navigation";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
@@ -30,7 +30,7 @@ function NavigationLinks({
         const isActive = isActivePath(pathname, item.href);
 
         return (
-          <Link
+          <TransitionLink
             key={item.href}
             aria-current={isActive ? "page" : undefined}
             href={item.href}
@@ -41,7 +41,7 @@ function NavigationLinks({
             }`}
           >
             {item.label}
-          </Link>
+          </TransitionLink>
         );
       })}
     </nav>
@@ -56,13 +56,13 @@ export function Header() {
     <header className="site-header-pastel sticky top-0 z-[100] w-full max-w-[100vw] overflow-visible backdrop-blur">
       <Container>
         <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
-          <Link
+          <TransitionLink
             href={routes.home.href}
             aria-label={`${site.name} home`}
             className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1.5 transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
           >
             <LogoPlaceholder priority size="header" />
-          </Link>
+          </TransitionLink>
 
           <div className="hidden items-center gap-4 lg:flex">
             <NavigationLinks

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { ErisietsmisgegaanButton } from "@/components/ui/ErisietsmisgegaanButton";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { contact } from "@/content/contact";
 import { navigation } from "@/content/navigation";
 import { placeholders } from "@/content/placeholders";
@@ -30,12 +31,12 @@ export function Footer() {
             <ul className="text-support mt-4 grid gap-1.5">
               {navigation.footer.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <TransitionLink
                     className="inline-flex min-h-11 items-center hover:text-foreground hover:underline decoration-brand-green decoration-2 underline-offset-4 lg:min-h-9"
                     href={item.href}
                   >
                     {item.label}
-                  </Link>
+                  </TransitionLink>
                 </li>
               ))}
             </ul>
