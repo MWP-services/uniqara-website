@@ -19,13 +19,13 @@ export const metadata = pageMetadata.contact;
 
 export default function ContactPage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell page-theme-contact">
       <PageHero aside={page.aside} intro={page.intro} title={page.title} />
 
-      <Section variant="surface">
+      <Section className="contact-rhythm-section" variant="surface">
         <Container className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-6">
-            <Card className="!h-auto">
+            <Card className="contact-card--highlight !h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Contact
               </p>
@@ -73,7 +73,7 @@ export default function ContactPage() {
               </Button>
             </Card>
 
-            <Card className="!h-auto">
+            <Card className="contact-card--compact !h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Feedback
               </p>
@@ -84,18 +84,7 @@ export default function ContactPage() {
               </div>
             </Card>
 
-            <Card className="!h-auto">
-              <p className="text-sm font-semibold uppercase text-muted-foreground">
-                Feedback
-              </p>
-              <h2 className="mt-3 text-2xl">{contact.complaint.title}</h2>
-              <p className="text-body mt-4">{contact.complaint.intro}</p>
-              <div className="mt-5">
-                <ErisietsmisgegaanButton variant="contact" />
-              </div>
-            </Card>
-
-            <Card className="!h-auto">
+            <Card className="contact-card--location !h-auto">
               <p className="text-sm font-semibold uppercase text-muted-foreground">
                 Locatie
               </p>
@@ -120,7 +109,7 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          <Card className="p-6 sm:p-8" id="contactformulier">
+          <Card className="contact-form-card p-6 sm:p-8" id="contactformulier">
             <SectionHeading
               headingLevel="h2"
               intro={contact.form.intro}
@@ -145,6 +134,7 @@ export default function ContactPage() {
             href: routes.praktischeInformatie.href,
           },
         ]}
+        sectionClassName="page-theme-contact"
         title="Liever eerst verder lezen?"
       />
     </main>

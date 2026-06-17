@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
@@ -50,56 +51,114 @@ function NavigationLinks({
 
 export function Header() {
   const pathname = usePathname();
+  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const contactIsActive = isActivePath(pathname, routes.contact.href);
 
   return (
-    <header className="site-header-pastel sticky top-0 z-30 w-full max-w-[100vw] overflow-x-clip backdrop-blur">
-      <Container>
-        <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
-          <Link
-            href={routes.home.href}
-            aria-label={`${site.name} home`}
-            className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1.5 transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
-          >
-            <LogoPlaceholder priority size="header" />
-          </Link>
-
-          <div className="hidden items-center gap-4 lg:flex">
-            <NavigationLinks
-              ariaLabel="Hoofdnavigatie"
-              className="flex items-center gap-1.5 xl:gap-2"
-              pathname={pathname}
-            />
-            <Button
-              aria-current={contactIsActive ? "page" : undefined}
-              href={routes.contact.href}
-              className={`ml-2 whitespace-nowrap ${contactIsActive ? "ring-2 ring-focus-ring/40" : ""}`}
+    <>
+      <header className="site-header-pastel sticky top-0 z-[1000] w-full max-w-[100vw] overflow-visible backdrop-blur">
+        <Container>
+          <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
+            <Link
+              href={routes.home.href}
+              aria-label={`${site.name} home`}
+              className="inline-flex shrink-0 items-center self-stretch rounded-soft px-1.5 transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
             >
-              {navigation.headerCtaLabel}
-            </Button>
-          </div>
+              <LogoPlaceholder priority size="header" />
+            </Link>
 
-          <details className="group relative lg:hidden">
-            <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft">
-              Menu
-            </summary>
-            <div className="absolute right-0 z-40 mt-3 max-h-[calc(100vh-5.5rem)] w-[min(calc(100vw-2rem),22rem)] overflow-auto rounded-medium border border-border-soft bg-card p-4 shadow-soft">
+            <div className="hidden items-center gap-4 lg:flex">
               <NavigationLinks
-                ariaLabel="Mobiele navigatie"
-                className="grid gap-1"
+                ariaLabel="Hoofdnavigatie"
+                className="flex items-center gap-1.5 xl:gap-2"
                 pathname={pathname}
               />
               <Button
                 aria-current={contactIsActive ? "page" : undefined}
                 href={routes.contact.href}
-                className="mt-3 w-full"
+                className={`ml-2 whitespace-nowrap ${contactIsActive ? "ring-2 ring-focus-ring/40" : ""}`}
               >
                 {navigation.headerCtaLabel}
               </Button>
             </div>
-          </details>
+
+            <button
+              type="button"
+              aria-controls="mobile-navigation-panel"
+              aria-expanded={mobileMenuIsOpen}
+              className="min-h-11 cursor-pointer rounded-pill border border-border-soft bg-[#fafcf9] px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft lg:hidden"
+              onClick={() => setMobileMenuIsOpen((isOpen) => !isOpen)}
+            >
+              Menu
+            </button>
+          </div>
+        </Container>
+      </header>
+
+      {mobileMenuIsOpen ? (
+        <div
+          id="mobile-navigation-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobiele navigatie"
+          className="lg:hidden"
+          style={{
+            background: "#fafcf9",
+            inset: 0,
+            isolation: "isolate",
+            overflowY: "auto",
+            padding:
+              "max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom))",
+            position: "fixed",
+            transform: "translateZ(0)",
+            WebkitOverflowScrolling: "touch",
+            zIndex: 2147483647,
+          }}
+        >
+          <div className="mx-auto flex min-h-20 max-w-6xl items-center justify-between gap-3 py-2">
+            <Link
+              href={routes.home.href}
+              aria-label={`${site.name} home`}
+              className="inline-flex shrink-0 items-center rounded-soft px-1.5 transition focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+              onClick={() => setMobileMenuIsOpen(false)}
+            >
+              <LogoPlaceholder priority size="header" />
+            </Link>
+            <button
+              type="button"
+              className="min-h-11 rounded-pill border border-border-soft bg-white px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft"
+              onClick={() => setMobileMenuIsOpen(false)}
+            >
+              Sluit
+            </button>
+          </div>
+
+          <div
+            className="mx-auto mt-6 max-w-6xl rounded-medium border border-border-soft bg-white p-4 shadow-soft"
+            onClickCapture={(event) => {
+              if (
+                event.target instanceof Element &&
+                event.target.closest("a")
+              ) {
+                setMobileMenuIsOpen(false);
+              }
+            }}
+          >
+            <NavigationLinks
+              ariaLabel="Mobiele navigatie"
+              className="grid gap-1"
+              pathname={pathname}
+            />
+            <Button
+              aria-current={contactIsActive ? "page" : undefined}
+              href={routes.contact.href}
+              className="mt-3 w-full"
+            >
+              {navigation.headerCtaLabel}
+            </Button>
+          </div>
         </div>
-      </Container>
-    </header>
+      ) : null}
+    </>
   );
 }

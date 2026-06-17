@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell page-theme-practice">
       <PageHero
         title="Team en behandelaars"
         intro="Maak kennis met de behandelaars die betrokken zijn bij Uniqara. Ieder brengt eigen expertise mee binnen diagnostiek, behandeling en jeugdhulp."
@@ -34,7 +34,7 @@ export default function TeamPage() {
         }}
       />
 
-      <Section variant="surface">
+      <Section className="team-rhythm-section" variant="surface">
         <Container>
           <div className="grid min-w-0 grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
@@ -61,6 +61,7 @@ export default function TeamPage() {
           { label: "Neem contact op", href: "/contact" },
           { label: "Bekijk hulpaanbod", href: "/hulpaanbod" },
         ]}
+        sectionClassName="page-theme-practice"
       />
     </main>
   );
