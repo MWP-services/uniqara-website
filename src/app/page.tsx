@@ -9,7 +9,7 @@ export const metadata = pageMetadata.home;
 
 export default function Home() {
   return (
-    <main className="page-shell">
+    <main className="page-shell page-theme-home">
       <HeroSection hero={home.hero} />
 
       <RouteOverviewSection

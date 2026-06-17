@@ -14,7 +14,7 @@ export function Container({
   const widthClass = size === "narrow" ? "max-w-4xl" : "max-w-6xl";
 
   return (
-    <div className={`mx-auto w-full ${widthClass} px-4 sm:px-6 lg:px-8 ${className}`}>
+    <div className={`mx-auto box-border w-full ${widthClass} px-4 sm:px-6 lg:px-8 ${className}`}>
       {children}
     </div>
   );

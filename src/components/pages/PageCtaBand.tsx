@@ -22,7 +22,7 @@ export function PageCtaBand({
   return (
     <section className={`page-cta-band-branded py-10 sm:py-12 ${sectionClassName}`}>
       <Container>
-        <Card className="grid w-full min-w-0 grid-cols-1 gap-5 border-brand-green/45 bg-card p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <Card className="cta-card grid w-full min-w-0 grid-cols-1 gap-5 border-brand-green/45 bg-card p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-muted-foreground">
               {eyebrow}
