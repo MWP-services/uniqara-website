@@ -4,7 +4,6 @@ import { PageHero } from "@/components/pages/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import { ErisietsmisgegaanButton } from "@/components/ui/ErisietsmisgegaanButton";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { contact } from "@/content/contact";
@@ -79,9 +78,9 @@ export default function ContactPage() {
               </p>
               <h2 className="mt-3 text-2xl">{contact.complaint.title}</h2>
               <p className="text-body mt-4">{contact.complaint.intro}</p>
-              <div className="mt-5">
-                <ErisietsmisgegaanButton variant="contact" />
-              </div>
+              <p className="text-support mt-4">
+                De link om onvrede te melden staat onderaan de website.
+              </p>
             </Card>
 
             <Card className="!h-auto">
