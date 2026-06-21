@@ -38,7 +38,7 @@ export function IllustrationFrame({
           alt={alt}
           className={`h-full w-full object-cover ${imageClassName}`}
           height={2160}
-          priority={priority}
+          preload={priority}
           sizes={sizes}
           src={src}
           width={3840}

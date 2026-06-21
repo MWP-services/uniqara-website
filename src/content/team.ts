@@ -5,21 +5,24 @@ export type TeamMember = {
   backText: string;
   image?: string;
   imageAlt?: string;
+  linkedinUrl?: string;
   initials?: string;
   tags?: string[];
 };
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Annemarie de Jager",
-    role: "Orthopedagoog-generalist en speltherapeut",
+    name: "Annemarie van den Heuvel",
+    role: "Speltherapeut",
     summary:
-      "Annemarie werkt met kinderen, jongeren en ouders en is betrokken bij diagnostiek, behandeling en speltherapie.",
-    image: "/assets/Annemarie.jpeg",
-    imageAlt: "Portretfoto van Annemarie de Jager.",
+      "Annemarie biedt speltherapie aan kinderen en jongeren en betrekt ouders waar dat helpend is voor de ontwikkeling thuis en op school.",
+    image: "/assets/Annemarie.jpg",
+    imageAlt: "Portretfoto van Annemarie van den Heuvel.",
+    linkedinUrl:
+      "https://www.linkedin.com/in/annemarie-van-den-heuvel-9626731a6/?skipRedirect=true",
     backText:
-      "Annemarie de Jager is orthopedagoog-generalist en heeft ruime ervaring binnen de geestelijke gezondheidszorg. Zij werkt met kinderen, jongeren en ouders en kan worden ingezet bij vragen rondom ontwikkeling, gedrag, emoties, trauma en psychodiagnostisch onderzoek.\n\nDaarnaast is Annemarie speltherapeut, EMDR-therapeut, Writejunior-therapeut en ACT4Life-therapeut. Vanuit haar achtergrond kijkt zij zorgvuldig naar wat een kind, jongere of gezin nodig heeft.",
-    tags: ["Speltherapie", "EMDR", "Diagnostiek"],
+      "Annemarie van den Heuvel is speltherapeut en sluit in haar werk aan bij de belevingswereld van kinderen en jongeren. Spel geeft ruimte om ervaringen, gevoelens en gedrag op een veilige manier zichtbaar te maken, ook wanneer woorden nog lastig zijn.\n\nIn de behandeling kijkt Annemarie zorgvuldig naar wat een kind nodig heeft en hoe ouders of verzorgers daarbij kunnen aansluiten. Haar werkwijze is rustig, betrokken en gericht op vertrouwen, ontwikkeling en veerkracht. Meer informatie over haar professionele achtergrond is te vinden via haar LinkedIn-profiel.",
+    tags: ["Speltherapie", "Kind en jeugd", "Ouderbetrokkenheid"],
   },
   {
     name: "Behandelaar volgt",

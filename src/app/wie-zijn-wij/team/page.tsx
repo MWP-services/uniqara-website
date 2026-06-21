@@ -4,7 +4,7 @@ import { PageCtaBand } from "@/components/pages/PageCtaBand";
 import { PageHero } from "@/components/pages/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { teamMembers } from "@/content/team";
+import { type TeamMember, teamMembers } from "@/content/team";
 
 export const metadata: Metadata = {
   title: "Team en behandelaars",
@@ -21,6 +21,11 @@ export const metadata: Metadata = {
 };
 
 export default function TeamPage() {
+  const linkedInProfiles = teamMembers.filter(
+    (member): member is TeamMember & { linkedinUrl: string } =>
+      Boolean(member.linkedinUrl),
+  );
+
   return (
     <main className="page-shell">
       <PageHero
@@ -51,6 +56,21 @@ export default function TeamPage() {
               />
             ))}
           </div>
+          {linkedInProfiles.length > 0 ? (
+            <div className="text-support mt-6 flex flex-wrap gap-3">
+              {linkedInProfiles.map((member) => (
+                <a
+                  key={member.linkedinUrl}
+                  href={member.linkedinUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                  className="inline-flex min-h-11 items-center rounded-pill border border-brand-green/35 bg-card px-4 py-2 font-semibold text-foreground shadow-card transition hover:border-border-strong hover:bg-brand-green-soft"
+                >
+                  LinkedIn-profiel van {member.name}
+                </a>
+              ))}
+            </div>
+          ) : null}
         </Container>
       </Section>
 

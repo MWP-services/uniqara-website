@@ -72,7 +72,7 @@ export const contact = {
   openingHours:
     "Werkdagen van 9.00 tot 17.00 uur.",
   ownerName:
-    "Elise Honkoop-de Visser, psycholoog NIP en EFT-relatietherapeut. Zzp'er: Annemarie van den Heuvel-de Jager.",
+    "Elise Honkoop-de Visser, psycholoog NIP en EFT-relatietherapeut. Zzp'er: Annemarie van den Heuvel.",
   googleMapsUrl:
     placeholders.GOOGLE_MAPS_LINK.uiText,
   address: {
