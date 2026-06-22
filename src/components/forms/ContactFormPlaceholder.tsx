@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import type { ContactContent } from "@/content/contact";
+import { routes } from "@/content/routes";
 
 type ContactFormPlaceholderProps = {
   form: ContactContent["form"];
@@ -183,6 +185,17 @@ export function ContactFormPlaceholder({
 
       <p id="contact-form-note" className="text-support">
         {form.handlerPlaceholder}
+      </p>
+      <p className="text-support rounded-soft border border-border-soft bg-card/70 p-4">
+        Wij gebruiken je formuliergegevens om je bericht te beoordelen en contact
+        met je op te nemen. Lees meer in de{" "}
+        <Link
+          className="font-semibold text-foreground underline decoration-brand-green decoration-2 underline-offset-4 hover:text-brand-green-deep"
+          href={routes.praktischePrivacy.href}
+        >
+          privacyverklaring
+        </Link>
+        .
       </p>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">

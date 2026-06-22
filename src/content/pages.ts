@@ -644,12 +644,12 @@ export const pages = {
       {
         title: "Aanmelden",
         body: [
-          "Aanmelden kan via het aanmeldformulier of door contact op te nemen.",
+          "Aanmelden kan door contact op te nemen.",
           "Vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
         ],
         illustration: {
-          alt: "Speeltreinillustratie bij de start van het traject.",
-          src: "/assets/SPELTREIN.webp",
+          alt: "Illustratie bij aanmelden voor een traject bij Uniqara.",
+          src: "/assets/aanmelden.png",
           tone: "coral",
         },
         links: [{ label: "Aanmelden", href: routes.praktischeAanmelden.href }],
@@ -660,6 +660,11 @@ export const pages = {
           "Tijdens de kennismaking of intake wordt de hulpvraag verkend.",
           "Er is aandacht voor achtergrond, verwachtingen en praktische afspraken.",
         ],
+        illustration: {
+          alt: "Illustratie bij kennismaking en intake.",
+          src: "/assets/kennismaking.png",
+          tone: "yellow",
+        },
       },
       {
         title: "Behandeltraject",
@@ -667,8 +672,8 @@ export const pages = {
           "Daarna volgt een traject dat aansluit bij de vraag, zoals behandeling, oudergesprekken of afstemming.",
         ],
         illustration: {
-          alt: "Blokkenillustratie bij bouwen aan behandeling en ontwikkeling.",
-          src: "/assets/BLOKKEN.webp",
+          alt: "Illustratie bij het behandeltraject.",
+          src: "/assets/behandeltraject.png",
           tone: "turquoise",
         },
       },
@@ -677,6 +682,11 @@ export const pages = {
         body: [
           "Regelmatig wordt bekeken wat werkt en welke vervolgstap passend is.",
         ],
+        illustration: {
+          alt: "Illustratie bij evaluatie en afstemming.",
+          src: "/assets/evaluatie.png",
+          tone: "neutral",
+        },
       },
     ],
     ctas: [practicalCta, contactCta],
@@ -799,30 +809,83 @@ export const pages = {
 
   praktischePrivacy: {
     routeKey: "praktischePrivacy",
-    title: "Privacy",
+    title: "Privacyverklaring",
     description:
-      "Privacy-informatie, dossiervoering en omgaan met persoonsgegevens.",
+      "Privacyverklaring van Uniqara over persoonsgegevens, gezondheidsgegevens, dossiers en rechten.",
     intro:
-      "Uniqara gaat zorgvuldig om met persoonsgegevens en gezondheidsgegevens.",
+      "Uniqara gaat zorgvuldig en vertrouwelijk om met persoonsgegevens en gezondheidsgegevens. Deze privacyverklaring legt uit welke gegevens wij verwerken, waarom dat gebeurt en welke rechten je hebt.",
     sections: [
       {
-        title: "Welke gegevens",
+        title: "Wie is verantwoordelijk?",
         body: [
-          "Uniqara kan gegevens verwerken zoals naam, contactgegevens, woonplaats, hulpvraag, verwijsinformatie en afspraken.",
-          "Bij kind en jeugd kunnen ook gegevens van ouders/verzorgers, school of verwijzers relevant zijn.",
+          "Uniqara is verantwoordelijk voor de verwerking van persoonsgegevens die via deze website, per e-mail, telefonisch, tijdens aanmelding of binnen een behandeltraject worden gedeeld.",
+          `Voor privacyvragen kun je contact opnemen via ${contact.email}. De praktijk is gevestigd aan ${contact.address.street}, ${contact.address.postalCodeCity}.`,
+          "Wanneer meerdere zorgverleners bij een traject betrokken zijn, wordt per situatie bekeken wie welke gegevens verwerkt en met welk doel.",
         ],
       },
       {
-        title: "Dossier en veiligheid",
+        title: "Welke gegevens verwerken wij?",
         body: [
-          "Voor goede en veilige zorg wordt een dossier bijgehouden met informatie die nodig is voor behandeling, afstemming of wettelijke verplichtingen.",
-          "Gegevens worden zorgvuldig behandeld en alleen gedeeld wanneer daar een passende grondslag of toestemming voor is.",
+          "Wij kunnen contactgegevens verwerken, zoals naam, e-mailadres, telefoonnummer, woonplaats en gegevens die je invult in het contactformulier.",
+          "Voor aanmelding, intake en behandeling kunnen ook hulpvraag, geboortedatum, verwijsinformatie, verzekerings- of gemeentegegevens, afspraken, gespreksverslagen, behandelgegevens en andere gezondheidsgegevens worden verwerkt.",
+          "Bij kinderen en jongeren kunnen ook gegevens van ouders/verzorgers, gezag, school, huisarts, gemeente, verwijzer of andere betrokken professionals relevant zijn.",
+          "Deel via het contactformulier alleen informatie die nodig is voor een eerste contact of aanmelding. Gebruik het formulier niet voor acute of spoedeisende situaties.",
         ],
       },
       {
-        title: "Rechten",
+        title: "Waarom verwerken wij gegevens?",
         body: [
-          "Je hebt volgens de AVG onder andere recht op informatie, inzage, correctie en in sommige gevallen verwijdering van gegevens.",
+          "Wij verwerken gegevens om contact op te nemen, aanmeldingen te beoordelen, afspraken te plannen, passende zorg te kunnen bieden, dossiers bij te houden, te communiceren met betrokkenen en te voldoen aan administratieve, declaratie- en wettelijke verplichtingen.",
+          "De grondslagen hiervoor zijn onder meer uitvoering van een zorg- of behandelovereenkomst, voorbereiding daarop, wettelijke verplichtingen, gerechtvaardigd belang en, waar nodig, toestemming.",
+          "Gezondheidsgegevens worden alleen verwerkt wanneer dat noodzakelijk is voor goede zorg, dossiervoering, verwijzing, afstemming of een andere wettelijk toegestane reden.",
+        ],
+      },
+      {
+        title: "Dossier en bewaartermijn",
+        body: [
+          "Voor goede en veilige zorg wordt een dossier bijgehouden. In het dossier staan gegevens die nodig zijn voor behandeling, begeleiding, afstemming, verslaglegging en continuiteit van zorg.",
+          "Medische dossiers worden in beginsel minimaal twintig jaar bewaard vanaf de laatste wijziging in het dossier, tenzij een langere of kortere bewaartermijn wettelijk is toegestaan of noodzakelijk is.",
+          "Gegevens uit een eerste contact of contactformulier worden niet langer bewaard dan nodig is voor beantwoording, aanmelding, administratieve opvolging of een eventueel behandeltraject.",
+        ],
+      },
+      {
+        title: "Delen met anderen",
+        body: [
+          "Gegevens worden niet zonder reden gedeeld. Delen gebeurt alleen wanneer dat nodig is voor zorgverlening, verwijzing, declaratie, administratie, wettelijke verplichtingen of wanneer je daarvoor toestemming hebt gegeven.",
+          "Denk aan afstemming met huisarts, verwijzer, gemeente, school, andere behandelaren, zorgadministratie, boekhouding, ICT-leveranciers of e-maildienstverleners. Met leveranciers die persoonsgegevens verwerken worden passende afspraken gemaakt.",
+          "Bij kinderen en jongeren wordt zorgvuldig gekeken naar leeftijd, gezag, toestemming en het belang van het kind.",
+        ],
+      },
+      {
+        title: "Beveiliging",
+        body: [
+          "Wij nemen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen verlies, onbevoegde toegang en onzorgvuldig gebruik.",
+          "Alleen personen die de gegevens nodig hebben voor hun taak krijgen toegang. Waar mogelijk beperken wij de hoeveelheid gegevens en bewaren wij gegevens niet langer dan nodig.",
+          "E-mail en online formulieren kunnen nooit volledig risicovrij worden gebruikt. Vermeld daarom in een eerste bericht alleen wat nodig is om contact op te nemen of de hulpvraag kort te duiden.",
+        ],
+      },
+      {
+        title: "Jouw rechten",
+        body: [
+          "Je hebt volgens de AVG onder andere recht op informatie, inzage, correctie, aanvulling, beperking van verwerking, bezwaar en in sommige gevallen verwijdering of overdracht van gegevens.",
+          "Voor medische dossiers gelden daarnaast specifieke regels. Een verzoek wordt zorgvuldig beoordeeld, onder meer in verband met wettelijke bewaarplichten, rechten van anderen en het belang van goede zorg.",
+          `Je kunt een verzoek of privacyvraag sturen naar ${contact.email}. Wij kunnen vragen om identificatie voordat wij gegevens verstrekken of aanpassen.`,
+        ],
+      },
+      {
+        title: "Cookies en websitegebruik",
+        body: [
+          "Deze website gebruikt voor zover bekend geen trackingcookies, advertentiecookies of analytische cookies waarvoor vooraf toestemming nodig is.",
+          "Wanneer later wel tracking, externe analyse of vergelijkbare technieken worden toegevoegd, wordt de website daarop aangepast en wordt waar nodig vooraf toestemming gevraagd.",
+          "Voor functionele of strikt noodzakelijke technieken die nodig zijn om de website te laten werken, is geen toestemmingspopup nodig.",
+        ],
+      },
+      {
+        title: "Klachten",
+        body: [
+          "Heb je een vraag of klacht over privacy, neem dan eerst contact op met Uniqara. Dan kunnen we samen kijken wat er aan de hand is.",
+          "Je hebt ook het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens.",
+          "Deze privacyverklaring kan worden aangepast wanneer de praktijk, website, wetgeving of gebruikte systemen veranderen.",
         ],
       },
     ],

@@ -89,15 +89,26 @@ const toneClasses = {
 
 function SectionIllustration({
   illustration,
+  variant = "default",
 }: {
   illustration: PageIllustration;
+  variant?: "default" | "timeline";
 }) {
+  const frameClass =
+    variant === "timeline"
+      ? "section-illustration section-illustration--timeline mt-5 h-32 w-40 max-w-full self-center sm:h-36 sm:w-48"
+      : "section-illustration mt-5 aspect-[4/3]";
+  const imageClass =
+    variant === "timeline"
+      ? "object-contain p-3 sm:p-4"
+      : "object-contain p-4 sm:p-5";
+
   return (
     <IllustrationFrame
       alt={illustration.alt}
-      className={`mt-5 aspect-[4/3] ${toneClasses[illustration.tone ?? "neutral"]}`}
-      imageClassName="object-contain p-4 sm:p-5"
-      motion="up"
+      className={`${frameClass} ${toneClasses[illustration.tone ?? "neutral"]}`}
+      imageClassName={imageClass}
+      motion={variant === "timeline" ? undefined : "up"}
       sizes="(min-width: 768px) 44vw, 100vw"
       src={illustration.src}
     />
@@ -217,7 +228,10 @@ function ContentCard({
       </h2>
       <SectionBody section={section} />
       {section.illustration ? (
-        <SectionIllustration illustration={section.illustration} />
+        <SectionIllustration
+          illustration={section.illustration}
+          variant={variant === "timeline" ? "timeline" : "default"}
+        />
       ) : null}
       <SectionLinks section={section} />
     </Card>
