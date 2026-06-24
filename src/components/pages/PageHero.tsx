@@ -24,14 +24,14 @@ const bannerVariantClasses: Record<
 > = {
   green: {
     panel: "border-brand-green bg-brand-green-soft",
-    visual: "bg-accent-yellow-soft",
+    visual: "bg-accent-blue-soft",
   },
   terra: {
     panel: "border-accent-coral/70 bg-accent-coral-soft",
     visual: "bg-accent-coral-soft",
   },
-  yellow: {
-    panel: "border-accent-yellow bg-accent-yellow-soft",
+  blue: {
+    panel: "border-accent-blue bg-accent-blue-soft",
     visual: "bg-brand-green-soft",
   },
 };

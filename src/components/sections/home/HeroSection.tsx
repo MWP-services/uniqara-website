@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { VideoFrame } from "@/components/ui/VideoFrame";
 import type { HomeContent } from "@/content/home";
 
 type HeroSectionProps = {
@@ -36,7 +36,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
             <Button
               href={hero.secondaryCta.href}
               variant="secondary"
-              className="border-brand-green/40 bg-card/85 text-foreground backdrop-blur hover:bg-brand-green-soft active:bg-accent-yellow-soft"
+              className="border-brand-green/40 bg-card/85 text-foreground backdrop-blur hover:bg-brand-green-soft active:bg-accent-blue-soft"
             >
               {hero.secondaryCta.label}
             </Button>
@@ -54,13 +54,19 @@ export function HeroSection({ hero }: HeroSectionProps) {
             </ul>
           ) : null}
         </div>
-        <VideoFrame
-          className="hero-video-cutout mx-auto aspect-[4/3] w-full max-w-[42rem] lg:aspect-[1.16/1] lg:max-w-none xl:-mr-4"
-          motion="hero"
-          plain
-          poster="/assets/HOMEPAGE.webp"
-          src="/assets/HOMEPAGE-ANIMATED.mp4"
-        />
+        <div className="illustration-motion illustration-motion-hero mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden rounded-medium border border-border-soft bg-card shadow-card lg:max-w-[29rem] xl:-mr-2">
+          <div className="illustration-motion-inner h-full w-full">
+            <Image
+              alt="De Hooiberg, de locatie van Uniqara."
+              className="block h-full w-full object-cover"
+              height={1024}
+              priority
+              sizes="(min-width: 1280px) 29rem, (min-width: 1024px) 36vw, min(24rem, 100vw)"
+              src="/assets/hooiberg.jpeg"
+              width={768}
+            />
+          </div>
+        </div>
       </Container>
     </section>
   );

@@ -39,9 +39,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "primary-button bg-brand-green text-white shadow-card hover:bg-brand-green-deep active:bg-brand-green-deep",
   secondary:
-    "secondary-button border border-border-soft bg-card/75 text-foreground shadow-card backdrop-blur hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft",
+    "secondary-button border border-border-soft bg-card/75 text-foreground shadow-card backdrop-blur hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-blue-soft",
   ghost:
-    "text-foreground hover:bg-brand-green-soft hover:text-brand-green-deep active:bg-accent-yellow-soft",
+    "text-foreground hover:bg-brand-green-soft hover:text-brand-green-deep active:bg-accent-blue-soft",
 };
 
 function Icon({

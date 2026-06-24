@@ -10,10 +10,10 @@ type LogoPlaceholderProps = {
 };
 
 const sizeClasses = {
-  header: "h-16 w-16 sm:h-20 sm:w-20 lg:h-28 lg:w-28",
-  sm: "h-12 w-12 sm:h-14 sm:w-14",
-  md: "h-14 w-14 sm:h-20 sm:w-20",
-  lg: "h-24 w-24 sm:h-32 sm:w-32",
+  header: "h-[4.75rem] w-[4.75rem] sm:h-24 sm:w-24 lg:h-32 lg:w-32",
+  sm: "h-14 w-14 sm:h-16 sm:w-16",
+  md: "h-20 w-20 sm:h-24 sm:w-24",
+  lg: "h-28 w-28 sm:h-36 sm:w-36",
 };
 
 export function LogoPlaceholder({
@@ -24,12 +24,12 @@ export function LogoPlaceholder({
 }: LogoPlaceholderProps) {
   return (
     <Image
-      src="/assets/logo.png"
+      src="/assets/logo-transparent.png"
       alt={placeholderKey === "LOGO_PRIMARY" ? site.name : `${site.name} logo`}
-      width={218}
-      height={218}
+      width={1254}
+      height={1254}
       preload={priority}
-      className={`site-logo-image block rounded-full object-cover ${sizeClasses[size]} ${className}`}
+      className={`site-logo-image block object-contain ${sizeClasses[size]} ${className}`}
     />
   );
 }

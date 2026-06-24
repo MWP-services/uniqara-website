@@ -207,7 +207,7 @@ export function ContactFormPlaceholder({
             aria-live="polite"
             className={`text-support rounded-soft border px-4 py-3 ${
               status.type === "success"
-                ? "border-border-soft bg-accent-yellow-soft"
+                ? "border-border-soft bg-accent-blue-soft"
                 : "border-red-200 bg-red-50 text-red-900"
             }`}
             role={status.type === "error" ? "alert" : "status"}

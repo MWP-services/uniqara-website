@@ -17,10 +17,10 @@ export type PageSection = {
 export type PageIllustration = {
   alt: string;
   src: string;
-  tone?: "turquoise" | "yellow" | "coral" | "neutral";
+  tone?: "turquoise" | "blue" | "coral" | "neutral";
 };
 
-export type PageBannerVariant = "green" | "yellow" | "terra";
+export type PageBannerVariant = "green" | "blue" | "terra";
 
 export type PageAside = {
   label: string;
@@ -199,7 +199,7 @@ export const pages = {
     illustration: {
       alt: "Zandbakillustratie bij spel en kindgerichte hulp.",
       src: "/assets/ZANDBAK.webp",
-      tone: "yellow",
+      tone: "blue",
     },
     sections: [
       {
@@ -364,7 +364,7 @@ export const pages = {
     illustration: {
       alt: "Zandbakillustratie bij speltherapie.",
       src: "/assets/ZANDBAK.webp",
-      tone: "yellow",
+      tone: "blue",
     },
     sections: [
       {
@@ -376,7 +376,7 @@ export const pages = {
         illustration: {
           alt: "Zandbakillustratie bij speltherapie.",
           src: "/assets/ZANDBAK.webp",
-          tone: "yellow",
+          tone: "blue",
         },
       },
       {
@@ -663,7 +663,7 @@ export const pages = {
         illustration: {
           alt: "Illustratie bij kennismaking en intake.",
           src: "/assets/kennismaking.png",
-          tone: "yellow",
+          tone: "blue",
         },
       },
       {

@@ -84,7 +84,7 @@ const toneClasses = {
   coral: "border-accent-coral/45 bg-accent-coral-soft",
   neutral: "border-border-soft bg-card",
   turquoise: "border-brand-green/45 bg-brand-green-soft",
-  yellow: "border-accent-yellow bg-accent-yellow-soft",
+  blue: "border-accent-blue bg-accent-blue-soft",
 };
 
 function SectionIllustration({
@@ -165,7 +165,7 @@ function PageAnchorBand({
             <Link
               key={section.title}
               href={`#${sectionId(section)}`}
-              className="compact-link-card inline-flex min-h-11 max-w-full items-center rounded-pill border border-border-soft bg-card/70 px-4 py-2 text-sm font-semibold leading-snug text-foreground shadow-card transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-yellow-soft"
+              className="compact-link-card inline-flex min-h-11 max-w-full items-center rounded-pill border border-border-soft bg-card/70 px-4 py-2 text-sm font-semibold leading-snug text-foreground shadow-card transition hover:border-brand-green hover:bg-brand-green-soft active:bg-accent-blue-soft"
             >
               {section.title}
             </Link>

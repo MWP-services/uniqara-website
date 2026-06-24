@@ -50,7 +50,7 @@ export const structuredData: JsonLdGraph = {
       url: absoluteUrl(routes.home.href),
       description: brand.shortDescription,
       image: absoluteUrl("/opengraph-image"),
-      logo: absoluteUrl("/assets/logo.png"),
+      logo: absoluteUrl("/assets/logo-transparent.png"),
       ...(hasPublicPhone ? { telephone: schemaPhone } : {}),
       email: contact.email,
       openingHours: contact.openingHours,

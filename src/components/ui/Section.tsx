@@ -4,7 +4,7 @@ type SectionProps = {
   children: ReactNode;
   className?: string;
   id?: string;
-  tone?: "mint" | "yellow" | "blue" | "lilac" | "peach" | "green";
+  tone?: "mint" | "blue" | "lilac" | "peach" | "green";
   variant?: "white" | "surface";
 };
 

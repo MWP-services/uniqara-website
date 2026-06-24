@@ -113,7 +113,7 @@ export async function WaitingTimesSection() {
           </div>
 
           {!hasLiveData ? (
-            <p className="border-t border-border-soft bg-accent-yellow-soft px-4 py-4 text-sm text-muted-foreground sm:px-6">
+            <p className="border-t border-border-soft bg-accent-blue-soft px-4 py-4 text-sm text-muted-foreground sm:px-6">
               De actuele wachttijden worden binnenkort aangevuld.
             </p>
           ) : null}

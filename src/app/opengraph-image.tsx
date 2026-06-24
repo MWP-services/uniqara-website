@@ -99,7 +99,7 @@ export default function OpenGraphImage() {
           />
           <div
             style={{
-              background: "#F8E98E",
+              background: "#AEDDFF",
               borderRadius: 16,
               height: 74,
               width: 220,

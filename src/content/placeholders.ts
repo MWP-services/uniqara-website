@@ -123,7 +123,7 @@ export const placeholders = {
     key: "HULPAANBOD_BANNER_VARIANT",
     uiText: "green",
     description: "Visuele kleurvariant voor de Hulpaanbod-banner.",
-    replaceWith: "Kies na visuele beoordeling: green, yellow of terra.",
+    replaceWith: "Kies na visuele beoordeling: green, blue of terra.",
   },
   FOOTER_SHORT_TAGLINE: {
     key: "FOOTER_SHORT_TAGLINE",
