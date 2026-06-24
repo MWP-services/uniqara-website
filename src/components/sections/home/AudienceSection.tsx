@@ -29,7 +29,7 @@ export function AudienceSection({
         <SectionHeading intro={intro} title={title} />
         <IllustrationFrame
           alt="Vriendelijke dierenillustratie bij veiligheid en verbinding."
-          className="mt-8 aspect-[4/3] border-brand-green/35 bg-[linear-gradient(135deg,rgba(204,245,222,0.76),rgba(255,255,255,0.55),rgba(255,241,173,0.52))] sm:aspect-[16/7]"
+          className="mt-8 aspect-[4/3] border-brand-green/35 bg-[rgba(204,245,222,0.58)] sm:aspect-[16/7]"
           imageClassName="object-contain p-4 sm:p-6"
           motion="float"
           sizes="(min-width: 1024px) 72rem, 100vw"

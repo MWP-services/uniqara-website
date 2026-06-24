@@ -15,7 +15,7 @@
   --yellow-soft: rgb(255 231 118 / 0.64);
   --mint-soft: rgb(181 239 207 / 0.66);
   --blue-soft: rgb(174 221 255 / 0.64);
-  --lilac-soft: rgb(214 195 255 / 0.6);
+  --lilac-soft: rgb(255 218 198 / 0.58);
   --peach-soft: rgb(255 199 169 / 0.62);
   --sage-soft: rgb(196 236 167 / 0.64);
   --surface-border: rgb(255 255 255 / 0.65);
@@ -99,7 +99,7 @@
       radial-gradient(circle at 10% 10%, rgb(204 245 222 / 0.7), transparent 32%),
       radial-gradient(circle at 90% 15%, rgb(255 241 173 / 0.58), transparent 30%),
       radial-gradient(circle at 15% 85%, rgb(203 235 255 / 0.55), transparent 32%),
-      radial-gradient(circle at 82% 78%, rgb(229 215 255 / 0.38), transparent 28%),
+      radial-gradient(circle at 82% 78%, rgb(255 218 198 / 0.34), transparent 28%),
       linear-gradient(180deg, #fafcf9 0%, #f4fbf1 100%);
     background-attachment: fixed;
     color: var(--foreground);
@@ -312,9 +312,9 @@
 
   .hero-pastel-background {
     background:
-      radial-gradient(circle at 12% 18%, rgb(204 245 222 / 0.82), transparent 36%),
-      radial-gradient(circle at 88% 18%, rgb(255 241 173 / 0.64), transparent 34%),
-      radial-gradient(circle at 74% 82%, rgb(203 235 255 / 0.54), transparent 34%),
+      radial-gradient(circle at 18% 18%, rgb(204 245 222 / 0.78), transparent 38%),
+      radial-gradient(circle at 82% 24%, rgb(204 245 222 / 0.46), transparent 36%),
+      radial-gradient(circle at 58% 86%, rgb(181 239 207 / 0.34), transparent 40%),
       linear-gradient(180deg, rgb(250 252 249 / 0.96), rgb(244 251 241 / 0.98));
   }
 
@@ -323,9 +323,8 @@
       linear-gradient(
         135deg,
         rgb(255 255 255 / 0.58),
-        rgb(255 241 173 / 0.34) 22%,
-        rgb(204 245 222 / 0.42) 58%,
-        rgb(229 215 255 / 0.28)
+        rgb(204 245 222 / 0.48) 50%,
+        rgb(181 239 207 / 0.34)
       );
   }
 
@@ -402,8 +401,8 @@
   .page-shell > .section-shell:nth-of-type(6n + 4),
   .surface-lilac {
     background:
-      radial-gradient(circle at 86% 18%, rgb(214 195 255 / 0.52), transparent 38%),
-      linear-gradient(135deg, rgb(225 211 255 / 0.56), rgb(248 243 255 / 0.38));
+      radial-gradient(circle at 86% 18%, rgb(255 218 198 / 0.48), transparent 38%),
+      linear-gradient(135deg, rgb(255 231 216 / 0.52), rgb(255 247 242 / 0.38));
   }
 
   .page-shell > .section-shell:nth-of-type(6n + 5),
