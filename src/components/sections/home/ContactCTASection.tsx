@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 
 type ContactCTASectionProps = {
   title: string;
@@ -31,6 +32,7 @@ export function ContactCTASection({
               {title}
             </h2>
             <p className="text-body mt-4 max-w-2xl">{intro}</p>
+            <ContactReferralNotice className="mt-4 max-w-2xl" compact />
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <Button href={primaryCtaHref}>{primaryCtaLabel}</Button>

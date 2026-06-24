@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import { ErisietsmisgegaanButton } from "@/components/ui/ErisietsmisgegaanButton";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import { TransitionLink } from "@/components/ui/TransitionLink";
@@ -64,6 +65,7 @@ export function Footer() {
             <Button href={contact.cta.href} className="mt-4" variant="secondary">
               {contact.cta.label}
             </Button>
+            <ContactReferralNotice className="mt-3 max-w-sm" compact />
             <div className="mt-4">
               <ErisietsmisgegaanButton variant="footer" />
             </div>

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
 import { Section } from "@/components/ui/Section";
 import { PageCtaBand } from "@/components/pages/PageCtaBand";
@@ -131,18 +132,24 @@ function SectionLinks({ section }: { section: PageSection }) {
   if (!section.links) {
     return null;
   }
+  const hasContactLink = section.links.some((link) => link.href === "/contact");
 
   return (
-    <nav
-      aria-label={`Vervolglinks bij ${section.title}`}
-      className="mt-auto flex flex-col gap-2 pt-5 sm:flex-row sm:flex-wrap"
-    >
-      {section.links.map((link) => (
-        <Button key={link.href} href={link.href} variant="ghost">
-          {link.label}
-        </Button>
-      ))}
-    </nav>
+    <>
+      {hasContactLink ? (
+        <ContactReferralNotice className="mt-auto pt-5" compact />
+      ) : null}
+      <nav
+        aria-label={`Vervolglinks bij ${section.title}`}
+        className={`${hasContactLink ? "mt-3" : "mt-auto pt-5"} flex flex-col gap-2 sm:flex-row sm:flex-wrap`}
+      >
+        {section.links.map((link) => (
+          <Button key={link.href} href={link.href} variant="ghost">
+            {link.label}
+          </Button>
+        ))}
+      </nav>
+    </>
   );
 }
 

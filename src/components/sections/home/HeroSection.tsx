@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import type { HomeContent } from "@/content/home";
 
 type HeroSectionProps = {
@@ -41,6 +42,10 @@ export function HeroSection({ hero }: HeroSectionProps) {
               {hero.secondaryCta.label}
             </Button>
           </div>
+          <ContactReferralNotice
+            className="hero-reveal hero-reveal-5 mt-4 max-w-2xl"
+            compact
+          />
           {hero.supportItems.length > 0 ? (
             <ul className="hero-reveal hero-reveal-5 mt-7 grid gap-3 text-sm leading-6 text-muted-foreground sm:mt-8 sm:grid-cols-3">
               {hero.supportItems.map((item) => (

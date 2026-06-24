@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import { navigation } from "@/content/navigation";
@@ -70,13 +71,16 @@ export function Header() {
               className="flex items-center gap-1.5 xl:gap-2"
               pathname={pathname}
             />
-            <Button
-              aria-current={contactIsActive ? "page" : undefined}
-              href={routes.contact.href}
-              className={`ml-2 whitespace-nowrap ${contactIsActive ? "ring-2 ring-focus-ring/40" : ""}`}
-            >
-              {navigation.headerCtaLabel}
-            </Button>
+            <div className="ml-2 flex max-w-[13rem] flex-col items-end gap-1">
+              <Button
+                aria-current={contactIsActive ? "page" : undefined}
+                href={routes.contact.href}
+                className={`whitespace-nowrap ${contactIsActive ? "ring-2 ring-focus-ring/40" : ""}`}
+              >
+                {navigation.headerCtaLabel}
+              </Button>
+              <ContactReferralNotice className="w-full" compact />
+            </div>
           </div>
 
           <details className="group relative z-[100] lg:hidden">
@@ -96,6 +100,7 @@ export function Header() {
               >
                 {navigation.headerCtaLabel}
               </Button>
+              <ContactReferralNotice className="mt-3" compact />
             </div>
           </details>
         </div>

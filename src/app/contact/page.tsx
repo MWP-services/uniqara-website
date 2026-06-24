@@ -4,6 +4,7 @@ import { PageHero } from "@/components/pages/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { contact } from "@/content/contact";
@@ -70,6 +71,7 @@ export default function ContactPage() {
               <Button className="mt-6" href="#contactformulier">
                 Naar het contactformulier
               </Button>
+              <ContactReferralNotice className="mt-4" />
             </Card>
 
             <Card className="!h-auto">
@@ -114,6 +116,7 @@ export default function ContactPage() {
               intro={contact.form.intro}
               title={contact.form.title}
             />
+            <ContactReferralNotice className="mt-5" />
             <div className="mt-7">
               <ContactFormPlaceholder
                 form={contact.form}

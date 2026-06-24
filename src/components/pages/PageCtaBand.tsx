@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import type { PageLink } from "@/content/pages";
 import { sharedUi } from "@/content/site";
 
@@ -19,6 +20,8 @@ export function PageCtaBand({
   intro = sharedUi.pageCtaIntro,
   sectionClassName = "",
 }: PageCtaBandProps) {
+  const hasContactLink = links.some((link) => link.href === "/contact");
+
   return (
     <section className={`page-cta-band-branded py-10 sm:py-12 ${sectionClassName}`}>
       <Container>
@@ -31,6 +34,9 @@ export function PageCtaBand({
               {title}
             </h2>
             {intro ? <p className="text-body mt-3">{intro}</p> : null}
+            {hasContactLink ? (
+              <ContactReferralNotice className="mt-4 max-w-2xl" compact />
+            ) : null}
           </div>
           <nav
             aria-label="Vervolgstappen"
