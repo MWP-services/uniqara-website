@@ -68,7 +68,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
               loading="eager"
               preload
               sizes="(min-width: 1280px) 29rem, (min-width: 1024px) 36vw, min(24rem, 100vw)"
-              src="/assets/DIEREN.png"
+              src="/assets/hooiberg.jpeg"
               width={3840}
             />
           </div>
