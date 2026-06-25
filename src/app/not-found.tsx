@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import { Section } from "@/components/ui/Section";
 import { fallbacks } from "@/content/fallbacks";
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   const content = fallbacks.notFound;
+  const hasContactLink = content.links.some((link) => link.href === "/contact");
 
   return (
     <main className="page-shell">
@@ -34,6 +36,9 @@ export default function NotFound() {
               <p className="text-support mx-auto mt-4 max-w-2xl break-words">
                 {content.note}
               </p>
+            ) : null}
+            {hasContactLink ? (
+              <ContactReferralNotice className="mx-auto mt-4 max-w-2xl text-left" compact />
             ) : null}
             <nav
               aria-label="Vervolgroutes vanaf foutpagina"

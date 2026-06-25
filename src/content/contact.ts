@@ -69,7 +69,7 @@ export const contact = {
   reassurance:
     "Een eerste bericht hoeft niet volledig te zijn. Vermeld woonplaats, hulpvraag, telefoonnummer en e-mailadres.",
   referralNotice:
-    "Vergoede jeugdzorg vraagt een verwijzing en geldt alleen voor Gouda, Bodegraven-Reeuwijk, Zuidplas, Waddinxveen en Krimpenerwaard. Anders is de zorg particulier.",
+    "Vergoeding kan alleen met verwijzing van huisarts of jeugdconsulent én bij woonplaats Gouda, Bodegraven-Reeuwijk, Zuidplas, Waddinxveen of Krimpenerwaard; anders is zorg particulier.",
   email: "info@uniqara.nl",
   phone: "06* 486 468 40",
   openingHours:
