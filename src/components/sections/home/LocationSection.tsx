@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import { IllustrationFrame } from "@/components/ui/IllustrationFrame";
+import { PracticePhoto } from "@/components/media/PracticePhoto";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -44,13 +44,12 @@ export function LocationSection({
           </SectionHeading>
           <Card className="overflow-hidden bg-card p-0">
             <div className="relative">
-              <IllustrationFrame
-                alt={imageText}
-                className="aspect-[4/3] border-0 bg-[rgba(204,245,222,0.58)] shadow-none"
-                imageClassName="object-contain p-4 sm:p-6"
-                motion="reveal"
+              <PracticePhoto
+                alt="Buitenzijde van de Hooiberg in de groene omgeving van Ouderkerk aan den IJssel."
+                className="aspect-[16/10] rounded-none border-0 shadow-none"
+                imageClassName="object-[50%_46%]"
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                src="/assets/BLOKKEN.webp"
+                src="/assets/Hooiberg-2-768x1024.webp"
               />
               <p className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] rounded-pill border border-brand-green/30 bg-background/85 px-4 py-2 text-sm font-semibold uppercase text-foreground shadow-card backdrop-blur">
                 {imageLabel}

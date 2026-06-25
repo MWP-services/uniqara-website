@@ -283,6 +283,16 @@
   }
 }
 
+@keyframes disclaimerFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @supports (view-transition-name: root) {
   ::view-transition-group(root) {
     animation-duration: 280ms;

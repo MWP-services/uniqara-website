@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import { navigation } from "@/content/navigation";
@@ -56,7 +55,7 @@ export function Header() {
   return (
     <header className="site-header-pastel sticky top-0 z-[100] w-full max-w-[100vw] overflow-visible backdrop-blur">
       <Container>
-        <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-24 sm:gap-4 sm:py-3 lg:min-h-32">
+        <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-28 sm:gap-4 sm:py-3 lg:min-h-36 xl:min-h-40">
           <TransitionLink
             href={routes.home.href}
             aria-label={`${site.name} home`}
@@ -79,7 +78,6 @@ export function Header() {
               >
                 {navigation.headerCtaLabel}
               </Button>
-              <ContactReferralNotice className="w-full" compact />
             </div>
           </div>
 
@@ -100,7 +98,6 @@ export function Header() {
               >
                 {navigation.headerCtaLabel}
               </Button>
-              <ContactReferralNotice className="mt-3" compact />
             </div>
           </details>
         </div>

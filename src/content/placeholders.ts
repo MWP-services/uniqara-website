@@ -109,13 +109,13 @@ export const placeholders = {
   },
   CONTACT_PHONE: {
     key: "CONTACT_PHONE",
-    uiText: "06* 486 468 40",
+    uiText: "06-48646840",
     description: "Publiek telefoonnummer van de praktijk.",
     replaceWith: "Aangeleverd; bewust niet als tel-link gebruiken.",
   },
   TELEFOONNUMMER_VOLGT: {
     key: "TELEFOONNUMMER_VOLGT",
-    uiText: "06* 486 468 40",
+    uiText: "06-48646840",
     description: "Historische telefoonplaceholder; nummer is inmiddels aangeleverd.",
     replaceWith: "Aangeleverd; bewust niet als tel-link gebruiken.",
   },

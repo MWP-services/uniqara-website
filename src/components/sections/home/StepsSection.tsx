@@ -33,7 +33,7 @@ export function StepsSection({
           imageClassName="object-contain p-4 sm:p-6"
           motion="left"
           sizes="(min-width: 1024px) 72rem, 100vw"
-          src="/assets/SPELTREIN.webp"
+          src="/assets/SPELTREIN.png"
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (

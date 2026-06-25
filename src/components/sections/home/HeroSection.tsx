@@ -59,16 +59,17 @@ export function HeroSection({ hero }: HeroSectionProps) {
             </ul>
           ) : null}
         </div>
-        <div className="illustration-motion illustration-motion-hero mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden rounded-medium border border-border-soft bg-card shadow-card lg:max-w-[29rem] xl:-mr-2">
+        <div className="illustration-motion illustration-motion-hero mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden rounded-medium border border-border-soft bg-brand-green-soft shadow-card lg:max-w-[29rem] xl:-mr-2">
           <div className="illustration-motion-inner h-full w-full">
             <Image
-              alt="De Hooiberg, de locatie van Uniqara."
-              className="block h-full w-full object-cover"
-              height={1024}
-              priority
+              alt="Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding."
+              className="block h-full w-full object-contain p-5 sm:p-7"
+              height={2160}
+              loading="eager"
+              preload
               sizes="(min-width: 1280px) 29rem, (min-width: 1024px) 36vw, min(24rem, 100vw)"
-              src="/assets/hooiberg.jpeg"
-              width={768}
+              src="/assets/DIEREN.png"
+              width={3840}
             />
           </div>
         </div>

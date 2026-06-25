@@ -11,6 +11,7 @@ type FlipTeamCardProps = {
   image?: string;
   imageAlt?: string;
   initials?: string;
+  badge?: string;
   tags?: string[];
 };
 
@@ -21,6 +22,7 @@ export function FlipTeamCard({
   image,
   imageAlt,
   initials,
+  badge,
   backText,
   tags = [],
 }: FlipTeamCardProps) {
@@ -57,7 +59,7 @@ export function FlipTeamCard({
     >
       <span className="team-flip-card__scene block h-full">
         <span
-          className={`team-flip-card__inner block h-full min-h-[38rem] rounded-soft md:min-h-[36rem] lg:min-h-[34rem] ${
+          className={`team-flip-card__inner block h-full min-h-[43rem] rounded-soft md:min-h-[41rem] lg:min-h-[39rem] ${
             isFlipped ? "team-flip-card__inner--flipped" : ""
           }`}
         >
@@ -88,7 +90,14 @@ export function FlipTeamCard({
               <span className="block text-2xl font-semibold leading-tight text-foreground">
                 {name}
               </span>
-              <span className="text-support mt-2 block font-semibold">{role}</span>
+              <span className="mt-2 flex flex-wrap items-center gap-2">
+                <span className="text-support block font-semibold">{role}</span>
+                {badge ? (
+                  <span className="rounded-pill border border-brand-green/35 bg-brand-green-soft px-3 py-1 text-xs font-semibold text-foreground">
+                    {badge}
+                  </span>
+                ) : null}
+              </span>
               <span className="mt-4 block text-base leading-7 text-muted">
                 {summary}
               </span>

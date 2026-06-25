@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { PracticePhoto } from "@/components/media/PracticePhoto";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -143,11 +144,21 @@ function SectionLinks({ section }: { section: PageSection }) {
         aria-label={`Vervolglinks bij ${section.title}`}
         className={`${hasContactLink ? "mt-3" : "mt-auto pt-5"} flex flex-col gap-2 sm:flex-row sm:flex-wrap`}
       >
-        {section.links.map((link) => (
-          <Button key={link.href} href={link.href} variant="ghost">
-            {link.label}
-          </Button>
-        ))}
+        {section.links.map((link) => {
+          const isExternal = /^https?:\/\//.test(link.href);
+
+          return (
+            <Button
+              key={link.href}
+              href={link.href}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              target={isExternal ? "_blank" : undefined}
+              variant="ghost"
+            >
+              {link.label}
+            </Button>
+          );
+        })}
       </nav>
     </>
   );
@@ -240,8 +251,39 @@ function ContentCard({
           variant={variant === "timeline" ? "timeline" : "default"}
         />
       ) : null}
+      {section.photo ? (
+        <PracticePhoto
+          alt={section.photo.alt}
+          className={section.photo.className}
+          imageClassName={section.photo.imageClassName}
+          priority={section.photo.priority}
+          sizes={section.photo.sizes}
+          src={section.photo.src}
+        />
+      ) : null}
       <SectionLinks section={section} />
     </Card>
+  );
+}
+
+function PageHeroPhotoBand({ page }: { page: PageContent }) {
+  if (!page.heroPhoto) {
+    return null;
+  }
+
+  return (
+    <section className="bg-background pb-5 sm:pb-7">
+      <Container>
+        <PracticePhoto
+          alt={page.heroPhoto.alt}
+          className={page.heroPhoto.className}
+          imageClassName={page.heroPhoto.imageClassName}
+          priority={page.heroPhoto.priority}
+          sizes={page.heroPhoto.sizes}
+          src={page.heroPhoto.src}
+        />
+      </Container>
+    </section>
   );
 }
 
@@ -284,6 +326,7 @@ function FeaturedSection({
                     image={therapist.image}
                     imageAlt={therapist.imageAlt}
                     initials={therapist.initials}
+                    badge={therapist.badge}
                     tags={therapist.tags}
                   />
                 ))}
@@ -464,6 +507,8 @@ export function StructuredContentPage({
         intro={page.intro}
         title={page.title}
       />
+
+      <PageHeroPhotoBand page={page} />
 
       <PageAnchorBand navSections={navSections} page={page} />
 

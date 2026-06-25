@@ -69,7 +69,7 @@ export default function ContactPage() {
                 </div>
               </dl>
               <Button className="mt-6" href="#contactformulier">
-                Naar het contactformulier
+                Ga naar het contactformulier
               </Button>
               <ContactReferralNotice className="mt-4" />
             </Card>

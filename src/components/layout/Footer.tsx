@@ -60,7 +60,7 @@ export function Footer() {
                 </Link>
               </p>
               <p>{contact.phone}</p>
-              <p>{contact.openingHours}</p>
+              <p>{contact.footerAvailability}</p>
             </div>
             <Button href={contact.cta.href} className="mt-4" variant="secondary">
               {contact.cta.label}
@@ -88,7 +88,7 @@ export function Footer() {
               href={contact.googleMapsUrl}
               icon="route"
               className="mt-4"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
               variant="secondary"
             >

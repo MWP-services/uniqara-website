@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { FirstVisitDisclaimer } from "@/components/legal/FirstVisitDisclaimer";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { ViewTransitionProvider } from "@/components/ui/ViewTransitionProvider";
 import { rootMetadata } from "@/content/seo";
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
+          <FirstVisitDisclaimer />
         </ViewTransitionProvider>
       </body>
     </html>
