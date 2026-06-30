@@ -74,7 +74,9 @@ export function absoluteUrl(path: string) {
   return new URL(path, seo.placeholderBaseUrl).toString();
 }
 
-export const technicalSeoRoutes = Object.values(seo.pages);
+export const technicalSeoRoutes = Object.values(seo.pages).filter(
+  (entry) => entry.routeKey !== "vaktherapieCreatieveTherapie",
+);
 
 function openGraphFor(entry: SeoEntry): NonNullable<Metadata["openGraph"]> {
   return {

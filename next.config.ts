@@ -14,11 +14,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/hulpaanbod/vaktherapie-creatieve-therapie",
-        destination: "/hulpaanbod/vaktherapie-beeldende-therapie",
-        permanent: true,
-      },
-      {
         source: "/hulpaanbod/psycholoog-pedagoog-begeleiding",
         destination: "/hulpaanbod/psycholoog-pedagoog",
         permanent: true,

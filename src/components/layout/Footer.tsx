@@ -6,6 +6,7 @@ import { ErisietsmisgegaanButton } from "@/components/ui/ErisietsmisgegaanButton
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import { contact } from "@/content/contact";
+import { disclaimerParagraphs } from "@/content/disclaimer";
 import { navigation } from "@/content/navigation";
 import { placeholders } from "@/content/placeholders";
 import { brand } from "@/content/site";
@@ -99,6 +100,16 @@ export function Footer() {
 
         <div className="mt-10 pt-6">
           <p className="text-support">{placeholders.COPYRIGHT_INFO.uiText}</p>
+          <details id="disclaimer" className="mt-4 max-w-3xl">
+            <summary className="inline-flex min-h-9 cursor-pointer items-center text-sm font-semibold text-foreground hover:text-brand-green hover:underline decoration-brand-green decoration-2 underline-offset-4">
+              Disclaimer
+            </summary>
+            <div className="mt-3 space-y-3 text-sm leading-6 text-muted-foreground">
+              {disclaimerParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </details>
         </div>
       </Container>
     </footer>

@@ -189,7 +189,6 @@ export const routeGroups = {
     routes.kindertherapie,
     routes.jongerenbegeleiding,
     routes.ouderbegeleiding,
-    routes.vaktherapieCreatieveTherapie,
     routes.psycholoogPedagoogBegeleiding,
   ],
   behandelvormen: [
