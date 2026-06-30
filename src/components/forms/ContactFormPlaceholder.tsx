@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
-import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import type { ContactContent } from "@/content/contact";
 import { routes } from "@/content/routes";
 
@@ -187,7 +186,6 @@ export function ContactFormPlaceholder({
       <p id="contact-form-note" className="text-support">
         {form.handlerPlaceholder}
       </p>
-      <ContactReferralNotice />
       <p className="text-support rounded-soft border border-border-soft bg-card/70 p-4">
         Wij gebruiken je formuliergegevens om je bericht te beoordelen en contact
         met je op te nemen. Lees meer in de{" "}

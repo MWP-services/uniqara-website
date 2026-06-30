@@ -71,7 +71,6 @@ export default function ContactPage() {
               <Button className="mt-6" href="#contactformulier">
                 Ga naar het contactformulier
               </Button>
-              <ContactReferralNotice className="mt-4" />
             </Card>
 
             <Card className="!h-auto">
