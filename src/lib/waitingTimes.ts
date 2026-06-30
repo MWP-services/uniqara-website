@@ -12,7 +12,6 @@ export type WaitingTimesResult = {
 };
 
 const WAITING_TIMES_CSV_URL = process.env.WAITING_TIMES_CSV_URL;
-const WAITING_TIMES_REVALIDATE_SECONDS = 300;
 
 const fallbackRows: WaitingTimeRow[] = [
   {
@@ -238,7 +237,7 @@ export async function getWaitingTimes(): Promise<WaitingTimesResult> {
 
   try {
     const response = await fetch(toCsvUrl(WAITING_TIMES_CSV_URL), {
-      next: { revalidate: WAITING_TIMES_REVALIDATE_SECONDS },
+      cache: "no-store",
     });
 
     if (!response.ok) {

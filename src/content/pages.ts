@@ -771,11 +771,6 @@ export const pages = {
     description: "Actuele wachttijd en aanmeldstatus.",
     intro:
       "De actuele wachttijd en aanmeldstatus staan hier bij elkaar.",
-    illustration: {
-      alt: "Blokkenillustratie bij overzicht en wachttijd.",
-      src: "/assets/BLOKKEN.png",
-      tone: "turquoise",
-    },
     sections: [
       {
         title: "Actuele status",
