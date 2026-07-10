@@ -29,7 +29,7 @@ export type SeoContent = {
 };
 
 const homeTitle = `${site.name} | ${site.tagline}`;
-const placeholderBaseUrl = "https://uniqara.example";
+const placeholderBaseUrl = "https://uniqara.nl";
 
 const contentPageSeo = Object.fromEntries(
   Object.values(pages).map((page) => [
@@ -85,6 +85,7 @@ function openGraphFor(entry: SeoEntry): NonNullable<Metadata["openGraph"]> {
     siteName: seo.siteName,
     locale: seo.locale,
     type: "website",
+    url: absoluteUrl(entry.path),
   };
 }
 
@@ -94,6 +95,9 @@ export function createPageMetadata(routeKey: "home" | PageRouteKey): Metadata {
   return {
     title: entry.title,
     description: entry.description,
+    alternates: {
+      canonical: entry.path,
+    },
     openGraph: openGraphFor(entry),
   };
 }
@@ -106,12 +110,16 @@ export const rootMetadata: Metadata = {
   },
   description: seo.defaultDescription,
   applicationName: seo.siteName,
+  alternates: {
+    canonical: routes.home.href,
+  },
   openGraph: {
     title: seo.defaultTitle,
     description: seo.defaultDescription,
     siteName: seo.siteName,
     locale: seo.locale,
     type: "website",
+    url: absoluteUrl(routes.home.href),
   },
   robots: {
     index: true,

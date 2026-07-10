@@ -12,7 +12,7 @@ type ContactFormPlaceholderProps = {
 };
 
 const inputClasses =
-  "mt-2 min-h-12 w-full min-w-0 rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:text-muted focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
+  "mt-2 min-h-12 w-full min-w-0 rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:italic placeholder:text-[#789084] focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
 
 const labelClasses = "block min-w-0 text-sm font-semibold text-foreground";
 
@@ -87,7 +87,7 @@ export function ContactFormPlaceholder({
         <label className={labelClasses}>
           {form.fields.name}
           <input
-            autoComplete="name"
+            autoComplete="given-name"
             className={inputClasses}
             name="name"
             placeholder={form.fieldPlaceholders.name}

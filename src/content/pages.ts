@@ -838,7 +838,7 @@ export const pages = {
       {
         title: "Welke gegevens verwerken wij?",
         body: [
-          "Wij kunnen contactgegevens verwerken, zoals naam, e-mailadres, telefoonnummer, woonplaats en gegevens die je invult in het contactformulier.",
+          "Wij kunnen contactgegevens verwerken, zoals voornaam, e-mailadres, telefoonnummer, woonplaats en gegevens die je invult in het contactformulier.",
           "Voor aanmelding, intake en behandeling kunnen ook hulpvraag, geboortedatum, verwijsinformatie, verzekerings- of gemeentegegevens, afspraken, gespreksverslagen, behandelgegevens en andere gezondheidsgegevens worden verwerkt.",
           "Bij kinderen en jongeren kunnen ook gegevens van ouders/verzorgers, gezag, school, huisarts, gemeente, verwijzer of andere betrokken professionals relevant zijn.",
           "Deel via het contactformulier alleen informatie die nodig is voor een eerste contact of aanmelding. Gebruik het formulier niet voor acute of spoedeisende situaties.",
@@ -898,6 +898,88 @@ export const pages = {
           "Heb je een vraag of klacht over privacy, neem dan eerst contact op met Uniqara. Dan kunnen we samen kijken wat er aan de hand is.",
           "Je hebt ook het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens.",
           "Deze privacyverklaring kan worden aangepast wanneer de praktijk, website, wetgeving of gebruikte systemen veranderen.",
+        ],
+      },
+    ],
+    ctas: [contactCta, practicalCta],
+  },
+
+  praktischeAlgemeneVoorwaarden: {
+    routeKey: "praktischeAlgemeneVoorwaarden",
+    title: "Algemene voorwaarden",
+    description:
+      "Algemene voorwaarden van Uniqara voor aanmelding, afspraken, betaling, dossier, privacy, afzeggingen en klachten.",
+    intro:
+      "Deze voorwaarden beschrijven de praktische afspraken rond onderzoek, begeleiding en behandeling bij Uniqara. Laat deze tekst juridisch controleren voordat hij als definitieve voorwaarden wordt gebruikt.",
+    sections: [
+      {
+        title: "Toepassing",
+        body: [
+          "Deze algemene voorwaarden gelden voor onderzoeks-, begeleidings- en behandelovereenkomsten tussen Uniqara en de client, ouder/verzorger of opdrachtgever.",
+          "Aanvullende afspraken in een behandelovereenkomst, beschikking, verwijsroute of schriftelijke bevestiging gaan voor wanneer die specifieker zijn.",
+        ],
+      },
+      {
+        title: "Aanmelding en start",
+        body: [
+          "Een traject start na aanmelding, beoordeling van de hulpvraag en schriftelijke of mondelinge bevestiging van de afspraak.",
+          "Uniqara beoordeelt bij aanmelding of de vraag passend is binnen de praktijk. Wanneer andere hulp beter aansluit, wordt dit zo duidelijk mogelijk besproken.",
+        ],
+      },
+      {
+        title: "Vergoeding en betaling",
+        body: [
+          "De client of opdrachtgever blijft zelf verantwoordelijk voor het controleren van vergoeding, voorwaarden, verwijzing, beschikking, eigen risico en eventuele eigen betaling.",
+          "Wanneer zorg particulier wordt geleverd of niet wordt vergoed, ontvangt de client of opdrachtgever een factuur volgens de gemaakte afspraken.",
+          "Bij te late betaling kan Uniqara een betalingsherinnering sturen en, wanneer betaling uitblijft, de vordering overdragen aan een incassopartij.",
+        ],
+      },
+      {
+        title: "Identificatie en gegevens",
+        body: [
+          "Wanneer wet- en regelgeving dat vraagt, kan Uniqara identiteit, verwijzing, beschikking, verzekeringsgegevens of andere noodzakelijke gegevens controleren en registreren.",
+          "Uniqara verwerkt persoonsgegevens alleen voor zover dit nodig is voor aanmelding, beoordeling, behandeling, administratie, declaratie, wettelijke verplichtingen of goede zorg.",
+        ],
+        links: [{ label: "Privacyverklaring", href: routes.praktischePrivacy.href }],
+      },
+      {
+        title: "Afspraken en afzeggen",
+        body: [
+          "Afspraken worden in overleg gepland. De duur en vorm van afspraken kunnen verschillen per hulpvraag, leeftijd en traject.",
+          "Afspraken die niet op tijd worden afgezegd kunnen in rekening worden gebracht wanneer dit vooraf is afgesproken of redelijkerwijs uit de behandelafspraken volgt.",
+          "Wanneer Uniqara een afspraak moet verplaatsen of annuleren, wordt zo snel mogelijk een nieuwe afspraak voorgesteld.",
+        ],
+      },
+      {
+        title: "Dossier en informatie delen",
+        body: [
+          "Voor goede zorg houdt Uniqara een dossier bij volgens de geldende wet- en regelgeving.",
+          "Informatie wordt alleen met derden gedeeld wanneer daar een wettelijke grondslag voor is, wanneer dit nodig is voor goede zorg of wanneer daarvoor toestemming is gegeven.",
+          "Voor overleg met huisarts, verwijzer, school, gemeente of andere betrokkenen wordt zorgvuldig gekeken naar toestemming, leeftijd, gezag en belang van de client.",
+        ],
+      },
+      {
+        title: "Verantwoordelijkheid en grenzen",
+        body: [
+          "De client, ouder/verzorger of opdrachtgever is verantwoordelijk voor het tijdig en volledig aanleveren van relevante informatie.",
+          "Uniqara is niet verantwoordelijk voor schade die ontstaat door onjuiste, onvolledige of achtergehouden informatie, tenzij sprake is van opzet of grove nalatigheid van Uniqara.",
+          "Bij acute crisis, spoed of direct gevaar is de website of het contactformulier niet de juiste route. Neem dan contact op met huisarts, huisartsenpost, 112 of de lokale crisisdienst.",
+        ],
+      },
+      {
+        title: "Klachten",
+        body: [
+          "Onvrede of klachten kunnen eerst met de betrokken behandelaar worden besproken. Vaak kan dan samen naar een oplossing worden gezocht.",
+          "Wanneer dat niet voldoende is, kan contact worden opgenomen met de praktijkhouder of de klachtenroute die op de website staat vermeld.",
+          "Het indienen van een klacht heft een betalingsverplichting niet automatisch op.",
+        ],
+      },
+      {
+        title: "Afwijkingen en recht",
+        body: [
+          "Van deze voorwaarden kan alleen schriftelijk worden afgeweken.",
+          "Op de afspraken tussen Uniqara en client, ouder/verzorger of opdrachtgever is Nederlands recht van toepassing.",
+          "Deze voorwaarden kunnen worden aangepast wanneer praktijkvoering, wetgeving, contracten of werkwijze veranderen.",
         ],
       },
     ],

@@ -25,6 +25,7 @@ export function ErisietsmisgegaanButton({
       rel="noopener noreferrer"
       aria-label={contact.complaint.buttonAriaLabel}
     >
+      <span className="erisietsmisgegaanLabel">Aangesloten bij</span>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={contact.complaint.buttonAlt} />
     </a>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import type { HomeContent } from "@/content/home";
@@ -56,15 +55,18 @@ export function HeroSection({ hero }: HeroSectionProps) {
         </div>
         <div className="illustration-motion illustration-motion-hero mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden rounded-medium border border-border-soft bg-brand-green-soft shadow-card lg:max-w-[29rem] xl:-mr-2">
           <div className="illustration-motion-inner h-full w-full">
-            <Image
+            {/* A direct, compressed asset avoids optimizer overhead for the landing LCP image. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               alt="Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding."
               className="block h-full w-full object-contain p-5 sm:p-7"
-              height={2160}
+              decoding="async"
+              fetchPriority="high"
+              height={563}
               loading="eager"
-              preload
               sizes="(min-width: 1280px) 29rem, (min-width: 1024px) 36vw, min(24rem, 100vw)"
-              src="/assets/hooiberg.jpeg"
-              width={3840}
+              src="/assets/hooiberg-landing.jpg"
+              width={1000}
             />
           </div>
         </div>

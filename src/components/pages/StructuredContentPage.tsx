@@ -52,6 +52,7 @@ const routeThemeGroups = {
     "praktischeWachttijd",
     "praktischeTarievenVergoedingen",
     "praktischePrivacy",
+    "praktischeAlgemeneVoorwaarden",
     "praktischeAlgemeen",
     "praktischeFaq",
   ]),

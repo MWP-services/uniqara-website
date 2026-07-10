@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl, technicalSeoRoutes } from "@/content/seo";
 
-const lastModified = new Date("2026-05-01");
+const lastModified = new Date("2026-07-10");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return technicalSeoRoutes.map((route) => ({

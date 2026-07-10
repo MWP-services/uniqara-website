@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { SiteSearch } from "@/components/search/SiteSearch";
 import { LogoPlaceholder } from "@/components/ui/LogoPlaceholder";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import { navigation } from "@/content/navigation";
@@ -18,10 +20,12 @@ function isActivePath(pathname: string, href: string) {
 function NavigationLinks({
   ariaLabel,
   className = "",
+  onLinkClick,
   pathname,
 }: {
   ariaLabel: string;
   className?: string;
+  onLinkClick?: () => void;
   pathname: string;
 }) {
   return (
@@ -34,6 +38,7 @@ function NavigationLinks({
             key={item.href}
             aria-current={isActive ? "page" : undefined}
             href={item.href}
+            onClick={onLinkClick}
             className={`flex min-h-11 items-center whitespace-nowrap rounded-pill px-3.5 py-2.5 text-[0.95rem] font-semibold leading-snug transition hover:bg-brand-green-soft hover:text-foreground active:bg-accent-blue-soft lg:text-base ${
               isActive
                 ? "bg-brand-green-soft text-foreground"
@@ -51,11 +56,18 @@ function NavigationLinks({
 export function Header() {
   const pathname = usePathname();
   const contactIsActive = isActivePath(pathname, routes.contact.href);
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+
+  function closeMobileMenu() {
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  }
 
   return (
     <header className="site-header-pastel sticky top-0 z-[100] w-full max-w-[100vw] overflow-visible backdrop-blur">
       <Container>
-        <div className="flex min-h-20 items-center justify-between gap-3 py-2 sm:min-h-28 sm:gap-4 sm:py-3 lg:min-h-36 xl:min-h-40">
+        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:gap-4 sm:py-3 lg:min-h-24 xl:min-h-28">
           <TransitionLink
             href={routes.home.href}
             aria-label={`${site.name} home`}
@@ -70,6 +82,7 @@ export function Header() {
               className="flex items-center gap-1.5 xl:gap-2"
               pathname={pathname}
             />
+            <SiteSearch />
             <div className="ml-2 flex max-w-[13rem] flex-col items-end gap-1">
               <Button
                 aria-current={contactIsActive ? "page" : undefined}
@@ -81,25 +94,30 @@ export function Header() {
             </div>
           </div>
 
-          <details className="group relative z-[100] lg:hidden">
-            <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-[#fafcf9] px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft">
-              Menu
-            </summary>
-            <div className="absolute right-0 z-[100] mt-3 max-h-[calc(100vh-5.5rem)] w-[min(calc(100vw-2rem),22rem)] overflow-auto rounded-medium border border-border-soft bg-[#fafcf9] p-4 shadow-soft">
-              <NavigationLinks
-                ariaLabel="Mobiele navigatie"
-                className="grid gap-1"
-                pathname={pathname}
-              />
-              <Button
-                aria-current={contactIsActive ? "page" : undefined}
-                href={routes.contact.href}
-                className="mt-3 w-full"
-              >
-                {navigation.headerCtaLabel}
-              </Button>
-            </div>
-          </details>
+          <div className="flex items-center gap-2 lg:hidden">
+            <SiteSearch />
+            <details ref={mobileMenuRef} className="group relative z-[100]">
+              <summary className="min-h-11 cursor-pointer list-none rounded-pill border border-border-soft bg-[#fafcf9] px-4 py-2.5 text-sm font-semibold text-foreground shadow-card transition hover:bg-brand-green-soft">
+                Menu
+              </summary>
+              <div className="absolute right-0 z-[100] mt-3 max-h-[calc(100vh-5.5rem)] w-[min(calc(100vw-2rem),22rem)] overflow-auto rounded-medium border border-border-soft bg-[#fafcf9] p-4 shadow-soft">
+                <NavigationLinks
+                  ariaLabel="Mobiele navigatie"
+                  className="grid gap-1"
+                  onLinkClick={closeMobileMenu}
+                  pathname={pathname}
+                />
+                <Button
+                  aria-current={contactIsActive ? "page" : undefined}
+                  href={routes.contact.href}
+                  onClick={closeMobileMenu}
+                  className="mt-3 w-full"
+                >
+                  {navigation.headerCtaLabel}
+                </Button>
+              </div>
+            </details>
+          </div>
         </div>
       </Container>
     </header>

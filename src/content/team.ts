@@ -26,7 +26,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Annemarie van den Heuvel",
-    role: "Speltherapeut",
+    role: "Speltherapeut MA",
     summary:
       "Annemarie biedt speltherapie aan kinderen en jongeren en betrekt ouders waar dat helpend is voor de ontwikkeling thuis en op school.",
     image: "/assets/Annemarie.jpg",

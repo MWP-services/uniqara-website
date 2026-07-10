@@ -109,13 +109,13 @@ export const placeholders = {
   },
   CONTACT_PHONE: {
     key: "CONTACT_PHONE",
-    uiText: "06-48646840",
+    uiText: "06* 486 468 40",
     description: "Publiek telefoonnummer van de praktijk.",
     replaceWith: "Aangeleverd; bewust niet als tel-link gebruiken.",
   },
   TELEFOONNUMMER_VOLGT: {
     key: "TELEFOONNUMMER_VOLGT",
-    uiText: "06-48646840",
+    uiText: "06* 486 468 40",
     description: "Historische telefoonplaceholder; nummer is inmiddels aangeleverd.",
     replaceWith: "Aangeleverd; bewust niet als tel-link gebruiken.",
   },
@@ -146,7 +146,7 @@ export const placeholders = {
   GOOGLE_MAPS_LINK: {
     key: "GOOGLE_MAPS_LINK",
     uiText:
-      "https://www.google.com/maps/search/?api=1&query=Kerkweg%20139a%2C%202935%20AC%20Ouderkerk%20aan%20den%20IJssel",
+      "https://www.google.com/maps/search/?api=1&query=Kerkweg%20139a%2C%202935%20LA%20Ouderkerk%20aan%20den%20IJssel",
     description: "Google Maps-link naar de praktijklocatie.",
     replaceWith: "Definitief gecontroleerde Google Maps-link.",
   },
