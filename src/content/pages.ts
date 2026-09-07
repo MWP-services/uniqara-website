@@ -10,6 +10,7 @@ export type PageLink = {
 export type PageSection = {
   title: string;
   body: string[];
+  subsections?: { title: string; body: string[] }[];
   illustration?: PageIllustration;
   photo?: PagePhoto;
   links?: PageLink[];
@@ -863,9 +864,9 @@ export const pages = {
       {
         title: "Delen met anderen",
         body: [
-          "Gegevens worden niet zonder reden gedeeld. Delen gebeurt alleen wanneer dat nodig is voor zorgverlening, verwijzing, declaratie, administratie, wettelijke verplichtingen of wanneer je daarvoor toestemming hebt gegeven.",
-          "Denk aan afstemming met huisarts, verwijzer, gemeente, school, andere behandelaren, zorgadministratie, boekhouding, ICT-leveranciers of e-maildienstverleners. Met leveranciers die persoonsgegevens verwerken worden passende afspraken gemaakt.",
-          "Bij kinderen en jongeren wordt zorgvuldig gekeken naar leeftijd, gezag, toestemming en het belang van het kind.",
+          "Als psycholoog, pedagoog of therapeut hebben we een beroepsgeheim. Alles wat je vertelt, valt onder het beroepsgeheim van een psycholoog en onder de AVG (Algemene Verordening Gegevensbescherming) die sinds 25 mei 2018 in werking is getreden. Volgens deze wet mogen je persoonlijke gegevens alleen worden gebruikt voor je behandeling. Zonder jouw toestemming mogen we nooit informatie over jou verstrekken aan anderen. De enige uitzondering hierop is als er sprake is van (dreigend) gevaar voor jouzelf of anderen.",
+          "Delen van gegevens gebeurt alleen na toestemming, denk aan afstemming met huisarts, verwijzer, gemeente, school en andere behandelaren. Bij kinderen en jongeren wordt zorgvuldig gekeken naar leeftijd, gezag van ouders, toestemming en het belang van het kind.",
+          "Met leveranciers die persoonsgegevens verwerken, voor bijvoorbeeld zorgadministratie, ICT-leveranciers, boekhouding of e-maildienstverleners worden passende afspraken gemaakt.",
         ],
       },
       {
@@ -880,6 +881,7 @@ export const pages = {
         title: "Jouw rechten",
         body: [
           "Je hebt volgens de AVG onder andere recht op informatie, inzage, correctie, aanvulling, beperking van verwerking, bezwaar en in sommige gevallen verwijdering of overdracht van gegevens.",
+          "Je hebt recht op inzage en afschrift van je dossier, op afspraak. Deze afspraak wordt in rekening gebracht.",
           "Voor medische dossiers gelden daarnaast specifieke regels. Een verzoek wordt zorgvuldig beoordeeld, onder meer in verband met wettelijke bewaarplichten, rechten van anderen en het belang van goede zorg.",
           `Je kunt een verzoek of privacyvraag sturen naar ${contact.email}. Wij kunnen vragen om identificatie voordat wij gegevens verstrekken of aanpassen.`,
         ],
@@ -887,9 +889,7 @@ export const pages = {
       {
         title: "Cookies en websitegebruik",
         body: [
-          "Deze website gebruikt voor zover bekend geen trackingcookies, advertentiecookies of analytische cookies waarvoor vooraf toestemming nodig is.",
-          "Wanneer later wel tracking, externe analyse of vergelijkbare technieken worden toegevoegd, wordt de website daarop aangepast en wordt waar nodig vooraf toestemming gevraagd.",
-          "Voor functionele of strikt noodzakelijke technieken die nodig zijn om de website te laten werken, is geen toestemmingspopup nodig.",
+          "Deze website maakt geen gebruik van cookies of vergelijkbare technologieën voor het volgen van bezoekers. De website kan wel technische gegevens verwerken die noodzakelijk zijn voor het functioneren en beveiligen van de website, zoals IP-adressen in serverlogbestanden.",
         ],
       },
       {
@@ -908,15 +908,15 @@ export const pages = {
     routeKey: "praktischeAlgemeneVoorwaarden",
     title: "Algemene voorwaarden",
     description:
-      "Algemene voorwaarden van Uniqara voor aanmelding, afspraken, betaling, dossier, privacy, afzeggingen en klachten.",
+      "navigeer hier makkelijk naar een van de onderwerpen van deze pagina",
     intro:
-      "Deze voorwaarden beschrijven de praktische afspraken rond onderzoek, begeleiding en behandeling bij Uniqara. Laat deze tekst juridisch controleren voordat hij als definitieve voorwaarden wordt gebruikt.",
+      "Deze voorwaarden beschrijven de praktische afspraken rond onderzoek, begeleiding en behandeling bij Uniqara.",
     sections: [
       {
         title: "Toepassing",
         body: [
           "Deze algemene voorwaarden gelden voor onderzoeks-, begeleidings- en behandelovereenkomsten tussen Uniqara en de client, ouder/verzorger of opdrachtgever.",
-          "Aanvullende afspraken in een behandelovereenkomst, beschikking, verwijsroute of schriftelijke bevestiging gaan voor wanneer die specifieker zijn.",
+          "Aanvullende afspraken kunnen in een behandelovereenkomst, beschikking, verwijsroute of via schriftelijke bevestiging worden opgenomen.",
         ],
       },
       {
@@ -946,7 +946,7 @@ export const pages = {
         title: "Afspraken en afzeggen",
         body: [
           "Afspraken worden in overleg gepland. De duur en vorm van afspraken kunnen verschillen per hulpvraag, leeftijd en traject.",
-          "Afspraken die niet op tijd worden afgezegd kunnen in rekening worden gebracht wanneer dit vooraf is afgesproken of redelijkerwijs uit de behandelafspraken volgt.",
+          "Bij het afzeggen van afspraken gelden de volgende regels: afspraken die binnen 24 uur afgezegd worden, zullen in rekening gebracht worden. Voor de niet tijdig afgemelde consulten op jeugdzorg, wordt de factuur naar ouders van het (minderjarige) kind gestuurd. Indien de behandelaar de afspraak afzegt dan vervalt de verplichting tot betaling van het consult.",
           "Wanneer Uniqara een afspraak moet verplaatsen of annuleren, wordt zo snel mogelijk een nieuwe afspraak voorgesteld.",
         ],
       },
@@ -963,7 +963,39 @@ export const pages = {
         body: [
           "De client, ouder/verzorger of opdrachtgever is verantwoordelijk voor het tijdig en volledig aanleveren van relevante informatie.",
           "Uniqara is niet verantwoordelijk voor schade die ontstaat door onjuiste, onvolledige of achtergehouden informatie, tenzij sprake is van opzet of grove nalatigheid van Uniqara.",
+          "De cliënt is ten alle tijden, zowel binnen als buiten de praktijk, verantwoordelijk voor zijn/haar eigen gedrag en de gevolgen daarvan. Uniqara is in geen geval aansprakelijk voor eventuele schade die in de ogen van de opdrachtgever/cliënt of derden door het contact zou zijn veroorzaakt.",
           "Bij acute crisis, spoed of direct gevaar is de website of het contactformulier niet de juiste route. Neem dan contact op met huisarts, huisartsenpost, 112 of de lokale crisisdienst.",
+        ],
+      },
+      {
+        title: "Medicatie en middelengebruik",
+        body: [],
+        subsections: [
+          {
+            title: "Medicatie",
+            body: [
+              "De cliënt is verantwoordelijk voor het verstrekken van juiste en actuele informatie over medicatiegebruik. Wijzigingen in medicatie die van invloed kunnen zijn op het psychisch functioneren dienen tijdig aan de behandelaar te worden gemeld. De praktijk schrijft geen medicatie voor en verstrekt geen medisch advies over het starten, wijzigen of beëindigen van medicatiegebruik.",
+            ],
+          },
+          {
+            title: "Middelengebruik",
+            body: [
+              "De cliënt verschijnt niet onder invloed van alcohol, drugs of andere middelen die het bewustzijn of functioneren wezenlijk beïnvloeden. Indien middelengebruik een effectieve behandeling belemmert of de veiligheid van betrokkenen onvoldoende kan worden gewaarborgd, kan de behandelaar besluiten een gesprek uit te stellen, aanvullende afspraken te maken of de behandeling te beëindigen.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Incidenten en calamiteiten",
+        body: [
+          "De praktijk beschikt over een procedure voor het registreren, melden, onderzoeken en evalueren van incidenten en calamiteiten. Indien een incident of calamiteit gevolgen heeft voor de cliënt, wordt gehandeld conform de geldende wet- en regelgeving en wordt de cliënt hierover geïnformeerd voor zover de situatie dit vereist.",
+        ],
+      },
+      {
+        title: "Suïcidaliteit, crisis en veiligheid",
+        body: [
+          "De praktijk biedt reguliere ambulante zorg en is niet ingericht voor acute psychiatrische crisiszorg.",
+          "Indien sprake is van ernstige suïcidaliteit, acute veiligheidsrisico’s of gevaar voor de cliënt of anderen, kan de behandelaar maatregelen treffen die noodzakelijk worden geacht vanuit professionele en wettelijke verantwoordelijkheid. Hierbij kan contact worden opgenomen met de huisarts, crisisdienst, betrokken hulpverleners of hulpdiensten. Buiten openingstijden is de praktijk niet bereikbaar voor spoedeisende hulp.",
         ],
       },
       {

@@ -126,6 +126,16 @@ function SectionBody({ section }: { section: PageSection }) {
           {paragraph}
         </p>
       ))}
+      {section.subsections?.map((subsection) => (
+        <div key={subsection.title} className="space-y-3">
+          <h3 className="font-semibold text-foreground">{subsection.title}</h3>
+          {subsection.body.map((paragraph) => (
+            <p key={paragraph} className="text-body">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
@@ -443,9 +453,9 @@ function MosaicSections({
         ) : (
           <div className="content-rhythm-heading content-rhythm-heading--wide">
             <span className="text-xs font-semibold uppercase tracking-wide text-muted">
-              Verdieping
+              
             </span>
-            <h2 className="mt-2 text-2xl sm:text-3xl">Kies wat nu past</h2>
+            <h2 className="mt-2 text-2xl sm:text-3xl">Algemene voorwaarden</h2>
             <p className="mt-3 max-w-3xl text-body">{page.description}</p>
           </div>
         )}
