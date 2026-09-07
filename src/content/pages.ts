@@ -713,7 +713,7 @@ export const pages = {
     routeKey: "praktischeInformatie",
     title: "Praktische informatie",
     description:
-      "kies hier wat U wilt weergeven.",
+      "Overzicht van praktische informatie over aanmelden, wachttijd, tarieven, privacy en veelgestelde vragen.",
     intro:
       "Aanmelden, wachttijd, tarieven, privacy en veelgestelde vragen staan hier bij elkaar.",
     illustration: {
