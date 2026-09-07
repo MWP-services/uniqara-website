@@ -34,14 +34,14 @@ export default function TeamPage() {
         heroVariant="connected"
         illustration={{
           alt: "Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding.",
-          src: "/assets/DIEREN.jpg",
+          src: "/assets/DIEREN.png",
           tone: "turquoise",
         }}
       />
 
       <Section variant="surface">
         <Container>
-          <div className="grid min-w-0 grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid min-w-0 grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
             {teamMembers.map((member) => (
               <FlipTeamCard
                 key={member.name}
@@ -51,6 +51,7 @@ export default function TeamPage() {
                 image={member.image}
                 imageAlt={member.imageAlt}
                 initials={member.initials}
+                badge={member.badge}
                 backText={member.backText}
                 tags={member.tags}
               />
@@ -62,7 +63,7 @@ export default function TeamPage() {
                 <a
                   key={member.linkedinUrl}
                   href={member.linkedinUrl}
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   target="_blank"
                   className="inline-flex min-h-11 items-center rounded-pill border border-brand-green/35 bg-card px-4 py-2 font-semibold text-foreground shadow-card transition hover:border-border-strong hover:bg-brand-green-soft"
                 >

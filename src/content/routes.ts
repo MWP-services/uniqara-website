@@ -22,6 +22,7 @@ export type RouteKey =
   | "praktischeWachttijd"
   | "praktischeTarievenVergoedingen"
   | "praktischePrivacy"
+  | "praktischeAlgemeneVoorwaarden"
   | "praktischeAlgemeen"
   | "praktischeFaq"
   | "locatie"
@@ -141,6 +142,11 @@ export const routes = {
     label: "Privacy",
     href: "/praktische-informatie/privacy",
   },
+  praktischeAlgemeneVoorwaarden: {
+    key: "praktischeAlgemeneVoorwaarden",
+    label: "Algemene voorwaarden",
+    href: "/praktische-informatie/algemene-voorwaarden",
+  },
   praktischeAlgemeen: {
     key: "praktischeAlgemeen",
     label: "Algemene praktische informatie",
@@ -189,7 +195,6 @@ export const routeGroups = {
     routes.kindertherapie,
     routes.jongerenbegeleiding,
     routes.ouderbegeleiding,
-    routes.vaktherapieCreatieveTherapie,
     routes.psycholoogPedagoogBegeleiding,
   ],
   behandelvormen: [
@@ -202,6 +207,7 @@ export const routeGroups = {
     routes.praktischeWachttijd,
     routes.praktischeTarievenVergoedingen,
     routes.praktischePrivacy,
+    routes.praktischeAlgemeneVoorwaarden,
     routes.praktischeAlgemeen,
     routes.praktischeFaq,
   ],

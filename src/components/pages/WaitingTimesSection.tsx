@@ -112,9 +112,15 @@ export async function WaitingTimesSection() {
             </table>
           </div>
 
-          {!hasLiveData ? (
+          {waitingTimes.source === "error" ? (
             <p className="border-t border-border-soft bg-accent-blue-soft px-4 py-4 text-sm text-muted-foreground sm:px-6">
-              De actuele wachttijden worden binnenkort aangevuld.
+              De live wachttijdgegevens konden niet worden geladen. Getoond is
+              de laatst bekende informatie.
+            </p>
+          ) : !hasLiveData ? (
+            <p className="border-t border-border-soft bg-accent-blue-soft px-4 py-4 text-sm text-muted-foreground sm:px-6">
+              De actuele wachttijden zijn gepubliceerd op basis van de laatst
+              bekende praktijkinformatie.
             </p>
           ) : null}
         </div>

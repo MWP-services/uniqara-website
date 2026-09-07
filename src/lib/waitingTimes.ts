@@ -11,16 +11,25 @@ export type WaitingTimesResult = {
   source: "sheet" | "not-configured" | "error";
 };
 
-const WAITING_TIMES_CSV_URL = process.env.WAITING_TIMES_CSV_URL;
-const WAITING_TIMES_REVALIDATE_SECONDS = 300;
+const DEFAULT_WAITING_TIMES_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/1gYS1kzeBqcffsgrstlZlM3ryC7fuS2Vcw7_1W8q8dZk/export?format=csv&gid=0";
+const WAITING_TIMES_CSV_URL =
+  process.env.WAITING_TIMES_CSV_URL ?? DEFAULT_WAITING_TIMES_CSV_URL;
 
 const fallbackRows: WaitingTimeRow[] = [
   {
-    item: "Algemeen",
-    waitingTime: "Wordt binnenkort aangevuld",
-    status: "Nog niet gepubliceerd",
-    note: "De actuele wachttijden worden hier getoond zodra de Google Sheet is gekoppeld.",
-    updatedAt: "",
+    item: "Kinderen",
+    waitingTime: "5-6 weken",
+    status: "Aanmelden mogelijk",
+    note: "Intake op afspraak",
+    updatedAt: "01-05-2026",
+  },
+  {
+    item: "Speltherapie",
+    waitingTime: "Geen wachttijd",
+    status: "Aanmelden mogelijk",
+    note: "Intake op afspraak",
+    updatedAt: "30-06-2026",
   },
 ];
 
@@ -238,7 +247,7 @@ export async function getWaitingTimes(): Promise<WaitingTimesResult> {
 
   try {
     const response = await fetch(toCsvUrl(WAITING_TIMES_CSV_URL), {
-      next: { revalidate: WAITING_TIMES_REVALIDATE_SECONDS },
+      cache: "no-store",
     });
 
     if (!response.ok) {

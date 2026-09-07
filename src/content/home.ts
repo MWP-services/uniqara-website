@@ -164,12 +164,12 @@ export const home = {
     stepLinkLabel: "Stap bekijken",
   },
   location: {
-    heading: "Een plek voor groei",
+    heading: "De Hooiberg in Ouderkerk aan den IJssel",
     intro:
-      "Adres, bereikbaarheid, routebeschrijving en openingstijden staan overzichtelijk bij elkaar.",
-    cardLabel: "Locatieblok",
+      "Uniqara is gevestigd op een landelijke praktijkplek aan de Kerkweg. Adres, bereikbaarheid en route-informatie staan overzichtelijk bij elkaar.",
+    cardLabel: "Locatie",
     cardText:
-      "Illustratie rond ontwikkeling, bouwen en verder groeien.",
+      "De Hooiberg",
     ctaLabel: "Bekijk de locatie",
     secondaryCtaLabel: "Praktische route-info",
   },

@@ -146,7 +146,7 @@ export const placeholders = {
   GOOGLE_MAPS_LINK: {
     key: "GOOGLE_MAPS_LINK",
     uiText:
-      "https://www.google.com/maps/search/?api=1&query=Kerkweg%20139a%2C%202935%20AC%20Ouderkerk%20aan%20den%20IJssel",
+      "https://www.google.com/maps/search/?api=1&query=Kerkweg%20139a%2C%202935%20LA%20Ouderkerk%20aan%20den%20IJssel",
     description: "Google Maps-link naar de praktijklocatie.",
     replaceWith: "Definitief gecontroleerde Google Maps-link.",
   },

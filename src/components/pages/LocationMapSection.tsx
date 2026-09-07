@@ -35,7 +35,7 @@ export function LocationMapSection() {
                 <Button
                   href={contact.googleMapsUrl}
                   icon="route"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   target="_blank"
                   variant="secondary"
                 >

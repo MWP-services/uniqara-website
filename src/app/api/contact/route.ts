@@ -63,7 +63,7 @@ function validatePayload(payload: ContactPayload) {
   const errors: Partial<Record<keyof ContactFormData, string>> = {};
 
   if (!formData.name) {
-    errors.name = "Vul je naam in.";
+    errors.name = "Vul je voornaam in.";
   }
 
   if (!formData.email || !isValidEmail(formData.email)) {
@@ -102,7 +102,7 @@ function buildEmailText(data: ContactFormData) {
   return [
     `Nieuw bericht via het contactformulier van ${site.name}.`,
     "",
-    `Naam: ${data.name}`,
+    `Voornaam: ${data.name}`,
     `E-mailadres: ${data.email}`,
     `Telefoonnummer: ${data.phone || "-"}`,
     `Woonplaats: ${data.city}`,

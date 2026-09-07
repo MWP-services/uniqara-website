@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
-import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import type { ContactContent } from "@/content/contact";
 import { routes } from "@/content/routes";
 
@@ -13,7 +12,7 @@ type ContactFormPlaceholderProps = {
 };
 
 const inputClasses =
-  "mt-2 min-h-12 w-full min-w-0 rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:text-muted focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
+  "mt-2 min-h-12 w-full min-w-0 rounded-soft border border-border-soft bg-card px-4 py-3 text-base text-foreground shadow-none transition placeholder:italic placeholder:text-[#789084] focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-focus-ring/25";
 
 const labelClasses = "block min-w-0 text-sm font-semibold text-foreground";
 
@@ -88,7 +87,7 @@ export function ContactFormPlaceholder({
         <label className={labelClasses}>
           {form.fields.name}
           <input
-            autoComplete="name"
+            autoComplete="given-name"
             className={inputClasses}
             name="name"
             placeholder={form.fieldPlaceholders.name}
@@ -187,7 +186,6 @@ export function ContactFormPlaceholder({
       <p id="contact-form-note" className="text-support">
         {form.handlerPlaceholder}
       </p>
-      <ContactReferralNotice />
       <p className="text-support rounded-soft border border-border-soft bg-card/70 p-4">
         Wij gebruiken je formuliergegevens om je bericht te beoordelen en contact
         met je op te nemen. Lees meer in de{" "}

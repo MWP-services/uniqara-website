@@ -41,7 +41,7 @@ export function ServicesPreviewSection({
           imageClassName="object-contain p-4 sm:p-6"
           motion="up"
           sizes="(min-width: 1024px) 72rem, 100vw"
-          src="/assets/ZANDBAK.webp"
+          src="/assets/ZANDBAK.png"
         />
         <div className="mt-8 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">

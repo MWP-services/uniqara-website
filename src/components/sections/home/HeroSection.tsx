@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { ContactReferralNotice } from "@/components/ui/ContactReferralNotice";
 import type { HomeContent } from "@/content/home";
 
 type HeroSectionProps = {
@@ -42,10 +40,6 @@ export function HeroSection({ hero }: HeroSectionProps) {
               {hero.secondaryCta.label}
             </Button>
           </div>
-          <ContactReferralNotice
-            className="hero-reveal hero-reveal-5 mt-4 max-w-2xl"
-            compact
-          />
           {hero.supportItems.length > 0 ? (
             <ul className="hero-reveal hero-reveal-5 mt-7 grid gap-3 text-sm leading-6 text-muted-foreground sm:mt-8 sm:grid-cols-3">
               {hero.supportItems.map((item) => (
@@ -59,16 +53,20 @@ export function HeroSection({ hero }: HeroSectionProps) {
             </ul>
           ) : null}
         </div>
-        <div className="illustration-motion illustration-motion-hero mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden rounded-medium border border-border-soft bg-card shadow-card lg:max-w-[29rem] xl:-mr-2">
+        <div className="illustration-motion illustration-motion-hero mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden rounded-medium border border-border-soft bg-brand-green-soft shadow-card lg:max-w-[29rem] xl:-mr-2">
           <div className="illustration-motion-inner h-full w-full">
-            <Image
-              alt="De Hooiberg, de locatie van Uniqara."
-              className="block h-full w-full object-cover"
-              height={1024}
-              priority
+            {/* A direct, compressed asset avoids optimizer overhead for the landing LCP image. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Vriendelijke illustratie met dieren als beeld voor veiligheid en verbinding."
+              className="block h-full w-full object-contain p-5 sm:p-7"
+              decoding="async"
+              fetchPriority="high"
+              height={563}
+              loading="eager"
               sizes="(min-width: 1280px) 29rem, (min-width: 1024px) 36vw, min(24rem, 100vw)"
-              src="/assets/hooiberg.jpeg"
-              width={768}
+              src="/assets/hooiberg-landing.jpg"
+              width={1000}
             />
           </div>
         </div>

@@ -25,6 +25,31 @@ const hasPublicPhone =
   Boolean(schemaPhone) &&
   schemaPhone !== placeholders.CONTACT_PHONE.uiText &&
   schemaPhone !== placeholders.TELEFOONNUMMER_VOLGT.uiText;
+const socialProfileUrls = placeholders.SOCIAL_PROFILE_URLS.uiText.startsWith(
+  "http",
+)
+  ? [placeholders.SOCIAL_PROFILE_URLS.uiText]
+  : [];
+
+function splitPostalCodeCity(value: string) {
+  const match = value.match(/^(\d{4}\s?[A-Z]{2})\s+(.+)$/);
+
+  return {
+    postalCode: match?.[1] ?? value,
+    city: match?.[2] ?? value,
+  };
+}
+
+const addressParts = splitPostalCodeCity(contact.address.postalCodeCity);
+const postalAddress = {
+  "@type": "PostalAddress",
+  name: contact.address.name,
+  streetAddress: contact.address.street,
+  postalCode: addressParts.postalCode,
+  addressLocality: addressParts.city,
+  addressRegion: "Zuid-Holland",
+  addressCountry: contact.address.country,
+};
 
 // Structured data gebruikt placeholders totdat domein, contactgegevens,
 // openingstijden en social profielen definitief zijn aangeleverd.
@@ -43,7 +68,7 @@ export const structuredData: JsonLdGraph = {
       },
     },
     {
-      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@type": ["Organization", "LocalBusiness", "MedicalBusiness", "ProfessionalService"],
       "@id": organizationId,
       name: site.name,
       legalName: site.name,
@@ -54,14 +79,16 @@ export const structuredData: JsonLdGraph = {
       ...(hasPublicPhone ? { telephone: schemaPhone } : {}),
       email: contact.email,
       openingHours: contact.openingHours,
-      sameAs: [placeholders.SOCIAL_PROFILE_URLS.uiText],
-      address: {
-        "@type": "PostalAddress",
-        name: contact.address.name,
-        streetAddress: contact.address.street,
-        addressLocality: contact.address.postalCodeCity,
-        addressCountry: contact.address.country,
+      hasMap: contact.googleMapsUrl,
+      areaServed: ["Krimpenerwaard", "Gouda", "Zuidplas", "Waddinxveen", "Bodegraven-Reeuwijk"],
+      ...(socialProfileUrls.length > 0 ? { sameAs: socialProfileUrls } : {}),
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Aanmelding en praktijkvragen",
+        email: contact.email,
+        availableLanguage: ["nl-NL"],
       },
+      address: postalAddress,
       location: {
         "@id": placeId,
       },
@@ -71,12 +98,8 @@ export const structuredData: JsonLdGraph = {
       "@id": placeId,
       name: contact.address.name,
       description: contact.locationDescription,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: contact.address.street,
-        addressLocality: contact.address.postalCodeCity,
-        addressCountry: contact.address.country,
-      },
+      hasMap: contact.googleMapsUrl,
+      address: postalAddress,
     },
   ],
 };
