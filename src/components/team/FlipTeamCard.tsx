@@ -134,7 +134,20 @@ export function FlipTeamCard({
             <span className="mt-5 block space-y-3">
               {paragraphs.map((paragraph) => (
                 <span key={paragraph} className="text-body block">
-                  {paragraph}
+                  {paragraph.startsWith("**") && paragraph.endsWith("**") ? (
+                    <strong>{paragraph.slice(2, -2)}</strong>
+                  ) : paragraph.startsWith("- ") ? (
+                    <span className="block space-y-1">
+                      {paragraph.split("\n").map((item) => (
+                        <span key={item} className="flex gap-2">
+                          <span aria-hidden="true">•</span>
+                          <span>{item.slice(2)}</span>
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    paragraph
+                  )}
                 </span>
               ))}
             </span>
