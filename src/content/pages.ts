@@ -805,8 +805,18 @@ export const pages = {
       {
         title: "Jeugd",
         body: [
-          "Voor jeugd kan vergoeding via gemeente of Jeugdwet mogelijk zijn wanneer er een geldige beschikking of verwijzing is.",
+          "Uniqara heeft voor jeugdzorg contracten met de gemeenten Krimpenerwaard, Zuidplas, Gouda, Waddinxveen en Bodegraven-Reeuwijk. Alleen voor jeugd die in een van deze gemeenten woont, is er sprake van vergoede zorg, met een geldige beschikking of verwijzing.",
           "Bij aanmelding wordt afgestemd welke betaal- of verwijsroute van toepassing is.",
+        ],
+      },
+      {
+        title: "Particuliere zorg",
+        body: [
+          "Individueel consult intakegesprek (90 minuten inclusief indirecte tijd): € 180,00.",
+          "Individueel consult overig (60 minuten incl. 15 minuten indirecte tijd): € 120,00.",
+          "Individueel consult overig (90 minuten incl. 15 minuten indirecte tijd): € 180,00.",
+          "Relatietherapie (90 minuten incl. 15 minuten indirecte tijd): € 176,25 per gesprek. Indien gewenst kan het bedrag gesplitst worden per partner.",
+          "NoShow tarief Uniqara: € 120,00.",
         ],
       },
       {
