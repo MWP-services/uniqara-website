@@ -19,6 +19,7 @@ function pageText(page: PageContent) {
     page.sections.flatMap((section) => [
       section.title,
       ...section.body,
+      ...(section.subsections?.flatMap((subsection) => [subsection.title, ...subsection.body]) ?? []),
       section.links?.map((link) => link.label).join(" "),
     ]),
   ]
