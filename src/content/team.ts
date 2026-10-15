@@ -42,7 +42,8 @@ export const teamMembers: TeamMember[] = [
     role: "Beeldend therapeut AG",
     summary:
       "Durga helpt kinderen vanaf 6 jaar, jongeren en volwassenen om met creatieve materialen te werken aan meer balans en veerkracht.",
-    initials: "DV",
+    image: "/assets/IMG_2721.jpeg",
+    imageAlt: "Portretfoto van Durga van Velzen, beeldend therapeut bij Uniqara.",
     backText:
       `Durga van Velzen is beeldend therapeut AG (Antroposofisch Geïnspireerd) en sluit met haar creatieve materialen aan op de behoeften en belevingswereld van kinderen, jongeren en volwassenen. In de therapie gaat zij samen met jou opzoek naar wat er nodig is om meer balans en veerkracht te ervaren. Haar werkwijze is persoonlijk en laagdrempelig, en een rustige, sensitieve en warme benadering kenmerken Durga als therapeut.
 
